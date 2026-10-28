@@ -262,7 +262,7 @@ window.DADOS = {
       2025,
       2026
     ],
-    "Manchetes (Google Notícias)": [
+    "Headlines (Google News)": [
       53,
       131,
       139,
@@ -270,7 +270,7 @@ window.DADOS = {
       293,
       411
     ],
-    "Reportagens classificadas": [
+    "Classified News Reports": [
       68,
       132,
       157,
@@ -278,7 +278,7 @@ window.DADOS = {
       319,
       394
     ],
-    "Vídeos no YouTube": [
+    "YouTube Videos": [
       44,
       35,
       36,
@@ -286,7 +286,7 @@ window.DADOS = {
       58,
       51
     ],
-    "Comentários no YouTube": [
+    "YouTube Comments": [
       9950,
       3484,
       2664,
@@ -294,7 +294,7 @@ window.DADOS = {
       18765,
       9996
     ],
-    "Posts no Instagram": [
+    "Instagram Posts": [
       0,
       1,
       5,
@@ -302,7 +302,7 @@ window.DADOS = {
       47,
       393
     ],
-    "Vídeos no TikTok": [
+    "TikTok Videos": [
       0,
       0,
       3,
@@ -310,7 +310,7 @@ window.DADOS = {
       36,
       446
     ],
-    "Posts no X": [
+    "X Posts": [
       25,
       23,
       28,
@@ -733,17 +733,17 @@ window.DADOS = {
       "X (posts e vídeos)": 8.4
     },
     "postura": {
-      "Comentários": {
+      "Comments": {
         "detrator": 894,
         "neutro": 291,
         "apoiador": 276
       },
-      "Vídeos": {
+      "Videos": {
         "detrator": 7,
         "neutro": 86,
         "apoiador": 50
       },
-      "Reportagens": {
+      "News Reports": {
         "detrator": 1,
         "neutro": 341,
         "apoiador": 66
@@ -872,27 +872,27 @@ window.DADOS = {
     ],
     "temas_comentarios": [
       {
-        "rotulo": "Validade dos testes de QI",
+        "rotulo": "Validity of IQ Tests",
         "pct": 20.3
       },
       {
-        "rotulo": "Experiência pessoal",
+        "rotulo": "Personal Experience",
         "pct": 17.5
       },
       {
-        "rotulo": "Entretenimento e humor",
+        "rotulo": "Entertainment & Humor",
         "pct": 14.8
       },
       {
-        "rotulo": "Elitismo e arrogância",
+        "rotulo": "Elitism & Arrogance",
         "pct": 14.3
       },
       {
-        "rotulo": "A Mensa e a sociedade",
+        "rotulo": "Mensa & Society",
         "pct": 14.3
       },
       {
-        "rotulo": "Diagnóstico e avaliação",
+        "rotulo": "Diagnosis & Assessment",
         "pct": 8.3
       }
     ],
@@ -1165,7 +1165,7 @@ window.DADOS = {
   "vozes": [
     {
       "tema": "entretenimento_humor",
-      "rotulo": "Entretenimento e humor",
+      "rotulo": "Entertainment & Humor",
       "definicao": "Os trechos têm em comum o uso do tema QI, superdotação e Mensa como matéria de piada, ironia ou provocação, sem discussão séria sobre o assunto. Predominam a autodepreciação cômica (\"meu QI é zero\"), a autoproclamação exagerada (\"meu QI é 520,342\"), os trocadilhos e duplos sentidos, e o deboche dirigido a terceiros, como o…",
       "exemplos": [
         {
@@ -1193,7 +1193,7 @@ window.DADOS = {
     },
     {
       "tema": "experiencia_pessoal",
-      "rotulo": "Experiência pessoal",
+      "rotulo": "Personal Experience",
       "definicao": "Os trechos são relatos em primeira pessoa em que o autor fala de si, de sua família ou de pessoas próximas em relação a altas habilidades, superdotação, QI ou testes da Mensa. Eles trazem vivências concretas: diagnósticos e laudos, resultados de testes, a descoberta tardia, a infância e a escola, relações sociais e de…",
       "exemplos": [
         {
@@ -1221,7 +1221,7 @@ window.DADOS = {
     },
     {
       "tema": "elogio_admiracao",
-      "rotulo": "Elogio e admiração",
+      "rotulo": "Praise & Admiration",
       "definicao": "Os trechos têm em comum a expressão de uma avaliação positiva, explícita ou emocionada, dirigida a um vídeo, ao criador de conteúdo, a um entrevistado ou à própria temática da superdotação, do QI e da Mensa. Aparecem parabéns, agradecimentos, adjetivos como \"excelente\" e \"incrível\", relatos de acolhimento ou de emoção ao…",
       "exemplos": [
         {
@@ -1249,7 +1249,7 @@ window.DADOS = {
     },
     {
       "tema": "validade_testes_qi",
-      "rotulo": "Validade dos testes de QI",
+      "rotulo": "Validity of IQ Tests",
       "definicao": "Os trechos têm em comum o debate sobre se o QI e os testes que o medem (incluindo os da Mensa e os quizzes de vídeo) medem de fato a inteligência. Os comentários questionam a validade do teste por vários ângulos: ele captaria só um tipo de raciocínio (lógico-matemático, reconhecimento de padrões, vocabulário), seria enviesado…",
       "exemplos": [
         {
@@ -1277,7 +1277,7 @@ window.DADOS = {
     },
     {
       "tema": "diagnostico_avaliacao",
-      "rotulo": "Diagnóstico e avaliação",
+      "rotulo": "Diagnosis & Assessment",
       "definicao": "Os trechos têm em comum o tema de como se descobre, mede ou confirma a superdotação/altas habilidades (AH/SD). Aparecem relatos de avaliações neuropsicológicas e de testes de QI (WAIS, SON-R, Mensa), com pontuações e laudos, e também diagnósticos que se misturam ou se confundem com TDAH e TEA (dupla excepcionalidade). Há ainda…",
       "exemplos": [
         {
@@ -1305,7 +1305,7 @@ window.DADOS = {
     },
     {
       "tema": "saude_mental_neuro",
-      "rotulo": "Saúde mental e neurodivergência",
+      "rotulo": "Mental Health & Neurodivergence",
       "definicao": "**1. Definição** Os trechos reúnem comentários em que altas habilidades/superdotação (AH/SD) aparecem ligadas a condições de neurodesenvolvimento e de saúde mental, sobretudo TEA, TDAH e a dupla ou tripla excepcionalidade. Também aparecem ansiedade, depressão, burnout, crises de raiva e de pânico, mascaramento (masking) e…",
       "exemplos": [
         {
@@ -1333,7 +1333,7 @@ window.DADOS = {
     },
     {
       "tema": "caracteristicas_sinais",
-      "rotulo": "Características e sinais",
+      "rotulo": "Traits & Behavioral Indicators",
       "definicao": "A categoria reúne comentários que descrevem como é, ou como se manifesta, uma pessoa com altas habilidades/superdotação. Entram aqui traços cognitivos (aprendizagem precoce, memória, hiperfoco, criatividade, interesses variados), emocionais e sensoriais (perfeccionismo, intensidade, hipersensibilidade) e sociais (isolamento,…",
       "exemplos": [
         {
@@ -1361,7 +1361,7 @@ window.DADOS = {
     },
     {
       "tema": "elitismo_arrogancia",
-      "rotulo": "Elitismo e arrogância",
+      "rotulo": "Elitism & Arrogance",
       "definicao": "1. Os trechos tratam o QI, a superdotação e a Mensa como marcadores de status e hierarquia entre pessoas. Em um grupo, o autor se vangloria do próprio QI, se coloca acima da \"média\" ou usa o QI para rebaixar outros, como o brasileiro comum, adversários políticos ou quem comenta. No outro grupo, o autor acusa superdotados,…",
       "exemplos": [
         {
@@ -1389,7 +1389,7 @@ window.DADOS = {
     },
     {
       "tema": "educacao_escola",
-      "rotulo": "Educação e escola",
+      "rotulo": "Education & School System",
       "definicao": "Os trechos têm em comum o foco na relação entre altas habilidades/superdotação e o ambiente escolar. Aparecem relatos de pais, professores e ex-alunos sobre falta de preparo das escolas, incompreensão e preconceito de docentes, tédio com o ritmo do ensino, bullying, isolamento e abandono escolar. Também há menções a soluções e…",
       "exemplos": [
         {
@@ -1417,7 +1417,7 @@ window.DADOS = {
     },
     {
       "tema": "mensa_sociedade",
-      "rotulo": "A Mensa e a sociedade",
+      "rotulo": "Mensa & Society",
       "definicao": "A categoria reúne comentários que tratam da Mensa como organização e instituição social: quem a integra, como se entra, o que ela faz, qual é o seu valor e como é percebida. Aparecem experiências de membros e ex-membros, dúvidas sobre ingresso e testes de admissão (percentil de 2%, limite de tempo, testes aceitos), críticas e…",
       "exemplos": [
         {
@@ -1445,7 +1445,7 @@ window.DADOS = {
     },
     {
       "tema": "politica_publica",
-      "rotulo": "Política pública",
+      "rotulo": "Public Policy & Legislation",
       "definicao": "Os trechos têm em comum a ligação entre QI, superdotação ou Mensa e o Estado, o governo ou a disputa política. Uma parte cobra ou avalia o poder público: falta de apoio, de leis e de direitos para superdotados (inclusive adultos), comparações com outros países e pedidos de investimento em educação. Outra parte usa o QI como…",
       "exemplos": [
         {
@@ -1473,7 +1473,7 @@ window.DADOS = {
     },
     {
       "tema": "custo_acesso",
-      "rotulo": "Custo e acesso",
+      "rotulo": "Cost & Accessibility",
       "definicao": "1. Os trechos tratam do dinheiro como barreira ou objeção ao acesso a testes de QI, laudos de altas habilidades/superdotação e à filiação à Mensa. Isso aparece em queixas sobre taxas de teste, anuidades e preços de avaliações neuropsicológicas, e em relatos de quem desistiu, não pôde pagar ou se sentiu enganado pela cobrança.…",
       "exemplos": [
         {
@@ -10284,8 +10284,8 @@ window.DADOS = {
     "categorias": [
       {
         "chave": "sofrimento_mental",
-        "titulo": "Psychological Distress",
-        "desc": "Anxiety, depressive states, autistic/gifted burnout, and existential crises.",
+        "titulo": "Psychological Distress & Burnout",
+        "desc": "Anxiety disorders, depressive states, gifted/autistic burnout, and profound existential crises.",
         "n": 120,
         "pct": 19.8,
         "likes": 12943,
@@ -10315,8 +10315,8 @@ window.DADOS = {
       },
       {
         "chave": "tdah_autismo_ou_sd",
-        "titulo": "TDAH, autismo ou superdotação?",
-        "desc": "A confusão entre diagnósticos e a dupla excepcionalidade.",
+        "titulo": "ADHD, Autism, or Giftedness?",
+        "desc": "Diagnostic confusion, overlapping symptomatic phenotypes, and twice-exceptionality.",
         "n": 97,
         "pct": 16.0,
         "likes": 998,
@@ -10346,8 +10346,8 @@ window.DADOS = {
       },
       {
         "chave": "solidao_nao_se_encaixa",
-        "titulo": "Não me encaixo",
-        "desc": "Solidão, sentir-se diferente, não ter com quem conversar.",
+        "titulo": "Chronic Alienation & Misfit Syndrome",
+        "desc": "Acute isolation, feeling structurally alien to peers, and absent intellectual camaraderie.",
         "n": 85,
         "pct": 14.0,
         "likes": 15076,
@@ -10377,8 +10377,8 @@ window.DADOS = {
       },
       {
         "chave": "sera_que_sou",
-        "titulo": "Será que eu sou?",
-        "desc": "Quem se reconhece nos sinais e quer saber se é superdotado.",
+        "titulo": "Could I Be Gifted?",
+        "desc": "Recognizing behavioral markers and seeking empirical confirmation of superior cognition.",
         "n": 74,
         "pct": 12.2,
         "likes": 4158,
@@ -10408,8 +10408,8 @@ window.DADOS = {
       },
       {
         "chave": "teste_qi_vale",
-        "titulo": "O teste vale alguma coisa?",
-        "desc": "Se o QI mede inteligência e se o resultado da Mensa significa algo.",
+        "titulo": "Psychometric Validity of IQ",
+        "desc": "Whether psychometric testing genuinely measures intelligence and what Mensa qualification signifies.",
         "n": 62,
         "pct": 10.2,
         "likes": 235,
@@ -10439,8 +10439,8 @@ window.DADOS = {
       },
       {
         "chave": "duvida_sobre_filho",
-        "titulo": "E meu filho?",
-        "desc": "Pais e mães que veem sinais na criança e não sabem o que fazer.",
+        "titulo": "Pedagogical Guidance for Children",
+        "desc": "Parents observing asynchronous developmental precocity without clear navigation protocols.",
         "n": 56,
         "pct": 9.3,
         "likes": 489,
@@ -10470,8 +10470,8 @@ window.DADOS = {
       },
       {
         "chave": "potencial_frustrado",
-        "titulo": "Inteligente, mas…",
-        "desc": "Sensação de potencial desperdiçado, fracasso na escola ou no trabalho.",
+        "titulo": "Cognitive Potential vs. Underachievement",
+        "desc": "Pervasive frustration with underutilized capability, academic friction, or professional stalling.",
         "n": 51,
         "pct": 8.4,
         "likes": 946,
@@ -10501,8 +10501,8 @@ window.DADOS = {
       },
       {
         "chave": "como_avaliar_custo",
-        "titulo": "Assessment & Cost",
-        "desc": "Who performs evaluations, how the neuropsychological protocol works, costs, and public health access.",
+        "titulo": "Assessment Protocols & Prohibitive Costs",
+        "desc": "Accredited neurodevelopmental evaluators, psychometric batteries, diagnostic costs, and public access.",
         "n": 24,
         "pct": 4.0,
         "likes": 152,
@@ -10532,8 +10532,8 @@ window.DADOS = {
       },
       {
         "chave": "escola_e_bullying",
-        "titulo": "A escola não entende",
-        "desc": "Tédio, punição por adiantar conteúdo, bullying e falta de apoio.",
+        "titulo": "Institutional Invalidation & Bullying",
+        "desc": "Classroom boredom, punitive measures for accelerating content, peer victimization, and institutional neglect.",
         "n": 22,
         "pct": 3.6,
         "likes": 224,
@@ -10563,8 +10563,8 @@ window.DADOS = {
       },
       {
         "chave": "como_entrar_mensa",
-        "titulo": "Como entrar na Mensa",
-        "desc": "Como fazer o teste, quanto custa e para que serve ser membro.",
+        "titulo": "Mensa Admission & Examination",
+        "desc": "Proctored testing logistics, percentile requirements, membership fee structures, and peer society purpose.",
         "n": 14,
         "pct": 2.3,
         "likes": 31,

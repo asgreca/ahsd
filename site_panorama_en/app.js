@@ -25,7 +25,7 @@ $('#tema-btn').onclick = () => {
 };
 
 /* abertura */
-const manch = D.anual['Manchetes (Google Notícias)'];
+const manch = D.anual['Headlines (Google News)'] || D.anual['Manchetes (Google Notícias)'];
 $('#hero-lead').innerHTML = `Allow us to explain. We initiated this investigation with a question deceptively simple to articulate yet computationally arduous to measure: how does Brazil actually discuss giftedness? To address this with the empirical rigor it demands, we assembled 98,861 comments, 870 YouTube and TikTok videos (transcribed verbatim—yes, every single syllable), 708 posts with complete engagement metrics, and 1,264 news reports. A curious, statistically verifiable fact: between 2021 and 2026, annual headlines surged from 53 to 411. That represents an increase of 675%, or a 7.75-fold multiplication, if you appreciate formal mathematical elegance. The general public, however, remains hopelessly conflated between two entirely distinct phenomena sharing the same vocabulary: the superficial fascination with an IQ number, and the urgent search for answers regarding neurodivergence and genuine psychological distress.`;
 const ME = D.medicao;
 const somaM = (campo, redes) => redes.reduce((a, r) => a + (ME[r][campo] || 0), 0);
