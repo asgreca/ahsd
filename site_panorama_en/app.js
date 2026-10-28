@@ -133,7 +133,7 @@ function desenharLinha() {
   const pts = v.map((val, i) => `${x(i)},${y(val)}`).join(' ');
   s += `<polygon points="${pl},${y(0)} ${pts} ${x(v.length - 1)},${y(0)}" fill="${cor}" opacity=".15"/><polyline points="${pts}" fill="none" stroke="${cor}" stroke-width="2.5"/>`;
   const im = v.indexOf(mx);
-  s += `<circle cx="${x(im)}" cy="${y(mx)}" r="5" fill="var(--spark)"/><text x="${x(im) - 8}" y="${y(mx) + 4}" text-anchor="end" font-size="13" font-weight="700" fill="var(--ink)">${mx} em ${M.meses[im].split('-').reverse().join('/')}</text>`;
+  s += `<circle cx="${x(im)}" cy="${y(mx)}" r="5" fill="var(--spark)"/><text x="${x(im) - 8}" y="${y(mx) + 4}" text-anchor="end" font-size="13" font-weight="700" fill="var(--ink)">${mx} in ${M.meses[im].split('-').reverse().join('/')}</text>`;
   $('#linha-mensal').innerHTML = s;
 }
 desenharLinha();
