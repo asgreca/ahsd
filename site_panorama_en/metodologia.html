@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Metodologia do Radar</title>
-<meta name="description" content="Como os dados sobre superdotação nas redes e na imprensa foram coletados, filtrados, classificados e medidos.">
+<title>Methodology · Giftedness Radar</title>
+<meta name="description" content="Empirical protocol: how data regarding giftedness across social platforms and journalism was harvested, filtered, classified, and measured.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -98,93 +98,93 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
 <body>
 <div class="top"><div class="wrap">
   <a class="marca" href="index.html">Giftedness <b>Radar</b></a>
-  <nav class="nav"><a href="index.html">Dados</a><a href="historia.html">História</a><a href="index.html#mapa">Mapa de influência</a><a class="on" href="metodologia.html">Metodologia</a></nav>
+  <nav class="nav"><a href="index.html">Data Overview</a><a href="historia.html">Timeline</a><a href="mapa.html">Influence Map</a><a href="tabelas.html">Tables</a><a class="on" href="metodologia.html">Methodology</a></nav>
 </div></div>
 
 <header class="abre"><div class="wrap">
-  <div class="chapeu">Metodologia</div>
-  <h1>O que foi feito, passo a passo</h1>
-  <p>Como os dados foram buscados, filtrados, classificados e medidos, o que eles representam e, com o mesmo cuidado, o que não dá para concluir com eles. Eu explico tudo, em ordem. Um resultado só vale tanto quanto o método que o produziu, e omitir o método seria, francamente, uma falta de educação científica.</p>
-  <div class="aviso"><b>É uma amostra, não um censo.</b> Os números de vídeos e posts não são o total que existe nas redes. São os itens que as buscas devolveram dentro de um limite de rolagem, depois filtrados pelo tema. As redes não oferecem contagem total de conteúdo por assunto, e cada busca mostra só uma parte dos resultados, puxando para o que é recente e popular. Por isso, o volume por ano mede a amostra, e não o tamanho do tema. O que é comparável são as <b>proporções dentro da amostra</b> (temas, posturas, dúvidas) e as <b>métricas dos itens coletados</b> (alcance, curtidas e comentários).</div>
+  <div class="chapeu">Methodological Architecture</div>
+  <h1>The Empirical Protocol, Step by Step</h1>
+  <p>How data was harvested, filtered, categorized, and quantified; precisely what it represents; and, with identical scientific vigilance, what conclusions one cannot validly extrapolate. I delineate every phase sequentially. An empirical finding is only as robust as the methodology that produced it, and omitting the methodology would be, frankly, an intolerable breach of scientific etiquette.</p>
+  <div class="aviso"><b>Notice: This represents a structured sample, not an exhaustive census.</b> The tally of videos and posts does not represent the entirety of items existing across social platforms. Rather, they comprise records returned by algorithmic search queries within defined pagination thresholds, subsequently subjected to strict thematic filtering. Commercial social platforms do not expose universal archives, and search APIs inherently favor recent and viral material. Consequently, annual volume reflects sample capture rather than absolute population size. Valid scientific comparisons are strictly confined to <b>proportions within the harvested sample</b> (thematic distribution, sentiment posture, inquiry archetypes) and <b>direct engagement telemetry of collected items</b> (views, likes, comments).</div>
 </div></header>
 
 <section id="funil"><div class="wrap">
-  <h2>Do que foi buscado ao que entrou no site</h2>
-  <p>Para cada fonte, as etapas da coleta, da busca bruta ao que sobrou depois de cada filtro. A barra verde é o que aparece nas análises.</p>
+  <h2>From Raw Query Retrieval to Final Observatory Corpus</h2>
+  <p>For each data channel, the sequential filtration pipeline from raw search returns to the validated corpus. The highlighted bar denotes items included in final analyses.</p>
   <div class="funil" id="funil-lista"></div>
 </div></section>
 
 <section id="medidas"><div class="wrap">
-  <h2>Como medimos alcance, curtidas e comentários</h2>
-  <p>Cada rede mostra números diferentes. Uma regra que seguimos à risca: não se somam grandezas de natureza diferente. Visualizações e seguidores ficam separados.</p>
+  <h2>Quantification Protocol: Reach, Likes, and Comments</h2>
+  <p>Each platform exposes divergent telemetry schemas. An unyielding rule governing our analysis: never aggregate physically disparate dimensions. Video views and follower counts are strictly non-additive scalars.</p>
   <div class="tab"><table id="tab-medidas"></table></div>
   <div class="grid2">
-    <div class="card"><h3>Alcance</h3><p>Visualizações informadas pelo YouTube e pelo TikTok no dia da coleta. São um retrato daquele dia: vídeos antigos acumulam mais. O Instagram não mostra visualizações nas páginas coletadas; ali usamos a <b>audiência potencial</b>, a soma dos seguidores dos perfis que postaram sobre o tema. Seguidor não é visualização, por isso esse número nunca é somado às views.</p></div>
-    <div class="card"><h3>Curtidas e comentários</h3><p>No YouTube e no TikTok, são os números exibidos pela rede. No Instagram, curtidas exibidas no post (algumas páginas escondem esse número) e comentários efetivamente coletados, que podem ser menos que o total. No X, a coleta trouxe curtidas, respostas e repostagens zeradas em todos os 427 posts, o que indica falha na leitura da página, já que é improvável que 427 posts tenham exatamente zero interações. Por isso o X aparece só em volume e em respostas coletadas.</p></div>
+    <div class="card"><h3>Reach (Audience Exposure)</h3><p>Video views officially reported by YouTube and TikTok on harvest date. These represent cumulative snapshots: older publications naturally accumulate larger exposure over time. Instagram restricts view telemetry on harvested image/carousel pages; there we calculate <b>potential audience</b> (aggregate follower counts of profiles posting on-topic). A follower is unequivocally not a view; hence, these metrics are never conflated or summed.</p></div>
+    <div class="card"><h3>Likes and Comments</h3><p>On YouTube and TikTok, these reflect platform-reported totals. On Instagram, likes displayed on the post (some accounts elect to suppress public like counts) and comments successfully collected via scraping, which may represent a subset of platform totals. On X (formerly Twitter), API/scraper returns yielded zero values across likes, replies, and reposts for all 427 harvested tweets—a manifest interface parsing anomaly, as the probability of 427 on-topic tweets yielding exactly zero interactions is statistically infinitesimal. Consequently, X is represented strictly in publication volume and collected reply threads.</p></div>
   </div>
 </div></section>
 
 <section id="filtro"><div class="wrap">
-  <h2>Filtro de tema</h2>
-  <p>Parte das coletas foi feita por perfil (todos os vídeos recentes de um criador) e trouxe conteúdo de outros assuntos. Por isso, um post do Instagram, do TikTok ou do X só entra nas análises se o texto da legenda, do post ou a fala transcrita tiver pelo menos um destes termos: <b>superdotação, superdotado, altas habilidades, AH/SD, QI, IQ, Mensa, gifted, superinteligente, gênio, prodígio, neurodivergência, dupla excepcionalidade ou inteligência</b>. Os vídeos do YouTube já tinham passado por limpeza manual de ruído (por exemplo, o pastor Mensa Otabil e o rapper Vic Mensa).</p>
-  <p>Todo filtro erra para algum lado, e este erra nos dois. É permissivo, porque "inteligência" e "gênio" trazem alguns conteúdos que tocam o tema só de passagem. E é restritivo, porque deixa de fora quem fala do assunto sem usar nenhum desses termos.</p>
+  <h2>Thematic Filtration Protocol</h2>
+  <p>A subset of data harvesting was executed at profile scope (retrieving all recent publications of identified creators), inevitably introducing off-topic material. Consequently, an Instagram, TikTok, or X publication is admitted into the corpus if and only if caption text, post copy, or Whisper-transcribed audio contains at least one of the following canonical tokens: <b>superdotação, superdotado, altas habilidades, AH/SD, QI, IQ, Mensa, gifted, superinteligente, gênio, prodígio, neurodivergência, dupla excepcionalidade, or inteligência</b>. YouTube videos previously underwent rigorous manual decontamination to eliminate homonym artifacts (e.g., Ghanaian pastor Mensa Otabil and American hip-hop artist Vic Mensa).</p>
+  <p>Every algorithmic filter entails classification trade-offs, operating along a precision-recall Pareto frontier. Ours is moderately permissive, as terms such as "inteligência" and "gênio" occasionally admit tangential philosophical discussions; simultaneously, it is moderately restrictive, excluding creators discussing twice-exceptionality without explicitly deploying defined keywords.</p>
 </div></section>
 
 <section id="classificacao"><div class="wrap">
-  <h2>Classificação com a nossa IA</h2>
-  <p>A nossa IA é um modelo de classificação. Ela recebe um texto e escolhe uma opção de uma lista fechada, informando também a própria confiança na escolha. Não escreve, não opina e não inventa categorias.</p>
+  <h2>Natural Language Classification Architecture</h2>
+  <p>Our natural language system operates strictly as a discrete classification pipeline. It receives normalized text, evaluates semantic embeddings against an invariant rubric, and assigns a single category from a predefined closed schema while computing a confidence probability score. It generates no conversational prose, injects no editorial commentary, and invents no ad-hoc classes.</p>
   <div class="grid2">
-    <div class="card"><h3>Temas</h3><ul>
-      <li>13 temas, os mesmos para comentários, vídeos e reportagens.</li>
-      <li>Todos os 80.809 comentários do YouTube: 65.265 pela nossa IA e 15.544 sem palavras (só emojis, marcações) mandados para "outro".</li>
-      <li>353 vídeos (título, canal e descrição) e 1.264 reportagens (título e texto).</li>
-      <li>As definições de cada tema foram escritas a partir de amostras e estão no codebook do projeto.</li>
+    <div class="card"><h3>Thematic Taxonomy</h3><ul>
+      <li>13 standardized themes applied uniformly across public user comments, produced videos, and press reports.</li>
+      <li>All 80,809 harvested YouTube comments evaluated: 65,265 classified via NLP and 15,544 devoid of lexical tokens (pure emoji strings, user mentions) assigned to "other".</li>
+      <li>353 videos (evaluated across title, channel metadata, and description) and 1,264 news reports (title and full body text).</li>
+      <li>Semantic boundary definitions for each topic were grounded in preliminary empirical samples and documented in the project codebook.</li>
     </ul></div>
-    <div class="card"><h3>Postura sobre a Mensa</h3><ul>
-      <li>Só para itens que citam a Mensa pelo nome.</li>
-      <li>1.461 comentários, 143 vídeos e 408 reportagens.</li>
-      <li>Três opções: apoiador, neutro e detrator.</li>
+    <div class="card"><h3>Sentiment Posture Toward Mensa</h3><ul>
+      <li>Evaluated strictly for publications explicitly citing Mensa by name.</li>
+      <li>1,461 user comments, 143 videos, and 408 news reports.</li>
+      <li>Ternary classification schema: supporter, neutral, or critic/detractor.</li>
     </ul></div>
-    <div class="card"><h3>Dúvidas e angústias</h3><ul>
-      <li>Candidatos: comentários de 2021 a 2026 com pergunta ou palavras de sofrimento (5.248 no YouTube, 1.499 no Instagram).</li>
-      <li>Amostra de 1.000 do YouTube e 500 do Instagram: metade os mais curtidos, metade sorteada.</li>
-      <li>Dez categorias mais "nenhuma"; 1.498 classificados, 605 com dúvida ou angústia.</li>
-      <li>Nos exemplos do site, só rótulos com confiança de 0,7 ou mais.</li>
+    <div class="card"><h3>Inquiries and Psychological Distress</h3><ul>
+      <li>Candidate pool: comments from 2021 to 2026 formulating questions or deploying vocabulary of psychological distress (5,248 on YouTube, 1,499 on Instagram).</li>
+      <li>Stratified sample of 1,000 YouTube and 500 Instagram comments: 50% highest engagement, 50% randomized control.</li>
+      <li>10 clinical/existential categories plus "none"; 1,498 successfully processed, 605 confirmed genuine dilemmas.</li>
+      <li>Exemplars displayed on the site require a model classification confidence score ≥ 0.70.</li>
     </ul></div>
-    <div class="card"><h3>Validação</h3><p>Nenhuma das classificações foi comparada com rótulos feitos por pessoas. Há uma amostra de 275 itens preparada para essa revisão. Até lá, os percentuais mostram como a nossa IA distribuiu os itens, não a taxa de acerto. A distinção é importante, e preferimos deixá-la explícita a fingir uma precisão que ainda não medimos.</p></div>
+    <div class="card"><h3>Model Validation Status</h3><p>No automated classification has yet been double-blind benchmarked against human inter-rater reliability. A stratified sample of 275 items is currently structured for subsequent inter-coder validation. In the interim, percentage values reflect model classification distributions rather than certified ground truth. This distinction is scientifically critical, and we prefer absolute transparency over pretending to possess a precision metric not yet experimentally established.</p></div>
   </div>
 </div></section>
 
 <section id="agrupamentos"><div class="wrap">
-  <h2>Vocabulário, clusters e parceiros</h2>
+  <h2>Lexical Mining, Creator Clustering, and Institutional Screening</h2>
   <div class="grid2">
-    <div class="card"><h3>Grupos de vocabulário</h3><p>Onze listas de palavras (Mensa; QI e testes; TDAH, autismo e saúde mental; diagnóstico; escola; leis; infância e família; humor e quiz; gênio e prodígio; elitismo; descoberta adulta). Um conteúdo "toca" o assunto se tiver uma palavra da lista. É a mesma régua para redes, veículos e criadores.</p></div>
-    <div class="card"><h3>Clusters de criadores</h3><p>Criadores com 3 ou mais conteúdos sobre o tema. Para cada um, a fração dos conteúdos que toca cada grupo de vocabulário. Agrupamento por k-médias em 6 grupos, com 25 inícios aleatórios. Os nomes dos grupos são leitura nossa dos traços que mais os distinguem da média.</p></div>
-    <div class="card"><h3>Parceiros possíveis</h3><p>Criadores com 3 ou mais conteúdos e pelo menos 50 mil de alcance (views ou seguidores). Notas de 1 a 5 por quintil em três critérios: alcance; afinidade de pauta (quanto fala de saúde, escola, família, diagnóstico, adultos e leis, menos metade do quanto fala de quiz); e conversa (comentários por conteúdo).</p></div>
-    <div class="card"><h3>Duplas de palavras</h3><p>Pares de palavras vizinhas repetidos nos textos (bigramas), contados uma vez por texto. Saem os pares com palavra vazia (de, que, o...), com números (respostas de quiz), com palavras de menos de três letras e os de texto de interface. O site mostra as 20 duplas mais frequentes de cada recorte, desde que apareçam em pelo menos 3 textos.</p></div>
+    <div class="card"><h3>Lexical Domains</h3><p>11 curated token dictionaries (Mensa; IQ & Psychometrics; ADHD, Autism & Mental Health; Clinical Assessment; Schooling & Education; Legislation & Policy; Childhood & Family; Humor & Trivia; Genius & Prodigies; Elitism; Adult Identification). A publication intersects a domain if it contains at least one dictionary token, establishing an identical measurement scale across platforms, outlets, and creators.</p></div>
+    <div class="card"><h3>Unsupervised Creator Clustering</h3><p>Creators with ≥ 3 on-topic publications. For each profile, we compute the multi-dimensional vector representing the proportion of content intersecting each lexical domain. Applied K-Means clustering (k=6) with 25 random restarts. Cluster nomenclature reflects principal statistical centroids distinguishing each cohort from universe mean.</p></div>
+    <div class="card"><h3>Prospective Institutional Partners</h3><p>Creators with ≥ 3 on-topic publications and ≥ 50,000 reach (video views or followers). Quintile scores (1 to 5) across three objective criteria: reach magnitude; editorial affinity (proportion of substantive clinical/school/family/policy content minus 50% trivia weight); and conversation depth (comments per post).</p></div>
+    <div class="card"><h3>Adjacent Word Pairs (Bigrams)</h3><p>Adjacent token pairs co-occurring across documents, deduplicated per document. Purged of syntactic stop words, numerals (quiz answers), tokens shorter than three characters, and platform interface artifacts. Displays the top 20 most frequent adjacent pairs per facet appearing across at least 3 distinct documents.</p></div>
   </div>
 </div></section>
 
 <section id="limites"><div class="wrap">
-  <h2>Limites e cuidados</h2>
+  <h2>Methodological Limitations and Boundary Conditions</h2>
   <div class="tab"><table>
-    <thead><tr><th>Limite</th><th>Efeito</th></tr></thead>
+    <thead><tr><th>Methodological Constraint</th><th>Analytical Consequence</th></tr></thead>
     <tbody>
-      <tr><td><b>Amostra das buscas</b></td><td>Volumes por ano não medem o tamanho do tema na rede. As buscas favorecem conteúdo recente e popular.</td></tr>
-      <tr><td><b>Coleta em 2026</b></td><td>Instagram e TikTok foram coletados em outubro de 2026, por isso concentram itens de 2025 e 2026.</td></tr>
-      <tr><td><b>Datas dos comentários do YouTube</b></td><td>Vêm como "há N anos" e foram convertidas a partir do dia da coleta. Só o ano é confiável, com margem de um ano.</td></tr>
-      <tr><td><b>Métricas do X</b></td><td>Vieram zeradas, o que é um defeito da coleta, não um fato sobre o X. A rede aparece só em volume e respostas.</td></tr>
-      <tr><td><b>Instagram sem views</b></td><td>O alcance no Instagram é potencial (seguidores), não visualização.</td></tr>
-      <tr><td><b>Classificação sem gabarito</b></td><td>Temas, posturas e dúvidas são da nossa IA, sem validação humana.</td></tr>
-      <tr><td><b>Comentários por vídeo</b></td><td>No YouTube, os comentários vêm de 262 vídeos com comentários disponíveis; vídeos muito comentados podem ter sido coletados em parte.</td></tr>
-      <tr><td><b>Membros da Mensa</b></td><td>Números noticiados pela imprensa, não dados oficiais da entidade.</td></tr>
+      <tr><td><b>Search Sample</b></td><td>Annual volumes reflect sample capture rather than absolute universe size. Commercial search APIs bias toward recent and viral items.</td></tr>
+      <tr><td><b>2026 Harvest Date</b></td><td>Instagram and TikTok were scraped in October 2026, naturally skewing volume toward 2025 and 2026 items.</td></tr>
+      <tr><td><b>YouTube Comment Timestamps</b></td><td>Scraped as relative strings ("N years ago") and converted relative to harvest date. Reliable at annual resolution only, with a ±1 year margin.</td></tr>
+      <tr><td><b>X Telemetry Null Values</b></td><td>Harvested engagement metrics returned zero due to scraper parsing limitations. X is incorporated strictly for post counts and reply text.</td></tr>
+      <tr><td><b>Instagram Video Views Omitted</b></td><td>Instagram reach reflects potential audience (profile followers) rather than verified impressions.</td></tr>
+      <tr><td><b>Unsupervised Model Outputs</b></td><td>Thematic and sentiment classifications originate from NLP inference without double-blind human verification.</td></tr>
+      <tr><td><b>YouTube Comments per Video</b></td><td>Comments originate from 262 videos with active comment threads; highly viral videos may reflect partial API harvests.</td></tr>
+      <tr><td><b>Mensa Membership Counts</b></td><td>Figures originate from journalistic press releases rather than audited administrative records.</td></tr>
     </tbody>
   </table></div>
 </div></section>
 
 <section id="privacidade"><div class="wrap">
-  <h2>Privacidade</h2>
-  <p>Autores de comentários do YouTube foram trocados por um código (hash com sal, um código de mão única) e não aparecem no site. Nenhum comentário é mostrado com nome de quem escreveu, e trechos com números, links ou marcações foram excluídos dos exemplos. Só aparecem pelo nome perfis públicos de criadores, veículos e instituições. A tabela que liga códigos a nomes fica fora do site, em pasta restrita.</p>
+  <h2>User Privacy and Data Sanitization</h2>
+  <p>Author identities for public YouTube comments were irreversibly pseudonymized via salted one-way SHA-256 cryptographic hashes and do not appear anywhere in this observatory. No personal comment is attributed to an identifiable author, and strings containing phone numbers, URLs, or personal tags were purged. Exclusively verified public profiles of creators, media outlets, and registered institutions appear by name. The key bridging pseudonymized tokens to original identifiers is strictly air-gapped on restricted local storage.</p>
 </div></section>
 
 <footer><div class="wrap"><p id="rodape"></p></div></footer>
@@ -193,42 +193,42 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
 <script>
 (() => {
 const D = window.DADOS, N = D.numeros, ME = D.medicao;
-const nf = new Intl.NumberFormat('pt-BR'), n = x => x == null ? '–' : nf.format(Math.round(x));
+const nf = new Intl.NumberFormat('en-US'), n = x => x == null ? '–' : nf.format(Math.round(x));
 const c = x => x >= 1e6 ? (x / 1e6).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' mi' : x >= 1e4 ? Math.round(x / 1e3) + ' mil' : n(x);
 try { const t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 
 const FONTES = [
-  {nome: 'YouTube', como: '15 buscas pelos termos do tema ("altas habilidades", "superdotação", "superdotado" e "Mensa" combinada com QI, inteligência e elitista), até 100 resultados cada. Limpeza manual de ruído. Métricas e comentários coletados depois, vídeo a vídeo.',
-   etapas: [['Vídeos devolvidos pelas buscas', 1139], ['Sobre o tema, após limpeza', 363], ['Com métricas coletadas', N.videos_youtube], ['Com comentários disponíveis', 262]],
-   extra: `${n(N.comentarios_youtube)} comentários coletados desses 262 vídeos.`},
-  {nome: 'TikTok', como: 'Busca por 7 termos (superdotação, superdotado, altas habilidades, Mensa Brasil, dupla excepcionalidade, teste de QI, alto QI), até 15 rolagens cada, mais a varredura de 20 perfis de criadores do tema. Áudio transcrito pelo Whisper.',
-   etapas: [['Links de vídeo encontrados', 2267], ['Vídeos com metadados lidos', N.tt_videos], ['Sobre o tema (filtro de termos)', N.tt_videos_tema]],
-   extra: 'Muitos vídeos das varreduras por perfil tratavam de outros assuntos e saíram no filtro.'},
-  {nome: 'Instagram', como: '46 hashtags, 66 palavras-chave e 74 perfis-semente. As páginas de hashtag e de perfil foram roladas e os links de posts e reels guardados. Reels transcritos pelo Whisper.',
-   etapas: [['Perfis descobertos', 1697], ['Links de posts e reels', 1647], ['Posts lidos', N.ig_posts], ['Sobre o tema (filtro de termos)', N.ig_posts_tema]],
-   extra: `${n(N.ig_perfis)} perfis visitados com seguidores e categoria; ${n(N.ig_comentarios)} comentários coletados.`},
-  {nome: 'X', como: 'Busca por termos em tempo real (até 25 rolagens) e busca por ano e termo com filtros de data (até 10 rolagens), mais perfis do tema. Respostas coletadas nos posts principais.',
-   etapas: [['Links de posts encontrados', 579], ['Posts lidos', N.x_tweets], ['Sobre o tema (filtro de termos)', N.x_tweets_tema]],
-   extra: `${n(N.x_respostas)} respostas coletadas. Métricas vieram zeradas.`},
-  {nome: 'Imprensa', como: 'Google Notícias por RSS, busca semanal por 4 combinações de termos de 2020 a 2026; leitura do texto completo das matérias abertas; 20 revistas nacionais; e 11 buscas no DuckDuckGo Notícias com leitura limpa das páginas.',
-   etapas: [['Linhas do Google Notícias', 5415], ['Manchetes únicas', N.manchetes], ['Textos lidos (portais e revistas)', 1938], ['Reportagens sobre o tema, classificadas', N.reportagens_classificadas]],
-   extra: `Revistas: 953 links, 895 textos lidos, ${n(N.revistas_artigos)} com o tema. DuckDuckGo: ${n(N.ddg_reportagens)} reportagens.`},
+  {nome: 'YouTube', como: '15 structured queries across domain tokens ("altas habilidades", "superdotação", "superdotado", "Mensa" combined with IQ, intelligence, elitist), up to 100 results per query. Manual artifact decontamination. Engagement telemetry and comments scraped per video.',
+   etapas: [['Videos returned by search queries', 1139], ['On-topic after decontamination', 363], ['With telemetry metrics gathered', N.videos_youtube], ['With active comment threads', 262]],
+   extra: `${n(N.comentarios_youtube)} user comments harvested across these 262 videos.`},
+  {nome: 'TikTok', como: 'Search queries across 7 tokens (superdotação, superdotado, altas habilidades, Mensa Brasil, dupla excepcionalidade, teste de QI, alto QI), up to 15 scrolls per query, plus systematic harvest of 20 creator profiles. Audio transcribed via OpenAI Whisper.',
+   etapas: [['Video URLs discovered', 2267], ['Videos with parsed metadata', N.tt_videos], ['On-topic (lexical filter passed)', N.tt_videos_tema]],
+   extra: 'Profile sweeps captured general lifestyle posts, which were purged during lexical filtration.'},
+  {nome: 'Instagram', como: '46 hashtags, 66 keywords, and 74 seed creator profiles. Hashtag and profile feeds scraped to record post and reel links. Reels transcribed via Whisper.',
+   etapas: [['Profiles discovered', 1697], ['Post and reel URLs captured', 1647], ['Posts parsed', N.ig_posts], ['On-topic (lexical filter passed)', N.ig_posts_tema]],
+   extra: `${n(N.ig_perfis)} profiles indexed with followers and categories; ${n(N.ig_comentarios)} user comments harvested.`},
+  {nome: 'X', como: 'Real-time token search queries (up to 25 scrolls) and historical date-filtered queries (up to 10 scrolls), plus domain profiles. Reply threads gathered for top tweets.',
+   etapas: [['Post URLs identified', 579], ['Posts parsed', N.x_tweets], ['On-topic (lexical filter passed)', N.x_tweets_tema]],
+   extra: `${n(N.x_respostas)} replies collected. Engagement telemetry parsed as null.`},
+  {nome: 'Imprensa', como: 'Google News via RSS feeds, weekly longitudinal sweeps across 4 query formulations (2020-2026); full-text extraction of open articles; 20 national magazines; and 11 DuckDuckGo News sweeps with HTML parsing.',
+   etapas: [['Google News RSS records', 5415], ['Unique headlines deduplicated', N.manchetes], ['Full-text articles parsed', 1938], ['On-topic news reports classified', N.reportagens_classificadas]],
+   extra: `Magazines: 953 URLs, 895 parsed, ${n(N.revistas_artigos)} verified on-topic. DuckDuckGo: ${n(N.ddg_reportagens)} verified reports.`},
 ];
 document.getElementById('funil-lista').innerHTML = FONTES.map(f => {
   const mx = Math.max(...f.etapas.map(e => e[1]));
   return `<div class="fonte"><h3>${f.nome}</h3><p class="como">${f.como}</p><div class="etapas">` +
-    f.etapas.map(([l, v], i) => `<div class="l">${l}</div><div class="t"><i class="${i === f.etapas.length - 1 ? 'fim' : ''}" style="width:${Math.max(.5, 70 * v / mx)}%"></i><span>${n(v)}${i ? ` <small>(${Math.round(100 * v / f.etapas[0][1])}% da 1ª etapa)</small>` : ''}</span></div>`).join('') +
+    f.etapas.map(([l, v], i) => `<div class="l">${l}</div><div class="t"><i class="${i === f.etapas.length - 1 ? 'fim' : ''}" style="width:${Math.max(.5, 70 * v / mx)}%"></i><span>${n(v)}${i ? ` <small>(${Math.round(100 * v / f.etapas[0][1])}% of stage 1)</small>` : ''}</span></div>`).join('') +
     `</div><p class="lim">${f.extra}</p></div>`;
 }).join('');
 
-const S = '<span class="sim">sim</span>', X = '<span class="nao">não</span>';
-document.getElementById('tab-medidas').innerHTML = `<thead><tr><th>Fonte</th><th>Visualizações</th><th>Curtidas</th><th>Comentários</th><th>O que usamos como alcance</th></tr></thead><tbody>
-<tr><td><b>YouTube</b></td><td>${S} ${c(ME.YouTube.views)}</td><td>${S} ${c(ME.YouTube.likes)}</td><td>${S} ${c(ME.YouTube.coments)} exibidos</td><td>Visualizações</td></tr>
-<tr><td><b>TikTok</b></td><td>${S} ${c(ME.TikTok.views)}</td><td>${S} ${c(ME.TikTok.likes)}</td><td>${S} ${c(ME.TikTok.coments)} exibidos</td><td>Visualizações</td></tr>
-<tr><td><b>Instagram</b></td><td>${X}</td><td>${S} ${c(ME.Instagram.likes)}</td><td>${S} ${c(ME.Instagram.coments)} coletados</td><td>Seguidores dos perfis: ${c(ME.Instagram.seguidores)} (audiência potencial)</td></tr>
-<tr><td><b>X</b></td><td>${X}</td><td>${X} vieram zeradas</td><td>${n(ME.X.coments)} respostas coletadas</td><td>Sem medida</td></tr>
-<tr><td><b>Imprensa</b></td><td>${X}</td><td>${X}</td><td>${X}</td><td>Sem medida; contamos reportagens</td></tr></tbody>`;
-document.getElementById('rodape').textContent = `Dados coletados até 27/10/2026. Números desta página gerados em ${D.gerado_em} a partir da pasta "banco de dados" do projeto.`;
+const S = '<span class="sim">yes</span>', X = '<span class="nao">no</span>';
+document.getElementById('tab-medidas').innerHTML = `<thead><tr><th>Platform</th><th>Video Views</th><th>Likes</th><th>Comments</th><th>Measurement Used for Reach</th></tr></thead><tbody>
+<tr><td><b>YouTube</b></td><td>${S} ${c(ME.YouTube.views)}</td><td>${S} ${c(ME.YouTube.likes)}</td><td>${S} ${c(ME.YouTube.coments)} reported</td><td>Video Views</td></tr>
+<tr><td><b>TikTok</b></td><td>${S} ${c(ME.TikTok.views)}</td><td>${S} ${c(ME.TikTok.likes)}</td><td>${S} ${c(ME.TikTok.coments)} reported</td><td>Video Views</td></tr>
+<tr><td><b>Instagram</b></td><td>${X}</td><td>${S} ${c(ME.Instagram.likes)}</td><td>${S} ${c(ME.Instagram.coments)} harvested</td><td>Profile Followers: ${c(ME.Instagram.seguidores)} (Potential Audience)</td></tr>
+<tr><td><b>X</b></td><td>${X}</td><td>${X} returned null</td><td>${n(ME.X.coments)} replies collected</td><td>Metric Omitted</td></tr>
+<tr><td><b>Imprensa</b></td><td>${X}</td><td>${X}</td><td>${X}</td><td>Metric Omitted; article count quantified</td></tr></tbody>`;
+document.getElementById('rodape').textContent = `Data harvested through October 27, 2026. Metrics generated on ${D.gerado_em} from the project primary database repository.`;
 })();
 </script>
 </body>

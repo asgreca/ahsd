@@ -1194,7 +1194,7 @@ window.DADOS = {
     {
       "tema": "experiencia_pessoal",
       "rotulo": "Personal Experience",
-      "definicao": "Os trechos são relatos em primeira pessoa em que o autor fala de si, de sua família ou de pessoas próximas em relação a altas habilidades, superdotação, QI ou testes da Mensa. Eles trazem vivências concretas: diagnósticos e laudos, resultados de testes, a descoberta tardia, a infância e a escola, relações sociais e de…",
+      "definicao": "First-person qualitative narratives recounting personal, family, or close experiences with high abilities/giftedness, IQ psychometrics, or Mensa admissions. They describe tangible life experiences: clinical assessments, score reports, late adult identification, school struggles, and social relationships.",
       "exemplos": [
         {
           "texto": "High abilities, in my personal experience, was more of a curse than a gift. Childhood was pure hell because I had to wait for everyone else to catch up before moving forward, and today that reflects in chronic procrastination that is nearly impossible to overcome.",
@@ -1250,7 +1250,7 @@ window.DADOS = {
     {
       "tema": "validade_testes_qi",
       "rotulo": "Validity of IQ Tests",
-      "definicao": "Os trechos têm em comum o debate sobre se o QI e os testes que o medem (incluindo os da Mensa e os quizzes de vídeo) medem de fato a inteligência. Os comentários questionam a validade do teste por vários ângulos: ele captaria só um tipo de raciocínio (lógico-matemático, reconhecimento de padrões, vocabulário), seria enviesado…",
+      "definicao": "Critical debate examining whether psychometric IQ instruments (including proctored Mensa examinations and online video quizzes) genuinely measure human intelligence. Commenters question construct validity from multiple epistemological perspectives: narrow cognitive focus (pattern recognition, logic), cultural bias, and educational socio-economic confounding.",
       "exemplos": [
         {
           "texto": "According to this test, everyone qualifies as a genius. Complete nonsense.",
@@ -1278,7 +1278,7 @@ window.DADOS = {
     {
       "tema": "diagnostico_avaliacao",
       "rotulo": "Diagnosis & Assessment",
-      "definicao": "Os trechos têm em comum o tema de como se descobre, mede ou confirma a superdotação/altas habilidades (AH/SD). Aparecem relatos de avaliações neuropsicológicas e de testes de QI (WAIS, SON-R, Mensa), com pontuações e laudos, e também diagnósticos que se misturam ou se confundem com TDAH e TEA (dupla excepcionalidade). Há ainda…",
+      "definicao": "Commentary addressing clinical identification, formal measurement, and confirmation of giftedness/high abilities. Includes reports of comprehensive neuropsychological batteries and IQ tests (WAIS, SON-R, Mensa), score percentiles, and complex diagnostic overlaps with ADHD and Autism Spectrum (twice-exceptionality).",
       "exemplos": [
         {
           "texto": "I never wanted to take an IQ test, because I am convinced it would score low. Far better to merely suspect I am foolish than to verify it empirically.",
@@ -1306,7 +1306,7 @@ window.DADOS = {
     {
       "tema": "saude_mental_neuro",
       "rotulo": "Mental Health & Neurodivergence",
-      "definicao": "**1. Definição** Os trechos reúnem comentários em que altas habilidades/superdotação (AH/SD) aparecem ligadas a condições de neurodesenvolvimento e de saúde mental, sobretudo TEA, TDAH e a dupla ou tripla excepcionalidade. Também aparecem ansiedade, depressão, burnout, crises de raiva e de pânico, mascaramento (masking) e…",
+      "definicao": "Discourse linking giftedness/high abilities with neurodivergence and psychiatric mental health, primarily Autism Spectrum, ADHD, and twice/thrice-exceptionality. Also encompasses chronic anxiety, clinical depression, autistic burnout, panic episodes, masking, and emotional exhaustion.",
       "exemplos": [
         {
           "texto": "And what about the combination of autism and giftedness? Or with ADHD lol? I strongly advocate for an episode covering twice-exceptionality to expand on neurodivergence.",
@@ -1334,7 +1334,7 @@ window.DADOS = {
     {
       "tema": "caracteristicas_sinais",
       "rotulo": "Traits & Behavioral Indicators",
-      "definicao": "A categoria reúne comentários que descrevem como é, ou como se manifesta, uma pessoa com altas habilidades/superdotação. Entram aqui traços cognitivos (aprendizagem precoce, memória, hiperfoco, criatividade, interesses variados), emocionais e sensoriais (perfeccionismo, intensidade, hipersensibilidade) e sociais (isolamento,…",
+      "definicao": "Descriptive accounts detailing behavioral, emotional, and cognitive manifestations of giftedness: precocious learning, eidetic memory, hyperfocus, intense curiosity, sensory hypersensitivities, emotional overexcitabilities, perfectionism, and acute social alienation.",
       "exemplos": [
         {
           "texto": "Damn, I had no idea that severe intolerance of injustice stemmed from giftedness. It is literally what infuriates me the most. And of all places, I was born in Brazil, the promised land of injustice.",
@@ -1390,7 +1390,7 @@ window.DADOS = {
     {
       "tema": "educacao_escola",
       "rotulo": "Education & School System",
-      "definicao": "Os trechos têm em comum o foco na relação entre altas habilidades/superdotação e o ambiente escolar. Aparecem relatos de pais, professores e ex-alunos sobre falta de preparo das escolas, incompreensão e preconceito de docentes, tédio com o ritmo do ensino, bullying, isolamento e abandono escolar. Também há menções a soluções e…",
+      "definicao": "Testimonials focusing on the intersection of giftedness and the formal educational system: structural lack of pedagogical preparation, teacher incomprehension, crippling classroom boredom, severe bullying, ostracism, grade skipping, and educational dropout.",
       "exemplos": [
         {
           "texto": "Our educational system prioritizes rote content over authentic learning. The curriculum is excessively encyclopedic and divorced from the practical competencies required to foster an intellectually productive citizen.",
@@ -1418,7 +1418,7 @@ window.DADOS = {
     {
       "tema": "mensa_sociedade",
       "rotulo": "Mensa & Society",
-      "definicao": "A categoria reúne comentários que tratam da Mensa como organização e instituição social: quem a integra, como se entra, o que ela faz, qual é o seu valor e como é percebida. Aparecem experiências de membros e ex-membros, dúvidas sobre ingresso e testes de admissão (percentil de 2%, limite de tempo, testes aceitos), críticas e…",
+      "definicao": "Commentary examining Mensa as a social institution and membership society: member demographics, admission criteria (98th percentile cutoff, time limits, accepted proctored instruments), perceived social utility, and member testimonials.",
       "exemplos": [
         {
           "texto": "They claim not to seek groups? If that premise held, organizations like Mensa, Intertel, Triple Nine Society, Prometheus Society, and Mega Society wouldn't exist. The drive to belong and connect with peers is universal; for exceptional minds...",
@@ -1446,7 +1446,7 @@ window.DADOS = {
     {
       "tema": "politica_publica",
       "rotulo": "Public Policy & Legislation",
-      "definicao": "Os trechos têm em comum a ligação entre QI, superdotação ou Mensa e o Estado, o governo ou a disputa política. Uma parte cobra ou avalia o poder público: falta de apoio, de leis e de direitos para superdotados (inclusive adultos), comparações com outros países e pedidos de investimento em educação. Outra parte usa o QI como…",
+      "definicao": "Discourse connecting giftedness, psychometrics, and Mensa to state public policy, legislation, and national political debates. Involves demands for governmental accommodation, statutory rights under Special Education laws, international policy comparisons, and educational investments.",
       "exemplos": [
         {
           "texto": "The day a head of state presents this video in an address regarding our national vision, I shall begin harboring hope for Brazil. Outstanding content.",
@@ -1474,7 +1474,7 @@ window.DADOS = {
     {
       "tema": "custo_acesso",
       "rotulo": "Cost & Accessibility",
-      "definicao": "1. Os trechos tratam do dinheiro como barreira ou objeção ao acesso a testes de QI, laudos de altas habilidades/superdotação e à filiação à Mensa. Isso aparece em queixas sobre taxas de teste, anuidades e preços de avaliações neuropsicológicas, e em relatos de quem desistiu, não pôde pagar ou se sentiu enganado pela cobrança.…",
+      "definicao": "Financial constraints and economic barriers surrounding giftedness: complaints regarding exorbitant fees for private neuropsychological assessments (R$ 2,000–6,000), testing charges, Mensa membership dues, and socio-economic exclusion from formal identification.",
       "exemplos": [
         {
           "texto": "The underprivileged will die without knowing, as one would have to sell a house to afford these clinical evaluations. e nem casa tem😢",
@@ -10137,7 +10137,7 @@ window.DADOS = {
       "likes": 24540,
       "comentarios": 1800,
       "url": "https://www.youtube.com/watch?v=AdufhUiDB6A",
-      "contexto": "O QI como jogo: quizzes de 'gênio' somam milhões de views desde o começo do período."
+      "contexto": "IQ gamification: 'genius' trivia quizzes accumulating millions of views since the beginning of the observation period."
     },
     {
       "rede": "TikTok",
@@ -10149,7 +10149,7 @@ window.DADOS = {
       "likes": 350600,
       "comentarios": 23900,
       "url": "https://www.tiktok.com/@hipertesteoficial/video/7286493715214961925",
-      "contexto": "O quiz mais visto do TikTok: 8 milhões de views e quase 24 mil comentários."
+      "contexto": "The most viewed quiz on TikTok: 8 million views and nearly 24 thousand comments."
     },
     {
       "rede": "TikTok",
@@ -10161,7 +10161,7 @@ window.DADOS = {
       "likes": 242500,
       "comentarios": 4785,
       "url": "https://www.tiktok.com/@jeanalessandrob/video/7306569781149175045",
-      "contexto": "Sobrecarga sensorial: o vídeo que levou a superdotação para o vocabulário da neurodivergência."
+      "contexto": "Sensory overload: the viral video that anchored giftedness firmly within the neurodiversity lexicon."
     },
     {
       "rede": "YouTube",
@@ -10173,7 +10173,7 @@ window.DADOS = {
       "likes": 29905,
       "comentarios": 2400,
       "url": "https://www.youtube.com/watch?v=W6dBBY4BpbY",
-      "contexto": "Os 'sinais' de superdotação viram corte de podcast e formato de lista."
+      "contexto": "'Signs' of giftedness converted into podcast excerpts and listicle formats."
     },
     {
       "rede": "YouTube",
@@ -10185,7 +10185,7 @@ window.DADOS = {
       "likes": 106307,
       "comentarios": 10000,
       "url": "https://www.youtube.com/watch?v=cfQu-qxLFNI",
-      "contexto": "A resposta científica: o vídeo que mais gerou debate sobre a validade dos testes."
+      "contexto": "The scientific critique: the video that catalyzed the deepest discourse regarding psychometric test validity."
     },
     {
       "rede": "YouTube",
@@ -10197,7 +10197,7 @@ window.DADOS = {
       "likes": 31253,
       "comentarios": 3000,
       "url": "https://www.youtube.com/watch?v=Ymkh93Ixv0M",
-      "contexto": "Celebridade de QI alto como entretenimento: o 'maior QI do Brasil'."
+      "contexto": "High-IQ celebrity as mass entertainment: profiles claiming the 'highest IQ in Brazil'."
     },
     {
       "rede": "TikTok",
@@ -10209,7 +10209,7 @@ window.DADOS = {
       "likes": 300700,
       "comentarios": 13100,
       "url": "https://www.tiktok.com/@takeisaude/video/7610086687133273351",
-      "contexto": "Davi Giordani, 6 anos, no Senado: a criança-símbolo da política nacional."
+      "contexto": "Davi Giordani, 6, addressing the Federal Senate: the child ambassador catalyzing national statutory policy."
     },
     {
       "rede": "TikTok",
@@ -10221,7 +10221,7 @@ window.DADOS = {
       "likes": 643300,
       "comentarios": 4713,
       "url": "https://www.tiktok.com/@enova.film/video/7630079654958877973",
-      "contexto": "'Como é ser superdotado?': relato pessoal com 5,2 milhões de views."
+      "contexto": "'What is it like to be gifted?': autobiographical account amassing 5.2 million views."
     },
     {
       "rede": "Instagram",
@@ -10233,7 +10233,7 @@ window.DADOS = {
       "likes": 130035,
       "comentarios": 43,
       "url": "https://www.instagram.com/aielloflow/reel/DWWqiN1jaA7/",
-      "contexto": "O personagem do 'QI 640': o maior número de curtidas do Instagram na base."
+      "contexto": "The satirical '640 IQ' persona: capturing the highest volume of Instagram likes in the corpus."
     }
   ],
   "video_mensa": {
@@ -10246,7 +10246,7 @@ window.DADOS = {
     "likes": 300,
     "comentarios": 41,
     "url": "https://www.youtube.com/watch?v=t9Nq6YGW9uw",
-    "contexto": "O vídeo mais visto do canal da Mensa Brasil."
+    "contexto": "The most viewed video on Mensa Brasil's official YouTube channel."
   },
   "duvidas": {
     "amostra": 1498,
@@ -11886,17 +11886,17 @@ window.DADOS = {
   "mapa": {
     "grupos": {
       "mensa": "Mensa",
-      "qi_teste": "QI e testes",
-      "neuro": "TDAH, autismo e saúde mental",
-      "diagnostico": "Diagnóstico e avaliação",
-      "escola": "Escola e educação",
-      "politica": "Leis e políticas públicas",
-      "infancia": "Infância e família",
-      "humor": "Humor, quiz e desafio",
-      "genio": "Gênio, prodígio e recorde",
-      "elitismo": "Elitismo e arrogância",
-      "adulto": "Descoberta na vida adulta",
-      "outros": "Sem tema específico"
+      "qi_teste": "IQ & Testing",
+      "neuro": "ADHD, Autism & Mental Health",
+      "diagnostico": "Diagnosis & Assessment",
+      "escola": "School & Education",
+      "politica": "Laws & Public Policy",
+      "infancia": "Childhood & Family",
+      "humor": "Humor, Quizzes & Challenges",
+      "genio": "Genius, Prodigies & Records",
+      "elitismo": "Elitism & Arrogance",
+      "adulto": "Adult Discovery",
+      "outros": "No specific topic"
     },
     "pessoas": [
       {
@@ -11913,7 +11913,7 @@ window.DADOS = {
         "likes": 647701,
         "coments": 15175,
         "seguidores": 561000,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "instagram/jeanalessandrob",
         "url": "https://www.tiktok.com/@jeanalessandrob",
         "temas": {
@@ -11944,7 +11944,7 @@ window.DADOS = {
         "likes": 396324,
         "coments": 8490,
         "seguidores": null,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "tiktok/dra.tamirismariano",
         "url": "https://www.tiktok.com/@dra.tamirismariano",
         "temas": {
@@ -11970,7 +11970,7 @@ window.DADOS = {
         "likes": 154947,
         "coments": 1037,
         "seguidores": null,
-        "cluster": "QI como espetáculo",
+        "cluster": "IQ as Spectacle",
         "avatar": "tiktok/descobertamental",
         "url": "https://www.tiktok.com/@descobertamental",
         "temas": {
@@ -11992,7 +11992,7 @@ window.DADOS = {
         "likes": 135157,
         "coments": 1754,
         "seguidores": null,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "tiktok/eu.superdotado",
         "url": "https://www.tiktok.com/@eu.superdotado",
         "temas": {
@@ -12020,7 +12020,7 @@ window.DADOS = {
         "likes": 98384,
         "coments": 1365,
         "seguidores": null,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "tiktok/altashabilidades.sd",
         "url": "https://www.tiktok.com/@altashabilidades.sd",
         "temas": {
@@ -12047,7 +12047,7 @@ window.DADOS = {
         "likes": 100511,
         "coments": 6832,
         "seguidores": null,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "tiktok/vozesneurodivergentes",
         "url": "https://www.tiktok.com/@vozesneurodivergentes",
         "temas": {
@@ -12076,7 +12076,7 @@ window.DADOS = {
         "likes": 160625,
         "coments": 500,
         "seguidores": 760000,
-        "cluster": "QI como espetáculo",
+        "cluster": "IQ as Spectacle",
         "avatar": "instagram/aielloflow",
         "url": "https://www.instagram.com/aielloflow/",
         "temas": {
@@ -12102,7 +12102,7 @@ window.DADOS = {
         "likes": 61309,
         "coments": 1660,
         "seguidores": 678000,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "instagram/luana_braghirolli",
         "url": "https://www.tiktok.com/@luana_braghirolli",
         "temas": {
@@ -12152,7 +12152,7 @@ window.DADOS = {
         "likes": 37067,
         "coments": 3058,
         "seguidores": null,
-        "cluster": "QI como espetáculo",
+        "cluster": "IQ as Spectacle",
         "avatar": "tiktok/hipertesteoficial",
         "url": "https://www.tiktok.com/@hipertesteoficial",
         "temas": {
@@ -12176,7 +12176,7 @@ window.DADOS = {
         "likes": 54112,
         "coments": 667,
         "seguidores": null,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "tiktok/virando.adulta",
         "url": "https://www.tiktok.com/@virando.adulta",
         "temas": {
@@ -12221,7 +12221,7 @@ window.DADOS = {
         "likes": 22677,
         "coments": 570,
         "seguidores": null,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "tiktok/doutormarcone",
         "url": "https://www.tiktok.com/@doutormarcone",
         "temas": {
@@ -12307,7 +12307,7 @@ window.DADOS = {
         "likes": 9343,
         "coments": 1038,
         "seguidores": 455000,
-        "cluster": "Mensa e mídia",
+        "cluster": "Mensa & Mainstream Media",
         "avatar": "youtube/UClqw5bFCDcxPmgHb8yMfP3w",
         "url": "https://www.youtube.com/channel/UClqw5bFCDcxPmgHb8yMfP3w",
         "temas": {
@@ -12331,7 +12331,7 @@ window.DADOS = {
         "likes": 13823,
         "coments": 246,
         "seguidores": 53000,
-        "cluster": "Clínica e avaliação",
+        "cluster": "Clinical Practice & Assessment",
         "avatar": "instagram/mensabrasil",
         "url": "https://www.instagram.com/mensabrasil/",
         "temas": {
@@ -12381,7 +12381,7 @@ window.DADOS = {
         "likes": 5239,
         "coments": 345,
         "seguidores": 27800,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "youtube/UCQiI9cIm3Wdl7r-7Y8VOYVw",
         "url": "https://www.youtube.com/channel/UCQiI9cIm3Wdl7r-7Y8VOYVw",
         "temas": {
@@ -12405,7 +12405,7 @@ window.DADOS = {
         "likes": 10627,
         "coments": 334,
         "seguidores": 114000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/segatta.psico",
         "url": "https://www.instagram.com/segatta.psico/",
         "temas": {
@@ -12433,7 +12433,7 @@ window.DADOS = {
         "likes": 4963,
         "coments": 463,
         "seguidores": 955000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "youtube/UCeg3XXEiFL2Zr3HcfNPUVzg",
         "url": "https://www.youtube.com/channel/UCeg3XXEiFL2Zr3HcfNPUVzg",
         "temas": {
@@ -12454,7 +12454,7 @@ window.DADOS = {
         "likes": 8992,
         "coments": 176,
         "seguidores": 4000000,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "instagram/davimgiordani",
         "url": "https://www.instagram.com/davimgiordani/",
         "temas": {
@@ -12481,7 +12481,7 @@ window.DADOS = {
         "likes": 4204,
         "coments": 281,
         "seguidores": 121000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "youtube/UCuOcsxJgQRXYWF-XliNBJIQ",
         "url": "https://www.youtube.com/channel/UCuOcsxJgQRXYWF-XliNBJIQ",
         "temas": {
@@ -12505,7 +12505,7 @@ window.DADOS = {
         "likes": 3361,
         "coments": 199,
         "seguidores": 595000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "instagram/lutzpodcast",
         "url": "https://www.instagram.com/lutzpodcast/",
         "temas": {
@@ -12571,7 +12571,7 @@ window.DADOS = {
         "likes": 2585,
         "coments": 129,
         "seguidores": 62000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "youtube/UCOzpKduFAWtMmj4QkuiexPg",
         "url": "https://www.youtube.com/channel/UCOzpKduFAWtMmj4QkuiexPg",
         "temas": {
@@ -12595,7 +12595,7 @@ window.DADOS = {
         "likes": 2136,
         "coments": 313,
         "seguidores": 12000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "youtube/UCQdbAN8YHOwDvYs73qzPXNQ",
         "url": "https://www.youtube.com/channel/UCQdbAN8YHOwDvYs73qzPXNQ",
         "temas": {
@@ -12617,7 +12617,7 @@ window.DADOS = {
         "likes": 2499,
         "coments": 269,
         "seguidores": 99000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/naofoiontem_",
         "url": "https://www.instagram.com/naofoiontem_/",
         "temas": {
@@ -12665,7 +12665,7 @@ window.DADOS = {
         "likes": 1535,
         "coments": 47,
         "seguidores": 85000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "youtube/UCbPWAgZx8GVKOGOuDPgsHBA",
         "url": "https://www.youtube.com/channel/UCbPWAgZx8GVKOGOuDPgsHBA",
         "temas": {
@@ -12749,7 +12749,7 @@ window.DADOS = {
         "likes": 1592,
         "coments": 82,
         "seguidores": 82000,
-        "cluster": "Neurodivergência e podcasts",
+        "cluster": "Neurodivergence & Videocasts",
         "avatar": "instagram/draleticiatavares",
         "url": "https://www.instagram.com/draleticiatavares/",
         "temas": {
@@ -12772,7 +12772,7 @@ window.DADOS = {
         "likes": 992,
         "coments": 144,
         "seguidores": 372000,
-        "cluster": "QI como espetáculo",
+        "cluster": "IQ as Spectacle",
         "avatar": "instagram/euluangama",
         "url": "https://www.instagram.com/euluangama/",
         "temas": {
@@ -12817,7 +12817,7 @@ window.DADOS = {
         "likes": 336,
         "coments": 50,
         "seguidores": 335000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/nagudayol",
         "url": "https://www.instagram.com/nagudayol/",
         "temas": {
@@ -12845,7 +12845,7 @@ window.DADOS = {
         "likes": 312,
         "coments": 281,
         "seguidores": 153000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/drathaisprioli",
         "url": "https://www.instagram.com/drathaisprioli/",
         "temas": {
@@ -12873,7 +12873,7 @@ window.DADOS = {
         "likes": 43,
         "coments": 170,
         "seguidores": 65000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/marcosfernandes.neuro",
         "url": "https://www.instagram.com/marcosfernandes.neuro/",
         "temas": {
@@ -12964,7 +12964,7 @@ window.DADOS = {
         "likes": 19,
         "coments": 71,
         "seguidores": 5,
-        "cluster": "Educação, famílias e direitos",
+        "cluster": "Education, Families & Rights",
         "avatar": "instagram/institutogiftedbrasil",
         "url": "https://www.instagram.com/institutogiftedbrasil/",
         "temas": {
@@ -13011,7 +13011,7 @@ window.DADOS = {
         "likes": 6,
         "coments": 49,
         "seguidores": 35000,
-        "cluster": "Descoberta adulta",
+        "cluster": "Adult Discovery",
         "avatar": "instagram/ramirocatelan",
         "url": "https://www.instagram.com/ramirocatelan/",
         "temas": {
@@ -15349,7 +15349,7 @@ window.DADOS = {
           "nome": "Dra. Thais Prioli",
           "handle": "drathaisprioli",
           "rede": "Instagram",
-          "papel": "Médica",
+          "papel": "Physician",
           "n": 13,
           "redes": {
             "Instagram": 13
@@ -15374,7 +15374,7 @@ window.DADOS = {
           "nome": "Jean Alessandro",
           "handle": "jeanalessandrob",
           "rede": "Instagram",
-          "papel": "Psicólogo",
+          "papel": "Psychologist",
           "n": 5,
           "redes": {
             "Instagram": 5
@@ -15399,7 +15399,7 @@ window.DADOS = {
           "nome": "@segatta.psico",
           "handle": "segatta.psico",
           "rede": "Instagram",
-          "papel": "Psicólogo",
+          "papel": "Psychologist",
           "n": 19,
           "redes": {
             "Instagram": 19
@@ -15424,7 +15424,7 @@ window.DADOS = {
           "nome": "Davi Giordani",
           "handle": "davimgiordani",
           "rede": "Instagram",
-          "papel": "Criança com AH/SD e família",
+          "papel": "Gifted Child & Family",
           "n": 7,
           "redes": {
             "Instagram": 7
@@ -15451,7 +15451,7 @@ window.DADOS = {
           "nome": "Jean Alessandro",
           "handle": "jeanalessandrob",
           "rede": "TikTok",
-          "papel": "Psicólogo",
+          "papel": "Psychologist",
           "n": 86,
           "redes": {
             "TikTok": 86
@@ -15476,7 +15476,7 @@ window.DADOS = {
           "nome": "Dra. Tamiris Mariano",
           "handle": "dra.tamirismariano",
           "rede": "TikTok",
-          "papel": "Profissional de saúde",
+          "papel": "Healthcare Clinician",
           "n": 23,
           "redes": {
             "TikTok": 23
@@ -15501,7 +15501,7 @@ window.DADOS = {
           "nome": "@altashabilidades.sd",
           "handle": "altashabilidades.sd",
           "rede": "TikTok",
-          "papel": "Perfil sobre AH/SD",
+          "papel": "Giftedness Channel",
           "n": 20,
           "redes": {
             "TikTok": 20
@@ -15526,7 +15526,7 @@ window.DADOS = {
           "nome": "Vozes Neurodivergentes",
           "handle": "vozesneurodivergentes",
           "rede": "TikTok",
-          "papel": "Perfil de neurodiversidade",
+          "papel": "Neurodiversity Channel",
           "n": 94,
           "redes": {
             "TikTok": 94
@@ -15553,7 +15553,7 @@ window.DADOS = {
           "nome": "Dra. Olzeni Ribeiro",
           "handle": "Dra. Olzeni Ribeiro",
           "rede": "YouTube",
-          "papel": "Especialista em AH/SD",
+          "papel": "Giftedness Specialist",
           "n": 9,
           "redes": {
             "YouTube": 9
@@ -15578,7 +15578,7 @@ window.DADOS = {
           "nome": "Ciência Todo Dia",
           "handle": "Ciência Todo Dia",
           "rede": "YouTube",
-          "papel": "Divulgação científica",
+          "papel": "Science Communication",
           "n": 1,
           "redes": {
             "YouTube": 1
@@ -15603,7 +15603,7 @@ window.DADOS = {
           "nome": "Jean Alessandro",
           "handle": "Jean Alessandro",
           "rede": "YouTube",
-          "papel": "Psicólogo",
+          "papel": "Psychologist",
           "n": 6,
           "redes": {
             "YouTube": 6
@@ -15628,7 +15628,7 @@ window.DADOS = {
           "nome": "Lygia Pereira",
           "handle": "Lygia Pereira - Psicologia e Autismo Feminino",
           "rede": "YouTube",
-          "papel": "Psicóloga",
+          "papel": "Psychologist",
           "n": 4,
           "redes": {
             "YouTube": 4
@@ -15733,7 +15733,7 @@ window.DADOS = {
       {
         "id": "davimgiordani",
         "nome": "Davi Giordani",
-        "papel": "Criança com AH/SD, 4 milhões de seguidores",
+        "papel": "Gifted Child, 4 Million Followers",
         "avatar": "instagram/davimgiordani",
         "rede": "TikTok",
         "publicado_por": "@takeisaude",
@@ -15749,7 +15749,7 @@ window.DADOS = {
       {
         "id": "whinderssonnunes",
         "nome": "Whindersson Nunes",
-        "papel": "Humorista; o caso dele reabriu o debate em 2025",
+        "papel": "Comedian; his late diagnosis reignited public debate",
         "avatar": "instagram/whinderssonnunes",
         "rede": "TikTok",
         "publicado_por": "@jeanalessandrob",
@@ -15765,7 +15765,7 @@ window.DADOS = {
       {
         "id": "converso",
         "nome": "Roger Moreira",
-        "papel": "Músico (Ultraje a Rigor), \"o maior QI do Brasil\"",
+        "papel": "Musician (Ultraje a Rigor), widely cited for high IQ",
         "avatar": "youtube/ConVerso",
         "rede": "YouTube",
         "publicado_por": "ConVerso",
@@ -15781,7 +15781,7 @@ window.DADOS = {
       {
         "id": "aielloflow",
         "nome": "João Gabriel (@aielloflow)",
-        "papel": "Personagem do \"QI 640\" no Instagram",
+        "papel": "Creator of viral \"IQ 640\" parody character",
         "avatar": "instagram/aielloflow",
         "rede": "Instagram",
         "publicado_por": "@aielloflow",

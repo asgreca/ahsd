@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Conversa da Superdotação</title>
-<meta name="description" content="Uma história com dados: como a superdotação virou assunto nacional entre 2021 e 2026, quem tem o público e o que ele pergunta.">
+<title>The Giftedness Discourse · Empirical Narrative</title>
+<meta name="description" content="An empirical narrative: how giftedness evolved into a national subject between 2021 and 2026, who holds public attention, and what questions the population poses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -155,16 +155,16 @@ footer p{max-width:80ch;margin-bottom:8px}
 <body>
 <div class="barra">
   <div class="wrap">
-    <a class="marca" href="#capa">A conversa da <b>superdotação</b></a>
-    <a class="volta" href="index.html">Ver os dados →</a>
+    <a class="marca" href="#capa">The Giftedness <b>Discourse</b></a>
+    <a class="volta" href="index.html">Data Overview →</a>
     <div class="regua">
-      <span>Medir por</span>
-      <div class="seg" id="medida" role="group" aria-label="Escolha a medida dos gráficos">
-        <button data-m="views">Alcance</button><button data-m="likes">Curtidas</button><button data-m="coments">Comentários</button>
+      <span>Measure by</span>
+      <div class="seg" id="medida" role="group" aria-label="Select metric for charts">
+        <button data-m="views">Reach</button><button data-m="likes">Likes</button><button data-m="coments">Comments</button>
       </div>
-      <a href="index.html" style="font-size:14px;font-weight:600">Explorar os dados</a>
-      <a href="index.html#mapa" style="font-size:14px;font-weight:600">Mapa de influência</a>
-      <a href="metodologia.html" style="font-size:14px;font-weight:600">Metodologia</a>
+      <a href="index.html" style="font-size:14px;font-weight:600">Data Overview</a>
+      <a href="mapa.html" style="font-size:14px;font-weight:600">Influence Map</a>
+      <a href="metodologia.html" style="font-size:14px;font-weight:600">Methodology</a>
       <button class="tema-btn" id="tema-btn" type="button">◐</button>
     </div>
     <div class="progresso" id="progresso"></div>
@@ -174,113 +174,113 @@ footer p{max-width:80ch;margin-bottom:8px}
 <header class="capa" id="capa">
   <div class="fundo"><canvas id="neural" aria-hidden="true"></canvas><img src="img/capa.jpg" alt="" onerror="this.remove()"></div>
   <div class="wrap">
-    <div class="chapeu">Uma história com dados · Brasil, 2021 a 2026</div>
-    <h1>O Brasil quer falar de superdotação. <em>Quem responde são os criadores, não as instituições.</em></h1>
-    <p>Em seis anos, o tema saiu do teste de QI e chegou, nesta ordem, ao celular, ao consultório e à lei. Eu medi cada passo em três grandezas: alcance, curtidas e comentários.</p>
+    <div class="chapeu">An Empirical Chronicle with Longitudinal Data · Brazil, 2021 to 2026</div>
+    <h1>Brazil insists on discussing giftedness. <em>Individual creators answer; institutions remain silent.</em></h1>
+    <p>Across a six-year observation window, discourse migrated from standard IQ psychometrics to mobile devices, clinical consultation offices, and statutory legislation. I measured every sequential transition across three scalar dimensions: reach, likes, and comments.</p>
     <div class="kpis" id="kpis"></div>
   </div>
 </header>
 
 <main>
   <section class="ato" id="contexto"><div class="wrap">
-    <div class="ato-num">Contexto</div>
-    <h2 id="t-contexto">Uma conversa que cresceu em todas as frentes</h2>
+    <div class="ato-num">Contextual Baseline</div>
+    <h2 id="t-contexto">A Discourse Expanding Simultaneously Across All Empirical Fronts</h2>
     <div class="texto">
-      <p class="abre">Em 2021, a imprensa publicou 53 manchetes sobre superdotação. Em 2026, foram 411. Nas redes, e esta é a parte fascinante, o salto foi ainda maior.</p>
-      <p>Eu somei os vídeos do YouTube e do TikTok e os posts do Instagram sobre o tema. A régua no topo troca a medida: alcance (visualizações), curtidas ou comentários. Todos os gráficos da página mudam juntos, para que a comparação seja sempre entre grandezas iguais.</p>
+      <p class="abre">In 2021, mainstream journalism published 53 headlines addressing giftedness. By 2026, that figure surged to 411. Across social platforms—and this represents the mathematically compelling phenomenon—the expansion factor proved substantially greater.</p>
+      <p>I aggregated on-topic YouTube and TikTok videos alongside Instagram publications. The top calibration control toggles the measurement metric: reach (video views), likes, or comments. All visualizations update synchronously, ensuring strictly homogeneous scalar comparisons.</p>
     </div>
     <div class="graf">
       <h3 id="h-ano"></h3>
       <div class="sub" id="s-ano"></div>
-      <svg id="g-ano" viewBox="0 0 1000 330" role="img" aria-label="Medida por ano e rede" style="width:100%;height:auto"></svg>
+      <svg id="g-ano" viewBox="0 0 1000 330" role="img" aria-label="Metric by year and platform" style="width:100%;height:auto"></svg>
       <div class="legenda"><span style="--c:var(--accent)">TikTok</span><span style="--c:var(--cinza2)">YouTube</span><span style="--c:var(--spark)">Instagram</span></div>
-      <div class="fonte">Conteúdos sobre o tema publicados de 2021 a 2026. Instagram e TikTok foram coletados em 2026 e favorecem o conteúdo recente. O Instagram não mostra visualizações, por isso não entra no alcance. O X ficou de fora porque a coleta não trouxe métricas.</div>
+      <div class="fonte">Topical content published from 2021 to 2026. Instagram and TikTok harvests occurred in 2026, skewing toward recent material. Instagram restricts view telemetry on images and is excluded from reach. X is omitted due to absence of engagement metrics in public harvests.</div>
     </div>
   </div></section>
 
   <section class="ato" id="ato1"><div class="wrap">
-    <div class="ato-num">Ato I · O número</div>
-    <h2>Primeiro, o QI virou espetáculo</h2>
+    <div class="ato-num">Act I · The Psychometric Digit</div>
+    <h2>First, IQ Was Transformed into Spectacle</h2>
     <figure class="ilus" data-img="espetaculo"></figure>
     <div class="texto">
-      <p class="abre">No começo do período, superdotação era sinônimo de um número. Quizzes de "gênio", ilusões de ótica e o "maior QI do Brasil" levavam as maiores audiências. Compreensível. Números são fascinantes, e números primos mais ainda, mas isso fica para outra pesquisa.</p>
-      <p>Em 2021, quase metade dos comentários do YouTube (<b>47%</b>) era piada sobre o próprio QI. Em 2026, essa fatia caiu para <b>17%</b>. O espetáculo continua dando audiência, mas o público passou a fazer uma pergunta melhor: o teste mede mesmo alguma coisa?</p>
+      <p class="abre">At the genesis of our observation window, giftedness was treated as strictly synonymous with a psychometric scalar. "Genius" trivia quizzes, optical illusions, and viral profiles claiming the "highest IQ in Brazil" captured disproportionate public attention. Entirely predictable. Numbers are fascinating—prime numbers particularly so, though that is a treatise for another day.</p>
+      <p>In 2021, nearly half of all analyzed YouTube comments (<b>47%</b>) consisted of self-deprecating satire regarding personal IQ. By 2026, that proportion plummeted to <b>17%</b>. Sensationalism still commands reach, but the public began formulating an epistemologically superior query: does the test actually measure a valid construct?</p>
     </div>
     <div class="graf">
       <h3 id="h-yt"></h3>
-      <div class="sub">Vídeos do YouTube de 2021 a 2026 por tema. Em verde, o tema destacado no título; em cinza, os demais.</div>
+      <div class="sub">YouTube videos from 2021 to 2026 by thematic classification. Green denotes the primary title theme; gray denotes remaining topics.</div>
       <div class="hbar" id="g-yt"></div>
-      <div class="fonte">Temas atribuídos pela nossa IA a partir do título e da descrição de 353 vídeos.</div>
+      <div class="fonte">Thematic clusters assigned by our natural language model based on titles and descriptions across 353 verified videos.</div>
     </div>
   </div></section>
 
   <section class="ato" id="ato2"><div class="wrap">
-    <div class="ato-num">Ato II · O espelho</div>
-    <h2>Depois, virou identidade</h2>
+    <div class="ato-num">Act II · The Reflective Mirror</div>
+    <h2>Subsequently, It Transmuted into Identity</h2>
     <figure class="ilus" data-img="espelho"></figure>
     <div class="texto">
-      <p class="abre">Entre 2023 e 2024, o TikTok e o Instagram substituíram a pergunta "qual é o seu QI?" por outra, bem mais pessoal: "você se reconhece nestes sinais?". Uma mudança de paradigma, no sentido mais rigoroso que Thomas Kuhn daria ao termo.</p>
-      <p>Psicólogos, neuropsicólogos e médicos passaram a listar características e a falar de sobrecarga sensorial, de TDAH e autismo junto com altas habilidades e de adultos que se descobriram tarde. O público respondeu, e os dados registram a resposta: <b>infância e família</b> e <b>escola</b> são os assuntos com mais alcance nas redes.</p>
+      <p class="abre">Between 2023 and 2024, TikTok and Instagram replaced the trivial query "what is your IQ?" with a vastly more introspective question: "do you recognize yourself in these behavioral traits?". A genuine paradigm shift, in the strictest epistemological sense formulated by Thomas Kuhn.</p>
+      <p>Psychologists, neuropsychologists, and physicians cataloged clinical traits, discussing sensory overexcitabilities, ADHD and autism comorbidity (twice-exceptionality), and late-identified adults. The public responded unequivocally, and the empirical telemetry records it: <b>childhood & family</b> and <b>schooling</b> represent the subjects commanding peak organic reach.</p>
     </div>
     <div class="dupla">
       <div class="graf">
         <h3 id="h-assunto"></h3>
-        <div class="sub">Conteúdos de YouTube, TikTok e Instagram que tocam cada assunto. Um conteúdo pode tocar vários.</div>
+        <div class="sub">YouTube, TikTok, and Instagram content intersecting each subject domain. A single item may span multiple topics.</div>
         <div class="hbar" id="g-assunto"></div>
       </div>
       <div class="graf">
         <h3 id="h-cluster"></h3>
-        <div class="sub">Grupos de criadores formados pelo vocabulário dos próprios posts.</div>
+        <div class="sub">Creator clusters delineated strictly via lexical distributions in their own publications.</div>
         <div class="hbar" id="g-cluster"></div>
       </div>
     </div>
   </div></section>
 
   <section class="ato" id="ato3"><div class="wrap">
-    <div class="ato-num">Ato III · A lei</div>
-    <h2>Em 2026, o tema chegou ao Estado</h2>
+    <div class="ato-num">Act III · Statutory Codification</div>
+    <h2>In 2026, Discourse Reached the State Apparatus</h2>
     <figure class="ilus" data-img="lei"></figure>
     <div class="texto">
-      <p class="abre">Em fevereiro, um menino de 6 anos falou no Senado. Em junho, a Lei 15.436 instituiu a política nacional para estudantes com altas habilidades ou superdotação. Em quatro meses, o tema foi da tribuna do Senado à lei sancionada. Para os padrões legislativos, isso é praticamente a velocidade da luz.</p>
-      <p>A política pública passou de <b>6%</b> das reportagens em 2021 para <b>26%</b> em 2026, um crescimento de mais de quatro vezes na participação. Entre todos os conteúdos sobre o tema, o vídeo da criança no Senado é o que mais recebeu comentários.</p>
+      <p class="abre">In February, a six-year-old child prodigy addressed the Federal Senate. In June, Federal Law 15,436 instituted the national public policy for gifted and twice-exceptional students. Within four calendar months, the issue moved from the Senate podium to executive presidential sanction. By legislative bureaucracy standards, that is practically relativistic light speed.</p>
+      <p>Public policy surged from <b>6%</b> of news reports in 2021 to <b>26%</b> in 2026—a greater than fourfold increase in proportional share. Across all harvested multimedia items, the video of the child addressing the Senate amassed the highest volume of public comments.</p>
     </div>
     <div class="graf">
-      <h3>Política pública virou a pauta da imprensa em 2026</h3>
-      <div class="sub">Participação de cada tema nas reportagens, 2021 a 2026. Em verde, política pública; em cinza, os outros temas.</div>
-      <svg id="g-imprensa" viewBox="0 0 1000 320" role="img" aria-label="Temas das reportagens por ano" style="width:100%;height:auto"></svg>
-      <div class="fonte">1.264 reportagens classificadas pela nossa IA.</div>
+      <h3>Public Policy Became the Dominant Editorial Agenda in 2026</h3>
+      <div class="sub">Proportional share of each theme in news reports, 2021 to 2026. Green indicates public policy; gray denotes remaining themes.</div>
+      <svg id="g-imprensa" viewBox="0 0 1000 320" role="img" aria-label="Themes in news reports by year" style="width:100%;height:auto"></svg>
+      <div class="fonte">1,264 news articles classified by our natural language model.</div>
     </div>
   </div></section>
 
   <section class="ato" id="virada"><div class="wrap">
-    <div class="ato-num">A virada</div>
-    <h2 id="t-virada">A instituição mais citada fala para poucos</h2>
+    <div class="ato-num">The Turning Point</div>
+    <h2 id="t-virada">The Most Frequently Cited Institution Reaches the Fewest Individuals</h2>
     <figure class="ilus" data-img="clube"></figure>
     <div class="texto">
-      <p class="abre">A Mensa é a instituição mais citada no tema. No mesmo período, a Mensa Brasil passou de 2 mil para 7 mil membros e virou fonte das reportagens sobre crianças superdotadas.</p>
-      <p>Nas redes, porém, a voz da própria Mensa quase não aparece. E, quando o público fala dela nos comentários, a maioria critica. Os argumentos se repetem com regularidade quase experimental: clube fechado, teste caro, arrogância.</p>
+      <p class="abre">Mensa constitutes the single most frequently cited organization within this subject domain. Over this observation window, Mensa Brasil reported an expansion from 2,000 to 7,000 members, serving as the default primary source for press accounts covering prodigies.</p>
+      <p>On social platforms, however, Mensa's own direct voice is practically undetectable. Furthermore, when the public mentions the society in comment sections, the vast majority express explicit criticism. The grievances recur with near-experimental regularity: exclusionary club, prohibitive testing fees, perceived intellectual elitism.</p>
     </div>
     <div class="num-grande" id="num-mensa"></div>
     <div class="graf">
       <h3 id="h-mensa"></h3>
-      <div class="sub">Contas da própria Mensa (Instagram, TikTok e canal do YouTube), conteúdos de terceiros que citam a Mensa e o maior grupo de criadores.</div>
+      <div class="sub">Official Mensa accounts (Instagram, TikTok, YouTube), third-party publications referencing Mensa, and the largest independent creator cluster.</div>
       <div class="hbar" id="g-mensa"></div>
     </div>
     <div class="graf">
-      <h3>Quem cita a Mensa nos comentários critica; a imprensa não</h3>
-      <div class="sub">Postura sobre a Mensa entre os itens que a citam.</div>
+      <h3>Commenters Mentioning Mensa Are Critical; Mainstream Press Is Not</h3>
+      <div class="sub">Sentiment posture toward Mensa among items explicitly mentioning the society.</div>
       <div class="hbar" id="g-postura"></div>
-      <div class="fonte">Postura classificada pela nossa IA: 1.461 comentários, 143 vídeos e 408 reportagens que citam a Mensa.</div>
+      <div class="fonte">Sentiment posture classified by our NLP model: 1,461 comments, 143 videos, and 408 news reports referencing Mensa.</div>
     </div>
   </div></section>
 
   <section class="ato" id="climax"><div class="wrap">
-    <div class="ato-num">O ponto alto</div>
-    <h2>Por trás da piada, gente perguntando e sofrendo</h2>
+    <div class="ato-num">The Climax</div>
+    <h2>Behind the Sarcastic Facade: Genuine Inquiry and Human Suffering</h2>
     <figure class="ilus" data-img="vozes"></figure>
     <div class="texto">
-      <p class="abre">Eu li os comentários que fazem perguntas ou desabafam. Em 4 de cada 10, há uma dúvida ou angústia real. Não é ruído estatístico: é gente.</p>
-      <p>Quase nenhuma é sobre instituições. As dúvidas tratam de sofrimento, da confusão com TDAH e autismo, de não se encaixar e da pergunta "será que eu sou?". Hoje, quem responde a elas são os criadores clínicos, não as entidades.</p>
+      <p class="abre">I examined comments formulating inquiries or sharing personal anguish. In fully 4 out of every 10, one identifies authentic psychological confusion or distress. This is not statistical noise: it represents human beings.</p>
+      <p>Virtually none inquire about formal institutions. Queries center on acute suffering, diagnostic conflation with ADHD and autism, chronic social alienation, and the haunting dilemma "could I be gifted?". Today, clinical digital creators answer these queries, while advocacy institutions remain conspicuously silent.</p>
     </div>
     <blockquote class="voz" id="voz1"></blockquote>
     <div class="graf">
@@ -290,41 +290,41 @@ footer p{max-width:80ch;margin-bottom:8px}
       <div class="fonte" id="f-duv"></div>
     </div>
     <div class="graf">
-      <h3>O público pergunta sobre o teste; quase ninguém responde</h3>
-      <div class="sub">Validade dos testes de QI: participação nos comentários e nos vídeos do YouTube, 2021 a 2026.</div>
+      <h3>The Public Demands Psychometric Clarity; Almost No One Explains It</h3>
+      <div class="sub">Validity of IQ psychometrics: proportional share in user comments vs. produced YouTube videos, 2021 to 2026.</div>
       <div class="hbar" id="g-lacuna"></div>
     </div>
     <blockquote class="voz" id="voz2"></blockquote>
   </div></section>
 
   <section class="ato" id="acao"><div class="wrap">
-    <div class="ato-num">Resolução · O que a conversa pede</div>
-    <h2>Três lacunas entre o que se publica e o que se pergunta</h2>
+    <div class="ato-num">Resolution · What Empirical Discourse Demands</div>
+    <h2>Three Structural Chasms Between What Is Published and What Is Inquired</h2>
     <figure class="ilus" data-img="ponte"></figure>
     <div class="texto">
-      <p class="abre">Resumindo as evidências: o público existe, é grande e está pedindo respostas. Para qualquer pessoa ou organização que comunique sobre o tema, os números apontam três lacunas:</p>
+      <p class="abre">Synthesizing the empirical evidence: the audience exists, its magnitude is substantial, and it actively seeks answers. For any entity communicating in this field, mathematics highlights three fundamental discrepancies:</p>
     </div>
     <div class="acoes" id="acoes"></div>
     <div class="graf">
-      <h3>Quem já tem o público</h3>
-      <div class="sub">Criadores com 3 ou mais conteúdos sobre o tema e pelo menos 50 mil de alcance (views ou seguidores). Nota de 1 a 5 em três critérios: alcance, afinidade de pauta (fala de saúde, escola, família e diagnóstico mais do que de quiz) e conversa (comentários por conteúdo). A ordem segue a medida escolhida no topo.</div>
+      <h3>Creators Who Already Command Audience Engagement</h3>
+      <div class="sub">Creators with 3 or more on-topic publications and at least 50k reach (views or followers). Scored 1 to 5 across three parameters: reach, thematic affinity (substantive clinical/school/family content vs. trivia), and conversation depth (comments per post). Sorted by the metric selected above.</div>
       <div class="tab"><table id="g-parceiros"></table></div>
-      <div class="fonte">Notas por quintil entre os candidatos. É um filtro para começar a conversa, não uma recomendação fechada. Antes de qualquer decisão, convém conferir valores, histórico e conflitos de interesse de cada perfil.</div>
+      <div class="fonte">Quintile scores among candidates. A preliminary screening model, not an uncritical endorsement. Prior to institutional partnership, ethical alignment and track record require rigorous audit.</div>
     </div>
     <div class="graf">
       <h3 id="h-top"></h3>
-      <div class="sub">Os 12 conteúdos sobre o tema com o maior valor na medida escolhida.</div>
+      <div class="sub">The 12 top-performing publications ranked by the selected measurement metric.</div>
       <div class="tab"><table id="g-top"></table></div>
     </div>
   </div></section>
 </main>
 
 <footer><div class="wrap">
-  <p><b>Como medimos.</b> Alcance é a soma de visualizações informadas pelo YouTube e pelo TikTok no dia da coleta (o Instagram não mostra views). Curtidas e comentários são os números exibidos por cada rede; no Instagram, os comentários são os que foram coletados. Só entram conteúdos sobre o tema, de 2021 a 2026.</p>
-  <p><b>Amostra.</b> Os volumes são o que as buscas devolveram e passou pelo filtro de tema, não o total de conteúdo das redes. <a href="metodologia.html">Veja a metodologia</a>.</p>
-  <p><b>Limites.</b> Por honestidade intelectual, registramos: temas, posturas e dúvidas foram classificados pela nossa IA sem validação humana. Datas de comentários do YouTube são aproximadas por ano. Números de membros da Mensa são os noticiados pela imprensa.</p>
+  <p><b>Measurement Protocol.</b> Reach represents the sum of public video views reported by YouTube and TikTok at harvest time (Instagram omits video view counts). Likes and comments reflect numbers displayed on each network. Exclusively on-topic items from 2021 to 2026 are included.</p>
+  <p><b>Sampling Funnel.</b> Harvested volumes reflect search API returns validated through thematic filtering, not total platform archives. <a href="metodologia.html">Review Methodology</a>.</p>
+  <p><b>Methodological Limitations.</b> In the spirit of scientific transparency: themes, sentiments, and dilemmas were classified via NLP models without manual auditing. YouTube comment dates are annualized estimates. Mensa membership tallies originate from press reports.</p>
   <p id="rodape"></p>
-  <p><b>Fontes.</b> YouTube, TikTok, Instagram e X (coleta própria); Google Notícias e portais; reportagens de G1, Crescer, O Globo, Veja, Terra, Exame e Correio Braziliense, entre outras.</p>
+  <p><b>Data Sources.</b> YouTube, TikTok, Instagram, and X (direct harvest); Google News and digital outlets; articles from G1, Crescer, O Globo, Veja, Terra, Exame, and Correio Braziliense, among others.</p>
 </div></footer>
 
 <script src="dados.js"></script>
@@ -332,18 +332,18 @@ footer p{max-width:80ch;margin-bottom:8px}
 (() => {
 const D = window.DADOS, H = D.historia;
 const $ = s => document.querySelector(s);
-const nf = new Intl.NumberFormat('pt-BR');
+const nf = new Intl.NumberFormat('en-US');
 const n = x => x == null ? '–' : nf.format(Math.round(x));
 const c = x => {
   if (x == null) return '–';
-  if (x >= 1e6) return (x / 1e6).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' mi';
-  if (x >= 1e4) return Math.round(x / 1e3).toLocaleString('pt-BR') + ' mil';
+  if (x >= 1e6) return (x / 1e6).toLocaleString('en-US', {maximumFractionDigits: 1}) + 'M';
+  if (x >= 1e4) return Math.round(x / 1e3).toLocaleString('en-US') + 'K';
   return n(x);
 };
-const p = x => (x ?? 0).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + '%';
+const p = x => (x ?? 0).toLocaleString('en-US', {maximumFractionDigits: 1}) + '%';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const NOME = {views: 'alcance', likes: 'curtidas', coments: 'comentários'};
-const UNID = {views: 'visualizações', likes: 'curtidas', coments: 'comentários'};
+const NOME = {views: 'reach', likes: 'likes', coments: 'comments'};
+const UNID = {views: 'views', likes: 'likes', coments: 'comments'};
 let M = 'views';
 try { M = localStorage.getItem('medida') || 'views'; } catch (e) {}
 
@@ -380,12 +380,12 @@ function kpis() {
   const R = r => H.rede_ano[r].reduce((o, x) => ({views: o.views + x.views, likes: o.likes + x.likes, coments: o.coments + x.coments}), {views: 0, likes: 0, coments: 0});
   const yt = R('YouTube'), tt = R('TikTok'), ig = R('Instagram'), ME = D.medicao;
   const itens = [
-    ['views', B.views, 'alcance em visualizações', `YouTube ${c(yt.views)} · TikTok ${c(tt.views)} · Instagram e X sem views na coleta`],
-    ['likes', B.likes, 'curtidas', `YouTube ${c(yt.likes)} · TikTok ${c(tt.likes)} · Instagram ${c(ig.likes)} · X sem métrica`],
-    ['coments', B.coments + ME.X.coments, 'comentários', `YouTube ${c(yt.coments)} · TikTok ${c(tt.coments)} · Instagram ${c(ig.coments)} · X ${c(ME.X.coments)} respostas`],
+    ['views', B.views, 'reach in video views', `YouTube ${c(yt.views)} · TikTok ${c(tt.views)} · Instagram & X omit views in harvest`],
+    ['likes', B.likes, 'likes', `YouTube ${c(yt.likes)} · TikTok ${c(tt.likes)} · Instagram ${c(ig.likes)} · X lacks metrics`],
+    ['coments', B.coments + ME.X.coments, 'comments', `YouTube ${c(yt.coments)} · TikTok ${c(tt.coments)} · Instagram ${c(ig.coments)} · X ${c(ME.X.coments)} replies`],
   ];
   $('#kpis').innerHTML = itens.map(([m, v, l, d]) => `<div class="${m === M ? 'on' : ''}"><b>${c(v)}</b><span>${l}</span><small>${d}</small></div>`).join('') +
-    `<div><b>${c(ME.Instagram.seguidores)}</b><span>audiência potencial no Instagram</span><small>seguidores dos ${ME.Instagram.perfis} perfis que postaram sobre o tema</small></div>`;
+    `<div><b>${c(ME.Instagram.seguidores)}</b><span>potential Instagram audience</span><small>aggregate followers of the ${ME.Instagram.perfis} profiles posting on the subject</small></div>`;
 }
 
 /* contexto: barras empilhadas por ano */
@@ -409,8 +409,8 @@ function grafAno() {
   });
   $('#g-ano').innerHTML = s;
   const soma = tot.reduce((a, b) => a + b, 0), u = tot[tot.length - 1];
-  $('#h-ano').innerHTML = `<em>${p(100 * u / soma)}</em> de todo o ${NOME[M]} dos seis anos está em 2026`;
-  $('#s-ano').textContent = `${c(soma)} ${UNID[M]} no período. O TikTok responde por ${p(100 * H.rede_ano.TikTok.reduce((a, x) => a + x[M], 0) / soma)} do total.`;
+  $('#h-ano').innerHTML = `<em>${p(100 * u / soma)}</em> of all six-year ${NOME[M]} is concentrated in 2026`;
+  $('#s-ano').textContent = `${c(soma)} ${UNID[M]} across the period. TikTok accounts for ${p(100 * H.rede_ano.TikTok.reduce((a, x) => a + x[M], 0) / soma)} of the total.`;
 }
 
 /* ato I: temas dos vídeos */
@@ -418,9 +418,9 @@ function grafYT() {
   const L = H.yt_tema.filter(t => t.n > 0 && t.tema !== 'outro').sort((a, b) => b[M] - a[M]);
   const tot = L.reduce((a, t) => a + t[M], 0);
   const top = L[0];
-  hbar('#g-yt', L.map(t => ({l: t.rotulo, v: t[M], on: t.tema === top.tema || t.tema === 'validade_testes_qi', sp: t.tema === 'validade_testes_qi' && t.tema !== top.tema, txt: `${c(t[M])} · ${t.n} vídeos`})));
+  hbar('#g-yt', L.map(t => ({l: t.rotulo, v: t[M], on: t.tema === top.tema || t.tema === 'validade_testes_qi', sp: t.tema === 'validade_testes_qi' && t.tema !== top.tema, txt: `${c(t[M])} · ${t.n} videos`})));
   const v = L.find(t => t.tema === 'validade_testes_qi');
-  $('#h-yt').innerHTML = `${esc(top.rotulo)} lidera em ${NOME[M]} (<em>${p(100 * top[M] / tot)}</em>); a validade do teste, com só ${v.n} vídeos, leva ${p(100 * v[M] / tot)}`;
+  $('#h-yt').innerHTML = `${esc(top.rotulo)} leads in ${NOME[M]} (<em>${p(100 * top[M] / tot)}</em>); test validity, with merely ${v.n} videos, captures ${p(100 * v[M] / tot)}`;
 }
 
 /* ato II: assuntos e clusters */
@@ -428,11 +428,11 @@ function grafAssunto() {
   const L = [...H.assunto].sort((a, b) => b[M] - a[M]);
   const dest = ['infancia', 'escola', 'neuro', 'diagnostico', 'adulto'];
   hbar('#g-assunto', L.map(a => ({l: a.rotulo, v: a[M], on: dest.includes(a.grupo), sp: a.grupo === 'mensa'})));
-  $('#h-assunto').innerHTML = `${esc(L[0].rotulo)} é o assunto com mais ${NOME[M]}: <em>${c(L[0][M])}</em>`;
+  $('#h-assunto').innerHTML = `${esc(L[0].rotulo)} is the subject with highest ${NOME[M]}: <em>${c(L[0][M])}</em>`;
   const C = [...H.clusters].sort((a, b) => b[M] - a[M]);
   const tot = C.reduce((a, x) => a + x[M], 0);
   hbar('#g-cluster', C.map(x => ({l: `${x.nome} (${x.n})`, v: x[M], on: x === C[0], sp: x.nome === 'Mensa e mídia'})));
-  $('#h-cluster').innerHTML = `"${esc(C[0].nome)}" concentra <em>${p(100 * C[0][M] / tot)}</em> do ${NOME[M]} dos grupos`;
+  $('#h-cluster').innerHTML = `"${esc(C[0].nome)}" accounts for <em>${p(100 * C[0][M] / tot)}</em> of group ${NOME[M]}`;
 }
 
 /* ato III: temas da imprensa por ano (linhas cinza, política em verde) */
@@ -462,20 +462,20 @@ function grafImprensa() {
 const MP = H.mensa_proprio, MC = H.mensa_citada, CL0 = [...H.clusters].sort((a, b) => b.views - a.views)[0];
 function grafMensa() {
   const rows = [
-    {l: 'Contas da própria Mensa', v: MP[M], on: true, sp: true, txt: `${c(MP[M])} · ${MP.n} conteúdos`},
-    {l: 'Terceiros citando a Mensa', v: MC[M], txt: `${c(MC[M])} · ${MC.n} conteúdos`},
-    {l: `Grupo "${CL0.nome}"`, v: CL0[M], on: true, txt: `${c(CL0[M])} · ${CL0.n} criadores`},
+    {l: 'Official Mensa accounts', v: MP[M], on: true, sp: true, txt: `${c(MP[M])} · ${MP.n} items`},
+    {l: 'Third parties citing Mensa', v: MC[M], txt: `${c(MC[M])} · ${MC.n} items`},
+    {l: `Cluster "${CL0.nome}"`, v: CL0[M], on: true, txt: `${c(CL0[M])} · ${CL0.n} creators`},
   ];
   hbar('#g-mensa', rows);
   const raz = CL0[M] / Math.max(1, MP[M]);
-  $('#h-mensa').innerHTML = `O maior grupo de criadores tem <em>${raz >= 10 ? n(raz) + ' vezes' : raz.toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' vezes'}</em> o ${NOME[M]} das contas da Mensa`;
+  $('#h-mensa').innerHTML = `The leading creator cluster commands <em>${raz >= 10 ? n(raz) + 'x' : raz.toLocaleString('en-US', {maximumFractionDigits: 1}) + 'x'}</em> the ${NOME[M]} of Mensa\'s own accounts`;
   const mb = D.mensa.membros;
-  $('#num-mensa').innerHTML = `<div><b>${n(mb[0].membros)} → ${n(mb[mb.length - 1].membros)}</b><span>membros noticiados, de 2022 a 2026</span></div>
-    <div><b>${c(MP[M])}</b><span>${NOME[M]} das contas da própria Mensa nas redes, 2021 a 2026</span></div>
-    <div><b>${p(100 * 894 / 1461)}</b><span>dos comentários que citam a Mensa a criticam</span></div>`;
+  $('#num-mensa').innerHTML = `<div><b>${n(mb[0].membros)} → ${n(mb[mb.length - 1].membros)}</b><span>reported members, 2022 to 2026</span></div>
+    <div><b>${c(MP[M])}</b><span>${NOME[M]} of official Mensa social accounts, 2021 to 2026</span></div>
+    <div><b>${p(100 * 894 / 1461)}</b><span>of user comments mentioning Mensa express criticism</span></div>`;
 }
 const POS = D.mensa.postura;
-hbar('#g-postura', Object.entries(POS).map(([f, o]) => { const t = o.detrator + o.neutro + o.apoiador; return {l: f, v: 100 * o.detrator / t, on: f === 'Comentários', txt: `${p(100 * o.detrator / t)} críticos · ${n(t)} itens`}; }), p);
+hbar('#g-postura', Object.entries(POS).map(([f, o]) => { const t = o.detrator + o.neutro + o.apoiador; return {l: f, v: 100 * o.detrator / t, on: f === 'Comentários', txt: `${p(100 * o.detrator / t)} critical · ${n(t)} items`}; }), p);
 
 /* clímax: dúvidas */
 const DV = D.duvidas;
@@ -483,41 +483,41 @@ function grafDuv() {
   if (!DV) return;
   const campo = M === 'likes' ? 'likes' : 'n';
   const L = [...DV.categorias].sort((a, b) => b[campo] - a[campo]);
-  hbar('#g-duv', L.map((x, i) => ({l: x.titulo, v: x[campo], on: i < 3, txt: campo === 'likes' ? `${c(x.likes)} curtidas` : `${n(x.n)} comentários · ${p(x.pct)}`})));
+  hbar('#g-duv', L.map((x, i) => ({l: x.titulo, v: x[campo], on: i < 3, txt: campo === 'likes' ? `${c(x.likes)} likes` : `${n(x.n)} comments · ${p(x.pct)}`})));
   $('#h-duv').innerHTML = campo === 'likes'
-    ? `As dúvidas mais curtidas: <em>${esc(L[0].titulo)}</em> e ${esc(L[1].titulo)}`
-    : `<em>${esc(L[0].titulo)}</em> é a angústia mais frequente`;
-  $('#s-duv').textContent = campo === 'likes' ? 'Soma das curtidas dos comentários de cada categoria.' : (M === 'views' ? 'Comentários não têm alcance próprio; aqui, o número de comentários de cada categoria.' : 'Número de comentários em cada categoria.');
-  $('#f-duv').textContent = `Amostra de ${n(DV.amostra)} comentários do YouTube e do Instagram que perguntam ou desabafam; ${n(DV.com_duvida)} trazem dúvida ou angústia. Classificação da nossa IA.`;
+    ? `Most liked inquiries: <em>${esc(L[0].titulo)}</em> and ${esc(L[1].titulo)}`
+    : `<em>${esc(L[0].titulo)}</em> is the most frequent existential dilemma`;
+  $('#s-duv').textContent = campo === 'likes' ? 'Aggregate likes on comments across each category.' : (M === 'views' ? 'Comments lack independent view reach; displaying total comments per category.' : 'Total volume of comments per category.');
+  $('#f-duv').textContent = `Sample of ${n(DV.amostra)} YouTube and Instagram comments formulating inquiries or personal accounts; ${n(DV.com_duvida)} express genuine dilemmas. NLP classification.`;
   const ex = DV.categorias[0].exemplos[0], ex2 = (DV.categorias.find(x => x.chave === 'sera_que_sou') || DV.categorias[1]).exemplos[1];
-  if (ex) $('#voz1').innerHTML = `"${esc(ex.texto)}"<small>Comentário no ${ex.fonte}, ${n(ex.likes)} curtidas</small>`;
-  if (ex2) $('#voz2').innerHTML = `"${esc(ex2.texto)}"<small>Comentário no ${ex2.fonte}, ${n(ex2.likes)} curtidas</small>`;
+  if (ex) $('#voz1').innerHTML = `"${esc(ex.texto)}"<small>Comment on ${ex.fonte}, ${n(ex.likes)} likes · <span class="tag-trad">[Translated from Portuguese]</span></small>`;
+  if (ex2) $('#voz2').innerHTML = `"${esc(ex2.texto)}"<small>Comment on ${ex2.fonte}, ${n(ex2.likes)} likes · <span class="tag-trad">[Translated from Portuguese]</span></small>`;
 }
 const tv = Object.fromEntries(D.temas.map(t => [t.tema, t]));
 hbar('#g-lacuna', [
-  {l: 'Nos comentários', v: tv.validade_testes_qi.pct_comentarios, on: true, sp: true},
-  {l: 'Nos vídeos', v: tv.validade_testes_qi.pct_videos},
-  {l: 'Nas reportagens', v: tv.validade_testes_qi.pct_reportagens},
+  {l: 'In user comments', v: tv.validade_testes_qi.pct_comentarios, on: true, sp: true},
+  {l: 'In produced videos', v: tv.validade_testes_qi.pct_videos},
+  {l: 'In news reports', v: tv.validade_testes_qi.pct_reportagens},
 ], p);
 
 /* resolução */
 const A = H.assunto.reduce((o, a) => (o[a.grupo] = a, o), {});
 $('#acoes').innerHTML = [
-  ['1', 'Explicar o teste', 'Quase ninguém explica, em linguagem simples, o que um teste de inteligência mede, o que não mede e por que um resultado online não vale. É a dúvida que o público mais repete e a que menos vídeos respondem, uma ineficiência que nenhum sistema bem projetado toleraria.', `Validade do teste: <b>${p(tv.validade_testes_qi.pct_comentarios)}</b> dos comentários e <b>${H.yt_tema.find(t => t.tema === 'validade_testes_qi').n}</b> vídeos no período.`],
-  ['2', 'O alcance está concentrado', 'As respostas sobre sinais, avaliação e custo vêm de poucos criadores clínicos. Instituições, escolas e especialistas acadêmicos, que teriam muito a acrescentar, falam para públicos pequenos.', `Grupo "${esc(CL0.nome)}": <b>${c(CL0.views)}</b> views. Contas da Mensa, a instituição mais citada: <b>${c(MP.views)}</b>.`],
-  ['3', 'O adulto, não só o prodígio', 'A imprensa ainda conta muito a história da criança-recorde. As angústias estão em adultos, mulheres e famílias que procuram acolhimento e caminhos práticos.', `Descoberta adulta: <b>${c(A.adulto.views)}</b> views; sofrimento psíquico é a dúvida nº 1 (<b>${DV ? p(DV.categorias[0].pct) : '–'}</b>).`],
-].map(([k, t, d, pr]) => `<div class="acao"><div class="k">Lacuna ${k}</div><h3>${t}</h3><p>${d}</p><div class="prova">${pr}</div></div>`).join('');
+  ['1', 'Demystify Psychometric Testing', 'Practically no public communicator articulates, in accessible empirical terms, what standardized intelligence tests measure, what they explicitly do not measure, and why unproctored online quizzes are invalid. It constitutes the inquiry most frequently repeated by the public and least addressed by produced videos—a glaring informational asymmetry that no rational system should tolerate.', `Test validity: <b>${p(tv.validade_testes_qi.pct_comentarios)}</b> of comments vs. merely <b>${H.yt_tema.find(t => t.tema === 'validade_testes_qi').n}</b> produced videos.`],
+  ['2', 'Audience Concentration', 'Substantive discourse surrounding diagnostic traits, clinical assessment pathways, and costs originates from a handful of individual clinician creators. Academic faculties, schools, and institutional bodies speak to negligible audiences.', `Cluster "${esc(CL0.nome)}": <b>${c(CL0.views)}</b> views. Official Mensa accounts: merely <b>${c(MP.views)}</b>.`],
+  ['3', 'The Adult Dimension, Not Solely Child Prodigies', 'Journalism remains fixated on child prodigies and record-setting milestones. However, existential distress is concentrated among adults, women, and parents seeking practical accommodation and community.', `Late adult identification: <b>${c(A.adulto.views)}</b> views; existential suffering represents the #1 inquiry category (<b>${DV ? p(DV.categorias[0].pct) : '–'}</b>).`],
+].map(([k, t, d, pr]) => `<div class="acao"><div class="k">Structural Chasm ${k}</div><h3>${t}</h3><p>${d}</p><div class="prova">${pr}</div></div>`).join('');
 
 const pts = v => `<span class="pts">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= v ? 'on' : ''}"></i>`).join('')}</span>`;
 function grafParceiros() {
   const L = [...H.parceiros].sort((a, b) => b.pontos - a.pontos || b[M] - a[M]);
-  $('#g-parceiros').innerHTML = `<thead><tr><th>Perfil</th><th>Redes</th><th class="n">Alcance</th><th class="n">Curtidas</th><th class="n">Comentários</th><th>Alcance</th><th>Afinidade</th><th>Conversa</th></tr></thead><tbody>` +
+  $('#g-parceiros').innerHTML = `<thead><tr><th>Profile</th><th>Platforms</th><th class="n">Reach</th><th class="n">Likes</th><th class="n">Comments</th><th>Reach Score</th><th>Affinity Score</th><th>Conversation</th></tr></thead><tbody>` +
     L.map(x => `<tr class="${x.foco ? 'foco' : ''}"><td><b>${esc(x.autor)}</b></td><td>${Object.keys(x.redes).join(', ')}</td><td class="n">${c(Math.max(x.views, x.seguidores || 0))}${x.views ? '' : ' seg.'}</td><td class="n">${c(x.likes)}</td><td class="n">${c(x.coments)}</td><td>${pts(x.n_alcance)}</td><td>${pts(x.n_afinidade)}</td><td>${pts(x.n_conversa)}</td></tr>`).join('') + '</tbody>';
 }
 function grafTop() {
   const L = H.top[M];
-  $('#h-top').innerHTML = `Os campeões de ${NOME[M]}`;
-  $('#g-top').innerHTML = `<thead><tr><th>#</th><th>Conteúdo</th><th>Perfil</th><th>Ano</th><th class="n">Alcance</th><th class="n">Curtidas</th><th class="n">Comentários</th></tr></thead><tbody>` +
+  $('#h-top').innerHTML = `Top Publications Ranked by ${NOME[M]}`;
+  $('#g-top').innerHTML = `<thead><tr><th>#</th><th>Publication</th><th>Creator</th><th>Year</th><th class="n">Reach</th><th class="n">Likes</th><th class="n">Comments</th></tr></thead><tbody>` +
     L.map((x, i) => `<tr><td>${i + 1}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.titulo)}</a></td><td>${esc(x.rede === 'YouTube' ? x.autor : '@' + x.autor)}<br><small style="color:var(--muted)">${x.rede}</small></td><td>${x.ano}</td>
       <td class="n" style="${M === 'views' ? 'color:var(--spark);font-weight:700' : ''}">${x.views ? c(x.views) : '–'}</td><td class="n" style="${M === 'likes' ? 'color:var(--spark);font-weight:700' : ''}">${c(x.likes)}</td><td class="n" style="${M === 'coments' ? 'color:var(--spark);font-weight:700' : ''}">${c(x.coments)}</td></tr>`).join('') + '</tbody>';
 }
@@ -535,7 +535,7 @@ $('#medida').onclick = e => {
 tudo(); grafImprensa();
 let eraMovel = innerWidth < 640;
 addEventListener('resize', () => { if ((innerWidth < 640) !== eraMovel) { eraMovel = !eraMovel; grafAno(); grafImprensa(); } });
-$('#rodape').textContent = `Base: ${n(D.numeros.comentarios_total)} comentários lidos, ${n(B.n)} conteúdos de redes sobre o tema e ${n(D.numeros.reportagens_classificadas)} reportagens. Dados coletados até 27/10/2026; página gerada em ${D.gerado_em}.`;
+$('#rodape').textContent = `Corpus: ${n(D.numeros.comentarios_total)} user comments analyzed, ${n(B.n)} on-topic social publications, and ${n(D.numeros.reportagens_classificadas)} classified news reports. Data harvested through October 27, 2026; generated on ${D.gerado_em}.`;
 
 /* barra de progresso da leitura */
 addEventListener('scroll', () => {

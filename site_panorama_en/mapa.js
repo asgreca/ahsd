@@ -48,7 +48,7 @@ function orgs() { $('#cards-orgs').innerHTML = MP.orgs.map(o => card(o, `<div>${
 function famosos() {
   $('#cards-famosos').innerHTML = MP.famosos.map(o => `<article class="pcard"><div class="pcab">${avatar(o.id, o.nome)}<div><div class="pnome">${esc(o.nome)}</div><div class="ppapel">${esc(o.papel)}</div></div></div>${metricas(o.post)}${postHtml(o.post, o.publicado_por)}</article>`).join('');
   $('#famosos-nota').textContent = `Also featured in mainstream press reports without dedicated topical social posts: ${MP.famosos_imprensa.join(', ')}.`;
-  $('#refs').innerHTML = MP.sem_dados.map(r => `<div class="ref">${avatar(r.id, r.nome, 'g')}<div><div class="pnome">${esc(r.nome)}</div><div class="ppapel">${esc(r.papel)} · pioneering reference figure</div><p class="post" style="margin-top:6px">${esc(r.nota)}${r.citacao ? ` <a href="${esc(r.citacao.url)}" target="_blank" rel="noopener">Watch PodPeople episode</a> (${c(r.citacao.views)} views, ${c(r.citacao.likes)} curtidas, ${c(r.citacao.coments)} comments).` : ''}</p></div></div>`).join('');
+  $('#refs').innerHTML = MP.sem_dados.map(r => `<div class="ref">${avatar(r.id, r.nome, 'g')}<div><div class="pnome">${esc(r.nome)}</div><div class="ppapel">${esc(r.papel)} · pioneering reference figure</div><p class="post" style="margin-top:6px">${esc(r.nota)}${r.citacao ? ` <a href="${esc(r.citacao.url)}" target="_blank" rel="noopener">Watch PodPeople episode</a> (${c(r.citacao.views)} views, ${c(r.citacao.likes)} likes, ${c(r.citacao.coments)} comments).` : ''}</p></div></div>`).join('');
 }
 
 /* por tema */
@@ -159,7 +159,7 @@ function atualizaFiltroTemaTree(totTema, totGeral) {
   const container = $('#filtro-tema-tree');
   if (!container) return;
   const temasOrdenados = [...TEMAS].sort((a, b) => (totTema[b] || 0) - (totTema[a] || 0));
-  let html = `<button data-tema="todos" aria-pressed="${temaTree === 'todos'}">Todos os temas</button>`;
+  let html = `<button data-tema="todos" aria-pressed="${temaTree === 'todos'}">All Themes</button>`;
   temasOrdenados.forEach(g => {
     const val = totTema[g] || 0;
     if (val <= 0 && temaTree !== g) return;
@@ -196,7 +196,7 @@ function treemap() {
     const valTema = totTema[g] || 0;
     const pctGeral = Math.round(100 * valTema / totGeral);
 
-    $('#h-tree').innerHTML = `${esc(nomeTema)}: <em>${c(valTema)} ${NOME[M] === 'alcance' ? 'views' : NOME[M]}</em> (${pctGeral}% da conversa total) <small style="display:block;font-size:13px;font-weight:400;margin-top:4px;color:var(--muted)">Mostrando os principais criadores deste assunto · Clique em "Todos os temas" para voltar</small>`;
+    $('#h-tree').innerHTML = `${esc(nomeTema)}: <em>${c(valTema)} ${NOME[M] === 'reach' ? 'views' : NOME[M]}</em> (${pctGeral}% of the total conversation) <small style="display:block;font-size:13px;font-weight:400;margin-top:4px;color:var(--muted)">Displaying key creators in this topic · Click "All Themes" to return</small>`;
 
     const tops = [...(MP.tema_top[g] || [])].sort((a, b) => b[idx] - a[idx]);
     const somaTops = d3.sum(tops, t => t[idx] || 0);
@@ -218,7 +218,7 @@ function treemap() {
 
     if (resto > 0) {
       children.push({
-        name: 'Demais criadores e menções somadas',
+        name: 'Other creators & aggregate mentions',
         id: 'outros',
         value: resto,
         g,
@@ -244,7 +244,7 @@ function treemap() {
       .attr('stroke-width', 2)
       .on('mousemove', (ev, d) => {
         const pctTema = Math.round(100 * d.value / valTema);
-        mostra(ev, `<b>${esc(d.data.name)}</b><br>${d.data.rede ? esc(d.data.rede) + ' · ' + esc(d.data.cluster) + '<br>' : ''}<b>${c(d.value)}</b> ${NOME[M] === 'alcance' ? 'views' : NOME[M]}<br><b>${pctTema}%</b> de ${esc(nomeTema)}`);
+        mostra(ev, `<b>${esc(d.data.name)}</b><br>${d.data.rede ? esc(d.data.rede) + ' · ' + esc(d.data.cluster) + '<br>' : ''}<b>${c(d.value)}</b> ${NOME[M] === 'reach' ? 'views' : NOME[M]}<br><b>${pctTema}%</b> of ${esc(nomeTema)}`);
       })
       .on('mouseleave', esconde);
 
@@ -316,7 +316,7 @@ function treemap() {
       }));
       const resto = totalDoTema - soma;
       if (resto > 0) {
-        kids.push({name: 'outros', id: 'outros', value: resto, g, totalTema: totalDoTema, outros: true});
+        kids.push({name: 'others', id: 'outros', value: resto, g, totalTema: totalDoTema, outros: true});
       }
       return {name: G[g] || g, g, valueTema: totalDoTema, children: kids};
     }).filter(t => t.children.length);
@@ -333,7 +333,7 @@ function treemap() {
 
     const tot = root.value || 1;
     const top = root.children[0];
-    $('#h-tree').innerHTML = `${esc(top.data.name)} é o tema mais expressivo: <em>${Math.round(100 * top.value / tot)}%</em> da conversa <small style="display:block;font-size:13px;font-weight:400;margin-top:4px;color:var(--muted)">Clique no título de um tema para isolá-lo e ver detalhes de todos os criadores</small>`;
+    $('#h-tree').innerHTML = `${esc(top.data.name)} is the most prominent topic: <em>${Math.round(100 * top.value / tot)}%</em> of the conversation <small style="display:block;font-size:13px;font-weight:400;margin-top:4px;color:var(--muted)">Click a topic heading to isolate it and inspect granular creator breakdowns</small>`;
 
     const grp = svg.selectAll('g.t').data(root.children).join('g').attr('class', 't');
 
@@ -354,7 +354,7 @@ function treemap() {
       .style('cursor', 'pointer')
       .on('click', (ev, d) => { temaTree = d.data.g; treemap(); })
       .on('mousemove', (ev, d) => {
-        mostra(ev, `<b>${esc(d.data.name)}</b><br>${c(d.value)} ${NOME[M] === 'alcance' ? 'views' : NOME[M]} (${Math.round(100 * d.value / tot)}% da conversa)<br><em>Clique para detalhar este tema</em>`);
+        mostra(ev, `<b>${esc(d.data.name)}</b><br>${c(d.value)} ${NOME[M] === 'reach' ? 'views' : NOME[M]} (${Math.round(100 * d.value / tot)}% of the conversation)<br><em>Click to drill down into this topic</em>`);
       })
       .on('mouseleave', esconde);
 
@@ -378,7 +378,7 @@ function treemap() {
       .attr('text-anchor', 'end')
       .attr('font-size', 11).attr('font-weight', 600)
       .attr('fill', cor('--ink2')).style('opacity', 0.75)
-      .text('detalhar →')
+      .text('drill down →')
       .style('cursor', 'pointer')
       .on('click', (ev, d) => { temaTree = d.data.g; treemap(); });
 
@@ -396,7 +396,7 @@ function treemap() {
       .on('mousemove', (ev, d) => {
         const pctDoTema = d.data.totalTema ? Math.round(100 * d.value / d.data.totalTema) : 0;
         const pctTotal = Math.round(100 * d.value / tot);
-        mostra(ev, `<b>${esc(d.data.name)}</b> em <i>${esc(G[d.data.g] || d.data.g)}</i><br><b>${c(d.value)}</b> ${NOME[M] === 'alcance' ? 'views' : NOME[M]}<br>${pctDoTema}% deste tema · ${pctTotal}% do total<br><em>Clique para detalhar o tema</em>`);
+        mostra(ev, `<b>${esc(d.data.name)}</b> in <i>${esc(G[d.data.g] || d.data.g)}</i><br><b>${c(d.value)}</b> ${NOME[M] === 'reach' ? 'views' : NOME[M]}<br>${pctDoTema}% of this topic · ${pctTotal}% of total<br><em>Click to drill down into this topic</em>`);
       })
       .on('mouseleave', esconde);
 
@@ -454,7 +454,7 @@ function sankey() {
   const corNo = d => d.nivel === 0 ? cor('--ink2') : d.nivel === 1 ? corTema(d.id.slice(2)) : corCl(d.nome);
   svg.append('g').attr('fill', 'none').selectAll('path').data(links).join('path').attr('d', d3.sankeyLinkHorizontal())
     .attr('stroke', d => corNo(d.source.nivel === 0 ? d.target : d.source)).attr('stroke-opacity', .35).attr('stroke-width', d => Math.max(1, d.width))
-    .on('mousemove', (ev, d) => mostra(ev, `${esc(d.source.nome)} → ${esc(d.target.nome)}<br>${c(d.value)} ${NOME[M] === 'alcance' ? 'views' : NOME[M]}`)).on('mouseleave', esconde);
+    .on('mousemove', (ev, d) => mostra(ev, `${esc(d.source.nome)} → ${esc(d.target.nome)}<br>${c(d.value)} ${NOME[M] === 'reach' ? 'views' : NOME[M]}`)).on('mouseleave', esconde);
   svg.append('g').selectAll('rect').data(nodes).join('rect').attr('x', d => d.x0).attr('y', d => d.y0).attr('width', d => d.x1 - d.x0).attr('height', d => Math.max(1, d.y1 - d.y0)).attr('fill', corNo);
   svg.append('g').selectAll('text').data(nodes).join('text')
     .attr('x', d => d.x0 < W / 2 ? d.x1 + 6 : d.x0 - 6).attr('y', d => (d.y0 + d.y1) / 2).attr('dy', '0.35em')
@@ -477,16 +477,16 @@ function sunburst() {
     .attr('fill-opacity', d => d.depth === 3 ? .7 : .95)
     .on('mousemove', (ev, d) => {
       const cam = d.ancestors().reverse().slice(1).map(a => a.depth === 3 ? (G[a.data.name] || a.data.name) : a.data.name).join(' → ');
-      mostra(ev, `<b>${esc(cam)}</b><br>${c(d.value)} · ${Math.round(100 * d.value / tot)}% do total`);
-      $('#sun-det').innerHTML = `<b>${esc(cam)}</b><br>${c(d.value)} ${NOME[M] === 'alcance' ? 'views' : NOME[M]}, ${Math.round(100 * d.value / tot)}% do total`;
+      mostra(ev, `<b>${esc(cam)}</b><br>${c(d.value)} · ${Math.round(100 * d.value / tot)}% of total`);
+      $('#sun-det').innerHTML = `<b>${esc(cam)}</b><br>${c(d.value)} ${NOME[M] === 'reach' ? 'views' : NOME[M]}, ${Math.round(100 * d.value / tot)}% of total`;
     }).on('mouseleave', esconde);
   svg.append('text').attr('text-anchor', 'middle').attr('dy', -4).attr('font-size', 26).attr('font-weight', 800).attr('fill', cor('--ink')).attr('font-family', 'Saira Condensed, sans-serif').text(c(tot));
-  svg.append('text').attr('text-anchor', 'middle').attr('dy', 16).attr('font-size', 12).attr('fill', cor('--muted')).text(NOME[M] === 'alcance' ? 'views' : NOME[M]);
+  svg.append('text').attr('text-anchor', 'middle').attr('dy', 16).attr('font-size', 12).attr('fill', cor('--muted')).text(NOME[M] === 'reach' ? 'views' : NOME[M]);
 }
 
 function tudo() {
   document.querySelectorAll('#medida button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === M));
-  grafo(); treemap();
+  foco(); orgs(); famosos(); porTema(); grafo(); treemap(); sankey(); sunburst();
 }
 let eraMovel = movel();
 addEventListener('resize', () => { if (movel() !== eraMovel) { eraMovel = movel(); tudo(); } });
