@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Metodologia do Radar</title>
+<meta name="description" content="Como os dados sobre superdotação nas redes e na imprensa foram coletados, filtrados, classificados e medidos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110d; --surface:#0f1d16; --surface2:#152a20; --line:#1f3a2b;
+  --ink:#e8f3ec; --ink2:#b5cbbd; --muted:#7f9a8a; --cinza:#3b5246;
+  --accent:#34d399; --spark:#c4f25a; --neg:#f2a35e;
+  --head:"Saira Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f3f7f2; --surface:#ffffff; --surface2:#eaf2ec; --line:#d3e3d8;
+  --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69; --cinza:#c3d3c8;
+  --accent:#0f8a5f; --spark:#4f7d00; --neg:#c2631a; color-scheme:light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f7f2; --surface:#ffffff; --surface2:#eaf2ec; --line:#d3e3d8;
+    --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69; --cinza:#c3d3c8;
+    --accent:#0f8a5f; --spark:#4f7d00; --neg:#c2631a; color-scheme:light;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--head);text-transform:uppercase;line-height:1.05}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.marca{font:800 18px var(--head);text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+.marca b{color:var(--accent)}
+.nav{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--ink2);font:600 14px var(--body);white-space:nowrap;text-decoration:none}
+.nav a.on{color:var(--accent)}
+header.abre{padding:64px 0 36px;border-bottom:1px solid var(--line)}
+.chapeu{font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header h1{font-size:clamp(38px,6vw,68px);margin:10px 0 16px;max-width:18ch}
+header p{max-width:66ch;color:var(--ink2);font-size:19px}
+.aviso{margin:28px 0 0;padding:18px 22px;border-left:4px solid var(--spark);background:var(--surface);max-width:820px}
+.aviso b{color:var(--spark)}
+section{padding:56px 0 20px;border-bottom:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
+section>.wrap>p{max-width:72ch;color:var(--ink2);margin-bottom:14px}
+section p b{color:var(--ink)}
+.funil{display:grid;gap:18px;margin-top:20px}
+.fonte{background:var(--surface);border:1px solid var(--line);padding:20px}
+.fonte h3{font-size:24px;color:var(--accent)}
+.fonte .como{font-size:15px;color:var(--ink2);margin:6px 0 14px;max-width:80ch}
+.etapas{display:grid;grid-template-columns:minmax(150px,30%) 1fr;gap:6px 12px;align-items:center;font-size:15px}
+.etapas .l{color:var(--ink2)}
+.etapas .t{display:flex;align-items:center;gap:8px;min-width:0}
+.etapas .t i{display:block;height:18px;background:var(--cinza);min-width:2px}
+.etapas .t i.fim{background:var(--accent)}
+.etapas .t span{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700;white-space:nowrap}
+.etapas .t span small{font-weight:400;color:var(--muted)}
+.fonte .lim{font-size:14px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+.grid2>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);padding:20px}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p,.card li{font-size:15px;color:var(--ink2)}
+.card ul{padding-left:18px}
+.card li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+.tab{overflow-x:auto;background:var(--surface);border:1px solid var(--line);margin-top:16px}
+th{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sim{color:var(--accent);font-weight:700} .nao{color:var(--neg);font-weight:700}
+footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
+/* celular: marca e tema na primeira linha, capítulos numa faixa rolável logo abaixo, alvos de toque de 40px */
+@media (max-width:640px){
+  .top .wrap{height:auto;flex-wrap:wrap;gap:0 10px;padding-top:6px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:44px}
+  .tema-btn{min-height:40px;min-width:40px}
+  .nav{order:3;flex:0 0 calc(100% + 32px);gap:20px;margin:0 -16px;padding:0 16px}
+  .nav a{min-height:40px;display:inline-flex;align-items:center;font-size:15px}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .filtros button,.abas button,.seg button{flex:none;min-height:40px}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="marca" href="index.html">Giftedness <b>Radar</b></a>
+  <nav class="nav"><a href="index.html">Dados</a><a href="historia.html">História</a><a href="index.html#mapa">Mapa de influência</a><a class="on" href="metodologia.html">Metodologia</a></nav>
+</div></div>
+
+<header class="abre"><div class="wrap">
+  <div class="chapeu">Metodologia</div>
+  <h1>O que foi feito, passo a passo</h1>
+  <p>Como os dados foram buscados, filtrados, classificados e medidos, o que eles representam e, com o mesmo cuidado, o que não dá para concluir com eles. Eu explico tudo, em ordem. Um resultado só vale tanto quanto o método que o produziu, e omitir o método seria, francamente, uma falta de educação científica.</p>
+  <div class="aviso"><b>É uma amostra, não um censo.</b> Os números de vídeos e posts não são o total que existe nas redes. São os itens que as buscas devolveram dentro de um limite de rolagem, depois filtrados pelo tema. As redes não oferecem contagem total de conteúdo por assunto, e cada busca mostra só uma parte dos resultados, puxando para o que é recente e popular. Por isso, o volume por ano mede a amostra, e não o tamanho do tema. O que é comparável são as <b>proporções dentro da amostra</b> (temas, posturas, dúvidas) e as <b>métricas dos itens coletados</b> (alcance, curtidas e comentários).</div>
+</div></header>
+
+<section id="funil"><div class="wrap">
+  <h2>Do que foi buscado ao que entrou no site</h2>
+  <p>Para cada fonte, as etapas da coleta, da busca bruta ao que sobrou depois de cada filtro. A barra verde é o que aparece nas análises.</p>
+  <div class="funil" id="funil-lista"></div>
+</div></section>
+
+<section id="medidas"><div class="wrap">
+  <h2>Como medimos alcance, curtidas e comentários</h2>
+  <p>Cada rede mostra números diferentes. Uma regra que seguimos à risca: não se somam grandezas de natureza diferente. Visualizações e seguidores ficam separados.</p>
+  <div class="tab"><table id="tab-medidas"></table></div>
+  <div class="grid2">
+    <div class="card"><h3>Alcance</h3><p>Visualizações informadas pelo YouTube e pelo TikTok no dia da coleta. São um retrato daquele dia: vídeos antigos acumulam mais. O Instagram não mostra visualizações nas páginas coletadas; ali usamos a <b>audiência potencial</b>, a soma dos seguidores dos perfis que postaram sobre o tema. Seguidor não é visualização, por isso esse número nunca é somado às views.</p></div>
+    <div class="card"><h3>Curtidas e comentários</h3><p>No YouTube e no TikTok, são os números exibidos pela rede. No Instagram, curtidas exibidas no post (algumas páginas escondem esse número) e comentários efetivamente coletados, que podem ser menos que o total. No X, a coleta trouxe curtidas, respostas e repostagens zeradas em todos os 427 posts, o que indica falha na leitura da página, já que é improvável que 427 posts tenham exatamente zero interações. Por isso o X aparece só em volume e em respostas coletadas.</p></div>
+  </div>
+</div></section>
+
+<section id="filtro"><div class="wrap">
+  <h2>Filtro de tema</h2>
+  <p>Parte das coletas foi feita por perfil (todos os vídeos recentes de um criador) e trouxe conteúdo de outros assuntos. Por isso, um post do Instagram, do TikTok ou do X só entra nas análises se o texto da legenda, do post ou a fala transcrita tiver pelo menos um destes termos: <b>superdotação, superdotado, altas habilidades, AH/SD, QI, IQ, Mensa, gifted, superinteligente, gênio, prodígio, neurodivergência, dupla excepcionalidade ou inteligência</b>. Os vídeos do YouTube já tinham passado por limpeza manual de ruído (por exemplo, o pastor Mensa Otabil e o rapper Vic Mensa).</p>
+  <p>Todo filtro erra para algum lado, e este erra nos dois. É permissivo, porque "inteligência" e "gênio" trazem alguns conteúdos que tocam o tema só de passagem. E é restritivo, porque deixa de fora quem fala do assunto sem usar nenhum desses termos.</p>
+</div></section>
+
+<section id="classificacao"><div class="wrap">
+  <h2>Classificação com a nossa IA</h2>
+  <p>A nossa IA é um modelo de classificação. Ela recebe um texto e escolhe uma opção de uma lista fechada, informando também a própria confiança na escolha. Não escreve, não opina e não inventa categorias.</p>
+  <div class="grid2">
+    <div class="card"><h3>Temas</h3><ul>
+      <li>13 temas, os mesmos para comentários, vídeos e reportagens.</li>
+      <li>Todos os 80.809 comentários do YouTube: 65.265 pela nossa IA e 15.544 sem palavras (só emojis, marcações) mandados para "outro".</li>
+      <li>353 vídeos (título, canal e descrição) e 1.264 reportagens (título e texto).</li>
+      <li>As definições de cada tema foram escritas a partir de amostras e estão no codebook do projeto.</li>
+    </ul></div>
+    <div class="card"><h3>Postura sobre a Mensa</h3><ul>
+      <li>Só para itens que citam a Mensa pelo nome.</li>
+      <li>1.461 comentários, 143 vídeos e 408 reportagens.</li>
+      <li>Três opções: apoiador, neutro e detrator.</li>
+    </ul></div>
+    <div class="card"><h3>Dúvidas e angústias</h3><ul>
+      <li>Candidatos: comentários de 2021 a 2026 com pergunta ou palavras de sofrimento (5.248 no YouTube, 1.499 no Instagram).</li>
+      <li>Amostra de 1.000 do YouTube e 500 do Instagram: metade os mais curtidos, metade sorteada.</li>
+      <li>Dez categorias mais "nenhuma"; 1.498 classificados, 605 com dúvida ou angústia.</li>
+      <li>Nos exemplos do site, só rótulos com confiança de 0,7 ou mais.</li>
+    </ul></div>
+    <div class="card"><h3>Validação</h3><p>Nenhuma das classificações foi comparada com rótulos feitos por pessoas. Há uma amostra de 275 itens preparada para essa revisão. Até lá, os percentuais mostram como a nossa IA distribuiu os itens, não a taxa de acerto. A distinção é importante, e preferimos deixá-la explícita a fingir uma precisão que ainda não medimos.</p></div>
+  </div>
+</div></section>
+
+<section id="agrupamentos"><div class="wrap">
+  <h2>Vocabulário, clusters e parceiros</h2>
+  <div class="grid2">
+    <div class="card"><h3>Grupos de vocabulário</h3><p>Onze listas de palavras (Mensa; QI e testes; TDAH, autismo e saúde mental; diagnóstico; escola; leis; infância e família; humor e quiz; gênio e prodígio; elitismo; descoberta adulta). Um conteúdo "toca" o assunto se tiver uma palavra da lista. É a mesma régua para redes, veículos e criadores.</p></div>
+    <div class="card"><h3>Clusters de criadores</h3><p>Criadores com 3 ou mais conteúdos sobre o tema. Para cada um, a fração dos conteúdos que toca cada grupo de vocabulário. Agrupamento por k-médias em 6 grupos, com 25 inícios aleatórios. Os nomes dos grupos são leitura nossa dos traços que mais os distinguem da média.</p></div>
+    <div class="card"><h3>Parceiros possíveis</h3><p>Criadores com 3 ou mais conteúdos e pelo menos 50 mil de alcance (views ou seguidores). Notas de 1 a 5 por quintil em três critérios: alcance; afinidade de pauta (quanto fala de saúde, escola, família, diagnóstico, adultos e leis, menos metade do quanto fala de quiz); e conversa (comentários por conteúdo).</p></div>
+    <div class="card"><h3>Duplas de palavras</h3><p>Pares de palavras vizinhas repetidos nos textos (bigramas), contados uma vez por texto. Saem os pares com palavra vazia (de, que, o...), com números (respostas de quiz), com palavras de menos de três letras e os de texto de interface. O site mostra as 20 duplas mais frequentes de cada recorte, desde que apareçam em pelo menos 3 textos.</p></div>
+  </div>
+</div></section>
+
+<section id="limites"><div class="wrap">
+  <h2>Limites e cuidados</h2>
+  <div class="tab"><table>
+    <thead><tr><th>Limite</th><th>Efeito</th></tr></thead>
+    <tbody>
+      <tr><td><b>Amostra das buscas</b></td><td>Volumes por ano não medem o tamanho do tema na rede. As buscas favorecem conteúdo recente e popular.</td></tr>
+      <tr><td><b>Coleta em 2026</b></td><td>Instagram e TikTok foram coletados em outubro de 2026, por isso concentram itens de 2025 e 2026.</td></tr>
+      <tr><td><b>Datas dos comentários do YouTube</b></td><td>Vêm como "há N anos" e foram convertidas a partir do dia da coleta. Só o ano é confiável, com margem de um ano.</td></tr>
+      <tr><td><b>Métricas do X</b></td><td>Vieram zeradas, o que é um defeito da coleta, não um fato sobre o X. A rede aparece só em volume e respostas.</td></tr>
+      <tr><td><b>Instagram sem views</b></td><td>O alcance no Instagram é potencial (seguidores), não visualização.</td></tr>
+      <tr><td><b>Classificação sem gabarito</b></td><td>Temas, posturas e dúvidas são da nossa IA, sem validação humana.</td></tr>
+      <tr><td><b>Comentários por vídeo</b></td><td>No YouTube, os comentários vêm de 262 vídeos com comentários disponíveis; vídeos muito comentados podem ter sido coletados em parte.</td></tr>
+      <tr><td><b>Membros da Mensa</b></td><td>Números noticiados pela imprensa, não dados oficiais da entidade.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="privacidade"><div class="wrap">
+  <h2>Privacidade</h2>
+  <p>Autores de comentários do YouTube foram trocados por um código (hash com sal, um código de mão única) e não aparecem no site. Nenhum comentário é mostrado com nome de quem escreveu, e trechos com números, links ou marcações foram excluídos dos exemplos. Só aparecem pelo nome perfis públicos de criadores, veículos e instituições. A tabela que liga códigos a nomes fica fora do site, em pasta restrita.</p>
+</div></section>
+
+<footer><div class="wrap"><p id="rodape"></p></div></footer>
+
+<script src="dados.js"></script>
+<script>
+(() => {
+const D = window.DADOS, N = D.numeros, ME = D.medicao;
+const nf = new Intl.NumberFormat('pt-BR'), n = x => x == null ? '–' : nf.format(Math.round(x));
+const c = x => x >= 1e6 ? (x / 1e6).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' mi' : x >= 1e4 ? Math.round(x / 1e3) + ' mil' : n(x);
+try { const t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+
+const FONTES = [
+  {nome: 'YouTube', como: '15 buscas pelos termos do tema ("altas habilidades", "superdotação", "superdotado" e "Mensa" combinada com QI, inteligência e elitista), até 100 resultados cada. Limpeza manual de ruído. Métricas e comentários coletados depois, vídeo a vídeo.',
+   etapas: [['Vídeos devolvidos pelas buscas', 1139], ['Sobre o tema, após limpeza', 363], ['Com métricas coletadas', N.videos_youtube], ['Com comentários disponíveis', 262]],
+   extra: `${n(N.comentarios_youtube)} comentários coletados desses 262 vídeos.`},
+  {nome: 'TikTok', como: 'Busca por 7 termos (superdotação, superdotado, altas habilidades, Mensa Brasil, dupla excepcionalidade, teste de QI, alto QI), até 15 rolagens cada, mais a varredura de 20 perfis de criadores do tema. Áudio transcrito pelo Whisper.',
+   etapas: [['Links de vídeo encontrados', 2267], ['Vídeos com metadados lidos', N.tt_videos], ['Sobre o tema (filtro de termos)', N.tt_videos_tema]],
+   extra: 'Muitos vídeos das varreduras por perfil tratavam de outros assuntos e saíram no filtro.'},
+  {nome: 'Instagram', como: '46 hashtags, 66 palavras-chave e 74 perfis-semente. As páginas de hashtag e de perfil foram roladas e os links de posts e reels guardados. Reels transcritos pelo Whisper.',
+   etapas: [['Perfis descobertos', 1697], ['Links de posts e reels', 1647], ['Posts lidos', N.ig_posts], ['Sobre o tema (filtro de termos)', N.ig_posts_tema]],
+   extra: `${n(N.ig_perfis)} perfis visitados com seguidores e categoria; ${n(N.ig_comentarios)} comentários coletados.`},
+  {nome: 'X', como: 'Busca por termos em tempo real (até 25 rolagens) e busca por ano e termo com filtros de data (até 10 rolagens), mais perfis do tema. Respostas coletadas nos posts principais.',
+   etapas: [['Links de posts encontrados', 579], ['Posts lidos', N.x_tweets], ['Sobre o tema (filtro de termos)', N.x_tweets_tema]],
+   extra: `${n(N.x_respostas)} respostas coletadas. Métricas vieram zeradas.`},
+  {nome: 'Imprensa', como: 'Google Notícias por RSS, busca semanal por 4 combinações de termos de 2020 a 2026; leitura do texto completo das matérias abertas; 20 revistas nacionais; e 11 buscas no DuckDuckGo Notícias com leitura limpa das páginas.',
+   etapas: [['Linhas do Google Notícias', 5415], ['Manchetes únicas', N.manchetes], ['Textos lidos (portais e revistas)', 1938], ['Reportagens sobre o tema, classificadas', N.reportagens_classificadas]],
+   extra: `Revistas: 953 links, 895 textos lidos, ${n(N.revistas_artigos)} com o tema. DuckDuckGo: ${n(N.ddg_reportagens)} reportagens.`},
+];
+document.getElementById('funil-lista').innerHTML = FONTES.map(f => {
+  const mx = Math.max(...f.etapas.map(e => e[1]));
+  return `<div class="fonte"><h3>${f.nome}</h3><p class="como">${f.como}</p><div class="etapas">` +
+    f.etapas.map(([l, v], i) => `<div class="l">${l}</div><div class="t"><i class="${i === f.etapas.length - 1 ? 'fim' : ''}" style="width:${Math.max(.5, 70 * v / mx)}%"></i><span>${n(v)}${i ? ` <small>(${Math.round(100 * v / f.etapas[0][1])}% da 1ª etapa)</small>` : ''}</span></div>`).join('') +
+    `</div><p class="lim">${f.extra}</p></div>`;
+}).join('');
+
+const S = '<span class="sim">sim</span>', X = '<span class="nao">não</span>';
+document.getElementById('tab-medidas').innerHTML = `<thead><tr><th>Fonte</th><th>Visualizações</th><th>Curtidas</th><th>Comentários</th><th>O que usamos como alcance</th></tr></thead><tbody>
+<tr><td><b>YouTube</b></td><td>${S} ${c(ME.YouTube.views)}</td><td>${S} ${c(ME.YouTube.likes)}</td><td>${S} ${c(ME.YouTube.coments)} exibidos</td><td>Visualizações</td></tr>
+<tr><td><b>TikTok</b></td><td>${S} ${c(ME.TikTok.views)}</td><td>${S} ${c(ME.TikTok.likes)}</td><td>${S} ${c(ME.TikTok.coments)} exibidos</td><td>Visualizações</td></tr>
+<tr><td><b>Instagram</b></td><td>${X}</td><td>${S} ${c(ME.Instagram.likes)}</td><td>${S} ${c(ME.Instagram.coments)} coletados</td><td>Seguidores dos perfis: ${c(ME.Instagram.seguidores)} (audiência potencial)</td></tr>
+<tr><td><b>X</b></td><td>${X}</td><td>${X} vieram zeradas</td><td>${n(ME.X.coments)} respostas coletadas</td><td>Sem medida</td></tr>
+<tr><td><b>Imprensa</b></td><td>${X}</td><td>${X}</td><td>${X}</td><td>Sem medida; contamos reportagens</td></tr></tbody>`;
+document.getElementById('rodape').textContent = `Dados coletados até 27/10/2026. Números desta página gerados em ${D.gerado_em} a partir da pasta "banco de dados" do projeto.`;
+})();
+</script>
+</body>
+</html>

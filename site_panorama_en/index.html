@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giftedness Radar · Media and Social Networks in Brazil (2021–2026)</title>
+<meta name="description" content="An empirical data investigation into what mainstream press and social media say about high abilities and giftedness in Brazil from 2021 to 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Paleta: verdes de laboratório e de circuito. Esmeralda para o dado principal,
+   menta para o secundário, limão só para o número que precisa saltar. */
+:root{
+  --bg:#08110d; --bg2:#0d1a14; --surface:#112219; --surface2:#163024; --line:#21402f;
+  --ink:#e8f3ec; --ink2:#b5cbbd; --muted:#7f9a8a;
+  --accent:#34d399; --accent2:#2dd4bf; --spark:#c4f25a; --deep:#0f6b4a;
+  --neg:#f2a35e; --neu:#8fa89a; --pos:#34d399;
+  --glow:rgba(52,211,153,.14);
+  --head:"Saira Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f3f7f2; --bg2:#e8f0e9; --surface:#ffffff; --surface2:#eef5ef; --line:#cfe0d4;
+  --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69;
+  --accent:#0f8a5f; --accent2:#0d8f86; --spark:#5c8a00; --deep:#0b5c40;
+  --neg:#c2631a; --neu:#6f8a7c; --pos:#0f8a5f;
+  --glow:rgba(15,138,95,.10);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f7f2; --bg2:#e8f0e9; --surface:#ffffff; --surface2:#eef5ef; --line:#cfe0d4;
+    --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69;
+    --accent:#0f8a5f; --accent2:#0d8f86; --spark:#5c8a00; --deep:#0b5c40;
+    --neg:#c2631a; --neu:#6f8a7c; --pos:#0f8a5f;
+    --glow:rgba(15,138,95,.10);
+    color-scheme:light;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--head);text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* topo */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+.marca{font:800 19px/1 var(--head);text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+.marca b{color:var(--accent)}
+.nav{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--ink2);font:600 14px var(--body);white-space:nowrap}
+.nav a:hover{color:var(--accent);text-decoration:none}
+.tema-btn{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:5px 12px;font:600 13px var(--body);cursor:pointer;white-space:nowrap}
+
+/* abertura */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.45}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;opacity:.5}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 25%,color-mix(in srgb,var(--bg) 40%,transparent) 70%,transparent);pointer-events:none}
+.hero .wrap{z-index:1}
+.banner{margin:24px 0 8px;aspect-ratio:3/1;max-width:100%;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .wrap{position:relative;padding-top:64px;padding-bottom:40px}
+.selo{display:inline-block;font:700 13px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{font-size:clamp(40px,7vw,84px);max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--spark)}
+.hero p.lead{max-width:62ch;margin-top:22px;font-size:19px;color:var(--ink2)}
+.faixa{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.faixa div{background:var(--surface);padding:18px 18px 16px}
+.faixa b{display:block;font:800 clamp(30px,4vw,44px)/1 var(--head);color:var(--accent)}
+.faixa span{font-size:14px;color:var(--ink2);display:block}
+.faixa small{display:block;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+.faixa div:nth-child(1) b{color:var(--spark)}
+@media (max-width:760px){.faixa{grid-template-columns:repeat(2,1fr)}}
+.carimbo{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* capítulos */
+section.cap{padding:72px 0 24px;border-bottom:1px solid var(--line)}
+.cap-num{font:800 15px var(--head);color:var(--accent);letter-spacing:.08em}
+.cap h2{font-size:clamp(32px,4.6vw,52px);margin:6px 0 12px;max-width:22ch}
+.cap .sub{max-width:68ch;color:var(--ink2);font-size:18px}
+.rotulo{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.rotulo:after{content:"";flex:1;height:1px;background:var(--line)}
+.lead-box{margin:26px 0;padding:18px 22px;border-left:4px solid var(--accent);background:var(--surface);font:700 clamp(19px,2.4vw,24px)/1.25 var(--head);text-transform:uppercase}
+.lead-box span{color:var(--spark)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.grid2>*,.grid3>*,.redes>*,.vozes>*,.duv>*,.foco>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);padding:20px}
+.card h3{font-size:24px;margin-bottom:6px}
+.card h4{font-size:18px;margin-bottom:10px;color:var(--ink2)}
+.nota{font-size:14px;color:var(--muted);margin-top:10px}
+.leitura{max-width:72ch;margin:18px 0;color:var(--ink2)}
+.leitura b{color:var(--ink)}
+
+/* Resumo Executivo */
+.resumo-box{margin:36px 0 10px;padding:26px;border:1px solid var(--line);background:var(--surface);border-left:5px solid var(--accent)}
+.resumo-box h3{font-size:26px;color:var(--spark);margin-bottom:10px;letter-spacing:.04em}
+.resumo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+@media (max-width:850px){.resumo-grid{grid-template-columns:1fr}}
+.resumo-card{background:var(--surface2);padding:16px;border:1px solid var(--line)}
+.resumo-card h4{font-size:18px;color:var(--accent);margin-bottom:6px}
+.resumo-card p{font-size:15px;color:var(--ink2);line-height:1.5}
+
+/* Sobre o autor */
+.autor-card{display:grid;grid-template-columns:160px 1fr;gap:26px;align-items:start;background:var(--surface);border:1px solid var(--line);padding:26px;margin-top:20px}
+@media (max-width:760px){.autor-card{grid-template-columns:1fr;text-align:center}}
+.autor-foto{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin:0 auto;display:block}
+.autor-info h3{font-size:28px;color:var(--ink);margin-bottom:4px}
+.autor-info .cargo{font:700 14px var(--head);color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.autor-info p{color:var(--ink2);font-size:15px;line-height:1.6;margin-bottom:10px}
+.autor-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.autor-links a{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--surface2);border:1px solid var(--line);color:var(--ink);font:700 13px var(--body);border-radius:4px}
+.autor-links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* Responsividade Mobile Otimizada */
+@media (max-width:640px){
+  .top .wrap{padding:0 12px;gap:10px}
+  .marca{font-size:17px}
+  .nav{gap:10px}
+  .nav a{font-size:13px;padding:4px 0}
+  .hero .wrap{padding-top:36px;padding-bottom:24px}
+  .hero h1{font-size:34px;line-height:1.05}
+  .hero p.lead{font-size:16px;margin-top:14px}
+  .faixa{grid-template-columns:1fr;gap:8px;margin-top:24px}
+  .faixa div{padding:14px}
+  .faixa b{font-size:32px}
+  .resumo-box{padding:18px;margin:24px 0 6px}
+  .resumo-box h3{font-size:22px}
+  .resumo-card{padding:14px}
+  section.cap{padding:48px 0 20px}
+  .cap h2{font-size:28px}
+  .cap .sub{font-size:16px}
+  .fichas{grid-template-columns:repeat(2,1fr);gap:8px}
+  .ficha{padding:12px 8px}
+  .fn{font-size:13px}
+  .fp{font-size:11px}
+  .filtros{gap:4px}
+  .filtros button{padding:5px 8px;font-size:12px}
+  .seg{width:100%;display:flex}
+  .seg button{flex:1;text-align:center;padding:7px 6px;font-size:12px}
+  .autor-card{padding:18px}
+  .autor-foto{width:120px;height:120px}
+  .autor-info h3{font-size:24px}
+  .autor-links{flex-direction:column}
+  .autor-links a{justify-content:center;width:100%}
+}
+
+/* apresentação em vídeo: 16:9 no computador, 9:16 no celular */
+.video-abertura{margin:28px 0 8px;max-width:960px}
+.video-abertura video{width:100%;display:block;border-radius:8px;background:#121212}
+.video-abertura .so-celular{display:none;width:auto;max-width:100%;max-height:78vh;margin:0 auto}
+.video-abertura .so-celular-link{display:none}
+.video-abertura figcaption{font-size:14px;color:var(--ink2);margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.baixar-video{font-weight:700;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}
+.baixar-video::before{content:"↓ ";}
+.baixar-video:hover{text-decoration:none;opacity:.85}
+@media (max-width:760px){
+  .video-abertura .so-desk,.video-abertura .so-desk-link{display:none}
+  .video-abertura .so-celular,.video-abertura .so-celular-link{display:block}
+  .video-abertura .so-celular-link{display:inline-block}
+  .video-abertura{max-width:none}
+}
+/* celular: menu recolhido, alvos de toque de 44px, gráficos e cards no tamanho do polegar */
+.menu-btn{display:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;min-height:40px;padding:0 14px;font:700 14px var(--body);cursor:pointer;white-space:nowrap}
+@media (max-width:760px){
+  .top .wrap{height:56px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .menu-btn{display:inline-flex;align-items:center;gap:6px}
+  .tema-btn{min-height:40px;padding:0 12px}
+  .nav{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:calc(100dvh - 56px);overflow-y:auto;padding:6px 16px 14px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+  .top.aberto .nav{display:flex}
+  .nav a{font-size:17px;padding:0;min-height:48px;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+  .nav a:last-child{border-bottom:0}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero-img{opacity:.28}
+  .hero:after{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 55%,transparent),var(--bg) 70%)}
+  .selo{font-size:12px;margin-bottom:12px}
+  .lead-box{padding:14px 16px}
+  .card{padding:16px}
+  .rotulo{letter-spacing:.1em}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px 4px;-webkit-overflow-scrolling:touch}
+  .filtros::-webkit-scrollbar,.abas::-webkit-scrollbar{display:none}
+  .filtros button,.abas button{flex:none;min-height:40px;padding:0 14px;font-size:14px;white-space:nowrap}
+  .seg button{min-height:44px;font-size:14px}
+  .fontes-v{gap:8px}
+  .fcard{padding:16px 8px 12px}
+  .fcard h3{font-size:22px}
+  .fitens b{font-size:32px}
+  .bol b{font-size:14px} .bol span{font-size:10px}
+  .dom{grid-template-columns:1fr;gap:4px;margin:12px 0}
+  .dom>span{font-size:15px}
+  .sm{grid-template-columns:78px repeat(6,minmax(0,1fr));font-size:12px}
+  .sm .lab{font-size:12px;line-height:1.2}
+  .ano-img span{font-size:44px}
+  .cong-top>div:first-child b{font-size:56px}
+  .cong-pautas{grid-template-columns:1fr}
+  .multiplos{gap:8px}
+  .mult{padding:10px 10px 8px}
+  .mult h4{font-size:15px}
+  .mult-cab span{display:none}
+  .mult-d b{font-size:17px}
+  .chip-t b{font-size:30px}
+  .fichas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ft.g{width:64px;height:64px}
+  .cl h3{font-size:22px}
+  .cl-img{margin:-16px -16px 4px}
+  .mini{grid-template-columns:96px 1fr 34px}
+  .foco>div{padding:18px}
+  .foco .k b{font-size:26px}
+  .nuvem{padding:14px;gap:4px 10px}
+  .duv .pct{font-size:40px}
+  .duv h3,.cl h3{font-size:22px}
+  .fato b{font-size:36px}
+  .vid .info{padding:12px 14px}
+  .rede h3{font-size:26px}
+  .graf{margin:0 -8px}
+  .dica{max-width:calc(100vw - 24px)}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .btn-mapa{display:block;text-align:center}
+  .vid .info .met a.abrir{display:inline-flex;align-items:center;min-height:36px;padding:0 4px}
+  blockquote small a{display:inline-block;padding:6px 0}
+  footer{padding:36px 0 48px}
+}
+
+/* tabelas */
+.tabela{width:100%;overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .barra{height:8px;background:var(--accent);border-radius:1px;min-width:2px}
+td .barra.b2{background:var(--accent2)} td .barra.b3{background:var(--spark)}
+.cel{display:flex;align-items:center;gap:8px}
+.cel .barra{flex:none}
+.heat td.h{text-align:center;font-variant-numeric:tabular-nums;font-size:14px}
+
+/* barras horizontais */
+.hb{display:grid;grid-template-columns:minmax(120px,38%) 1fr auto;gap:6px 12px;align-items:center;font-size:15px}
+.hb .tr{height:12px;background:var(--surface2);position:relative}
+.hb .tr i{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.hb .v{font-variant-numeric:tabular-nums;color:var(--ink2);text-align:right;min-width:52px}
+
+/* pequenos múltiplos anuais */
+.sm{display:grid;grid-template-columns:minmax(150px,30%) repeat(6,1fr);gap:4px 8px;align-items:end;font-size:14px}
+.sm .h{font:700 12px var(--body);color:var(--muted);text-align:center;letter-spacing:.06em}
+.sm .lab{align-self:center;color:var(--ink2)}
+.sm .col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:58px;border-bottom:1px solid var(--line)}
+.sm .col i{display:block;width:70%;background:var(--accent);min-height:1px}
+.sm .col.max i{background:var(--spark)}
+.sm .col span{font-size:11px;color:var(--muted);margin-bottom:2px;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.sm{grid-template-columns:96px repeat(6,1fr);gap:4px 4px}.sm .col span{font-size:9px}}
+
+/* linha do tempo */
+.atos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.ato{background:var(--surface);padding:20px}
+.ato .ano{font:800 46px/1 var(--head);color:var(--accent)}
+.ato .tit{font:700 19px var(--head);text-transform:uppercase;margin:4px 0 10px;color:var(--ink)}
+.ato ul{list-style:none;font-size:15px;color:var(--ink2)}
+.ato li{padding:6px 0;border-top:1px dashed var(--line)}
+.ato li b{color:var(--ink)}
+@media (max-width:900px){.atos{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.atos{grid-template-columns:1fr}}
+
+/* postura */
+.stack{display:flex;height:26px;overflow:hidden}
+.stack i{display:flex;align-items:center;justify-content:center;font:700 12px var(--body);color:#06120c;font-style:normal;white-space:nowrap;overflow:hidden}
+.legenda{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.legenda span:before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px;background:var(--c)}
+
+/* influenciadores */
+.abas{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 14px}
+.abas button{border:1px solid var(--line);background:var(--surface);color:var(--ink2);padding:7px 14px;font:700 14px var(--body);cursor:pointer}
+.abas button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#04110a}
+.chip{display:inline-block;font:600 12px var(--body);padding:2px 8px;border:1px solid var(--line);color:var(--ink2);margin:2px 4px 2px 0;white-space:nowrap}
+.foco{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border:1px solid var(--accent);background:linear-gradient(135deg,var(--glow),transparent 60%),var(--surface)}
+.foco>div{padding:24px}
+.foco .k{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.foco .k b{display:block;font:800 32px/1 var(--head);color:var(--spark)}
+.foco .k span{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.foco{grid-template-columns:1fr}}
+
+/* clusters */
+.cl{background:var(--surface);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:10px}
+.cl .n{font:800 15px var(--head);color:var(--accent);letter-spacing:.06em}
+.cl h3{font-size:26px}
+.cl .m{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0}
+.cl .m b{display:block;font:800 22px/1 var(--head);color:var(--ink)}
+.cl .m span{font-size:12px;color:var(--muted)}
+.mini{display:grid;grid-template-columns:120px 1fr 38px;gap:3px 8px;align-items:center;font-size:13px;color:var(--ink2)}
+.mini .tr{height:7px;background:var(--surface2);position:relative}
+.mini .tr i{position:absolute;inset:0 auto 0 0;background:var(--accent2)}
+.mini .v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* comentários */
+.nuvem{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:20px;background:var(--surface);border:1px solid var(--line)}
+.nuvem span{font-family:var(--head);font-weight:700;line-height:1.1;color:var(--ink2)}
+.nuvem span.t1{color:var(--spark)} .nuvem span.t2{color:var(--accent)}
+.nuvem sup{font:600 11px var(--body);color:var(--muted);margin-left:3px}
+.vozes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.vozes{grid-template-columns:1fr}}
+.voz h4{font-size:21px;color:var(--accent);margin:0}
+.voz-cab{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.voz-cab .pic{width:42px;height:42px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none}
+.voz-cab .pic svg{width:21px;height:21px;fill:none;stroke:var(--bg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+blockquote small a{color:var(--accent)}
+.voz .def{font-size:14px;color:var(--muted);margin:4px 0 10px}
+blockquote{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:8px 0;font-size:15px;color:var(--ink)}
+blockquote small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+/* redes */
+.redes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:960px){.redes{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.redes{grid-template-columns:1fr}}
+.rede h3{font-size:30px;color:var(--accent);margin:0}
+.rede-cab{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.rede .q{font:700 15px var(--head);text-transform:uppercase;color:var(--spark);margin:2px 0 10px}
+.rede dl{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:14px}
+.rede dt{color:var(--muted)} .rede dd{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+
+/* vídeos */
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.videos{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.videos{grid-template-columns:1fr}}
+.vid{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column}
+.vid .tela{position:relative;aspect-ratio:16/9;background:radial-gradient(circle at 30% 30%,var(--deep),var(--bg2) 70%);cursor:pointer;display:flex;align-items:center;justify-content:center;border:0;width:100%;color:var(--ink)}
+.vid .tela.vert{aspect-ratio:9/13}
+.vid .tela.thumb{background-size:cover;background-position:center}
+.vid .tela.thumb:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,17,10,.85))}
+.vid .tela>*{position:relative}
+.vid .tela .rede-tag,.vid .tela .big{position:absolute}
+.vid .tela iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .play{width:64px;height:64px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px var(--glow)}
+.vid .play:after{content:"";border-left:20px solid #04110a;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.vid .rede-tag{position:absolute;top:10px;left:10px;font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--bg);color:var(--accent);padding:3px 8px}
+.vid .big{position:absolute;bottom:10px;left:12px;font:800 30px/1 var(--head);color:var(--spark)}
+.vid .big small{display:block;font:600 12px var(--body);color:var(--ink2)}
+.vid .info{padding:14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.vid .info b{font:700 18px/1.15 var(--head);text-transform:uppercase}
+.vid .info p{font-size:14px;color:var(--ink2)}
+.vid .info .met{font-size:13px;color:var(--muted);margin-top:auto}
+/* filtros */
+.filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.filtros button{border:1px solid var(--line);background:var(--surface);color:var(--ink2);padding:5px 11px;font:600 13px var(--body);cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#04110a}
+.seta-up{color:var(--spark);font-weight:700} .seta-dn{color:var(--neg);font-weight:700}
+/* dúvidas */
+.duv{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.duv{grid-template-columns:1fr}}
+.duv .card{position:relative;overflow:hidden}
+.duv .pct{font:800 48px/1 var(--head);color:var(--spark)}
+.duv-cab{display:flex;align-items:center;gap:14px}
+.duv-cab .pic{width:52px;height:52px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none}
+.duv-cab .pic svg{width:26px;height:26px;fill:none;stroke:var(--bg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.duv h3{font-size:26px;margin:4px 0}
+.duv .desc{font-size:14px;color:var(--muted);margin-bottom:6px}
+.duv .fundo{position:absolute;left:0;bottom:0;height:4px;background:var(--accent)}
+.fatos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0 8px}
+@media (max-width:900px){.fatos{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fatos{grid-template-columns:1fr}}
+.fato{background:var(--surface);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.fato .ic{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.fato .ic svg{width:22px;height:22px;fill:none;stroke:#04110a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fato b{font:800 42px/1 var(--head);color:var(--spark)}
+.fato span:last-child{font-size:15px;color:var(--ink2)}
+/* síntese visual do panorama */
+.sint{font-size:clamp(24px,3vw,32px);margin:22px 0 14px}
+.fontes-v{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media (max-width:980px){.fontes-v{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){.fontes-v{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fcard{background:var(--surface);border:1px solid var(--line);padding:20px 14px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;min-width:0}
+.fic{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.fcard h3{font-size:26px}
+.fpapel{font:700 14px var(--body);color:var(--spark);margin-top:-6px}
+.fitens{border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%;padding:8px 0}
+.fitens b{display:block;font:800 40px/1 var(--head)}
+.fitens span{font-size:13px;color:var(--muted)}
+.bols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;width:100%;align-items:end}
+.bol{display:flex;flex-direction:column;align-items:center;gap:4px}
+.bol i{display:block;border-radius:50%;box-sizing:border-box;margin-top:auto}
+.bol b{font:700 16px/1 var(--head)} .bol b.mu{font-size:12px;color:var(--muted)}
+.bol span{font-size:11px;color:var(--muted)}
+.dom{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;align-items:center;margin:8px 0}
+.dom>span{font:800 18px var(--head);text-transform:uppercase}
+.dom>div{display:flex;height:32px;overflow:hidden}
+.dom i{display:flex;align-items:center;padding:0 8px;font:700 12px var(--body);color:var(--bg);white-space:nowrap;overflow:hidden}
+/* anos com imagem */
+.atos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;background:none;border:0}
+@media (max-width:900px){.atos{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.atos{grid-template-columns:1fr}}
+.ano-card{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.ano-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.ano-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ano-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(4,17,10,.9))}
+.ano-img span{position:absolute;left:16px;bottom:10px;z-index:1;font:800 54px/1 var(--head);color:#e8f3ec}
+.ano-txt{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px}
+.ano-txt h3{font-size:24px}
+.ano-num{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:10px}
+.ano-num b{font:800 38px/1 var(--head);color:var(--spark);white-space:nowrap}
+.ano-num span{font-size:14px;color:var(--ink2)}
+.ano-txt p{font-size:14px;color:var(--muted)}
+/* Congresso */
+.cong-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:20px 22px;margin-bottom:14px}
+@media (max-width:700px){.cong-top{grid-template-columns:1fr}}
+.cong-top>div:first-child{display:flex;align-items:center;gap:14px}
+.cong-top>div:first-child b{font:800 72px/1 var(--head);color:var(--spark)}
+.cong-top>div:first-child span{max-width:220px;color:var(--ink2)}
+.cong-funil{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.cong-funil i{width:18px;height:18px;background:var(--cinza)}
+.cong-funil i.lei{background:var(--spark)}
+.cong-funil span{flex-basis:100%;margin-top:6px;color:var(--ink2);font-size:15px}
+.cong-pautas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.cong-pautas{grid-template-columns:1fr 1fr}}
+.pauta{background:var(--surface);border:1px solid var(--line);padding:16px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;min-width:0}
+.pic{grid-row:span 2;width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.pic svg{width:22px;height:22px;fill:none;stroke:var(--bg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pauta b{font:800 32px/1 var(--head);color:var(--spark)}
+.pauta h4{grid-column:2;font:800 18px var(--head);text-transform:uppercase;margin-top:-4px}
+.pauta p{grid-column:1/-1;font-size:14px;color:var(--ink2)}
+/* fichas de nomes */
+.fichas{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.ficha{background:var(--surface);border:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;text-decoration:none;color:var(--ink);min-width:0}
+.ficha:hover{border-color:var(--accent);text-decoration:none}
+.ficha.destaque{border-color:var(--spark)}
+.ft{width:44px;height:44px;border-radius:50%;overflow:hidden;background:var(--surface2);border:2px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;font:800 16px var(--head);color:var(--ink);flex:none}
+.ft img{width:100%;height:100%;object-fit:cover}
+.ft.g{width:76px;height:76px;font-size:26px}
+.fn{font:800 17px/1.05 var(--head);text-transform:uppercase;overflow-wrap:anywhere}
+.fp{font-size:12px;color:var(--muted)}
+.fr{display:flex;gap:6px}
+.fm{font:700 13px var(--body);color:var(--spark)}
+/* clusters com ilustração e fotos */
+.cl-img{margin:-20px -20px 4px;aspect-ratio:16/8;overflow:hidden}
+.cl-img img{width:100%;height:100%;object-fit:cover;display:block}
+.avs{display:flex;flex-wrap:wrap;gap:10px}
+.av-m{display:flex;flex-direction:column;align-items:center;gap:3px;width:64px}
+.av-m small{font-size:10px;color:var(--muted);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}
+/* temas em pequenos múltiplos */
+.chips-tema{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 6px}
+@media (max-width:820px){.chips-tema{grid-template-columns:1fr}}
+.chip-t{background:var(--surface);border:1px solid var(--line);padding:16px 18px;display:flex;align-items:center;gap:14px;min-width:0}
+.chip-t .pic{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.chip-t .pic svg{width:24px;height:24px;fill:none;stroke:var(--bg);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.chip-t b{display:block;font:800 36px/1 var(--head)}
+.chip-t span{font-size:15px;color:var(--ink2)}
+.multiplos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:980px){.multiplos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.multiplos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mult{background:var(--surface);border:1px solid var(--line);padding:14px 14px 10px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.mult-cab{display:flex;align-items:center;gap:8px}
+.mult h4{font:800 17px/1.05 var(--head);text-transform:uppercase;margin:0;flex:1;min-width:0}
+.mic{width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none}
+.mic svg{width:16px;height:16px;fill:none;stroke:var(--bg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mult-cab span{font-size:11px;color:var(--muted);white-space:nowrap}
+.mult svg{width:100%;height:auto;display:block}
+.mult-anos{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.mult-d{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-top:1px solid var(--line);padding-top:6px}
+.mult-d b{display:block;font:800 20px/1 var(--head)}
+.mult-d span{font-size:11px;color:var(--muted)}
+.sobe{color:var(--spark)} .desce{color:var(--neg)} .igual{color:var(--ink2)}
+.btn-mapa{display:inline-block;margin-top:10px;background:var(--accent);color:var(--bg);font:800 16px var(--head);text-transform:uppercase;padding:12px 20px;text-decoration:none}
+.btn-mapa:hover{text-decoration:none;filter:brightness(1.1)}
+
+/* mapa de influência, dentro da página principal */
+:root{--c1:#34d399;--c2:#c4f25a;--c3:#2dd4bf;--c4:#86efac;--c5:#a3e635;--c6:#5eead4;--c7:#d9f99d;--cinza:#3b5246}
+:root[data-theme="light"]{--c1:#0f8a5f;--c2:#5c8a00;--c3:#0d8f86;--c4:#2f7d52;--c5:#4d7c0f;--c6:#0f766e;--c7:#65a30d;--cinza:#c3d3c8}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--c1:#0f8a5f;--c2:#5c8a00;--c3:#0d8f86;--c4:#2f7d52;--c5:#4d7c0f;--c6:#0f766e;--c7:#65a30d;--cinza:#c3d3c8}}
+.graf svg{width:100%;height:auto;display:block}
+.seg{display:inline-flex;border:1px solid var(--line);background:var(--surface);margin:8px 0 16px}
+.seg button{border:0;background:transparent;color:var(--ink2);padding:7px 14px;font:700 13px var(--body);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.nota-leigo{font-size:15px;color:var(--ink2);max-width:72ch;margin:4px 0 12px}
+.dica{position:fixed;pointer-events:none;background:var(--surface);border:1px solid var(--line);padding:8px 10px;font-size:13px;color:var(--ink);max-width:260px;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+footer{padding:48px 0 64px;color:var(--muted);font-size:14px}
+footer p{max-width:80ch;margin-bottom:10px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#topo">Giftedness <b>Radar</b></a>
+    <nav class="nav" id="nav" aria-label="Chapters">
+      <a href="#panorama">Overview</a><a href="#linha">2021–2026</a><a href="#temas">Themes</a>
+      <a href="#influenciadores">Influencers</a><a href="#clusters">Clusters</a><a href="#comentarios">Comments</a>
+      <a href="#duvidas">Questions</a><a href="#redes">Platforms</a><a href="#mensa">Mensa</a>
+      <a href="historia.html">Timeline</a><a href="#mapa">Influence Map</a><a href="tabelas.html">Tables</a><a href="metodologia.html">Methodology</a><a href="#autor">About the Author</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">☰ Menu</button>
+    <button class="tema-btn" id="tema-btn" type="button">◐ Theme</button>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <img class="hero-img" src="img/capa.jpg" alt="" aria-hidden="true">
+    <canvas id="rede-neural" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="selo">Media and Social Networks in Brazil · 2021 to 2026</div>
+      <h1>Brazil discovered giftedness. <em>The conversation is still obsessed with IQ.</em></h1>
+      <p class="lead" id="hero-lead"></p>
+      <figure class="video-abertura">
+        <video class="so-desk" controls preload="none" playsinline poster="img/video-16x9.jpg" src="video/radar-superdotacao-16x9.mp4" aria-label="Apresentação do Radar da Superdotação, na horizontal"></video>
+        <video class="so-celular" controls preload="none" playsinline poster="img/video-9x16.jpg" src="video/radar-superdotacao-9x16.mp4" aria-label="Apresentação do Radar da Superdotação, na vertical"></video>
+        <figcaption>Project presentation with voiceover. <a class="baixar-video so-desk-link" href="video/radar-superdotacao-16x9.mp4" download="radar-superdotacao-16x9.mp4">Download 16:9 (1080p)</a><a class="baixar-video so-celular-link" href="video/radar-superdotacao-9x16.mp4" download="radar-superdotacao-9x16.mp4">Download 9:16 (mobile)</a></figcaption>
+      </figure>
+      <div class="faixa" id="faixa"></div>
+      <div class="carimbo" id="carimbo"></div>
+
+      <!-- Resumo Executivo -->
+      <div class="resumo-box">
+        <div class="rotulo" style="margin-top:0">Strategic Synthesis</div>
+        <h3>Executive Summary · What Empirical Data Reveals About Giftedness in Brazil</h3>
+        <p style="font-size:16px;color:var(--ink);max-width:75ch">This observatory compares two empirical sources that are almost never juxtaposed: professional press coverage and spontaneous social media discourse (YouTube, TikTok, Instagram, and X). The subject is the public perception of High Abilities and Giftedness in Brazil from 2021 to 2026. As far as can be empirically verified, no prior study has conducted this cross-analysis at this scale. I observed three principal findings, each thoroughly quantifiable.</p>
+        <div class="resumo-grid">
+          <div class="resumo-card">
+            <h4>1 · Public Interest Surged by 675%</h4>
+            <p>Technically speaking, the topic migrated from academic obscurity into mainstream public dialogue. Annual headlines rose from 53 in 2021 to 411 in 2026. Podcast clips and short-form video across TikTok and Instagram accumulated over 74 million views and 4.4 million likes. That is not a trivial statistical footnote.</p>
+          </div>
+          <div class="resumo-card">
+            <h4>2 · The Narrative Focus Shifted, Measurably</h4>
+            <p>In 2021 and 2022, the media agenda was almost exclusively child prodigies and sensationalized IQ scores. By 2024, the empirical center of gravity shifted toward school distress, dual exceptionality (ADHD and autism), and late adult identification. This is not an impression; the mathematical slope of each thematic category confirms it.</p>
+          </div>
+          <div class="resumo-card">
+            <h4>3 · The Press and the Public Live in Different Realities</h4>
+            <p>While the press predominantly reports academic achievements, awards, and legislative milestones, over 60% of spontaneous public comments express skepticism, defensive humor, or the paralyzing fear of being labeled 'arrogant'. Does this fear possess foundation? In most cases, no. But its measurable existence indicates a severe deficit in public understanding and psychological accommodation. The reassuring news is that this problem possesses a known solution—which is already more than can be said for quantum gravity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cap" id="panorama"><div class="wrap">
+    <div class="cap-num">00 · Overview</div>
+    <h2>Where we looked and what we assembled</h2>
+    <p class="sub">Four platforms and the press, each fulfilling a designated role. Journalism reports facts. YouTube explains and entertains. TikTok and Instagram forge personal identity. Comments reveal what humans actually think about all of this. Each source excels at a single function, as the telemetry indisputably demonstrates.</p>
+    <h3 class="sint">Five Sources, Five Structural Roles</h3>
+    <div class="fontes-v" id="fontes-visual"></div>
+    <div class="rotulo">Who Dominates Each Metric</div>
+    <div id="fontes-dominio"></div>
+    <p class="nota">Methodological note: items represent topical query returns, not aggregate network volume. Proportional circles compare platforms across each dimension. On Instagram, reach reflects follower count (ring), as the platform conceals view telemetry on images. For X and press, like and view counts were unavailable during collection. <a href="tabelas.html#fontes">Inspect tables</a> · <a href="metodologia.html">Methodology</a></p>
+  </div></section>
+
+  <section class="cap" id="linha"><div class="wrap">
+    <div class="cap-num">01 · Chronology</div>
+    <h2>From 2021 to 2026, the topic escaped its niche</h2>
+    <p class="sub">Annual headlines grew nearly eightfold over the observation window (7.75 times, to be mathematically exact). In 2026, three distinct forces propelled the subject to center stage: the federal special education policy law, iconic child ambassadors, and viral algorithms. These are independent variables, and one must never commit the fallacy of conflating their distinct causal effects.</p>
+    <figure class="banner"><img src="img/espetaculo.jpg" alt="Palco de quiz montado sobre uma folha de teste gigante" loading="lazy"></figure>
+    <div class="rotulo">Topical items collected per year by platform (search sample, not platform total)</div>
+    <div class="card"><div class="sm" id="anual"></div>
+      <p class="nota">Methodological caveat: these figures represent search returns validated through topical classification, not exhaustive platform archives. Platform APIs favor recent and viral content; Instagram and TikTok were scraped in 2026. Consequently, they serve to evaluate proportions rather than absolute universe size. The lighter bar marks the peak annual volume per platform. <a href="metodologia.html#funil">See sampling funnels</a>.</p></div>
+    <div class="rotulo">Monthly Press Headlines</div>
+    <div class="card"><svg id="linha-mensal" viewBox="0 0 1000 220" role="img" aria-label="Monthly Press Headlines, 2021 a 2026" style="width:100%;height:auto"></svg></div>
+    <div class="rotulo">Six Years in Six Acts</div>
+    <div class="atos" id="atos"></div>
+    <div class="rotulo">Federal Congress Enters the Arena</div>
+    <div id="congresso"></div>
+    <p class="nota">Chronological facts were reconstructed from the harvested corpus of reports, videos, and social posts. Mensa membership figures originate from press releases, which I cannot independently audit, and I state this with absolute transparency.</p>
+    <div class="rotulo">Videos That Catalyzed the Conversation</div>
+    <p class="leitura">From "genius" logic trivia to a gifted child testifying before the Federal Senate: nine videos that epitomize the longitudinal shift. Click to view. Out of respect for your network connection (and universal bandwidth conservation), each video stream embeds solely upon request.</p>
+    <div class="videos" id="videos"></div>
+  </div></section>
+
+  <section class="cap" id="temas"><div class="wrap">
+    <div class="cap-num">02 · Thematic Landscape</div>
+    <h2>The press discusses schools. The public discusses IQ.</h2>
+    <p class="sub">I applied an identical 13-theme taxonomy across comments, videos, and news reports from 2021 to 2026. This represents the closest approximation to a controlled experiment this subject allows: the same measurement scale across distinct empirical domains. The spatial divergence between columns illustrates the profound gap between published journalism and public rumination.</p>
+    <figure class="banner"><img src="img/espelho.jpg" alt="Pessoa diante de um celular que reflete um cérebro" loading="lazy"></figure>
+    <div class="chips-tema" id="temas-chips"></div>
+    <div class="rotulo">Did it rise or fall? The twelve key themes, 2021 to 2026</div>
+    <div class="legenda" style="margin-bottom:12px"><span style="--c:var(--accent)">% of YouTube comments</span><span style="--c:var(--spark)">% of press reports</span></div>
+    <div class="multiplos" id="multiplos"></div>
+    <p class="nota">How to read: each small-multiple tile features an independent y-axis scale (maximum indicated in the corner) to accentuate directional curvature rather than cross-panel amplitude. Percentage-point shifts compare 2026 against 2021; themes with the greatest delta appear first. YouTube comment dates are annualized approximations. <a href="tabelas.html#temas">View thematic tables →</a></p>
+  </div></section>
+
+  <section class="cap" id="influenciadores"><div class="wrap">
+    <div class="cap-num">03 · Influencers</div>
+    <h2>The voices steering the conversation</h2>
+    <p class="sub">Audience reach, likes, and comments across the most engaging profiles per network. To preserve scientific rigor (and an inaccurate comparison is worse than no comparison at all), we aggregate exclusively on-topic publications released between 2021 and 2026.</p>
+    <div class="abas" id="fichas-abas" aria-label="Filtrar por rede"></div>
+    <div class="fichas" id="fichas"></div>
+    <p class="nota">Profiles demonstrating peak topical engagement, alongside highlighted institutional actors. To observe their topological network ties, consult the <a href="#mapa">influence map</a>.</p>
+    <p class="nota"><a href="tabelas.html#influenciadores">View full tables →</a></p>
+  </div></section>
+
+
+  <section class="cap" id="mapa"><div class="wrap">
+    <div class="cap-num">Influence Map</div>
+    <h2>Who speaks about what, and how loudly</h2>
+    <p class="sub">Two analytical projections illustrating the identical discourse from different dimensional perspectives. Select your metric of choice at the top (reach, likes, or comments) and both models update simultaneously.</p>
+    <div class="seg" id="medida" role="group" aria-label="Metric"><button data-m="views">Reach</button><button data-m="likes">Likes</button><button data-m="coments">Comments</button></div>
+    <div class="rotulo">1 · Who Speaks About What</div>
+    <p class="nota-leigo">How to interpret this diagram: each node represents an individual creator, accompanied by photography, scaled by their aggregate engagement. Color denotes cluster membership. Named circles indicate topical domains. A directional edge connects a creator to a topic whenever at least 1 in every 5 of their publications touches that subject. Feel free to drag the nodes around; this visualization operates via a continuous Newtonian force simulation, which naturally makes it my favorite diagram.</p>
+    <div class="graf"><svg id="g-grafo" viewBox="0 0 1100 720" role="img" aria-label="Grafo de criadores e temas"></svg></div>
+    <div class="legenda" id="leg-cl"></div>
+    <div class="rotulo">2 · Relative Weight of Each Thematic Domain</div>
+    <p class="nota-leigo">Each nested rectangle corresponds to a topic, with its surface area proportional to its overall presence in the conversation. Inside each domain appear the leading contributors. Click any topic below or inside the diagram to isolate its creators.</p>
+    <div class="filtros" id="filtro-tema-tree" role="group" aria-label="Filtrar por tema" style="margin:12px 0 14px"></div>
+    <h3 id="h-tree" class="sint" style="font-size:24px"></h3>
+    <div class="graf"><svg id="g-tree" viewBox="0 0 1100 560" role="img" aria-label="Treemap de temas e criadores"></svg></div>
+    <div class="dica" id="dica" hidden></div>
+  </div></section>
+
+  <section class="cap" id="clusters"><div class="wrap">
+    <div class="cap-num">04 · Creator Clusters</div>
+    <h2>Six ways of talking about giftedness</h2>
+    <p class="sub">I grouped content creators purely based on the vocabulary distribution of their own publications and video transcripts, without observing their identities. The unsupervised algorithm possessed no knowledge of creator names or follower counts. Nonetheless, the emergent clusters exhibit drastically divergent audiences and reach. Hypothesis: divergent vocabularies attract divergent demographics. Hypothesis confirmed, and not by chance.</p>
+    <div class="grid3" id="cl" style="margin-top:22px"></div>
+    <p class="nota" id="cl-nota"></p>
+  </div></section>
+
+  <section class="cap" id="comentarios"><div class="wrap">
+    <div class="cap-num">05 · Public Discourse</div>
+    <h2>Humor, skepticism, and "could I be gifted?"</h2>
+    <p class="sub">The comments partition into three distinct populations: those deflecting via self-deprecating IQ humor, those disputing psychometric validity, and those experiencing sudden self-recognition. Below are the twenty most frequent lexical bigrams and the most upvoted comments per topic, with user identities rigorously anonymized.</p>
+    <figure class="banner"><img src="img/vozes.jpg" alt="Multidão com balões de fala e perguntas" loading="lazy"></figure>
+    <div class="rotulo">Top 20 Most Frequent Adjacent Word Pairs (Bigrams)</div>
+    <div class="filtros" id="filtro-fonte" aria-label="Fonte"></div>
+    <div class="filtros" id="filtro-tri" aria-label="Tema"></div>
+    <div class="filtros" id="filtro-tri-ano" aria-label="Filtrar por ano"></div>
+    <div class="nuvem" id="nuvem" style="min-height:220px"></div>
+    <p class="nota" id="nuvem-nota"></p>
+    <div class="rotulo">Most Upvoted Comments by Thematic Category</div>
+    <div class="vozes" id="vozes"></div>
+    <div class="card" style="margin-top:22px"><h4>Most Liked Comments on Instagram</h4><div id="vozes-ig"></div></div>
+  </div></section>
+
+  <section class="cap" id="duvidas"><div class="wrap">
+    <div class="cap-num">06 · Inquiries & Existential Anguish</div>
+    <h2>"Am I gifted?" and "why have I always felt this way?"</h2>
+    <p class="sub">Beneath the layer of sarcastic remarks lies a demographic experiencing genuine distress. I extracted comments formulating inquiries or describing suffering, utilizing natural language processing to identify their core dilemmas. It is the least humorous segment of the dataset and, by a wide margin, the most socially urgent.</p>
+    <figure class="banner"><img src="img/ponte.jpg" alt="Ponte de luz sendo construída entre dois penhascos" loading="lazy"></figure>
+    <div class="lead-box" id="duv-lead"></div>
+    <div class="card" style="margin-bottom:20px"><h4>Distribution of Core Inquiries</h4><div class="hb" id="duv-barras"></div></div>
+    <div class="duv" id="duv"></div>
+    <p class="nota" id="duv-nota"></p>
+  </div></section>
+
+  <section class="cap" id="redes"><div class="wrap">
+    <div class="cap-num">07 · Platforms & Outlets</div>
+    <h2>Every network narrates a distinct story</h2>
+    <p class="sub">I applied an identical lexical yardstick across all sources, revealing the functional specialty of each channel. Telemetry on reach, likes, and comments indicates where the audience genuinely congregates. A curious finding: X features substantially higher proportional discourse regarding legislation and Mensa than any other network.</p>
+    <div class="redes" id="cards-redes" style="margin-top:22px"></div>
+    <p class="nota"><a href="tabelas.html#redes">View platform vocabulary, outlets, and journals →</a></p>
+  </div></section>
+
+  <section class="cap" id="mensa"><div class="wrap">
+    <div class="cap-num">08 · Mensa & Associations</div>
+    <h2>A round table for the top 2%</h2>
+    <p class="sub">Far more than an arbitrary cut-off score on a standardized psychometric test: why living and dialoguing among intellectual peers constitutes a critical pillar of mental health and social accommodation.</p>
+    <figure class="banner"><img src="img/clube.jpg" alt="Porta redonda iluminada com pessoas do lado de fora" loading="lazy"></figure>
+    
+    <div class="leitura" style="max-width:85ch;margin:24px 0 28px;font-size:16px;line-height:1.7;color:var(--ink)">
+      <p style="margin-bottom:14px"><b>O que é a Mensa e para que ela existe?</b> A Mensa foi fundada em 1946, em Oxford, logo depois da Segunda Guerra Mundial, pelos juristas e pesquisadores Roland Berrill e Lancelot Ware. A proposta era, por qualquer padrão, ambiciosa: reunir pessoas de altíssima capacidade intelectual sem distinção de raça, credo, posição social ou ideologia política, e pôr essa inteligência a serviço da paz e do livre intercâmbio de ideias. Curiosidade etimológica: o nome vem do latim <i>mensa</i> ("mesa"), e a imagem pretendida é a de uma <b>mesa redonda</b>, como a da lenda arturiana, onde ninguém senta na cabeceira, não há hierarquia e todas as vozes têm o mesmo peso.</p>
+      <p style="margin-bottom:14px"><b>Uma conta simples desfaz o mito do elitismo: 2% é muita gente.</b> Na cultura popular e na TV, entrar na Mensa costuma ser retratado como troféu de vaidade ou admissão num clube secreto de semideuses. A aritmética, que não tem opinião, conta outra história. O critério de admissão é pontuar no percentil 98, isto é, entre os 2% superiores, em um teste psicométrico padronizado e supervisionado. Em um país com 215 milhões de habitantes, isso significa que <b>mais de 4,3 milhões de brasileiros são elegíveis</b>. É uma população da ordem da Paraíba inteira, ou da Nova Zelândia, espalhada por todas as classes sociais, profissões e bairros, da periferia ao centro. E a imensa maioria dessas pessoas cresce e envelhece sem jamais receber um diagnóstico formal.</p>
+      <p><b>Por que conviver entre iguais importa.</b> Deixando de lado as estatísticas de QI, a Mensa e as entidades congêneres (como a Febratis e as associações de famílias) atendem a uma necessidade psicológica concreta: a <b>saúde mental da convivência entre pares</b>. Pessoas neurodivergentes com altas habilidades costumam acumular trajetórias com solidão crônica, bullying, incompreensão familiar e uma autocensura cansativa, a de "diminuir o próprio ritmo" para não parecer arrogante. Num ambiente em que a velocidade do pensamento, os hiperfocos, as piadas complexas e a sensibilidade aguçada são compreendidos sem explicação prévia, a convivência deixa de exigir tradução. Isso não é privilégio. É acolhimento terapêutico e, em muitos casos, sobrevivência emocional.</p>
+    </div>
+
+    <div class="fatos">
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18 M5 21V8l7-5 7 5v13 M9 21v-6h6v6"/></svg></span><b>1946</b><span>Founded in Oxford shortly after WWII to deploy intellect in service of peace and free exchange of ideas.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V10 M18 20V4 M6 20v-4"/></svg></span><b>4.3 Million</b><span>The top 2% of Brazil: a demographic the size of an entire nation. The vast majority remains undiagnosed.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M12 2v20 M2 12h20"/></svg></span><b>Round Table</b><span>Mensa denotes "table" in Latin: no head of table, no political, religious, or class stratification.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18 M12 3a15 15 0 0 1 0 18 M12 3a15 15 0 0 0 0 18 M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><b>Among Peers</b><span>A safe cognitive habitat for neurodivergent minds to find empathy, validation, and relief from chronic isolation.</span></div>
+    </div>
+    <div class="rotulo">What Empirical Metrics Indicate About Mensa</div>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card"><h4>Reported Membership Growth</h4><div class="hb" id="membros"></div>
+        <p class="nota" id="membros-nota"></p></div>
+      <div class="card"><h4>Topical Presence Share</h4><div class="hb" id="presenca"></div>
+        <p class="nota">Percentage of items mentioning Mensa per platform (2021–2026 for comments; full dataset for others).</p></div>
+    </div>
+    <div class="rotulo">Sentiment Toward Mensa Among Mentioning Items</div>
+    <div class="card" id="postura"></div>
+    <div class="grid2" style="margin-top:20px">
+      <div class="card"><h4>Top Themes Among Comments Mentioning Mensa</h4><div class="hb" id="mensa-temas"></div></div>
+      <div class="card"><h4>Official Mensa Institutional Reach</h4><div id="mensa-canais"></div><div class="vid" id="video-mensa" style="margin-top:14px"></div></div>
+    </div>
+  </div></section>
+
+  <section class="cap" id="metodo"><div class="wrap">
+    <div class="cap-num">09 · Methodology & Limitations</div>
+    <h2>How this observatory was engineered</h2>
+    <p class="sub">Why monitoring digital networks matters, how we deployed artificial intelligence to transcribe speech and classify discourse, and what this research cannot formally conclude.</p>
+    <div class="grid2" style="margin-top:18px">
+      <div class="leitura">
+        <p><b>Temporal Scope (2021 to 2026).</b> The six-year chronological window captures the historical turning point of giftedness in Brazil: the post-pandemic paradigm, the explosion of neuroscience videocasts, the viralization of online test checklists, and the enactment of the National Special Education Policy.</p>
+        <p><b>Why Monitor Social Media?</b> Traditional press reports prodigies, academic studies, and legislative enactments. However, it is inside comment threads and short-form videos that everyday citizens express themselves without institutional censorship: voicing suspicions of neurodivergence, fear of ostracism, classroom trauma, and late adult diagnosis anxiety.</p>
+        <p><b>Harvested Empirical Dataset.</b> 80,809 YouTube comments, 16,795 Instagram comments, and 1,257 replies on X. 353 long-form YouTube videos and 1,464 TikTok videos (517 strictly on-topic with complete verbatim speech transcription). 1,478 Instagram posts (458 on-topic), 427 X posts, 1,264 investigative news reports, and 210 academic journal articles.</p>
+      </div>
+      <div class="leitura">
+        <p><b>Artificial Intelligence Pipeline.</b> Audio streams from TikTok and YouTube videos were transcribed using OpenAI Whisper. Each item was then classified into 13 transversal thematic categories via natural language processing models. Comments formulating inquiries or personal distress disclosures underwent semantic categorization to map the top 10 existential dilemmas.</p>
+        <p><b>Creator Clustering.</b> I applied unsupervised k-means clustering directly to the vocabulary distribution of each active creator. Without supervision, the mathematical model identified 6 distinct narrative clusters shaping Brazilian discourse.</p>
+        <p><b>Privacy & Research Ethics.</b> All public comment authors were rigorously and permanently anonymized. Only verified public creators, media outlets, and registered institutions are cited by name.</p>
+      </div>
+    </div>
+    <p class="nota" style="margin-top:16px"><a href="metodologia.html">Review the complete technical report and decision tree on the Methodology page →</a></p>
+  </div></section>
+
+  <section class="cap" id="autor"><div class="wrap">
+    <div class="cap-num">About the Author</div>
+    <h2>Data science in the service of clarity</h2>
+    <p class="sub">Meet the researcher behind Giftedness Radar and his initiatives for high-ability workplace inclusion.</p>
+    <div class="autor-card">
+      <img class="autor-foto" src="img/aislan.webp" alt="Foto de Aislan Greca">
+      <div class="autor-info">
+        <h3>Aislan Greca</h3>
+        <div class="cargo">Data Scientist · Public Relations · M.Sc. in Management focusing on NLP & Psychosociology</div>
+        <p>Aislan Greca has worked for over two decades at the intersection of strategic communication, open data intelligence, and cultural transformation. His specialization: converting massive volumes of intricate, heterogeneous data into accessible intelligence, enabling individuals and organizations to make decisions grounded in empirical evidence rather than subjective impressions.</p>
+        <p>Giftedness was identified in his adult life through formal neuropsychological assessment. This provided direct experiential understanding of the systemic challenges faced by high-ability individuals in corporate environments: cognitive asynchrony, leadership incomprehension, and the unjust label of being 'difficult' or 'arrogant'.</p>
+        <p>Recognizing a glaring void in Brazilian corporate discussions, he established and coordinates the LinkedIn community <b>Talentos Ocultos: Superdotação no Ambiente de Trabalho</b> (Hidden Talents: Giftedness in the Workplace). The group brings together gifted professionals, executives, and HR leaders with two declared missions: dismantling harmful stigmas and treating neurodivergence as a powerful collaborative asset.</p>
+        <div class="autor-links">
+          <a href="https://greca.dev.br" target="_blank" rel="noopener">Visit greca.dev.br</a>
+          <a href="https://www.linkedin.com/groups/9505909/" target="_blank" rel="noopener">Talentos Ocultos Community (LinkedIn)</a>
+          <a href="https://www.youtube.com/watch?v=qY3v2_XuqLY" target="_blank" rel="noopener">Watch the presentation on YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap"></div></footer>
+
+<script src="dados.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+<script>
+(function(){
+  var top=document.querySelector('.top'), b=document.getElementById('menu-btn');
+  var fecha=function(){top.classList.remove('aberto');b.setAttribute('aria-expanded','false');b.textContent='☰ Menu';};
+  b.onclick=function(){var ab=top.classList.toggle('aberto');b.setAttribute('aria-expanded',ab);b.textContent=ab?'✕ Fechar':'☰ Menu';};
+  document.getElementById('nav').addEventListener('click',function(e){if(e.target.closest('a'))fecha();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});
+})();
+</script>
+<script src="app.js"></script>
+<script src="mapa.js"></script>
+</body>
+</html>
