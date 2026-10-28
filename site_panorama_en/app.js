@@ -258,22 +258,22 @@ $('#cl-nota').textContent = `Critério: ${D.clusters_base.criadores} criadores c
 
 /* 06 comments */
 const NV = D.nuvem;
-const FONTES_NV = {all: 'All Sources', youtube: 'YouTube Comments', instagram: 'Instagram Comments', tiktok: 'TikTok Speech & Captions', x: 'X Posts & Replies'};
-const temasNv = [['all', 'All Themes']].concat(Object.keys(D.rotulos_tema).filter(k => k !== 'outro').map(k => [k, D.rotulos_tema[k]]));
-const filtroNv = {fonte: 'all', tema: 'all', ano: 'all'};
+const FONTES_NV = {todas: 'All Sources', youtube: 'YouTube Comments', instagram: 'Instagram Comments', tiktok: 'TikTok Speech & Captions', x: 'X Posts & Replies'};
+const temasNv = [['todos', 'All Themes']].concat(Object.keys(D.rotulos_tema).filter(k => k !== 'outro').map(k => [k, D.rotulos_tema[k]]));
+const filtroNv = {fonte: 'todas', tema: 'todos', ano: 'todos'};
 function nuvem() {
   const {fonte, tema, ano} = filtroNv;
-  const L = (fonte === 'youtube' ? NV.youtube[tema + '|' + ano] : NV[fonte][ano]) || [];
+  const L = (fonte === 'youtube' ? (NV.youtube && NV.youtube[tema + '|' + ano]) : (NV[fonte] && NV[fonte][ano])) || [];
   if (L.length < 5) {
     $('#nuvem').innerHTML = `<p class="nota" style="margin:auto">Insufficient textual density exists within this specific cross-section to generate recurring bi-grams. Drawing inferences from miniature samples is an empirical catastrophe that we adamantly avoid. Select another year, theme, or platform.</p>`;
   } else {
     const mx = L[0][1], mn = L[L.length - 1][1];
-    // embaralha de forma estável para a nuvem não virar lista ordenada
+    // embaralha de forma estavel para a nuvem nao virar lista ordenada
     const ord = L.map((x, i) => [x, i]).sort((a, b) => ((a[1] * 37) % 11) - ((b[1] * 37) % 11));
-    $('#nuvem').innerHTML = ord.map(([[t, q], i]) => `<span class="${i < 3 ? 't1' : i < 8 ? 't2' : ''}" style="font-size:${16 + 34 * Math.sqrt((q - mn) / Math.max(1, mx - mn))}px" title="${n(q)} ${fonte === 'tiktok' ? 'vídeos' : fonte === 'todas' ? 'textos' : 'comments'}">${esc(t)}<sup>${n(q)}</sup></span>`).join('');
+    $('#nuvem').innerHTML = ord.map(([[t, q], i]) => `<span class="${i < 3 ? 't1' : i < 8 ? 't2' : ''}" style="font-size:${16 + 34 * Math.sqrt((q - mn) / Math.max(1, mx - mn))}px" title="${n(q)} ${fonte === 'tiktok' ? 'videos' : 'texts'}">${esc(t)}<sup>${n(q)}</sup></span>`).join('');
   }
-  const periodo = ano === 'todos' ? ', 2021 a 2026' : ', ' + ano;
-  $('#nuvem-nota').textContent = `${FONTES_NV[fonte]}${fonte === 'youtube' && tema !== 'todos' ? ', tema "' + D.rotulos_tema[tema] + '"' : ''}${periodo}. As 20 duplas de palavras vizinhas mais frequentes; o número é quantos ${fonte === 'tiktok' ? 'vídeos' : fonte === 'todas' || fonte === 'x' ? 'textos' : 'comments'} usam a dupla. ${fonte === 'tiktok' ? 'O TikTok não teve comments coletados: aqui está o que os criadores dizem. ' : ''}${fonte === 'todas' ? 'Junta comments do YouTube e do Instagram, falas do TikTok e posts e respostas do X. ' : ''}${fonte === 'youtube' ? 'Datas aproximadas por ano. ' : ''}Palavras vazias, números e texto de interface ficaram de fora.`;
+  const periodo = ano === 'todos' ? ', 2021 to 2026' : ', ' + ano;
+  $('#nuvem-nota').textContent = `${FONTES_NV[fonte]}${fonte === 'youtube' && tema !== 'todos' ? ', theme "' + D.rotulos_tema[tema] + '"' : ''}${periodo}. The 20 most frequent adjacent word pairs (bi-grams); the superscript number indicates how many distinct ${fonte === 'tiktok' ? 'videos' : 'texts'} contain the pair. Stop words, punctuation, numerals, and interface artifacts were rigorously purged.`;
   $('#filtro-tri').hidden = fonte !== 'youtube';
   document.querySelectorAll('#filtro-fonte button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === fonte));
   document.querySelectorAll('#filtro-tri button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === tema));
