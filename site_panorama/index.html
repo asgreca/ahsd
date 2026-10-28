@@ -154,6 +154,21 @@ section.cap{padding:72px 0 24px;border-bottom:1px solid var(--line)}
   .autor-links a{justify-content:center;width:100%}
 }
 
+/* apresentação em vídeo: 16:9 no computador, 9:16 no celular */
+.video-abertura{margin:28px 0 8px;max-width:960px}
+.video-abertura video{width:100%;display:block;border-radius:8px;background:#121212}
+.video-abertura .so-celular{display:none;width:auto;max-width:100%;max-height:78vh;margin:0 auto}
+.video-abertura .so-celular-link{display:none}
+.video-abertura figcaption{font-size:14px;color:var(--ink2);margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.baixar-video{font-weight:700;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}
+.baixar-video::before{content:"↓ ";}
+.baixar-video:hover{text-decoration:none;opacity:.85}
+@media (max-width:760px){
+  .video-abertura .so-desk,.video-abertura .so-desk-link{display:none}
+  .video-abertura .so-celular,.video-abertura .so-celular-link{display:block}
+  .video-abertura .so-celular-link{display:inline-block}
+  .video-abertura{max-width:none}
+}
 /* celular: menu recolhido, alvos de toque de 44px, gráficos e cards no tamanho do polegar */
 .menu-btn{display:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;min-height:40px;padding:0 14px;font:700 14px var(--body);cursor:pointer;white-space:nowrap}
 @media (max-width:760px){
@@ -495,6 +510,11 @@ footer p{max-width:80ch;margin-bottom:10px}
       <div class="selo">Mídia e redes sociais no Brasil · 2021 a 2026</div>
       <h1>O Brasil descobriu a superdotação. <em>A conversa ainda é sobre QI.</em></h1>
       <p class="lead" id="hero-lead"></p>
+      <figure class="video-abertura">
+        <video class="so-desk" controls preload="none" playsinline poster="img/video-16x9.jpg" src="video/radar-superdotacao-16x9.mp4" aria-label="Apresentação do Radar da Superdotação, na horizontal"></video>
+        <video class="so-celular" controls preload="none" playsinline poster="img/video-9x16.jpg" src="video/radar-superdotacao-9x16.mp4" aria-label="Apresentação do Radar da Superdotação, na vertical"></video>
+        <figcaption>Apresentação do projeto, com narração. <a class="baixar-video so-desk-link" href="video/radar-superdotacao-16x9.mp4" download="radar-superdotacao-16x9.mp4">Baixar em 16:9 (1080p)</a><a class="baixar-video so-celular-link" href="video/radar-superdotacao-9x16.mp4" download="radar-superdotacao-9x16.mp4">Baixar em 9:16 (celular)</a></figcaption>
+      </figure>
       <div class="faixa" id="faixa"></div>
       <div class="carimbo" id="carimbo"></div>
 
