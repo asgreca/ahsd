@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tabelas do Radar</title>
-<meta name="description" content="O que a mídia e as redes sociais dizem sobre superdotação, altas habilidades e a Mensa no Brasil, de 2021 a 2026.">
+<title>Data Tables — Giftedness Radar</title>
+<meta name="description" content="Complete empirical datasets, matrices, and metrics regarding giftedness, high abilities, and Mensa in Brazil (2021–2026).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -247,71 +247,71 @@ footer p{max-width:80ch;margin-bottom:10px}
 <header class="top">
   <div class="wrap">
     <a class="marca" href="#topo">Giftedness <b>Radar</b></a>
-    <nav class="nav" aria-label="Seções">
-      <a href="index.html">Dados</a><a href="historia.html">História</a><a href="index.html#mapa">Mapa de influência</a><a href="#temas">Temas</a><a href="#influenciadores">Influenciadores</a>
-      <a href="#comentarios">Comentários</a><a href="#redes">Redes e veículos</a><a href="#mensa">Mensa</a><a href="metodologia.html">Metodologia</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="index.html">Overview</a><a href="historia.html">Chronicle</a><a href="index.html#mapa">Influence Map</a><a href="#temas">Themes</a><a href="#influenciadores">Influencers</a>
+      <a href="#comentarios">Comments</a><a href="#redes">Platforms & Media</a><a href="#mensa">Mensa</a><a href="metodologia.html">Methodology</a>
     </nav>
-    <button class="tema-btn" id="tema-btn" type="button">◐ Tema</button>
+    <button class="tema-btn" id="tema-btn" type="button">◐ Theme</button>
   </div>
 </header>
 
 <main>
   <section class="cap" id="abre" style="padding-top:56px"><div class="wrap">
-    <div class="cap-num">Para aprofundar</div>
-    <h2>Todas as tabelas</h2>
-    <p class="sub">Os números completos por trás dos gráficos do site, para quem prefere conferir a conta em vez de confiar no desenho. <a href="index.html">Voltar ao panorama</a>.</p>
+    <div class="cap-num">Empirical Deep Dive</div>
+    <h2>Complete Data Tables</h2>
+    <p class="sub">The comprehensive empirical matrices underlying our interactive visualizations, for scholars who prefer rigorous arithmetic over graphical summaries. <a href="index.html">Return to main overview</a>.</p>
   </div></section>
   <section class="cap" id="fontes"><div class="wrap">
-    <div class="cap-num">Fontes</div>
-    <h2>Itens e métricas por fonte</h2>
-    <div class="rotulo">Fontes</div>
+    <div class="cap-num">Sources & Datasets</div>
+    <h2>Items and Metrics by Platform</h2>
+    <div class="rotulo">Platforms & Monitored Sources</div>
     <div class="tabela"><table id="tab-fontes"></table></div>
-    <p class="nota">* No Instagram, o alcance é a audiência potencial: a soma dos seguidores dos perfis que postaram sobre o tema, porque a rede não mostra visualizações. O X e a imprensa não trouxeram números de alcance, curtidas ou comentários na coleta; do X, contamos as respostas coletadas.</p>
+    <p class="nota">* On Instagram, measured reach represents potential audience (aggregate follower sum of posting accounts), as the platform conceals impressions. X and traditional press do not disclose reach or engagement metrics; for X, gathered replies are tabulated.</p>
   </div></section>
   <section class="cap" id="temas"><div class="wrap">
-    <div class="cap-num">Temas</div>
-    <h2>Temas ano a ano e no período</h2>
-    <div class="rotulo">Quem ganhou e quem perdeu espaço, 2021 → 2026</div>
+    <div class="cap-num">Thematic Trajectories</div>
+    <h2>Thematic Distribution Year-by-Year & Aggregate</h2>
+    <div class="rotulo">Longitudinal Variance: Gain and Loss of Share (2021 → 2026)</div>
     <div class="tabela"><table id="tab-var"></table></div>
-    <div class="rotulo">Distribuição no período todo</div>
+    <div class="rotulo">Aggregate Period Distribution</div>
     <div class="tabela"><table id="tab-temas2"></table></div>
-    <p class="nota">Percentuais dentro de cada fonte. "Curtidas/coment." é a média de curtidas que o comentário daquele tema recebe: funciona como uma medida aproximada de quanto o público concorda com quem fala. "Outro" reúne comentários sem conteúdo sobre o tema (emojis, marcações, respostas soltas).</p>
+    <p class="nota">Percentages within each platform's corpus. "Likes / Comment" denotes the mean likes received by comments within that category, serving as an empirical proxy for consensus and resonance. "Other" aggregates non-thematic remarks (emojis, tags, disconnected replies).</p>
   </div></section>
   <section class="cap" id="influenciadores"><div class="wrap">
-    <div class="cap-num">Influenciadores</div>
-    <h2>Ranking por rede</h2>
-    <div class="rotulo">Ranking por rede</div>
+    <div class="cap-num">Content Creators</div>
+    <h2>Platform Rankings</h2>
+    <div class="rotulo">Ranking by Platform</div>
     <div class="abas" role="tablist" id="abas-inf"></div>
     <div class="tabela"><table id="tab-inf"></table></div>
     <p class="nota" id="inf-nota"></p>
-    <div class="rotulo">Quem está em mais de uma rede</div>
+    <div class="rotulo">Cross-Platform Creators</div>
     <div class="tabela"><table id="tab-multi"></table></div>
   </div></section>
   <section class="cap" id="comentarios"><div class="wrap">
-    <div class="cap-num">Comentários e dúvidas</div>
-    <h2>Assuntos e dúvidas por rede</h2>
+    <div class="cap-num">Discourse & Inquiries</div>
+    <h2>Thematic Distribution & Existential Inquiries</h2>
     <div class="grid2" style="margin-top:20px">
-      <div class="card"><h4>De que assunto cada rede comenta</h4><div class="tabela" style="border:0"><table id="tab-com-lex" class="heat"></table></div>
-        <p class="nota">Percentual dos comentários que usam termos de cada grupo.</p></div>
-      <div class="card"><h4>YouTube × Instagram</h4><div class="tabela" style="border:0"><table id="tab-duv-fonte" class="heat"></table></div>
+      <div class="card"><h4>Vocabulary Focus by Social Network</h4><div class="tabela" style="border:0"><table id="tab-com-lex" class="heat"></table></div>
+        <p class="nota">Percentage of comments deploying lexical markers from each cluster.</p></div>
+      <div class="card"><h4>YouTube × Instagram Comparison</h4><div class="tabela" style="border:0"><table id="tab-duv-fonte" class="heat"></table></div>
         <p class="nota" id="duv-fonte-nota"></p></div>
     </div>
   </div></section>
   <section class="cap" id="redes"><div class="wrap">
-    <div class="cap-num">Redes e veículos</div>
-    <h2>Vocabulário, veículos e revistas</h2>
-    <div class="rotulo">Impressão digital do vocabulário (% dos itens que tocam cada assunto)</div>
+    <div class="cap-num">Platforms & Media Outlets</div>
+    <h2>Vocabulary Fingerprint, Press Outlets & Academic Journals</h2>
+    <div class="rotulo">Lexical Fingerprint (% of Items Touching Each Domain)</div>
     <div class="tabela"><table id="tab-lex" class="heat"></table></div>
-    <div class="rotulo">Veículos de imprensa: o tema de cada um</div>
+    <div class="rotulo">Journalistic Outlets: Thematic Focus</div>
     <div class="tabela"><table id="tab-veic" class="heat"></table></div>
-    <p class="nota">Percentual das reportagens de cada veículo em cada tema (2021–2026). Cor mais forte, maior a participação. "Cita a Mensa" é o percentual das reportagens que mencionam a associação no texto.</p>
-    <div class="rotulo">Revistas: como enquadram o tema</div>
+    <p class="nota">Percentage of each outlet's coverage across themes (2021–2026). Deeper hue indicates higher thematic concentration. "Cites Mensa" reflects the proportion of articles explicitly referencing the association.</p>
+    <div class="rotulo">Academic Journals: Narrative Framing</div>
     <div class="tabela"><table id="tab-rev" class="heat"></table></div>
   </div></section>
   <section class="cap" id="mensa"><div class="wrap">
     <div class="cap-num">Mensa</div>
-    <h2>Vídeos sobre a Mensa</h2>
-    <div class="rotulo">Vídeos mais vistos com "Mensa" no título</div>
+    <h2>Video Coverage on Mensa</h2>
+    <div class="rotulo">Most-Viewed Videos with "Mensa" in Title</div>
     <div class="tabela"><table id="tab-mensa-videos"></table></div>
   </div></section>
 </main>

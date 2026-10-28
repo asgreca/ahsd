@@ -41,13 +41,13 @@ $('#carimbo').textContent = `Temporal scope: 2021 to 2026 · Data collected thro
 /* 00 fontes */
 const R = Object.fromEntries(D.redes.map(r => [r.rede, r]));
 const semM = 'no metrics';
-const linhaF = (nome, papel, itens, r) => `<tr><td><b>${nome}</b></td><td>${papel}</td><td class="n">${itens}</td><td class="n">${r.views != null ? c(r.views) + ' views' : r.seguidores ? c(r.seguidores) + ' seguidores*' : semM}</td><td class="n">${r.likes != null ? c(r.likes) : semM}</td><td class="n">${r.coments != null ? c(r.coments) : semM}</td></tr>`;
+const linhaF = (nome, papel, itens, r) => `<tr><td><b>${nome}</b></td><td>${papel}</td><td class="n">${itens}</td><td class="n">${r.views != null ? c(r.views) + ' views' : r.seguidores ? c(r.seguidores) + ' followers*' : semM}</td><td class="n">${r.likes != null ? c(r.likes) : semM}</td><td class="n">${r.coments != null ? c(r.coments) : semM}</td></tr>`;
 $('#tab-fontes').innerHTML = `<thead><tr><th>Source</th><th>Function & Role</th><th class="n">Items</th><th class="n">Reach</th><th class="n">Likes</th><th class="n">Comments</th></tr></thead><tbody>` +
   linhaF('YouTube', 'In-depth explanations and long-form video', `${n(ME.YouTube.itens)} videos`, ME.YouTube) +
   linhaF('TikTok', 'Short-form video, viral identity & traits', `${n(ME.TikTok.itens)} videos`, ME.TikTok) +
   linhaF('Instagram', 'Clinicians, families & celebrity stories', `${n(ME.Instagram.itens)} posts`, ME.Instagram) +
   linhaF('X', 'Journalism, debate & rapid reaction', `${n(ME.X.itens)} posts`, ME.X) +
-  linhaF('Imprensa', 'Portals, newspapers & academic journals', `${n(N.reportagens_classificadas)} reports · ${n(N.revistas_artigos)} journal articles`, ME.Imprensa) +
+  linhaF('Press & Journals', 'Portals, newspapers & academic journals', `${n(N.reportagens_classificadas)} reports · ${n(N.revistas_artigos)} journal articles`, ME.Imprensa) +
   `</tbody>`;
 
 
@@ -306,22 +306,22 @@ const PAPEL = {
 $('#cards-redes').innerHTML = D.redes.map(r => `<div class="card rede"><div class="rede-cab"><span class="fic" style="background:${COR_REDE[r.rede]};width:48px;height:48px;border-radius:14px">${ico(r.rede, 24, 'var(--bg)')}</span><h3>${r.rede}</h3></div><div class="q">${PAPEL[r.rede][0]}</div><p style="font-size:15px;color:var(--ink2);margin-bottom:12px">${PAPEL[r.rede][1]}</p><dl>
   <dt>Topical content items</dt><dd>${n(r.itens)}</dd><dt>Monitored profiles & channels</dt><dd>${n(r.autores)}</dd>
   <dt>Total reach (views)</dt><dd>${r.views_total ? c(r.views_total) : '–'}</dd>
-  <dt>Total likes</dt><dd>${r.rede === 'X' ? 'sem métrica' : c(r.likes_total)}</dd>
-  <dt>Total comments</dt><dd>${r.rede === 'X' ? n(N.x_respostas) + ' resp.' : c(r.comentarios_total)}</dd>
+  <dt>Total likes</dt><dd>${r.rede === 'X' ? 'no metric' : c(r.likes_total)}</dd>
+  <dt>Total comments</dt><dd>${r.rede === 'X' ? n(N.x_respostas) + ' replies' : c(r.comentarios_total)}</dd>
   <dt>Median likes per post</dt><dd>${r.rede === 'X' ? '–' : n(r.likes_mediana)}</dd>
   <dt>Top 5 profiles share of likes</dt><dd>${r.rede === 'X' ? '–' : p(r.concentracao_top5)}</dd></dl></div>`).join('');
 const LX = Object.fromEntries(D.redes.map(r => [r.rede, r.lexico]));
-LX['Imprensa (títulos)'] = D.redes_lexico_imprensa;
+LX['Press (Headlines)'] = D.redes_lexico_imprensa;
 const lmx = Math.max(...Object.values(LX).flatMap(o => Object.values(o)));
-$('#tab-lex').innerHTML = `<thead><tr><th>Assunto</th>${Object.keys(LX).map(r => `<th class="n">${r}</th>`).join('')}</tr></thead><tbody>` +
+$('#tab-lex').innerHTML = `<thead><tr><th>Topic</th>${Object.keys(LX).map(r => `<th class="n">${r}</th>`).join('')}</tr></thead><tbody>` +
   G.map(g => `<tr><td>${esc(D.grupos[g])}</td>${Object.values(LX).map(o => `<td class="h" style="${heat(o[g], lmx)}">${Math.round(o[g])}%</td>`).join('')}</tr>`).join('') + '</tbody>';
 
 const TV = ['educacao_escola', 'diagnostico_avaliacao', 'caracteristicas_sinais', 'saude_mental_neuro', 'experiencia_pessoal', 'mensa_sociedade', 'elogio_admiracao', 'politica_publica', 'validade_testes_qi'];
-const CURTO = {educacao_escola: 'Escola', diagnostico_avaliacao: 'Diagnóstico', caracteristicas_sinais: 'Sinais', saude_mental_neuro: 'Saúde mental', experiencia_pessoal: 'Experiência', mensa_sociedade: 'Mensa', elogio_admiracao: 'Elogio', politica_publica: 'Política', validade_testes_qi: 'Validade do QI'};
-$('#tab-veic').innerHTML = `<thead><tr><th>Veículo</th><th class="n">Reportagens</th><th class="n">Cita a Mensa</th>${TV.map(t => `<th class="n">${CURTO[t]}</th>`).join('')}</tr></thead><tbody>` +
+const CURTO = {educacao_escola: 'School', diagnostico_avaliacao: 'Diagnosis', caracteristicas_sinais: 'Traits', saude_mental_neuro: 'Mental Health', experiencia_pessoal: 'Experience', mensa_sociedade: 'Mensa', elogio_admiracao: 'Praise', politica_publica: 'Policy', validade_testes_qi: 'IQ Validity'};
+$('#tab-veic').innerHTML = `<thead><tr><th>Media Outlet</th><th class="n">Reports</th><th class="n">Cites Mensa</th>${TV.map(t => `<th class="n">${CURTO[t]}</th>`).join('')}</tr></thead><tbody>` +
   D.veiculos.map(v => `<tr><td><b>${esc(v.veiculo)}</b></td><td class="n">${v.reportagens}</td><td class="h" style="${heat(v.mensa, 100)}">${Math.round(v.mensa)}%</td>${TV.map(t => `<td class="h" style="${heat(v.temas[t] || 0, 45)}">${v.temas[t] ? Math.round(v.temas[t]) + '%' : '·'}</td>`).join('')}</tr>`).join('') + '</tbody>';
 const EQ = Object.keys(D.enquadramentos);
-$('#tab-rev').innerHTML = `<thead><tr><th>Revista</th><th class="n">Artigos</th>${EQ.map(e => `<th class="n">${esc(D.enquadramentos[e])}</th>`).join('')}</tr></thead><tbody>` +
+$('#tab-rev').innerHTML = `<thead><tr><th>Academic Journal</th><th class="n">Articles</th>${EQ.map(e => `<th class="n">${esc(D.enquadramentos[e])}</th>`).join('')}</tr></thead><tbody>` +
   D.revistas.map(r => `<tr><td><b>${esc(r.revista)}</b></td><td class="n">${r.artigos}</td>${EQ.map(e => `<td class="h" style="${heat(r.enquadramento[e], 50)}">${Math.round(r.enquadramento[e])}%</td>`).join('')}</tr>`).join('') + '</tbody>';
 // rodape mantido limpo conforme solicitacao
 const elRodape = $('#rodape');
