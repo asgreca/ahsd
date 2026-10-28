@@ -327,19 +327,27 @@ $('#tab-rev').innerHTML = `<thead><tr><th>Academic Journal</th><th class="n">Art
 const elRodape = $('#rodape');
 if (elRodape) elRodape.textContent = '';
 
-/* vídeos: incorporados diretamente com lazy loading */
+/* vídeos: o iframe só entra quando a pessoa clica */
 function embed(v) {
-  if (v.rede === 'YouTube') return `https://www.youtube-nocookie.com/embed/${v.id}?rel=0`;
+  if (v.rede === 'YouTube') return `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
   if (v.rede === 'TikTok') return `https://www.tiktok.com/embed/v2/${v.id}`;
   return `https://www.instagram.com/p/${v.id}/embed/`;
 }
 function cartaoVideo(v, comInfo = true) {
   const vert = v.rede !== 'YouTube';
   const big = v.views ? `${c(v.views)}<small>views</small>` : `${c(v.likes)}<small>likes</small>`;
-  const src = embed(v);
-  return `<div class="tela${vert ? ' vert' : ''}"><iframe src="${esc(src)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="${esc(v.titulo)}"></iframe><span class="rede-tag">${v.rede}</span><span class="big">${big}</span></div>` +
+  // capas guardadas junto do site; Instagram usa uma ilustração
+  const capa = v.rede === 'Instagram' ? 'img/espetaculo.jpg' : `img/capas/${esc(v.id)}.jpg`;
+  const thumb = ` thumb" style="background-image:url(${capa})`;
+  return `<button class="tela${vert ? ' vert' : ''}${thumb}" data-src="${esc(embed(v))}" aria-label="Watch: ${esc(v.titulo)}"><span class="rede-tag">${v.rede}</span><span class="play"></span><span class="big">${big}</span></button>` +
     (comInfo ? `<div class="info"><b>${esc(v.titulo)}</b><p>${esc(v.contexto)}</p><div class="met">${esc(v.autor)} · ${v.ano} · ${v.views ? c(v.views) + ' views · ' : ''}${c(v.likes)} likes · ${c(v.comentarios)} comments · <a class="abrir" href="${esc(v.url)}" target="_blank" rel="noopener">open ↗</a></div></div>` : '');
 }
+document.addEventListener('click', e => {
+  const t = e.target.closest('.tela[data-src]');
+  if (!t) return;
+  t.innerHTML = `<iframe src="${t.dataset.src}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="Video"></iframe>`;
+  t.removeAttribute('data-src');
+});
 $('#videos').innerHTML = D.videos_impacto.map(v => `<div class="vid">${cartaoVideo(v)}</div>`).join('');
 $('#video-mensa').innerHTML = cartaoVideo(D.video_mensa);
 
