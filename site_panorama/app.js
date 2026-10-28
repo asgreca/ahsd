@@ -319,7 +319,9 @@ $('#tab-veic').innerHTML = `<thead><tr><th>Veículo</th><th class="n">Reportagen
 const EQ = Object.keys(D.enquadramentos);
 $('#tab-rev').innerHTML = `<thead><tr><th>Revista</th><th class="n">Artigos</th>${EQ.map(e => `<th class="n">${esc(D.enquadramentos[e])}</th>`).join('')}</tr></thead><tbody>` +
   D.revistas.map(r => `<tr><td><b>${esc(r.revista)}</b></td><td class="n">${r.artigos}</td>${EQ.map(e => `<td class="h" style="${heat(r.enquadramento[e], 50)}">${Math.round(r.enquadramento[e])}%</td>`).join('')}</tr>`).join('') + '</tbody>';
-$('#rodape').textContent = `Base: ${n(N.comentarios_youtube)} comentários do YouTube, ${n(N.ig_comentarios)} do Instagram, ${n(N.x_respostas)} respostas no X, ${n(N.videos_youtube)} vídeos do YouTube, ${n(N.tt_videos)} do TikTok (${n(N.tt_videos_tema)} sobre o tema), ${n(N.ig_posts)} posts do Instagram (${n(N.ig_posts_tema)} sobre o tema), ${n(N.x_tweets)} posts do X (${n(N.x_tweets_tema)} sobre o tema), ${n(N.reportagens_classificadas)} reportagens e ${n(N.revistas_artigos)} artigos de revista.`;
+// rodape mantido limpo conforme solicitacao
+const elRodape = $('#rodape');
+if (elRodape) elRodape.textContent = '';
 
 /* vídeos: o iframe só entra quando a pessoa clica */
 function embed(v) {
