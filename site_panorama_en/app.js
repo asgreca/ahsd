@@ -145,7 +145,7 @@ const ATOS = [
   ['2022', 'Mensa Turns 20 in Brazil', '131', 'headlines, more than double 2021', 'School accommodation becomes mainstream press focus'],
   ['2023', 'TikTok Discovers Giftedness', '3.7M', 'views on viral video dissecting sensory overload', 'Giftedness transforms into an online identity'],
   ['2024', 'Adults Discover Themselves', '1.9M', 'views on \"The Truth About IQ Tests\"', 'Late adult diagnosis captures serious journalistic attention'],
-  ['2025', 'Celebrities & ADHD Intersection', '18.8K', 'YouTube comments in a single calendar year', 'Dual exceptionality enters broader public discourse'],
+  ['2025', 'Celebrities & Giftedness', '18.8K', 'YouTube comments in a single calendar year', 'Twice-exceptionality enters broader public discourse'],
   ['2026', 'Federal Law & The Child Prodigy', '411', 'headlines, setting an all-time dataset record', 'Law 15,436 enacted and gifted youth speaks at Federal Senate'],
 ];
 $('#atos').innerHTML = ATOS.map(([a, t, num, leg, fato]) => `<article class="ano-card">
