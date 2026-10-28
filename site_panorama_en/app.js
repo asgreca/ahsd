@@ -247,8 +247,10 @@ $('#tab-multi').innerHTML = `<thead><tr><th>Profile</th><th>Platforms (Posts)</t
 /* 05 clusters */
 $('#cl').innerHTML = D.clusters.map((k, i) => {
   const tr = Object.entries(k.perfil).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const IMGS = ['cl_educacao', 'cl_espetaculo', 'cl_neuro', 'cl_adulto', 'cl_clinica', 'cl_midia'];
   const IMG_CL = {'Clinical Practice & Assessment': 'cl_clinica', 'IQ as Spectacle': 'cl_espetaculo', 'Neurodivergence & Videocasts': 'cl_neuro', 'Education, Families & Rights': 'cl_educacao', 'Adult Discovery': 'cl_adulto', 'Mensa & Mainstream Media': 'cl_midia', 'Clínica e avaliação': 'cl_clinica', 'QI como espetáculo': 'cl_espetaculo', 'Neurodivergência e podcasts': 'cl_neuro', 'Educação, famílias e direitos': 'cl_educacao', 'Descoberta adulta': 'cl_adulto', 'Mensa e mídia': 'cl_midia'};
-  return `<div class="cl"><div class="cl-img"><img src="img/${IMG_CL[k.nome.nome] || 'capa'}.jpg" alt="" loading="lazy" onerror="this.src='img/capa.jpg'"></div><div class="n">Cluster ${i + 1} · ${k.n} creators</div><h3>${esc(k.nome.nome)}</h3><p style="font-size:15px;color:var(--ink2)">${esc(k.nome.desc)}</p>
+  const imgName = IMGS[i] || IMG_CL[k.nome.nome] || 'capa';
+  return `<div class="cl"><div class="cl-img"><img src="img/${imgName}.jpg" alt="" loading="lazy" onerror="this.src='img/capa.jpg'"></div><div class="n">Cluster ${i + 1} · ${k.n} creators</div><h3>${esc(k.nome.nome)}</h3><p style="font-size:15px;color:var(--ink2)">${esc(k.nome.desc)}</p>
   <div class="m"><div><b>${c(k.views)}</b><span>views</span></div><div><b>${c(k.likes)}</b><span>likes</span></div><div><b>${c(k.comentarios)}</b><span>comments</span></div></div>
   <div class="mini">${tr.map(([g, v]) => `<div>${esc(D.grupos[g])}</div><div class="tr"><i style="width:${v}%"></i></div><div class="v">${Math.round(v)}%</div>`).join('')}</div>
   <div class="avs">${k.membros.map(m => `<span class="av-m" title="${esc(m.autor)} · ${n(m.likes)} likes · ${n(m.views)} views · ${n(m.comentarios)} comments">${foto(m.id, m.autor)}<small>${esc(String(m.autor).replace(/^@/, '').slice(0, 16))}</small></span>`).join('')}</div>
