@@ -247,14 +247,14 @@ $('#tab-multi').innerHTML = `<thead><tr><th>Profile</th><th>Platforms (Posts)</t
 /* 05 clusters */
 $('#cl').innerHTML = D.clusters.map((k, i) => {
   const tr = Object.entries(k.perfil).sort((a, b) => b[1] - a[1]).slice(0, 5);
-  const IMG_CL = {'Clínica e avaliação': 'cl_clinica', 'QI como espetáculo': 'cl_espetaculo', 'Neurodivergência e podcasts': 'cl_neuro', 'Educação, famílias e direitos': 'cl_educacao', 'Descoberta adulta': 'cl_adulto', 'Mensa e mídia': 'cl_midia'};
+  const IMG_CL = {'Clinical Practice & Assessment': 'cl_clinica', 'IQ as Spectacle': 'cl_espetaculo', 'Neurodivergence & Videocasts': 'cl_neuro', 'Education, Families & Rights': 'cl_educacao', 'Adult Discovery': 'cl_adulto', 'Mensa & Mainstream Media': 'cl_midia', 'Clínica e avaliação': 'cl_clinica', 'QI como espetáculo': 'cl_espetaculo', 'Neurodivergência e podcasts': 'cl_neuro', 'Educação, famílias e direitos': 'cl_educacao', 'Descoberta adulta': 'cl_adulto', 'Mensa e mídia': 'cl_midia'};
   return `<div class="cl"><div class="cl-img"><img src="img/${IMG_CL[k.nome.nome] || 'capa'}.jpg" alt="" loading="lazy" onerror="this.src='img/capa.jpg'"></div><div class="n">Cluster ${i + 1} · ${k.n} creators</div><h3>${esc(k.nome.nome)}</h3><p style="font-size:15px;color:var(--ink2)">${esc(k.nome.desc)}</p>
   <div class="m"><div><b>${c(k.views)}</b><span>views</span></div><div><b>${c(k.likes)}</b><span>likes</span></div><div><b>${c(k.comentarios)}</b><span>comments</span></div></div>
   <div class="mini">${tr.map(([g, v]) => `<div>${esc(D.grupos[g])}</div><div class="tr"><i style="width:${v}%"></i></div><div class="v">${Math.round(v)}%</div>`).join('')}</div>
   <div class="avs">${k.membros.map(m => `<span class="av-m" title="${esc(m.autor)} · ${n(m.likes)} likes · ${n(m.views)} views · ${n(m.comentarios)} comments">${foto(m.id, m.autor)}<small>${esc(String(m.autor).replace(/^@/, '').slice(0, 16))}</small></span>`).join('')}</div>
   <div style="font-size:13px;color:var(--muted)">${Object.entries(k.redes).sort((a, b) => b[1] - a[1]).map(([r, q]) => `${r} ${q}`).join(' · ')} posts</div></div>`;
 }).join('');
-$('#cl-nota').textContent = `Critério: ${D.clusters_base.criadores} criadores com ${D.clusters_base.minimo_itens} ou mais conteúdos sobre o tema (com menos que isso, não dá para medir vocabulário com segurança). As barras mostram o percentual dos conteúdos do grupo que usam termos de cada assunto. Toque ou passe o mouse sobre um perfil para ver curtidas, views e comments.`;
+$('#cl-nota').textContent = `Inclusion criteria: ${D.clusters_base.criadores} creators with ${D.clusters_base.minimo_itens} or more on-topic publications (statistical stability threshold). Horizontal bars indicate the proportion of cluster output deploying markers from each subject. Hover or tap an avatar to inspect telemetry.`;
 
 /* 06 comments */
 const NV = D.nuvem;
@@ -359,15 +359,15 @@ let temaSel = 'saude_mental_neuro';
   $('#multiplos').innerHTML = L.map(({k, cm, rp, dc, dr}) => {
     const mx = Math.max(1, ...cm, ...rp), x = i => 6 + 228 * i / 5, y = v => (96 - 86 * v / mx).toFixed(1);
     const pts = a => a.map((v, i) => x(i) + ',' + y(v)).join(' ');
-    return `<article class="mult"><div class="mult-cab"><span class="mic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONE_TEMA[k] || ''}"/></svg></span><h4>${esc(nome[k] || D.rotulos_tema[k])}</h4><span>até ${Math.round(mx)}%</span></div>
-      <svg viewBox="0 0 240 104" role="img" aria-label="${esc(D.rotulos_tema[k])}: comments de ${p(cm[0])} para ${p(cm[5])}, reportagens de ${p(rp[0])} para ${p(rp[5])}">
+    return `<article class="mult"><div class="mult-cab"><span class="mic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONE_TEMA[k] || ''}"/></svg></span><h4>${esc(nome[k] || D.rotulos_tema[k])}</h4><span>up to ${Math.round(mx)}%</span></div>
+      <svg viewBox="0 0 240 104" role="img" aria-label="${esc(D.rotulos_tema[k])}: comments from ${p(cm[0])} to ${p(cm[5])}, news reports from ${p(rp[0])} to ${p(rp[5])}">
         <line x1="6" y1="96" x2="234" y2="96" stroke="var(--line)"/>
         <polyline points="${pts(rp)}" fill="none" stroke="var(--spark)" stroke-width="2.5" stroke-linejoin="round"/>
         <polyline points="${pts(cm)}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/>
         <circle cx="${x(5)}" cy="${y(cm[5])}" r="4" fill="var(--accent)"/><circle cx="${x(5)}" cy="${y(rp[5])}" r="4" fill="var(--spark)"/>
       </svg>
       <div class="mult-anos"><span>2021</span><span>2026</span></div>
-      <div class="mult-d"><div><b class="${cls(dc)}">${fmt(dc)}</b><span>comments, p.p.</span></div><div><b class="${cls(dr)}">${fmt(dr)}</b><span>reportagens, p.p.</span></div></div>
+      <div class="mult-d"><div><b class="${cls(dc)}">${fmt(dc)}</b><span>comments, p.p.</span></div><div><b class="${cls(dr)}">${fmt(dr)}</b><span>news reports, p.p.</span></div></div>
     </article>`;
   }).join('');
   const seta = {cima: 'M12 19V5 M5 12l7-7 7 7', baixo: 'M12 5v14 M5 12l7 7 7-7'};
@@ -375,14 +375,14 @@ let temaSel = 'saude_mental_neuro';
     const it = L.find(x => x.k === k), v = it[campo];
     return `<div class="chip-t"><span class="pic" style="background:${v >= 0 ? 'var(--spark)' : 'var(--neg)'}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${v >= 0 ? seta.cima : seta.baixo}"/></svg></span><div><b class="${cls(v)}">${fmt(v)} p.p.</b><span>${txt}</span></div></div>`;
   };
-  $('#temas-chips').innerHTML = ch('entretenimento_humor', 'dc', 'de piada sobre QI nos comments') + ch('politica_publica', 'dr', 'de política pública nas reportagens') + ch('mensa_sociedade', 'dr', 'de Mensa como tema principal das reportagens');
+  $('#temas-chips').innerHTML = ch('entretenimento_humor', 'dc', 'IQ humor in comments') + ch('politica_publica', 'dr', 'public policy in news reports') + ch('mensa_sociedade', 'dr', 'Mensa as primary focus in news reports');
 })();
 const seta = d => d > 0.5 ? `<span class="seta-up">▲ ${d.toLocaleString('en-US', {maximumFractionDigits: 1})}</span>` : d < -0.5 ? `<span class="seta-dn">▼ ${Math.abs(d).toLocaleString('en-US', {maximumFractionDigits: 1})}</span>` : '<span style="color:var(--muted)">=</span>';
 const VAR = temasSerie.map(k => {
   const a = ST.comentarios[k].pct, b = ST.reportagens[k].pct;
   return {k, c0: a[0], c1: a[5], r0: b[0], r1: b[5], dc: a[5] - a[0], dr: b[5] - b[0]};
 }).sort((u, v) => Math.abs(v.dc) + Math.abs(v.dr) - Math.abs(u.dc) - Math.abs(u.dr));
-$('#tab-var').innerHTML = `<thead><tr><th>Tema</th><th class="n">Comentários 2021</th><th class="n">2026</th><th class="n">Variação (p.p.)</th><th class="n">Reportagens 2021</th><th class="n">2026</th><th class="n">Variação (p.p.)</th></tr></thead><tbody>` +
+$('#tab-var').innerHTML = `<thead><tr><th>Theme</th><th class="n">Comments 2021</th><th class="n">2026</th><th class="n">Variance (p.p.)</th><th class="n">News Reports 2021</th><th class="n">2026</th><th class="n">Variance (p.p.)</th></tr></thead><tbody>` +
   VAR.map(r => `<tr><td><a href="#serie" data-k="${r.k}" class="ver-serie">${esc(D.rotulos_tema[r.k])}</a></td><td class="n">${p(r.c0)}</td><td class="n">${p(r.c1)}</td><td class="n">${seta(r.dc)}</td><td class="n">${p(r.r0)}</td><td class="n">${p(r.r1)}</td><td class="n">${seta(r.dr)}</td></tr>`).join('') + '</tbody>';
 $('#tab-var').onclick = e => { const a = e.target.closest('.ver-serie'); if (a) { e.preventDefault(); serie(a.dataset.k); $('#serie').scrollIntoView({behavior: 'smooth', block: 'center'}); } };
 
