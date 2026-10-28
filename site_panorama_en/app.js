@@ -195,7 +195,7 @@ const MC = D.mensa.canal;
 $('#mensa-canais').innerHTML = `<dl style="display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:15px">
 <dt>Official YouTube Channel</dt><dd class="n">${MC.videos} videos · ${n(MC.views)} views</dd>
 ${D.mensa.redes.map(r => `<dt>${r.rede} @${esc(r.handle)}</dt><dd class="n">${r.posts} posts · ${n(r.likes)} likes${r.seguidores ? ' · ' + c(r.seguidores) + ' followers' : ''}</dd>`).join('')}
-</dl><p class="nota">O vídeo mais visto do canal tem ${n(MC.melhor_views)} views ("${esc(MC.melhor)}"). For comparative calibration: a single third-party logic quiz video easily surpasses 1 million views.</p>`;
+</dl><p class="nota">The channel's most-viewed video has ${n(MC.melhor_views)} views ("${esc(MC.melhor)}"). For comparative calibration: a single third-party logic quiz video easily surpasses 1 million views.</p>`;
 $('#tab-mensa-videos').innerHTML = `<thead><tr><th>Video</th><th>Channel</th><th>Year</th><th>Theme</th><th class="n">Views</th></tr></thead><tbody>` +
   D.mensa.videos_top.map(v => `<tr><td><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.titulo)}</a></td><td>${esc(v.canal)}</td><td>${v.ano}</td><td>${esc(v.tema)}</td><td class="n">${n(v.views)}</td></tr>`).join('') + '</tbody>';
 

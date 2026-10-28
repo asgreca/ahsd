@@ -723,14 +723,14 @@ window.DADOS = {
   },
   "mensa": {
     "presenca": {
-      "Comentários no YouTube": 1.7,
-      "Manchetes": 4.0,
-      "Reportagens (texto)": 33.9,
-      "Revistas": 25.2,
-      "YouTube (posts e vídeos)": 34.8,
-      "Instagram (posts e vídeos)": 7.4,
-      "TikTok (posts e vídeos)": 2.7,
-      "X (posts e vídeos)": 8.4
+      "YouTube Comments": 1.7,
+      "Headlines": 4.0,
+      "News Reports (Text)": 33.9,
+      "Academic Journals": 25.2,
+      "YouTube (Posts & Videos)": 34.8,
+      "Instagram (Posts & Videos)": 7.4,
+      "TikTok (Posts & Videos)": 2.7,
+      "X (Posts & Videos)": 8.4
     },
     "postura": {
       "Comments": {
@@ -753,27 +753,27 @@ window.DADOS = {
       {
         "ano": "2022",
         "membros": 2000,
-        "nota": "20 anos no Brasil (post da Mensa no X, jul/2022)"
+        "nota": "20 years in Brazil (Mensa announcement on X, Jul/2022)"
       },
       {
         "ano": "2023",
         "membros": 3500,
-        "nota": "cerca de 1.000 crianças e adolescentes"
+        "nota": "approx. 1,000 children and adolescents"
       },
       {
         "ano": "2024",
         "membros": 4000,
-        "nota": "cerca de 1.300 crianças e adolescentes"
+        "nota": "approx. 1,300 children and adolescents"
       },
       {
         "ano": "2025",
         "membros": 5100,
-        "nota": "5.000 a 5.200 membros; cerca de 1.900 menores"
+        "nota": "5,000 to 5,200 members; approx. 1,900 minors"
       },
       {
         "ano": "2026",
         "membros": 7000,
-        "nota": "junho: 3.100 crianças e jovens, 3.900 adultos"
+        "nota": "June: 3,100 children & youth, 3,900 adults"
       }
     ],
     "estados": [
@@ -810,7 +810,7 @@ window.DADOS = {
         "canal": "Tibees",
         "ano": 2019,
         "views": 4362805,
-        "tema": "Entretenimento e humor",
+        "tema": "Entertainment & Humor",
         "url": "https://www.youtube.com/watch?v=h36cpwlslHk"
       },
       {
@@ -818,7 +818,7 @@ window.DADOS = {
         "canal": "Sky News",
         "ano": 2009,
         "views": 2204696,
-        "tema": "A Mensa e a sociedade",
+        "tema": "Mensa & Society",
         "url": "https://www.youtube.com/watch?v=z1mhx42dGxo"
       },
       {
@@ -826,7 +826,7 @@ window.DADOS = {
         "canal": "UniqueBrain",
         "ano": 2017,
         "views": 126766,
-        "tema": "Diagnóstico e avaliação",
+        "tema": "Diagnosis & Assessment",
         "url": "https://www.youtube.com/watch?v=AyDWj4iRVqU"
       },
       {
@@ -834,7 +834,7 @@ window.DADOS = {
         "canal": "Cortes Podcast",
         "ano": 2021,
         "views": 115935,
-        "tema": "A Mensa e a sociedade",
+        "tema": "Mensa & Society",
         "url": "https://www.youtube.com/watch?v=IcKkrX0BNJI"
       },
       {
@@ -842,7 +842,7 @@ window.DADOS = {
         "canal": "Mino Lee",
         "ano": 2022,
         "views": 100158,
-        "tema": "Diagnóstico e avaliação",
+        "tema": "Diagnosis & Assessment",
         "url": "https://www.youtube.com/watch?v=gh0zDyMmbPI"
       },
       {
@@ -850,7 +850,7 @@ window.DADOS = {
         "canal": "KCRA 3",
         "ano": 2007,
         "views": 94710,
-        "tema": "A Mensa e a sociedade",
+        "tema": "Mensa & Society",
         "url": "https://www.youtube.com/watch?v=0J95-moyVuE"
       },
       {
@@ -858,7 +858,7 @@ window.DADOS = {
         "canal": "Papa Flammy",
         "ano": 2020,
         "views": 56973,
-        "tema": "Diagnóstico e avaliação",
+        "tema": "Diagnosis & Assessment",
         "url": "https://www.youtube.com/watch?v=q4qdaboHa3c"
       },
       {
@@ -866,7 +866,7 @@ window.DADOS = {
         "canal": "UniqueBrain",
         "ano": 2018,
         "views": 49155,
-        "tema": "Diagnóstico e avaliação",
+        "tema": "Diagnosis & Assessment",
         "url": "https://www.youtube.com/watch?v=iTBoqD4JghA"
       }
     ],
