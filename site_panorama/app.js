@@ -26,7 +26,7 @@ $('#tema-btn').onclick = () => {
 
 /* abertura */
 const manch = D.anual['Manchetes (Google Notícias)'];
-$('#hero-lead').innerHTML = `Permita-nos explicar. Partimos de uma pergunta simples de enunciar e trabalhosa de medir: como o Brasil fala sobre superdotação? Para respondê-la com o rigor que ela merece, reunimos 98.861 comentários, 870 vídeos do YouTube e do TikTok (transcritos palavra por palavra; sim, todos), 708 posts com métricas e 1.264 reportagens. Fato curioso: entre 2021 e 2026, as manchetes por ano passaram de 53 para 411. Isso é um aumento de 675%, ou 7,75 vezes, se você preferir. Fascinante. O público, no entanto, continua dividido entre dois fenômenos distintos que, por um infeliz acidente de vocabulário, usam a mesma palavra: o fascínio pelo número do QI e a procura por respostas sobre neurodivergência e sofrimento real.`;
+$('#hero-lead').innerHTML = `Eu queria responder a uma pergunta simples de enunciar e trabalhosa de medir: como o Brasil fala sobre superdotação? Para isso, eu reuni 98.861 comentários, 870 vídeos do YouTube e do TikTok (transcritos palavra por palavra; todos), 708 posts com métricas e 1.264 reportagens. Os números dizem o seguinte: entre 2021 e 2026, as manchetes por ano passaram de 53 para 411. Isso é um aumento de 675%, ou 7,75 vezes, se você preferir a forma multiplicativa. O público, por sua vez, mistura duas coisas diferentes sob a mesma palavra: o fascínio pelo número do QI e a busca por respostas sobre neurodivergência e sofrimento real. Não são a mesma coisa. Confundi-las é um erro, e os dados mostram exatamente onde ele acontece.`;
 const ME = D.medicao;
 const somaM = (campo, redes) => redes.reduce((a, r) => a + (ME[r][campo] || 0), 0);
 const faixa = [
