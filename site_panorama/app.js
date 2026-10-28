@@ -26,7 +26,7 @@ $('#tema-btn').onclick = () => {
 
 /* abertura */
 const manch = D.anual['Manchetes (Google Notícias)'];
-$('#hero-lead').innerHTML = `Juntamos 98.861 comentários, 870 vídeos (YouTube e TikTok transcritos), 708 posts com métricas e 1.264 reportagens da imprensa para entender como o Brasil fala sobre superdotação. Entre 2021 e 2026, as manchetes saltaram de 53 para 411 ao ano (+675%). O público, porém, ainda oscila entre o fascínio pelo espetáculo do QI e a busca por respostas sobre neurodivergência e sofrimento real.`;
+$('#hero-lead').innerHTML = `Permita-nos explicar. Partimos de uma pergunta simples de enunciar e trabalhosa de medir: como o Brasil fala sobre superdotação? Para respondê-la com o rigor que ela merece, reunimos 98.861 comentários, 870 vídeos do YouTube e do TikTok (transcritos palavra por palavra; sim, todos), 708 posts com métricas e 1.264 reportagens. Fato curioso: entre 2021 e 2026, as manchetes por ano passaram de 53 para 411. Isso é um aumento de 675%, ou 7,75 vezes, se você preferir. Fascinante. O público, no entanto, continua dividido entre dois fenômenos distintos que, por um infeliz acidente de vocabulário, usam a mesma palavra: o fascínio pelo número do QI e a procura por respostas sobre neurodivergência e sofrimento real.`;
 const ME = D.medicao;
 const somaM = (campo, redes) => redes.reduce((a, r) => a + (ME[r][campo] || 0), 0);
 const faixa = [
@@ -122,7 +122,9 @@ for (const [k, v] of Object.entries(A)) {
 $('#anual').innerHTML = sm;
 
 function desenharLinha() {
-  const M = D.mensal, v = M.manchetes, W = 1000, H = 220, pl = 36, pb = 26, pt = 14;
+  // no celular o gráfico fica mais estreito e alto, para o texto não encolher
+  const mv = innerWidth < 640, M = D.mensal, v = M.manchetes, W = mv ? 420 : 1000, H = mv ? 240 : 220, pl = 36, pb = 26, pt = 14;
+  $('#linha-mensal').setAttribute('viewBox', `0 0 ${W} ${H}`);
   const mx = Math.max(...v), cor = getComputedStyle(raiz).getPropertyValue('--accent').trim();
   const x = i => pl + (W - pl - 8) * i / (v.length - 1), y = val => pt + (H - pt - pb) * (1 - val / mx);
   let s = '';
@@ -135,6 +137,8 @@ function desenharLinha() {
   $('#linha-mensal').innerHTML = s;
 }
 desenharLinha();
+let linhaMovel = innerWidth < 640;
+addEventListener('resize', () => { if ((innerWidth < 640) !== linhaMovel) { linhaMovel = !linhaMovel; desenharLinha(); } });
 
 const ATOS = [
   ['2021', 'O QI vira jogo', '47%', 'dos comentários são piada sobre o próprio QI', 'A Mensa retoma os testes presenciais'],
@@ -185,13 +189,13 @@ $('#postura').innerHTML = Object.entries(D.mensa.postura).map(([fonte, o]) => {
   const tot = o.detrator + o.neutro + o.apoiador;
   return `<div style="display:grid;grid-template-columns:130px 1fr 70px;gap:12px;align-items:center;margin:8px 0"><div>${fonte}</div><div class="stack">${['detrator', 'neutro', 'apoiador'].map(k => `<i style="width:${100 * o[k] / tot}%;background:${cores[k]}">${o[k] / tot > .08 ? p(100 * o[k] / tot) : ''}</i>`).join('')}</div><div class="v" style="text-align:right;color:var(--muted)">${n(tot)}</div></div>`;
 }).join('') + `<div class="legenda"><span style="--c:var(--neg)">Detrator</span><span style="--c:var(--neu)">Neutro</span><span style="--c:var(--pos)">Apoiador</span></div>
-<p class="leitura">Nos comentários, <b>${p(100 * 894 / 1461)}</b> de quem cita a Mensa a critica, quase sempre como clube de arrogância ou como teste que não mede inteligência. Na imprensa, a Mensa é fonte neutra: só <b>1</b> das ${n(408)} reportagens que a citam é negativa.</p>`;
+<p class="leitura">Nos comentários, <b>${p(100 * 894 / 1461)}</b> de quem cita a Mensa a critica, em geral por um de dois motivos: a ideia de clube de arrogância ou a tese de que o teste não mede inteligência. Na imprensa, o quadro é outro. A Mensa aparece como fonte neutra, e só <b>1</b> das ${n(408)} reportagens que a citam é negativa: uma em 408, ou 0,25%. Estatisticamente, isso é quase zero.</p>`;
 hb('#mensa-temas', D.mensa.temas_comentarios.map(t => [t.rotulo, t.pct]), p);
 const MC = D.mensa.canal;
 $('#mensa-canais').innerHTML = `<dl style="display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:15px">
 <dt>Canal no YouTube</dt><dd class="n">${MC.videos} vídeos · ${n(MC.views)} views</dd>
 ${D.mensa.redes.map(r => `<dt>${r.rede} @${esc(r.handle)}</dt><dd class="n">${r.posts} posts · ${n(r.likes)} curtidas${r.seguidores ? ' · ' + c(r.seguidores) + ' seguidores' : ''}</dd>`).join('')}
-</dl><p class="nota">O vídeo mais visto do canal tem ${n(MC.melhor_views)} views ("${esc(MC.melhor)}"). Um único vídeo de quiz de QI de terceiros passa de 1 milhão.</p>`;
+</dl><p class="nota">O vídeo mais visto do canal tem ${n(MC.melhor_views)} views ("${esc(MC.melhor)}"). Para efeito de comparação, um único vídeo de quiz de QI feito por terceiros passa de 1 milhão.</p>`;
 $('#tab-mensa-videos').innerHTML = `<thead><tr><th>Vídeo</th><th>Canal</th><th>Ano</th><th>Tema</th><th class="n">Views</th></tr></thead><tbody>` +
   D.mensa.videos_top.map(v => `<tr><td><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.titulo)}</a></td><td>${esc(v.canal)}</td><td>${v.ano}</td><td>${esc(v.tema)}</td><td class="n">${n(v.views)}</td></tr>`).join('') + '</tbody>';
 
@@ -250,7 +254,7 @@ $('#cl').innerHTML = D.clusters.map((k, i) => {
   <div class="avs">${k.membros.map(m => `<span class="av-m" title="${esc(m.autor)} · ${n(m.likes)} curtidas · ${n(m.views)} views · ${n(m.comentarios)} comentários">${foto(m.id, m.autor)}<small>${esc(String(m.autor).replace(/^@/, '').slice(0, 16))}</small></span>`).join('')}</div>
   <div style="font-size:13px;color:var(--muted)">${Object.entries(k.redes).sort((a, b) => b[1] - a[1]).map(([r, q]) => `${r} ${q}`).join(' · ')} conteúdos</div></div>`;
 }).join('');
-$('#cl-nota').textContent = `${D.clusters_base.criadores} criadores com ${D.clusters_base.minimo_itens} ou mais conteúdos sobre o tema. Barras: percentual dos conteúdos do grupo que usam termos de cada assunto. Passe o mouse sobre um perfil para ver curtidas, views e comentários.`;
+$('#cl-nota').textContent = `Critério: ${D.clusters_base.criadores} criadores com ${D.clusters_base.minimo_itens} ou mais conteúdos sobre o tema (com menos que isso, não dá para medir vocabulário com segurança). As barras mostram o percentual dos conteúdos do grupo que usam termos de cada assunto. Toque ou passe o mouse sobre um perfil para ver curtidas, views e comentários.`;
 
 /* 06 comentários */
 const NV = D.nuvem;
@@ -261,7 +265,7 @@ function nuvem() {
   const {fonte, tema, ano} = filtroNv;
   const L = (fonte === 'youtube' ? NV.youtube[tema + '|' + ano] : NV[fonte][ano]) || [];
   if (L.length < 5) {
-    $('#nuvem').innerHTML = `<p class="nota" style="margin:auto">Poucos textos neste recorte para formar pares repetidos. Escolha outro ano, tema ou fonte.</p>`;
+    $('#nuvem').innerHTML = `<p class="nota" style="margin:auto">Neste recorte há poucos textos para formar pares repetidos, e conclusões tiradas de amostras minúsculas são exatamente o tipo de coisa que tentamos evitar. Escolha outro ano, tema ou fonte.</p>`;
   } else {
     const mx = L[0][1], mn = L[L.length - 1][1];
     // embaralha de forma estável para a nuvem não virar lista ordenada
@@ -294,8 +298,8 @@ $('#tab-com-lex').innerHTML = `<thead><tr><th>Assunto</th>${Object.keys(CL).map(
 
 /* 07 redes */
 const PAPEL = {
-  YouTube: ['A sala de aula e o palco', 'Vídeo longo para explicar e para divertir. Quizzes e debates sobre a validade do QI levam as maiores audiências; é onde o público mais escreve.'],
-  TikTok: ['Onde o tema vira identidade', 'O maior alcance da base. Psicólogos e perfis de neurodiversidade listam "sinais" e o público se reconhece. Poucos perfis concentram quase tudo.'],
+  YouTube: ['A sala de aula e o palco', 'Vídeo longo para explicar e para divertir. Quizzes e debates sobre a validade do QI levam as maiores audiências, e é aqui que o público mais escreve.'],
+  TikTok: ['Onde o tema vira identidade', 'O maior alcance da base. Psicólogos e perfis de neurodiversidade listam "sinais" e o público se reconhece. A distribuição é muito concentrada: poucos perfis respondem por quase tudo.'],
   Instagram: ['Consultório e vitrine', 'Profissionais de saúde, institutos e famílias. Mais fala sobre infância, escola e diagnóstico, e celebridades que contam a própria descoberta.'],
   X: ['A imprensa em tempo real', 'Links de reportagens, debate político e reação às notícias. Fala mais de Mensa e de leis do que as outras redes.'],
 };
@@ -336,7 +340,7 @@ function cartaoVideo(v, comInfo = true) {
   const capa = v.rede === 'Instagram' ? 'img/espetaculo.jpg' : `img/capas/${esc(v.id)}.jpg`;
   const thumb = ` thumb" style="background-image:url(${capa})`;
   return `<button class="tela${vert ? ' vert' : ''}${thumb}" data-src="${esc(embed(v))}" aria-label="Assistir: ${esc(v.titulo)}"><span class="rede-tag">${v.rede}</span><span class="play"></span><span class="big">${big}</span></button>` +
-    (comInfo ? `<div class="info"><b>${esc(v.titulo)}</b><p>${esc(v.contexto)}</p><div class="met">${esc(v.autor)} · ${v.ano} · ${v.views ? c(v.views) + ' views · ' : ''}${c(v.likes)} curtidas · ${c(v.comentarios)} comentários · <a href="${esc(v.url)}" target="_blank" rel="noopener">abrir</a></div></div>` : '');
+    (comInfo ? `<div class="info"><b>${esc(v.titulo)}</b><p>${esc(v.contexto)}</p><div class="met">${esc(v.autor)} · ${v.ano} · ${v.views ? c(v.views) + ' views · ' : ''}${c(v.likes)} curtidas · ${c(v.comentarios)} comentários · <a class="abrir" href="${esc(v.url)}" target="_blank" rel="noopener">abrir ↗</a></div></div>` : '');
 }
 document.addEventListener('click', e => {
   const t = e.target.closest('.tela[data-src]');

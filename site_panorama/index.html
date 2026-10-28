@@ -154,6 +154,71 @@ section.cap{padding:72px 0 24px;border-bottom:1px solid var(--line)}
   .autor-links a{justify-content:center;width:100%}
 }
 
+/* celular: menu recolhido, alvos de toque de 44px, gráficos e cards no tamanho do polegar */
+.menu-btn{display:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;min-height:40px;padding:0 14px;font:700 14px var(--body);cursor:pointer;white-space:nowrap}
+@media (max-width:760px){
+  .top .wrap{height:56px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .menu-btn{display:inline-flex;align-items:center;gap:6px}
+  .tema-btn{min-height:40px;padding:0 12px}
+  .nav{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:calc(100dvh - 56px);overflow-y:auto;padding:6px 16px 14px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+  .top.aberto .nav{display:flex}
+  .nav a{font-size:17px;padding:0;min-height:48px;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+  .nav a:last-child{border-bottom:0}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero-img{opacity:.28}
+  .hero:after{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 55%,transparent),var(--bg) 70%)}
+  .selo{font-size:12px;margin-bottom:12px}
+  .lead-box{padding:14px 16px}
+  .card{padding:16px}
+  .rotulo{letter-spacing:.1em}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px 4px;-webkit-overflow-scrolling:touch}
+  .filtros::-webkit-scrollbar,.abas::-webkit-scrollbar{display:none}
+  .filtros button,.abas button{flex:none;min-height:40px;padding:0 14px;font-size:14px;white-space:nowrap}
+  .seg button{min-height:44px;font-size:14px}
+  .fontes-v{gap:8px}
+  .fcard{padding:16px 8px 12px}
+  .fcard h3{font-size:22px}
+  .fitens b{font-size:32px}
+  .bol b{font-size:14px} .bol span{font-size:10px}
+  .dom{grid-template-columns:1fr;gap:4px;margin:12px 0}
+  .dom>span{font-size:15px}
+  .sm{grid-template-columns:78px repeat(6,minmax(0,1fr));font-size:12px}
+  .sm .lab{font-size:12px;line-height:1.2}
+  .ano-img span{font-size:44px}
+  .cong-top>div:first-child b{font-size:56px}
+  .cong-pautas{grid-template-columns:1fr}
+  .multiplos{gap:8px}
+  .mult{padding:10px 10px 8px}
+  .mult h4{font-size:15px}
+  .mult-cab span{display:none}
+  .mult-d b{font-size:17px}
+  .chip-t b{font-size:30px}
+  .fichas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ft.g{width:64px;height:64px}
+  .cl h3{font-size:22px}
+  .cl-img{margin:-16px -16px 4px}
+  .mini{grid-template-columns:96px 1fr 34px}
+  .foco>div{padding:18px}
+  .foco .k b{font-size:26px}
+  .nuvem{padding:14px;gap:4px 10px}
+  .duv .pct{font-size:40px}
+  .duv h3,.cl h3{font-size:22px}
+  .fato b{font-size:36px}
+  .vid .info{padding:12px 14px}
+  .rede h3{font-size:26px}
+  .graf{margin:0 -8px}
+  .dica{max-width:calc(100vw - 24px)}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .btn-mapa{display:block;text-align:center}
+  .vid .info .met a.abrir{display:inline-flex;align-items:center;min-height:36px;padding:0 4px}
+  blockquote small a{display:inline-block;padding:6px 0}
+  footer{padding:36px 0 48px}
+}
+
 /* tabelas */
 .tabela{width:100%;overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
 table{width:100%;border-collapse:collapse;font-size:15px}
@@ -411,12 +476,13 @@ footer p{max-width:80ch;margin-bottom:10px}
 <header class="top">
   <div class="wrap">
     <a class="marca" href="#topo">Radar da <b>Superdotação</b></a>
-    <nav class="nav" aria-label="Capítulos">
+    <nav class="nav" id="nav" aria-label="Capítulos">
       <a href="#panorama">Panorama</a><a href="#linha">2021–2026</a><a href="#temas">Temas</a>
       <a href="#influenciadores">Influenciadores</a><a href="#clusters">Clusters</a><a href="#comentarios">Comentários</a>
       <a href="#duvidas">Dúvidas</a><a href="#redes">Redes</a><a href="#mensa">Mensa</a>
       <a href="historia.html">História</a><a href="#mapa">Mapa de influência</a><a href="tabelas.html">Tabelas</a><a href="metodologia.html">Metodologia</a><a href="#autor">Sobre o autor</a>
     </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">☰ Menu</button>
     <button class="tema-btn" id="tema-btn" type="button">◐ Tema</button>
   </div>
 </header>
@@ -436,19 +502,19 @@ footer p{max-width:80ch;margin-bottom:10px}
       <div class="resumo-box">
         <div class="rotulo" style="margin-top:0">Síntese Estratégica</div>
         <h3>Resumo Executivo · O que revelam os dados sobre AHSD no Brasil</h3>
-        <p style="font-size:16px;color:var(--ink);max-width:75ch">Este observatório é o primeiro levantamento em larga escala a cruzar a cobertura jornalística profissional com a voz espontânea das redes sociais (YouTube, TikTok, Instagram e X) para mapear a percepção pública sobre Altas Habilidades e Superdotação (AHSD) no Brasil entre 2021 e 2026.</p>
+        <p style="font-size:16px;color:var(--ink);max-width:75ch">Este observatório cruza duas fontes que raramente são postas lado a lado: a cobertura da imprensa profissional e a fala espontânea das redes (YouTube, TikTok, Instagram e X). O objeto de estudo é a percepção pública sobre Altas Habilidades e Superdotação (AHSD) no Brasil, de 2021 a 2026. Até onde conseguimos verificar, nenhum levantamento anterior fez esse cruzamento nessa escala. Os resultados se organizam, de forma bastante satisfatória, em três pontos. Numerados, naturalmente.</p>
         <div class="resumo-grid">
           <div class="resumo-card">
-            <h4>1 · Explosão de Interesse (+675%)</h4>
-            <p>O assunto saiu do nicho acadêmico para o debate de massa. As manchetes na imprensa passaram de 53 (2021) para 411 (2026), enquanto cortes de podcasts e vídeos curtos no TikTok e Instagram acumularam mais de 74 milhões de visualizações e 4,4 milhões de curtidas.</p>
+            <h4>1 · O interesse cresceu 675%</h4>
+            <p>Em termos estritamente técnicos, o assunto migrou do círculo acadêmico para a conversa de massa. Os números: as manchetes foram de 53 em 2021 para 411 em 2026, e cortes de podcast e vídeos curtos no TikTok e no Instagram somaram mais de 74 milhões de visualizações e 4,4 milhões de curtidas.</p>
           </div>
           <div class="resumo-card">
-            <h4>2 · A Mudança de Foco nos Anos</h4>
-            <p>Em 2021 e 2022, a pauta era quase exclusivamente sobre crianças-prodígio e pontuações astronômicas de QI. A partir de 2024, a conversa amadureceu: o protagonismo migrou para o sofrimento escolar, a dupla excepcionalidade (TDAH e autismo) e a descoberta tardia na vida adulta.</p>
+            <h4>2 · O foco mudou, e a mudança é mensurável</h4>
+            <p>Em 2021 e 2022, a pauta era quase só criança prodígio e pontuação de QI. A partir de 2024, o centro da conversa passou a ser o sofrimento na escola, a dupla excepcionalidade (TDAH e autismo) e a descoberta tardia na vida adulta. Isso não é uma impressão subjetiva. É uma tendência mensurável, e a curva de cada tema a registra.</p>
           </div>
           <div class="resumo-card">
-            <h4>3 · O Abismo entre Mídia e Público</h4>
-            <p>Enquanto a imprensa noticia conquistas, legislação e marcos institucionais, mais de 60% dos comentários públicos ainda expressam desconfiança, piadas ou o medo do estigma de ser rotulado como "arrogante". O tema precisa urgentemente de educação e acolhimento.</p>
+            <h4>3 · Imprensa e público falam de coisas diferentes</h4>
+            <p>A imprensa noticia conquistas, leis e marcos institucionais. Nos comentários, mais de 60% expressam desconfiança, piada ou medo de ser rotulado como "arrogante". Uma distância desse tamanho indica que falta explicação e acolhimento. A boa notícia é que, ao contrário de certos problemas da física teórica, este tem solução conhecida.</p>
           </div>
         </div>
       </div>
@@ -458,53 +524,53 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="panorama"><div class="wrap">
     <div class="cap-num">00 · Panorama</div>
     <h2>Onde olhamos e o que juntamos</h2>
-    <p class="sub">Quatro redes e a imprensa. Cada fonte mostra uma parte da conversa: a imprensa noticia, o YouTube explica e diverte, o TikTok e o Instagram transformam o tema em identidade, e os comentários dizem o que o público pensa disso tudo.</p>
+    <p class="sub">Quatro redes e a imprensa. Cada fonte ocupa um nicho próprio na conversa, um pouco como espécies num ecossistema: a imprensa noticia, o YouTube explica e diverte, o TikTok e o Instagram transformam o tema em identidade, e os comentários registram o que o público pensa de tudo isso.</p>
     <h3 class="sint">Cinco fontes, cinco papéis</h3>
     <div class="fontes-v" id="fontes-visual"></div>
     <div class="rotulo">Quem domina cada medida</div>
     <div id="fontes-dominio"></div>
-    <p class="nota">Itens: o que as buscas devolveram sobre o tema, não o total das redes. Círculos comparam as fontes em cada medida. Instagram: alcance em seguidores (anel), porque a rede não mostra views. X e imprensa: sem curtidas nem views na coleta. <a href="tabelas.html#fontes">Ver a tabela</a> · <a href="metodologia.html">Metodologia</a></p>
+    <p class="nota">Uma observação sobre os itens: são o que as buscas devolveram sobre o tema, não o total das redes. Os círculos comparam as fontes em cada medida. No Instagram, o alcance é medido em seguidores (anel), porque a rede não informa visualizações. Para o X e a imprensa, a coleta não trouxe curtidas nem visualizações. <a href="tabelas.html#fontes">Ver a tabela</a> · <a href="metodologia.html">Metodologia</a></p>
   </div></section>
 
   <section class="cap" id="linha"><div class="wrap">
     <div class="cap-num">01 · O que aconteceu</div>
     <h2>De 2021 a 2026, o tema saiu do nicho</h2>
-    <p class="sub">O número de manchetes cresceu quase oito vezes no período. Em 2026, a lei da política nacional, as crianças-símbolo e os vídeos virais puxaram o assunto para o centro.</p>
+    <p class="sub">O número de manchetes cresceu quase oito vezes no período (7,75 vezes, para ser exato). Em 2026, três forças puxaram o assunto para o centro: a lei da política nacional, as crianças-símbolo e os vídeos virais.</p>
     <figure class="banner"><img src="img/espetaculo.jpg" alt="Palco de quiz montado sobre uma folha de teste gigante" loading="lazy"></figure>
     <div class="rotulo">Itens coletados por ano em cada fonte (amostra das buscas, não o total da rede)</div>
     <div class="card"><div class="sm" id="anual"></div>
-      <p class="nota">Estes números são o que as buscas devolveram e que passou pelo filtro de tema, não a quantidade de vídeos e posts que existe nas redes. As redes mostram só uma parte dos resultados de cada busca e puxam para o recente e popular; Instagram e TikTok foram coletados em 2026. Use para comparar proporções, não o tamanho do tema. Barra mais clara: o ano de maior volume na fonte. <a href="metodologia.html#funil">Veja o funil de cada fonte</a>.</p></div>
+      <p class="nota">Advertência metodológica: estes números são o que as buscas devolveram e passou pelo filtro de tema, não a quantidade de vídeos e posts que existe nas redes. As redes mostram só uma parte dos resultados de cada busca e favorecem o recente e o popular; Instagram e TikTok foram coletados em 2026. Portanto, servem para comparar proporções, não para medir o tamanho do tema. A barra mais clara marca o ano de maior volume em cada fonte. <a href="metodologia.html#funil">Veja o funil de cada fonte</a>.</p></div>
     <div class="rotulo">Manchetes por mês</div>
     <div class="card"><svg id="linha-mensal" viewBox="0 0 1000 220" role="img" aria-label="Manchetes por mês, 2021 a 2026" style="width:100%;height:auto"></svg></div>
     <div class="rotulo">Os seis anos em seis atos</div>
     <div class="atos" id="atos"></div>
     <div class="rotulo">O Congresso entra no tema</div>
     <div id="congresso"></div>
-    <p class="nota">Fatos reconstituídos a partir das reportagens, vídeos e posts coletados. Números de membros da Mensa são os noticiados pela imprensa.</p>
+    <p class="nota">Fatos reconstituídos a partir das reportagens, vídeos e posts coletados. Os números de membros da Mensa são os noticiados pela imprensa; não temos como auditá-los.</p>
     <div class="rotulo">Vídeos que puxaram a conversa</div>
-    <p class="leitura">Do quiz de "gênio" à criança no Senado: nove vídeos que resumem a mudança do período. Clique para assistir; o vídeo só carrega quando você pede.</p>
+    <p class="leitura">Do quiz de "gênio" à criança no Senado: nove vídeos que, juntos, resumem a mudança do período. Clique para assistir. Por respeito à sua conexão (e à largura de banda em geral), cada vídeo só carrega quando você pede.</p>
     <div class="videos" id="videos"></div>
   </div></section>
 
   <section class="cap" id="temas"><div class="wrap">
     <div class="cap-num">02 · Temas abordados</div>
     <h2>A mídia fala de escola. O público fala de QI.</h2>
-    <p class="sub">Os mesmos 13 temas aplicados a comentários, vídeos e reportagens de 2021 a 2026. A diferença entre as colunas é o descompasso entre o que se publica e o que se comenta.</p>
+    <p class="sub">Aplicamos os mesmos 13 temas a comentários, vídeos e reportagens de 2021 a 2026. É o mais perto de um experimento controlado que este assunto permite: a mesma régua, fontes diferentes. A distância entre as colunas mede o descompasso entre o que se publica e o que se comenta.</p>
     <figure class="banner"><img src="img/espelho.jpg" alt="Pessoa diante de um celular que reflete um cérebro" loading="lazy"></figure>
     <div class="chips-tema" id="temas-chips"></div>
     <div class="rotulo">Subiu ou caiu? Os doze temas, de 2021 a 2026</div>
     <div class="legenda" style="margin-bottom:12px"><span style="--c:var(--accent)">% dos comentários do YouTube</span><span style="--c:var(--spark)">% das reportagens</span></div>
     <div class="multiplos" id="multiplos"></div>
-    <p class="nota">Cada quadro tem a própria escala (o máximo aparece no canto) para mostrar a direção da curva; os números de baixo comparam 2026 com 2021 em pontos percentuais. Os temas que mais mudaram vêm primeiro. A data dos comentários do YouTube é aproximada por ano. <a href="tabelas.html#temas">Ver as tabelas de temas →</a></p>
+    <p class="nota">Como ler: cada quadro tem a própria escala (o máximo aparece no canto), porque o objetivo é mostrar a direção da curva, não comparar alturas entre quadros. Os números de baixo comparam 2026 com 2021 em pontos percentuais, e os temas que mais mudaram vêm primeiro. A data dos comentários do YouTube é aproximada por ano. <a href="tabelas.html#temas">Ver as tabelas de temas →</a></p>
   </div></section>
 
   <section class="cap" id="influenciadores"><div class="wrap">
     <div class="cap-num">03 · Influenciadores</div>
     <h2>Os nomes da conversa</h2>
-    <p class="sub">Alcance, curtidas e comentários dos perfis com mais tração em cada rede, somando só os conteúdos sobre o tema publicados de 2021 a 2026.</p>
+    <p class="sub">Alcance, curtidas e comentários dos perfis com mais tração em cada rede. Para que a comparação seja justa (e uma comparação injusta é pior do que nenhuma), somamos apenas os conteúdos sobre o tema publicados de 2021 a 2026.</p>
     <div class="abas" id="fichas-abas" aria-label="Filtrar por rede"></div>
     <div class="fichas" id="fichas"></div>
-    <p class="nota">Fichas dos perfis com mais engajamento sobre o tema, mais os nomes em destaque. Clique para ver no <a href="mapa.html">mapa de influência</a>.</p>
+    <p class="nota">Fichas dos perfis com mais engajamento sobre o tema, mais os nomes em destaque. Para ver como esses nomes se ligam aos temas, consulte o <a href="#mapa">mapa de influência</a>.</p>
     <p class="nota"><a href="tabelas.html#influenciadores">Ver as tabelas completas →</a></p>
   </div></section>
 
@@ -512,14 +578,14 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="mapa"><div class="wrap">
     <div class="cap-num">Mapa de influência</div>
     <h2>Quem fala de quê, e o quanto</h2>
-    <p class="sub">Quatro desenhos mostram a mesma conversa de jeitos diferentes. Escolha no topo a medida que quiser (alcance, curtidas ou comentários) e os quatro se atualizam juntos.</p>
+    <p class="sub">Dois desenhos mostram a mesma conversa de ângulos diferentes. Escolha no topo a medida (alcance, curtidas ou comentários) e os dois se atualizam juntos.</p>
     <div class="seg" id="medida" role="group" aria-label="Medir por"><button data-m="views">Alcance</button><button data-m="likes">Curtidas</button><button data-m="coments">Comentários</button></div>
     <div class="rotulo">1 · Quem fala de quê</div>
-    <p class="nota-leigo">Cada bolinha é uma pessoa, com foto. Quanto maior a bolinha, mais repercussão ela teve. A cor mostra o grupo a que ela pertence. Os círculos com nome são os temas. Uma linha liga uma pessoa a um tema quando pelo menos 1 em cada 5 publicações dela fala daquele assunto. Arraste as bolinhas para explorar.</p>
+    <p class="nota-leigo">Como ler: cada bolinha é uma pessoa, com foto, e o tamanho acompanha a repercussão que ela teve. A cor indica o grupo a que pertence. Os círculos com nome são os temas. Uma linha liga uma pessoa a um tema quando pelo menos 1 em cada 5 publicações dela trata daquele assunto. Pode arrastar as bolinhas. O desenho obedece a uma simulação de forças, ou seja, é física de verdade, o que o torna, sem dúvida, o nosso gráfico favorito.</p>
     <div class="graf"><svg id="g-grafo" viewBox="0 0 1100 720" role="img" aria-label="Grafo de criadores e temas"></svg></div>
     <div class="legenda" id="leg-cl"></div>
     <div class="rotulo">2 · Quanto pesa cada tema</div>
-    <p class="nota-leigo">Cada retângulo é um tema. Quanto maior o retângulo, mais a conversa gira em torno dele. Dentro de cada tema, os nomes são quem mais contribui para ele. Clique em um tema abaixo ou no gráfico para detalhar seus criadores.</p>
+    <p class="nota-leigo">Cada retângulo é um tema, e a área é proporcional ao peso dele na conversa. Dentro de cada tema aparecem os nomes que mais contribuem para ele. Clique em um tema, abaixo ou no próprio gráfico, para ver seus criadores em detalhe.</p>
     <div class="filtros" id="filtro-tema-tree" role="group" aria-label="Filtrar por tema" style="margin:12px 0 14px"></div>
     <h3 id="h-tree" class="sint" style="font-size:24px"></h3>
     <div class="graf"><svg id="g-tree" viewBox="0 0 1100 560" role="img" aria-label="Treemap de temas e criadores"></svg></div>
@@ -529,7 +595,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="clusters"><div class="wrap">
     <div class="cap-num">04 · Clusters de influenciadores</div>
     <h2>Seis jeitos de falar de superdotação</h2>
-    <p class="sub">Agrupamos os criadores pelo vocabulário dos próprios posts e vídeos (legendas, títulos e falas transcritas), sem olhar para quem são. Os grupos que saíram têm públicos e alcances muito diferentes.</p>
+    <p class="sub">Agrupamos os criadores pelo vocabulário dos próprios posts e vídeos (legendas, títulos e falas transcritas), sem olhar para quem são. O algoritmo não conhecia nomes nem seguidores. Ainda assim, os grupos que emergiram têm públicos e alcances muito diferentes. Hipótese: vocabulário diferente, público diferente. Hipótese confirmada.</p>
     <div class="grid3" id="cl" style="margin-top:22px"></div>
     <p class="nota" id="cl-nota"></p>
   </div></section>
@@ -537,7 +603,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="comentarios"><div class="wrap">
     <div class="cap-num">05 · O que as pessoas comentam</div>
     <h2>Piada, desconfiança e "será que eu sou?"</h2>
-    <p class="sub">Os comentários se dividem entre quem brinca com o próprio QI, quem duvida dos testes e quem se reconhece no que vê. Abaixo, as duplas de palavras mais repetidas e os comentários mais curtidos de cada tema, sem o nome de quem escreveu.</p>
+    <p class="sub">Os comentários se dividem em três populações: quem brinca com o próprio QI, quem duvida dos testes e quem se reconhece no que vê. Abaixo estão as duplas de palavras mais repetidas e os comentários mais curtidos de cada tema, sem o nome de quem escreveu.</p>
     <figure class="banner"><img src="img/vozes.jpg" alt="Multidão com balões de fala e perguntas" loading="lazy"></figure>
     <div class="rotulo">As 20 duplas de palavras mais repetidas</div>
     <div class="filtros" id="filtro-fonte" aria-label="Fonte"></div>
@@ -553,7 +619,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="duvidas"><div class="wrap">
     <div class="cap-num">06 · Dúvidas e angústias</div>
     <h2>"Será que eu sou?" e "por que eu me sinto assim?"</h2>
-    <p class="sub">Por trás das piadas, há um público que pergunta e sofre. Separamos os comentários que fazem perguntas ou falam de sofrimento e pedimos à nossa IA que dissesse qual dúvida ou angústia cada um expressa.</p>
+    <p class="sub">Por trás das piadas, há um público que pergunta e sofre. Separamos os comentários que fazem perguntas ou falam de sofrimento e pedimos à nossa IA que identificasse a dúvida ou a angústia de cada um. É a parte menos engraçada dos dados e, provavelmente, a mais importante.</p>
     <figure class="banner"><img src="img/ponte.jpg" alt="Ponte de luz sendo construída entre dois penhascos" loading="lazy"></figure>
     <div class="lead-box" id="duv-lead"></div>
     <div class="card" style="margin-bottom:20px"><h4>O peso de cada dúvida</h4><div class="hb" id="duv-barras"></div></div>
@@ -564,7 +630,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="redes"><div class="wrap">
     <div class="cap-num">07 · Redes e veículos</div>
     <h2>Cada rede conta uma história diferente</h2>
-    <p class="sub">A mesma régua de vocabulário aplicada a todas as fontes mostra a especialidade de cada uma. Os números de alcance, curtidas e comentários mostram onde o público está.</p>
+    <p class="sub">Aplicamos a mesma régua de vocabulário a todas as fontes, e cada uma revelou a sua especialidade. Os números de alcance, curtidas e comentários mostram onde o público de fato está. Fato curioso: o X fala mais de leis e de Mensa do que qualquer outra rede.</p>
     <div class="redes" id="cards-redes" style="margin-top:22px"></div>
     <p class="nota"><a href="tabelas.html#redes">Ver vocabulário por rede, veículos e revistas →</a></p>
   </div></section>
@@ -572,20 +638,20 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="mensa"><div class="wrap">
     <div class="cap-num">08 · O papel da Mensa e das Associações</div>
     <h2>Uma mesa redonda para os 2% mais altos</h2>
-    <p class="sub">Mais do que uma nota de corte em teste de QI: por que a necessidade de viver e dialogar entre iguais é uma questão de saúde mental e acolhimento.</p>
+    <p class="sub">Mais do que uma nota de corte em teste de QI: por que conviver e dialogar entre iguais é uma questão de saúde mental e de acolhimento.</p>
     <figure class="banner"><img src="img/clube.jpg" alt="Porta redonda iluminada com pessoas do lado de fora" loading="lazy"></figure>
     
     <div class="leitura" style="max-width:85ch;margin:24px 0 28px;font-size:16px;line-height:1.7;color:var(--ink)">
-      <p style="margin-bottom:14px"><b>O que é a Mensa e qual é o seu verdadeiro propósito?</b> Fundada em 1946 no pós-Segunda Guerra Mundial, na Universidade de Oxford, pelos juristas e pesquisadores Roland Berrill e Lancelot Ware, a Mensa nasceu com uma utopia humanista: unir mentes com altíssima capacidade intelectual, sem distinção de raça, credo, posição social ou ideologia política, colocando a inteligência a serviço da paz e do livre intercâmbio de ideias. O nome vem do latim <i>mensa</i> ("mesa"), uma referência explícita à <b>mesa redonda</b> da lenda arturiana, onde ninguém senta na cabeceira, não há hierarquia e todas as vozes têm o mesmo peso.</p>
-      <p style="margin-bottom:14px"><b>Desmistificando o mito do elitismo: 2% é muita gente.</b> Na cultura popular e na cobertura de TV, o ingresso na Mensa costuma ser retratado como um troféu de vaidade ou a admissão em um clube secreto de semideuses. Os dados, no entanto, desmontam essa caricatura. O critério de admissão (pontuar no percentil 98, os 2% superiores em teste psicométrico padronizado e supervisionado) significa que, em um país com 215 milhões de habitantes, <b>mais de 4,3 milhões de brasileiros são elegíveis</b>. É uma multidão equivalente à população inteira da Paraíba ou da Nova Zelândia, distribuída por todas as classes sociais, profissões e bairros da periferia ao centro, mas cuja imensa maioria cresce e envelhece sem jamais receber um diagnóstico formal.</p>
-      <p><b>A urgência de viver e dialogar entre iguais.</b> Para além das estatísticas de QI, a existência da Mensa e de entidades congêneres (como a Febratis e associações de famílias) responde a uma necessidade psicológica vital: a <b>saúde mental da convivência entre pares</b>. Pessoas neurodivergentes com altas habilidades frequentemente acumulam trajetórias marcadas pela solidão crônica, bullying, incompreensão familiar e a dolorosa autocensura de ter de "diminuir o próprio ritmo" para não parecer arrogante. Encontrar um ambiente onde a velocidade do pensamento, os hiperfocos, as piadas complexas e a sensibilidade aguçada são compreendidos de imediato não é privilégio: é acolhimento terapêutico e sobrevivência emocional.</p>
+      <p style="margin-bottom:14px"><b>O que é a Mensa e para que ela existe?</b> A Mensa foi fundada em 1946, em Oxford, logo depois da Segunda Guerra Mundial, pelos juristas e pesquisadores Roland Berrill e Lancelot Ware. A proposta era, por qualquer padrão, ambiciosa: reunir pessoas de altíssima capacidade intelectual sem distinção de raça, credo, posição social ou ideologia política, e pôr essa inteligência a serviço da paz e do livre intercâmbio de ideias. Curiosidade etimológica: o nome vem do latim <i>mensa</i> ("mesa"), e a imagem pretendida é a de uma <b>mesa redonda</b>, como a da lenda arturiana, onde ninguém senta na cabeceira, não há hierarquia e todas as vozes têm o mesmo peso.</p>
+      <p style="margin-bottom:14px"><b>Uma conta simples desfaz o mito do elitismo: 2% é muita gente.</b> Na cultura popular e na TV, entrar na Mensa costuma ser retratado como troféu de vaidade ou admissão num clube secreto de semideuses. A aritmética, que não tem opinião, conta outra história. O critério de admissão é pontuar no percentil 98, isto é, entre os 2% superiores, em um teste psicométrico padronizado e supervisionado. Em um país com 215 milhões de habitantes, isso significa que <b>mais de 4,3 milhões de brasileiros são elegíveis</b>. É uma população da ordem da Paraíba inteira, ou da Nova Zelândia, espalhada por todas as classes sociais, profissões e bairros, da periferia ao centro. E a imensa maioria dessas pessoas cresce e envelhece sem jamais receber um diagnóstico formal.</p>
+      <p><b>Por que conviver entre iguais importa.</b> Deixando de lado as estatísticas de QI, a Mensa e as entidades congêneres (como a Febratis e as associações de famílias) atendem a uma necessidade psicológica concreta: a <b>saúde mental da convivência entre pares</b>. Pessoas neurodivergentes com altas habilidades costumam acumular trajetórias com solidão crônica, bullying, incompreensão familiar e uma autocensura cansativa, a de "diminuir o próprio ritmo" para não parecer arrogante. Num ambiente em que a velocidade do pensamento, os hiperfocos, as piadas complexas e a sensibilidade aguçada são compreendidos sem explicação prévia, a convivência deixa de exigir tradução. Isso não é privilégio. É acolhimento terapêutico e, em muitos casos, sobrevivência emocional.</p>
     </div>
 
     <div class="fatos">
-      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18 M5 21V8l7-5 7 5v13 M9 21v-6h6v6"/></svg></span><b>1946</b><span>Fundada em Oxford após a 2ª Guerra para colocar a inteligência a serviço da paz e do diálogo livre.</span></div>
-      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V10 M18 20V4 M6 20v-4"/></svg></span><b>4,3 milhões</b><span>2% da população brasileira é uma multidão do tamanho de um estado. A imensa maioria segue sem diagnóstico.</span></div>
-      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M12 2v20 M2 12h20"/></svg></span><b>Mesa Redonda</b><span>Mensa significa "mesa" em latim: ninguém senta na cabeceira, sem hierarquia política, religiosa ou social.</span></div>
-      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18 M12 3a15 15 0 0 1 0 18 M12 3a15 15 0 0 0 0 18 M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><b>Viver entre Iguais</b><span>Espaço seguro para mentes atípicas encontrarem empatia, validação e acolhimento contra a solidão crônica.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18 M5 21V8l7-5 7 5v13 M9 21v-6h6v6"/></svg></span><b>1946</b><span>Fundada em Oxford, logo após a Segunda Guerra, para pôr a inteligência a serviço da paz e do diálogo livre.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V10 M18 20V4 M6 20v-4"/></svg></span><b>4,3 milhões</b><span>É quanto dá 2% da população brasileira: uma multidão do tamanho de um estado. A imensa maioria segue sem diagnóstico.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M12 2v20 M2 12h20"/></svg></span><b>Mesa Redonda</b><span>Mensa significa "mesa" em latim. Numa mesa redonda ninguém senta na cabeceira: não há hierarquia política, religiosa ou social.</span></div>
+      <div class="fato"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18 M12 3a15 15 0 0 1 0 18 M12 3a15 15 0 0 0 0 18 M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><b>Viver entre iguais</b><span>Um espaço seguro para mentes atípicas encontrarem empatia, validação e uma alternativa à solidão crônica.</span></div>
     </div>
     <div class="rotulo">E o que os números dizem sobre ela</div>
     <div class="grid2" style="margin-top:22px">
@@ -605,16 +671,16 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="metodo"><div class="wrap">
     <div class="cap-num">09 · Método e limites</div>
     <h2>Como foi feito este observatório</h2>
-    <p class="sub">Por que ouvir as redes, como aplicamos inteligência artificial para ler áudios e textos, e quais são os limites estatísticos da pesquisa.</p>
+    <p class="sub">Por que ouvir as redes, como usamos inteligência artificial para ler áudios e textos e, igualmente importante, o que esta pesquisa não permite concluir.</p>
     <div class="grid2" style="margin-top:18px">
       <div class="leitura">
-        <p><b>Recorte Temporal (2021 a 2026).</b> A janela de 5 anos captura a virada histórica da superdotação no Brasil: o período pós-pandemia, o boom dos videocasts de saúde mental, a popularização de testes online e a recente promulgação da Política Nacional de Educação Especial.</p>
-        <p><b>Por que ouvir as redes sociais?</b> A imprensa tradicional cumpre o papel de noticiar prodígios, pesquisas e marcos legais. Porém, é nas caixas de comentários e nos vídeos curtos que o público comum se expressa sem filtro: revelando a suspeita de ser neurodivergente, o medo de ser julgado, os traumas do ambiente escolar e a angústia da identificação adulta.</p>
+        <p><b>Recorte Temporal (2021 a 2026).</b> A janela de seis anos captura a virada histórica da superdotação no Brasil: o período pós-pandemia, o boom dos videocasts de saúde mental, a popularização de testes online e a recente promulgação da Política Nacional de Educação Especial.</p>
+        <p><b>Por que ouvir as redes sociais?</b> A imprensa tradicional cumpre o papel de noticiar prodígios, pesquisas e marcos legais. Porém, é nas caixas de comentários e nos vídeos curtos que o público comum se expressa sem filtro. É ali que aparecem a suspeita de ser neurodivergente, o medo de ser julgado, os traumas do ambiente escolar e a angústia da identificação adulta.</p>
         <p><b>A Base Coletada.</b> 80.809 comentários do YouTube, 16.795 do Instagram e 1.257 respostas no X. 353 vídeos longos do YouTube e 1.464 vídeos do TikTok (517 estritamente sobre o tema com fala transcrita integralmente). 1.478 posts de Instagram (458 sobre o tema), 427 posts no X e 1.264 reportagens jornalísticas mais 210 artigos de periódicos.</p>
       </div>
       <div class="leitura">
-        <p><b>Pipeline de Inteligência Artificial.</b> Áudios de vídeos do TikTok e YouTube foram transcritos foneticamente pelo modelo Whisper. As peças foram classificadas em 13 temas transversais com modelos de linguagem natural (NLP). Comentários com perguntas ou relatos de dor passaram por triagem semântica para mapear as 10 maiores dúvidas existenciais.</p>
-        <p><b>Clusters de Criadores.</b> Aplicamos k-médias não-supervisionado sobre a distribuição de vocabulário de cada criador ativo, descobrindo organicamente 6 grupos narrativos que moldam a conversa no Brasil.</p>
+        <p><b>Pipeline de Inteligência Artificial.</b> Os áudios dos vídeos do TikTok e do YouTube foram transcritos pelo Whisper, um modelo de reconhecimento de fala. Em seguida, cada peça foi classificada em 13 temas transversais por modelos de linguagem. Os comentários com perguntas ou relatos de dor passaram por uma triagem semântica, que mapeou as 10 dúvidas e angústias mais frequentes.</p>
+        <p><b>Clusters de Criadores.</b> Aplicamos k-médias, um método não supervisionado, à distribuição de vocabulário de cada criador ativo. Sem que disséssemos o que procurar, o método encontrou 6 grupos narrativos que moldam a conversa no Brasil.</p>
         <p><b>Privacidade e Ética.</b> Todos os autores de comentários foram integralmente anonimizados. Apenas figuras públicas, veículos de imprensa e instituições são citados nominalmente.</p>
       </div>
     </div>
@@ -624,15 +690,15 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="autor"><div class="wrap">
     <div class="cap-num">Sobre o autor</div>
     <h2>Ciência de dados a serviço da clareza</h2>
-    <p class="sub">Conheça o idealizador do Radar da Superdotação e as iniciativas de inclusão de altas habilidades no ambiente profissional.</p>
+    <p class="sub">Quem idealizou o Radar da Superdotação e o que tem feito pela inclusão de pessoas com altas habilidades no trabalho.</p>
     <div class="autor-card">
       <img class="autor-foto" src="img/aislan.webp" alt="Foto de Aislan Greca">
       <div class="autor-info">
         <h3>Aislan Greca</h3>
         <div class="cargo">Cientista de Dados · Relações Públicas · Mestre em Gestão com foco em PLN e Psicossociologia</div>
-        <p>Com mais de 20 anos de atuação integrando comunicação, inteligência de dados abertos e transformação cultural, Aislan Greca é especialista em traduzir grandes volumes de dados complexos em inteligência acessível para que pessoas e organizações decidam com evidências reais.</p>
-        <p>Identificado com superdotação na vida adulta através de avaliação neuropsicológica, vivenciou diretamente o desafio que muitas pessoas com altas habilidades enfrentam no mercado corporativo: a sensação de descompasso, a incompreensão de lideranças e o estigma injusto de ser rotulado como "difícil" ou "arrogante".</p>
-        <p>Para preencher esse vazio no debate profissional brasileiro, fundou e coordena no LinkedIn a comunidade <b>Talentos Ocultos: Superdotação no Ambiente de Trabalho</b>, um espaço dedicado a conectar profissionais com AHSD, gestores e RHs para desmistificar o tema e valorizar a neurodivergência como potência colaborativa.</p>
+        <p>Aislan Greca trabalha há mais de 20 anos na interseção entre comunicação, inteligência de dados abertos e transformação cultural. A especialidade: converter grandes volumes de dados complexos em conhecimento acessível, para que pessoas e organizações decidam com base em evidências, não em impressões.</p>
+        <p>A superdotação foi identificada na vida adulta, por meio de avaliação neuropsicológica. Daí vem o conhecimento por experiência direta do que muitas pessoas com altas habilidades enfrentam no mercado corporativo: a sensação de descompasso, a incompreensão das lideranças e o rótulo injusto de "difícil" ou "arrogante".</p>
+        <p>Como o debate profissional brasileiro tinha uma lacuna evidente nesse ponto, fundou e coordena no LinkedIn a comunidade <b>Talentos Ocultos: Superdotação no Ambiente de Trabalho</b>. O grupo reúne profissionais com AHSD, gestores e equipes de RH com dois objetivos declarados: desfazer mitos sobre o tema e tratar a neurodivergência como potência colaborativa.</p>
         <div class="autor-links">
           <a href="https://greca.dev.br" target="_blank" rel="noopener">Conheça o site greca.dev.br</a>
           <a href="https://www.linkedin.com/groups/9505909/" target="_blank" rel="noopener">Grupo Talentos Ocultos (LinkedIn)</a>
@@ -648,6 +714,15 @@ footer p{max-width:80ch;margin-bottom:10px}
 <script src="dados.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+<script>
+(function(){
+  var top=document.querySelector('.top'), b=document.getElementById('menu-btn');
+  var fecha=function(){top.classList.remove('aberto');b.setAttribute('aria-expanded','false');b.textContent='☰ Menu';};
+  b.onclick=function(){var ab=top.classList.toggle('aberto');b.setAttribute('aria-expanded',ab);b.textContent=ab?'✕ Fechar':'☰ Menu';};
+  document.getElementById('nav').addEventListener('click',function(e){if(e.target.closest('a'))fecha();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});
+})();
+</script>
 <script src="app.js"></script>
 <script src="mapa.js"></script>
 </body>

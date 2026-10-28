@@ -81,46 +81,58 @@ td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sim{color:var(--accent);font-weight:700} .nao{color:var(--neg);font-weight:700}
 footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
+/* celular: marca e tema na primeira linha, capítulos numa faixa rolável logo abaixo, alvos de toque de 40px */
+@media (max-width:640px){
+  .top .wrap{height:auto;flex-wrap:wrap;gap:0 10px;padding-top:6px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:44px}
+  .tema-btn{min-height:40px;min-width:40px}
+  .nav{order:3;flex:0 0 calc(100% + 32px);gap:20px;margin:0 -16px;padding:0 16px}
+  .nav a{min-height:40px;display:inline-flex;align-items:center;font-size:15px}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .filtros button,.abas button,.seg button{flex:none;min-height:40px}
+}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap">
   <a class="marca" href="index.html">Radar da <b>Superdotação</b></a>
-  <nav class="nav"><a href="index.html">Dados</a><a href="historia.html">História</a><a href="mapa.html">Mapa de influência</a><a class="on" href="metodologia.html">Metodologia</a></nav>
+  <nav class="nav"><a href="index.html">Dados</a><a href="historia.html">História</a><a href="index.html#mapa">Mapa de influência</a><a class="on" href="metodologia.html">Metodologia</a></nav>
 </div></div>
 
 <header class="abre"><div class="wrap">
   <div class="chapeu">Metodologia</div>
   <h1>O que foi feito, passo a passo</h1>
-  <p>Como os dados foram buscados, filtrados, classificados e medidos, o que eles representam e o que não dá para concluir com eles.</p>
+  <p>Como os dados foram buscados, filtrados, classificados e medidos, o que eles representam e, com o mesmo cuidado, o que não dá para concluir com eles. Explicamos tudo, em ordem. Um resultado só vale tanto quanto o método que o produziu, e omitir o método seria, francamente, uma falta de educação científica.</p>
   <div class="aviso"><b>É uma amostra, não um censo.</b> Os números de vídeos e posts não são o total que existe nas redes. São os itens que as buscas devolveram dentro de um limite de rolagem, depois filtrados pelo tema. As redes não oferecem contagem total de conteúdo por assunto, e cada busca mostra só uma parte dos resultados, puxando para o que é recente e popular. Por isso, o volume por ano mede a nossa amostra. O que é comparável são as <b>proporções dentro da amostra</b> (temas, posturas, dúvidas) e as <b>métricas dos itens coletados</b> (alcance, curtidas e comentários).</div>
 </div></header>
 
 <section id="funil"><div class="wrap">
   <h2>Do que foi buscado ao que entrou no site</h2>
-  <p>Para cada fonte, as etapas da coleta. A barra verde é o que aparece nas análises.</p>
+  <p>Para cada fonte, as etapas da coleta, da busca bruta ao que sobrou depois de cada filtro. A barra verde é o que aparece nas análises.</p>
   <div class="funil" id="funil-lista"></div>
 </div></section>
 
 <section id="medidas"><div class="wrap">
   <h2>Como medimos alcance, curtidas e comentários</h2>
-  <p>Cada rede mostra números diferentes. Não somamos coisas de natureza diferente: visualizações e seguidores ficam separados.</p>
+  <p>Cada rede mostra números diferentes. Uma regra que seguimos à risca: não se somam grandezas de natureza diferente. Visualizações e seguidores ficam separados.</p>
   <div class="tab"><table id="tab-medidas"></table></div>
   <div class="grid2">
     <div class="card"><h3>Alcance</h3><p>Visualizações informadas pelo YouTube e pelo TikTok no dia da coleta. São um retrato daquele dia: vídeos antigos acumulam mais. O Instagram não mostra visualizações nas páginas coletadas; ali usamos a <b>audiência potencial</b>, a soma dos seguidores dos perfis que postaram sobre o tema. Seguidor não é visualização, por isso esse número nunca é somado às views.</p></div>
-    <div class="card"><h3>Curtidas e comentários</h3><p>No YouTube e no TikTok, são os números exibidos pela rede. No Instagram, curtidas exibidas no post (algumas páginas escondem esse número) e comentários efetivamente coletados, que podem ser menos que o total. No X, a coleta trouxe curtidas, respostas e repostagens zeradas em todos os 427 posts, sinal de falha na leitura da página; por isso o X aparece só em volume e em respostas coletadas.</p></div>
+    <div class="card"><h3>Curtidas e comentários</h3><p>No YouTube e no TikTok, são os números exibidos pela rede. No Instagram, curtidas exibidas no post (algumas páginas escondem esse número) e comentários efetivamente coletados, que podem ser menos que o total. No X, a coleta trouxe curtidas, respostas e repostagens zeradas em todos os 427 posts, o que indica falha na leitura da página, já que é improvável que 427 posts tenham exatamente zero interações. Por isso o X aparece só em volume e em respostas coletadas.</p></div>
   </div>
 </div></section>
 
 <section id="filtro"><div class="wrap">
   <h2>Filtro de tema</h2>
   <p>Parte das coletas foi feita por perfil (todos os vídeos recentes de um criador) e trouxe conteúdo de outros assuntos. Por isso, um post do Instagram, do TikTok ou do X só entra nas análises se o texto da legenda, do post ou a fala transcrita tiver pelo menos um destes termos: <b>superdotação, superdotado, altas habilidades, AH/SD, QI, IQ, Mensa, gifted, superinteligente, gênio, prodígio, neurodivergência, dupla excepcionalidade ou inteligência</b>. Os vídeos do YouTube já tinham passado por limpeza manual de ruído (por exemplo, o pastor Mensa Otabil e o rapper Vic Mensa).</p>
-  <p>O filtro é permissivo: "inteligência" e "gênio" trazem alguns conteúdos que tocam o tema de passagem. Ele também deixa de fora quem fala do assunto sem nenhum desses termos.</p>
+  <p>Todo filtro erra para algum lado, e este erra nos dois. É permissivo, porque "inteligência" e "gênio" trazem alguns conteúdos que tocam o tema só de passagem. E é restritivo, porque deixa de fora quem fala do assunto sem usar nenhum desses termos.</p>
 </div></section>
 
 <section id="classificacao"><div class="wrap">
   <h2>Classificação com a nossa IA</h2>
-  <p>A nossa IA é um modelo de classificação. Ela recebe um texto e escolhe uma opção de uma lista fechada, com uma confiança declarada.</p>
+  <p>A nossa IA é um modelo de classificação. Ela recebe um texto e escolhe uma opção de uma lista fechada, informando também a própria confiança na escolha. Não escreve, não opina e não inventa categorias.</p>
   <div class="grid2">
     <div class="card"><h3>Temas</h3><ul>
       <li>13 temas, os mesmos para comentários, vídeos e reportagens.</li>
@@ -139,7 +151,7 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
       <li>Dez categorias mais "nenhuma"; 1.498 classificados, 605 com dúvida ou angústia.</li>
       <li>Nos exemplos do site, só rótulos com confiança de 0,7 ou mais.</li>
     </ul></div>
-    <div class="card"><h3>Validação</h3><p>Nenhuma das classificações foi comparada com rótulos feitos por pessoas. Há uma amostra de 275 itens preparada para essa revisão. Até lá, os percentuais mostram como a nossa IA distribuiu os itens, não a taxa de acerto.</p></div>
+    <div class="card"><h3>Validação</h3><p>Nenhuma das classificações foi comparada com rótulos feitos por pessoas. Há uma amostra de 275 itens preparada para essa revisão. Até lá, os percentuais mostram como a nossa IA distribuiu os itens, não a taxa de acerto. A distinção é importante, e preferimos deixá-la explícita a fingir uma precisão que ainda não medimos.</p></div>
   </div>
 </div></section>
 
@@ -149,7 +161,7 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
     <div class="card"><h3>Grupos de vocabulário</h3><p>Onze listas de palavras (Mensa; QI e testes; TDAH, autismo e saúde mental; diagnóstico; escola; leis; infância e família; humor e quiz; gênio e prodígio; elitismo; descoberta adulta). Um conteúdo "toca" o assunto se tiver uma palavra da lista. É a mesma régua para redes, veículos e criadores.</p></div>
     <div class="card"><h3>Clusters de criadores</h3><p>Criadores com 3 ou mais conteúdos sobre o tema. Para cada um, a fração dos conteúdos que toca cada grupo de vocabulário. Agrupamento por k-médias em 6 grupos, com 25 inícios aleatórios. Os nomes dos grupos são leitura nossa dos traços que mais os distinguem da média.</p></div>
     <div class="card"><h3>Parceiros possíveis</h3><p>Criadores com 3 ou mais conteúdos e pelo menos 50 mil de alcance (views ou seguidores). Notas de 1 a 5 por quintil em três critérios: alcance; afinidade de pauta (quanto fala de saúde, escola, família, diagnóstico, adultos e leis, menos metade do quanto fala de quiz); e conversa (comentários por conteúdo).</p></div>
-    <div class="card"><h3>Trigramas</h3><p>Sequências de três palavras repetidas nos comentários, contadas uma vez por comentário. Saem as que começam ou terminam em palavra vazia (de, que, o...), as que têm números (respostas de quiz) e as de texto de interface.</p></div>
+    <div class="card"><h3>Duplas de palavras</h3><p>Pares de palavras vizinhas repetidos nos textos (bigramas), contados uma vez por texto. Saem os pares com palavra vazia (de, que, o...), com números (respostas de quiz), com palavras de menos de três letras e os de texto de interface. O site mostra as 20 duplas mais frequentes de cada recorte, desde que apareçam em pelo menos 3 textos.</p></div>
   </div>
 </div></section>
 
@@ -161,7 +173,7 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
       <tr><td><b>Amostra das buscas</b></td><td>Volumes por ano não medem o tamanho do tema na rede. As buscas favorecem conteúdo recente e popular.</td></tr>
       <tr><td><b>Coleta em 2026</b></td><td>Instagram e TikTok foram coletados em outubro de 2026, por isso concentram itens de 2025 e 2026.</td></tr>
       <tr><td><b>Datas dos comentários do YouTube</b></td><td>Vêm como "há N anos" e foram convertidas a partir do dia da coleta. Só o ano é confiável, com margem de um ano.</td></tr>
-      <tr><td><b>Métricas do X</b></td><td>Vieram zeradas. O X aparece só em volume e respostas.</td></tr>
+      <tr><td><b>Métricas do X</b></td><td>Vieram zeradas, o que é um defeito da coleta, não um fato sobre o X. A rede aparece só em volume e respostas.</td></tr>
       <tr><td><b>Instagram sem views</b></td><td>O alcance no Instagram é potencial (seguidores), não visualização.</td></tr>
       <tr><td><b>Classificação sem gabarito</b></td><td>Temas, posturas e dúvidas são da nossa IA, sem validação humana.</td></tr>
       <tr><td><b>Comentários por vídeo</b></td><td>No YouTube, os comentários vêm de 262 vídeos com comentários disponíveis; vídeos muito comentados podem ter sido coletados em parte.</td></tr>
@@ -172,7 +184,7 @@ footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
 
 <section id="privacidade"><div class="wrap">
   <h2>Privacidade</h2>
-  <p>Autores de comentários do YouTube foram trocados por um código (hash com sal) e não aparecem no site. Nenhum comentário é mostrado com nome de quem escreveu, e trechos com números, links ou marcações foram excluídos dos exemplos. Só aparecem pelo nome perfis públicos de criadores, veículos e instituições. A tabela que liga códigos a nomes fica fora do site, em pasta restrita.</p>
+  <p>Autores de comentários do YouTube foram trocados por um código (hash com sal, um código de mão única) e não aparecem no site. Nenhum comentário é mostrado com nome de quem escreveu, e trechos com números, links ou marcações foram excluídos dos exemplos. Só aparecem pelo nome perfis públicos de criadores, veículos e instituições. A tabela que liga códigos a nomes fica fora do site, em pasta restrita.</p>
 </div></section>
 
 <footer><div class="wrap"><p id="rodape"></p></div></footer>

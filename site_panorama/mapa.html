@@ -93,6 +93,18 @@ section h2{font-size:clamp(28px,4vw,44px);margin:6px 0 10px;max-width:24ch}
 .dupla>*{min-width:0}
 .ref{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--surface);border:1px dashed var(--muted);padding:18px}
 footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
+/* celular: marca e tema na primeira linha, capítulos numa faixa rolável logo abaixo, alvos de toque de 40px */
+@media (max-width:640px){
+  .top .wrap{height:auto;flex-wrap:wrap;gap:0 10px;padding-top:6px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:44px}
+  .tema-btn{min-height:40px;min-width:40px}
+  .nav{order:3;flex:0 0 calc(100% + 32px);gap:20px;margin:0 -16px;padding:0 16px}
+  .nav a{min-height:40px;display:inline-flex;align-items:center;font-size:15px}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .filtros button,.abas button,.seg button{flex:none;min-height:40px}
+}
 </style>
 </head>
 <body>

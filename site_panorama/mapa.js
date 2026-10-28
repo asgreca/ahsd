@@ -83,14 +83,17 @@ const mostra = (ev, html) => { dica.innerHTML = html; dica.hidden = false; dica.
 const esconde = () => { dica.hidden = true; };
 
 /* grafo */
+// no celular os gráficos ficam em pé e com menos nós, para o texto continuar legível
+const movel = () => innerWidth < 640;
 let sim;
 function grafo() {
   const svg = d3.select('#g-grafo'); svg.selectAll('*').remove();
-  const W = 1100, H = 720;
-  let pessoas = [...MP.pessoas].sort((a, b) => (b.likes + b.coments + b.views / 20) - (a.likes + a.coments + a.views / 20)).slice(0, 40);
+  const mv = movel(), W = mv ? 440 : 1100, H = mv ? 600 : 720, k = mv ? .6 : 1;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+  let pessoas = [...MP.pessoas].sort((a, b) => (b.likes + b.coments + b.views / 20) - (a.likes + a.coments + a.views / 20)).slice(0, mv ? 24 : 40);
   const val = p => p[M] || (M === 'views' ? (p.seguidores || 0) / 5 : 0);
   const mx = d3.max(pessoas, val) || 1;
-  const r = d3.scaleSqrt().domain([0, mx]).range([7, 34]);
+  const r = d3.scaleSqrt().domain([0, mx]).range(mv ? [6, 24] : [7, 34]);
   // só entra no grafo quem tem ligação com algum tema (sem ponto solto)
   const links = [];
   // conecta criadores aos temas com afinidade relevante
@@ -112,7 +115,7 @@ function grafo() {
   const ligados = new Set(links.map(l => l.source));
   pessoas = pessoas.filter(p => ligados.has(p.id));
   const nodes = [
-    ...TEMAS.map((g, i) => ({id: 't:' + g, tipo: 'tema', nome: G[g], x: W / 2 + 260 * Math.cos(2 * Math.PI * i / TEMAS.length), y: H / 2 + 220 * Math.sin(2 * Math.PI * i / TEMAS.length)})),
+    ...TEMAS.map((g, i) => ({id: 't:' + g, tipo: 'tema', nome: G[g], x: W / 2 + (mv ? 140 : 260) * Math.cos(2 * Math.PI * i / TEMAS.length), y: H / 2 + 220 * Math.sin(2 * Math.PI * i / TEMAS.length)})),
     ...pessoas.map(p => ({id: p.id, tipo: 'p', p, raio: r(val(p))})),
   ];
   const defs = svg.append('defs');
@@ -127,18 +130,18 @@ function grafo() {
   const lk = svg.append('g').attr('stroke', cor('--cinza')).selectAll('line').data(links).join('line').attr('stroke-width', d => 1 + 3 * d.w).attr('stroke-opacity', .7);
   const nd = svg.append('g').selectAll('g').data(nodes).join('g').style('cursor', 'grab');
   nd.filter(d => d.tipo === 'tema').append('circle').attr('r', 30).attr('fill', cor('--surface2')).attr('stroke', cor('--ink2')).attr('stroke-width', 1.5);
-  nd.filter(d => d.tipo === 'tema').append('text').text(d => d.nome.split(' ')[0]).attr('text-anchor', 'middle').attr('dy', 4).attr('font-size', 12).attr('font-weight', 700).attr('fill', cor('--ink'));
+  nd.filter(d => d.tipo === 'tema').append('text').text(d => d.nome.split(' ')[0].replace(/,$/, '')).attr('text-anchor', 'middle').attr('dy', 4).attr('font-size', 12).attr('font-weight', 700).attr('fill', cor('--ink'));
   const pn = nd.filter(d => d.tipo === 'p');
   pn.append('circle').attr('r', d => d.raio).attr('fill', d => `url(#av-${d.id.replace(/[^a-z0-9]/gi, '')})`).attr('stroke', d => corCl(d.p.cluster)).attr('stroke-width', d => d.p.foco ? 5 : 3).attr('stroke-opacity', 1);
   // nó sem ligação: fica visível e com contorno, mesmo sem foto
-  pn.filter(d => d.raio > 16 || d.p.foco).append('text').text(d => d.p.nome.replace(/^@/, '')).attr('text-anchor', 'middle').attr('dy', d => d.raio + 14).attr('font-size', 12).attr('font-weight', 600).attr('fill', cor('--ink'));
+  pn.filter(d => d.raio > 16 || d.p.foco).append('text').text(d => d.p.nome.replace(/^@/, '')).attr('text-anchor', 'middle').attr('dy', d => d.raio + 14).attr('font-size', 12).attr('font-weight', 600).attr('fill', cor('--ink')).attr('stroke', cor('--bg')).attr('stroke-width', 3).attr('paint-order', 'stroke');
   pn.on('mousemove', (ev, d) => mostra(ev, `<b>${esc(d.p.nome)}</b><br>${esc(d.p.cluster)}<br>${c(d.p.views)} views · ${c(d.p.likes)} curtidas · ${c(d.p.coments)} comentários`)).on('mouseleave', esconde);
   if (sim) sim.stop();
   sim = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + 60 * (1 - d.w)).strength(d => .2 + .5 * d.w))
+    .force('link', d3.forceLink(links).id(d => d.id).distance(d => k * (90 + 60 * (1 - d.w))).strength(d => .2 + .5 * d.w))
     .force('charge', d3.forceManyBody().strength(d => d.tipo === 'tema' ? -500 : -140))
     .force('colide', d3.forceCollide(d => (d.tipo === 'tema' ? 34 : d.raio) + 4))
-    .force('x', d3.forceX(W / 2).strength(.09)).force('y', d3.forceY(H / 2).strength(.1)).force('centro', d3.forceCenter(W / 2, H / 2))
+    .force('x', d3.forceX(W / 2).strength(mv ? .05 : .09)).force('y', d3.forceY(H / 2).strength(mv ? .04 : .1)).force('centro', d3.forceCenter(W / 2, H / 2))
     .on('tick', () => {
       nodes.forEach(d => { const rr = d.tipo === 'tema' ? 32 : d.raio; d.x = Math.max(rr, Math.min(W - rr, d.x)); d.y = Math.max(rr, Math.min(H - rr - 14, d.y)); });
       lk.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
@@ -176,7 +179,9 @@ $('#filtro-tema-tree').onclick = e => {
 
 function treemap() {
   const svg = d3.select('#g-tree'); svg.selectAll('*').remove();
-  const W = 1100, H = 560, idx = {views: 'views', likes: 'likes', coments: 'coments'}[M];
+  const W = movel() ? 440 : 1100, H = movel() ? 720 : 560;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+  const idx = {views: 'views', likes: 'likes', coments: 'coments'}[M];
   const totTema = {};
   MP.fluxos.forEach(f => { totTema[f.grupo] = (totTema[f.grupo] || 0) + (f[idx] || 0); });
   const totGeral = d3.sum(Object.values(totTema)) || 1;
@@ -358,16 +363,17 @@ function treemap() {
       .text(d => {
         const w = d.x1 - d.x0;
         const pct = Math.round(100 * d.value / tot);
-        if (w > 180) return `${d.data.name} · ${pct}%`;
-        if (w > 110) return `${d.data.name.split(/[,·]/)[0]} · ${pct}%`;
-        if (w > 55) return `${pct}%`;
-        return '';
+        // só escreve o que cabe na faixa (≈7px por letra em 13px)
+        const cabe = t => t.length * 7.2 + 16 < w;
+        const cheio = `${d.data.name} · ${pct}%`, curto = `${d.data.name.split(/[,·]/)[0]} · ${pct}%`;
+        const palavra = `${d.data.name.split(/[ ,·]/)[0]} · ${pct}%`;
+        return cabe(cheio) ? cheio : cabe(curto) ? curto : cabe(palavra) ? palavra : w > 40 ? `${pct}%` : '';
       })
       .attr('font-size', 13).attr('font-weight', 800)
       .attr('fill', cor('--ink'))
       .style('pointer-events', 'none');
 
-    grp.filter(d => (d.x1 - d.x0) > 160).append('text')
+    grp.filter(d => (d.x1 - d.x0) > d.data.name.length * 7.2 + 110).append('text')
       .attr('x', d => d.x1 - 8).attr('y', d => d.y0 + 20)
       .attr('text-anchor', 'end')
       .attr('font-size', 11).attr('font-weight', 600)
@@ -482,6 +488,8 @@ function tudo() {
   document.querySelectorAll('#medida button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === M));
   grafo(); treemap();
 }
+let eraMovel = movel();
+addEventListener('resize', () => { if (movel() !== eraMovel) { eraMovel = movel(); tudo(); } });
 $('#medida').onclick = e => { if (!e.target.dataset.m) return; M = e.target.dataset.m; try { localStorage.setItem('medida-mapa', M); } catch (er) {} tudo(); };
 tudo();
 })();

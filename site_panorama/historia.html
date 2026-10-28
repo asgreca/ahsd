@@ -53,6 +53,18 @@ h1,h2,h3{font-family:var(--head);text-transform:uppercase;line-height:1.02;lette
 .seg button{border:0;background:transparent;color:var(--ink2);padding:7px 14px;font:700 14px var(--body);cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--accent);color:#04110a}
 .tema-btn{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:5px 11px;font:600 13px var(--body);cursor:pointer}
+/* celular: barra em duas linhas curtas, sem os links (eles ficam no rodapé da barra recolhidos) */
+@media (max-width:640px){
+  .barra .wrap{gap:6px 10px;min-height:0;padding-top:8px;padding-bottom:8px}
+  .marca{font-size:16px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .regua{margin-left:0;width:100%;flex-wrap:nowrap;gap:8px}
+  .regua span,.regua a{display:none}
+  .regua .seg{flex:1;display:flex}
+  .regua .seg button{flex:1;min-height:40px;padding:0 6px}
+  .tema-btn{min-width:40px;min-height:40px}
+}
+.volta{display:none}
+@media (max-width:640px){.volta{display:inline-flex;align-items:center;min-height:40px;font:700 14px var(--body);white-space:nowrap}}
 .progresso{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
 
 /* capa */
@@ -144,13 +156,14 @@ footer p{max-width:80ch;margin-bottom:8px}
 <div class="barra">
   <div class="wrap">
     <a class="marca" href="#capa">A conversa da <b>superdotação</b></a>
+    <a class="volta" href="index.html">Ver os dados →</a>
     <div class="regua">
       <span>Medir por</span>
       <div class="seg" id="medida" role="group" aria-label="Escolha a medida dos gráficos">
         <button data-m="views">Alcance</button><button data-m="likes">Curtidas</button><button data-m="coments">Comentários</button>
       </div>
       <a href="index.html" style="font-size:14px;font-weight:600">Explorar os dados</a>
-      <a href="mapa.html" style="font-size:14px;font-weight:600">Mapa de influência</a>
+      <a href="index.html#mapa" style="font-size:14px;font-weight:600">Mapa de influência</a>
       <a href="metodologia.html" style="font-size:14px;font-weight:600">Metodologia</a>
       <button class="tema-btn" id="tema-btn" type="button">◐</button>
     </div>
@@ -163,7 +176,7 @@ footer p{max-width:80ch;margin-bottom:8px}
   <div class="wrap">
     <div class="chapeu">Uma história com dados · Brasil, 2021 a 2026</div>
     <h1>O Brasil quer falar de superdotação. <em>Quem responde são os criadores, não as instituições.</em></h1>
-    <p>Em seis anos, o tema saiu do teste de QI e chegou à lei, ao consultório e ao celular. Medimos cada passo em alcance, curtidas e comentários.</p>
+    <p>Em seis anos, o tema saiu do teste de QI e chegou, nesta ordem, ao celular, ao consultório e à lei. Medimos cada passo em três grandezas: alcance, curtidas e comentários.</p>
     <div class="kpis" id="kpis"></div>
   </div>
 </header>
@@ -173,8 +186,8 @@ footer p{max-width:80ch;margin-bottom:8px}
     <div class="ato-num">Contexto</div>
     <h2 id="t-contexto">Uma conversa que cresceu em todas as frentes</h2>
     <div class="texto">
-      <p class="abre">Em 2021, a imprensa publicou 53 manchetes sobre superdotação. Em 2026, foram 411. Nas redes, o salto foi maior.</p>
-      <p>Somamos vídeos do YouTube e do TikTok e posts do Instagram sobre o tema. Use a régua no topo para trocar a medida: alcance (visualizações), curtidas ou comentários. Todos os gráficos da página mudam juntos.</p>
+      <p class="abre">Em 2021, a imprensa publicou 53 manchetes sobre superdotação. Em 2026, foram 411. Nas redes, e esta é a parte fascinante, o salto foi ainda maior.</p>
+      <p>Somamos vídeos do YouTube e do TikTok e posts do Instagram sobre o tema. A régua no topo troca a medida: alcance (visualizações), curtidas ou comentários. Todos os gráficos da página mudam juntos, para que a comparação seja sempre entre grandezas iguais.</p>
     </div>
     <div class="graf">
       <h3 id="h-ano"></h3>
@@ -190,8 +203,8 @@ footer p{max-width:80ch;margin-bottom:8px}
     <h2>Primeiro, o QI virou espetáculo</h2>
     <figure class="ilus" data-img="espetaculo"></figure>
     <div class="texto">
-      <p class="abre">No começo do período, superdotação era sinônimo de um número. Quizzes de "gênio", ilusões de ótica e o "maior QI do Brasil" levavam as maiores audiências.</p>
-      <p>Em 2021, quase metade dos comentários do YouTube (<b>47%</b>) era piada sobre o próprio QI. Em 2026, essa fatia caiu para <b>17%</b>. O espetáculo continua dando audiência, mas o público começou a perguntar outra coisa: se o teste mede mesmo alguma coisa.</p>
+      <p class="abre">No começo do período, superdotação era sinônimo de um número. Quizzes de "gênio", ilusões de ótica e o "maior QI do Brasil" levavam as maiores audiências. Compreensível. Números são fascinantes, e números primos mais ainda, mas isso fica para outra pesquisa.</p>
+      <p>Em 2021, quase metade dos comentários do YouTube (<b>47%</b>) era piada sobre o próprio QI. Em 2026, essa fatia caiu para <b>17%</b>. O espetáculo continua dando audiência, mas o público passou a fazer uma pergunta melhor: o teste mede mesmo alguma coisa?</p>
     </div>
     <div class="graf">
       <h3 id="h-yt"></h3>
@@ -206,8 +219,8 @@ footer p{max-width:80ch;margin-bottom:8px}
     <h2>Depois, virou identidade</h2>
     <figure class="ilus" data-img="espelho"></figure>
     <div class="texto">
-      <p class="abre">Entre 2023 e 2024, o TikTok e o Instagram trocaram a pergunta "qual é o seu QI?" por "você se reconhece nestes sinais?".</p>
-      <p>Psicólogos, neuropsicólogos e médicos passaram a listar características, falar de sobrecarga sensorial, de TDAH e autismo junto com altas habilidades, de adultos que se descobriram tarde. O público respondeu: <b>infância e família</b> e <b>escola</b> são os assuntos com mais alcance nas redes.</p>
+      <p class="abre">Entre 2023 e 2024, o TikTok e o Instagram substituíram a pergunta "qual é o seu QI?" por outra, bem mais pessoal: "você se reconhece nestes sinais?". Uma mudança de paradigma, no sentido mais rigoroso que Thomas Kuhn daria ao termo.</p>
+      <p>Psicólogos, neuropsicólogos e médicos passaram a listar características e a falar de sobrecarga sensorial, de TDAH e autismo junto com altas habilidades e de adultos que se descobriram tarde. O público respondeu, e os dados registram a resposta: <b>infância e família</b> e <b>escola</b> são os assuntos com mais alcance nas redes.</p>
     </div>
     <div class="dupla">
       <div class="graf">
@@ -228,8 +241,8 @@ footer p{max-width:80ch;margin-bottom:8px}
     <h2>Em 2026, o tema chegou ao Estado</h2>
     <figure class="ilus" data-img="lei"></figure>
     <div class="texto">
-      <p class="abre">Em fevereiro, um menino de 6 anos falou no Senado. Em junho, a Lei 15.436 instituiu a política nacional para estudantes com altas habilidades ou superdotação.</p>
-      <p>A política pública passou de <b>6%</b> das reportagens em 2021 para <b>26%</b> em 2026. Entre todos os conteúdos sobre o tema, o vídeo da criança no Senado é o que mais recebeu comentários.</p>
+      <p class="abre">Em fevereiro, um menino de 6 anos falou no Senado. Em junho, a Lei 15.436 instituiu a política nacional para estudantes com altas habilidades ou superdotação. Em quatro meses, o tema foi da tribuna do Senado à lei sancionada. Para os padrões legislativos, isso é praticamente a velocidade da luz.</p>
+      <p>A política pública passou de <b>6%</b> das reportagens em 2021 para <b>26%</b> em 2026, um crescimento de mais de quatro vezes na participação. Entre todos os conteúdos sobre o tema, o vídeo da criança no Senado é o que mais recebeu comentários.</p>
     </div>
     <div class="graf">
       <h3>Política pública virou a pauta da imprensa em 2026</h3>
@@ -245,7 +258,7 @@ footer p{max-width:80ch;margin-bottom:8px}
     <figure class="ilus" data-img="clube"></figure>
     <div class="texto">
       <p class="abre">A Mensa é a instituição mais citada no tema. No mesmo período, a Mensa Brasil passou de 2 mil para 7 mil membros e virou fonte das reportagens sobre crianças superdotadas.</p>
-      <p>Nas redes, porém, a voz da própria Mensa quase não aparece. E quando o público fala dela nos comentários, a maioria critica: clube fechado, teste caro, arrogância.</p>
+      <p>Nas redes, porém, a voz da própria Mensa quase não aparece. E, quando o público fala dela nos comentários, a maioria critica. Os argumentos se repetem com regularidade quase experimental: clube fechado, teste caro, arrogância.</p>
     </div>
     <div class="num-grande" id="num-mensa"></div>
     <div class="graf">
@@ -266,8 +279,8 @@ footer p{max-width:80ch;margin-bottom:8px}
     <h2>Por trás da piada, gente perguntando e sofrendo</h2>
     <figure class="ilus" data-img="vozes"></figure>
     <div class="texto">
-      <p class="abre">Lemos os comentários que fazem perguntas ou desabafam. Em 4 de cada 10, há uma dúvida ou angústia real.</p>
-      <p>Quase nenhuma é sobre instituições. São sobre sofrimento, sobre a confusão com TDAH e autismo, sobre não se encaixar e sobre "será que eu sou?". Quem responde a essas perguntas hoje são os criadores clínicos, não as entidades.</p>
+      <p class="abre">Lemos os comentários que fazem perguntas ou desabafam. Em 4 de cada 10, há uma dúvida ou angústia real. Não é ruído estatístico: é gente.</p>
+      <p>Quase nenhuma é sobre instituições. As dúvidas tratam de sofrimento, da confusão com TDAH e autismo, de não se encaixar e da pergunta "será que eu sou?". Hoje, quem responde a elas são os criadores clínicos, não as entidades.</p>
     </div>
     <blockquote class="voz" id="voz1"></blockquote>
     <div class="graf">
@@ -289,14 +302,14 @@ footer p{max-width:80ch;margin-bottom:8px}
     <h2>Três lacunas entre o que se publica e o que se pergunta</h2>
     <figure class="ilus" data-img="ponte"></figure>
     <div class="texto">
-      <p class="abre">O público existe, é grande e está pedindo respostas. Para qualquer pessoa ou organização que comunique sobre o tema, os números apontam três lacunas:</p>
+      <p class="abre">Resumindo as evidências: o público existe, é grande e está pedindo respostas. Para qualquer pessoa ou organização que comunique sobre o tema, os números apontam três lacunas:</p>
     </div>
     <div class="acoes" id="acoes"></div>
     <div class="graf">
       <h3>Quem já tem o público</h3>
       <div class="sub">Criadores com 3 ou mais conteúdos sobre o tema e pelo menos 50 mil de alcance (views ou seguidores). Nota de 1 a 5 em três critérios: alcance, afinidade de pauta (fala de saúde, escola, família e diagnóstico mais do que de quiz) e conversa (comentários por conteúdo). A ordem segue a medida escolhida no topo.</div>
       <div class="tab"><table id="g-parceiros"></table></div>
-      <div class="fonte">Notas por quintil entre os candidatos. É um filtro para começar a conversa, não uma recomendação fechada: conferir valores, histórico e conflitos de interesse de cada perfil.</div>
+      <div class="fonte">Notas por quintil entre os candidatos. É um filtro para começar a conversa, não uma recomendação fechada. Antes de qualquer decisão, convém conferir valores, histórico e conflitos de interesse de cada perfil.</div>
     </div>
     <div class="graf">
       <h3 id="h-top"></h3>
@@ -309,7 +322,7 @@ footer p{max-width:80ch;margin-bottom:8px}
 <footer><div class="wrap">
   <p><b>Como medimos.</b> Alcance é a soma de visualizações informadas pelo YouTube e pelo TikTok no dia da coleta (o Instagram não mostra views). Curtidas e comentários são os números exibidos por cada rede; no Instagram, os comentários são os que foram coletados. Só entram conteúdos sobre o tema, de 2021 a 2026.</p>
   <p><b>Amostra.</b> Os volumes são o que as buscas devolveram e passou pelo filtro de tema, não o total de conteúdo das redes. <a href="metodologia.html">Veja a metodologia</a>.</p>
-  <p><b>Limites.</b> Temas, posturas e dúvidas foram classificados pela nossa IA sem validação humana. Datas de comentários do YouTube são aproximadas por ano. Números de membros da Mensa são os noticiados pela imprensa.</p>
+  <p><b>Limites.</b> Por honestidade intelectual, registramos: temas, posturas e dúvidas foram classificados pela nossa IA sem validação humana. Datas de comentários do YouTube são aproximadas por ano. Números de membros da Mensa são os noticiados pela imprensa.</p>
   <p id="rodape"></p>
   <p><b>Fontes.</b> YouTube, TikTok, Instagram e X (coleta própria); Google Notícias e portais; reportagens de G1, Crescer, O Globo, Veja, Terra, Exame e Correio Braziliense, entre outras.</p>
 </div></footer>
@@ -379,8 +392,10 @@ function kpis() {
 function grafAno() {
   const anos = D.anual.anos, redes = [['TikTok', 'var(--accent)'], ['YouTube', 'var(--cinza2)'], ['Instagram', 'var(--spark)']];
   const tot = anos.map((a, i) => redes.reduce((s, [r]) => s + H.rede_ano[r][i][M], 0));
-  const mx = Math.max(...tot), W = 1000, Hh = 330, pb = 30, pt = 34, bw = 92;
-  const x = i => 70 + i * (W - 140) / (anos.length - 1) - bw / 2;
+  // no celular o gráfico fica mais estreito, para os números não encolherem
+  const mv = innerWidth < 640, mx = Math.max(...tot), W = mv ? 420 : 1000, Hh = 330, pb = 30, pt = 34, bw = mv ? 46 : 92;
+  $('#g-ano').setAttribute('viewBox', `0 0 ${W} ${Hh}`);
+  const x = i => (mv ? 34 : 70) + i * (W - (mv ? 68 : 140)) / (anos.length - 1) - bw / 2;
   let s = '';
   anos.forEach((a, i) => {
     let y0 = Hh - pb;
@@ -422,7 +437,8 @@ function grafAssunto() {
 
 /* ato III: temas da imprensa por ano (linhas cinza, política em verde) */
 function grafImprensa() {
-  const anos = D.anual.anos, T = D.imprensa_tema_ano, W = 1000, Hh = 320, pl = 46, pr = 210, pt = 16, pb = 30;
+  const mv = innerWidth < 640, anos = D.anual.anos, T = D.imprensa_tema_ano, W = mv ? 460 : 1000, Hh = mv ? 360 : 320, pl = 40, pr = mv ? 175 : 210, pt = 16, pb = 30;
+  $('#g-imprensa').setAttribute('viewBox', `0 0 ${W} ${Hh}`);
   const temas = Object.keys(D.rotulos_tema).filter(k => k !== 'outro' && Math.max(...anos.map(a => T[a][k])) >= 8 || k === 'politica_publica');
   const mx = 36, x = i => pl + (W - pl - pr) * i / (anos.length - 1), y = v => pt + (Hh - pt - pb) * (1 - Math.min(v, mx) / mx);
   let s = '';
@@ -436,8 +452,9 @@ function grafImprensa() {
     if (on) s += `<circle cx="${x(5)}" cy="${y(v[5])}" r="6" fill="var(--accent)"/><text x="${x(0)}" y="${y(v[0]) - 10}" font-size="13" fill="var(--accent)">${p(v[0])}</text>`;
   }
   fins.sort((a, b) => a[0] - b[0]);
-  for (let i = 1; i < fins.length; i++) if (fins[i][0] - fins[i - 1][0] < 17) fins[i][0] = fins[i - 1][0] + 17;
-  fins.forEach(([yy, on, t]) => s += `<text x="${W - pr + 10}" y="${yy + 4}" font-size="${on ? 14 : 12}" font-weight="${on ? 700 : 400}" fill="${on ? 'var(--accent)' : 'var(--muted)'}">${esc(t)}</text>`);
+  const passo = mv ? 19 : 17;
+  for (let i = 1; i < fins.length; i++) if (fins[i][0] - fins[i - 1][0] < passo) fins[i][0] = fins[i - 1][0] + passo;
+  fins.forEach(([yy, on, t]) => s += `<text x="${W - pr + 8}" y="${yy + 4}" font-size="${(on ? 14 : 12) + (mv ? 2 : 0)}" font-weight="${on ? 700 : 400}" fill="${on ? 'var(--accent)' : 'var(--muted)'}">${esc(t)}</text>`);
   $('#g-imprensa').innerHTML = s;
 }
 
@@ -486,8 +503,8 @@ hbar('#g-lacuna', [
 /* resolução */
 const A = H.assunto.reduce((o, a) => (o[a.grupo] = a, o), {});
 $('#acoes').innerHTML = [
-  ['1', 'Explicar o teste', 'Quase ninguém explica, em linguagem simples, o que um teste de inteligência mede, o que não mede e por que um resultado online não vale. É a dúvida que o público mais repete e a que menos vídeos respondem.', `Validade do teste: <b>${p(tv.validade_testes_qi.pct_comentarios)}</b> dos comentários e <b>${H.yt_tema.find(t => t.tema === 'validade_testes_qi').n}</b> vídeos no período.`],
-  ['2', 'O alcance está concentrado', 'As respostas sobre sinais, avaliação e custo vêm de poucos criadores clínicos. Instituições, escolas e especialistas acadêmicos falam para públicos pequenos.', `Grupo "${esc(CL0.nome)}": <b>${c(CL0.views)}</b> views. Contas da Mensa, a instituição mais citada: <b>${c(MP.views)}</b>.`],
+  ['1', 'Explicar o teste', 'Quase ninguém explica, em linguagem simples, o que um teste de inteligência mede, o que não mede e por que um resultado online não vale. É a dúvida que o público mais repete e a que menos vídeos respondem, uma ineficiência que nenhum sistema bem projetado toleraria.', `Validade do teste: <b>${p(tv.validade_testes_qi.pct_comentarios)}</b> dos comentários e <b>${H.yt_tema.find(t => t.tema === 'validade_testes_qi').n}</b> vídeos no período.`],
+  ['2', 'O alcance está concentrado', 'As respostas sobre sinais, avaliação e custo vêm de poucos criadores clínicos. Instituições, escolas e especialistas acadêmicos, que teriam muito a acrescentar, falam para públicos pequenos.', `Grupo "${esc(CL0.nome)}": <b>${c(CL0.views)}</b> views. Contas da Mensa, a instituição mais citada: <b>${c(MP.views)}</b>.`],
   ['3', 'O adulto, não só o prodígio', 'A imprensa ainda conta muito a história da criança-recorde. As angústias estão em adultos, mulheres e famílias que procuram acolhimento e caminhos práticos.', `Descoberta adulta: <b>${c(A.adulto.views)}</b> views; sofrimento psíquico é a dúvida nº 1 (<b>${DV ? p(DV.categorias[0].pct) : '–'}</b>).`],
 ].map(([k, t, d, pr]) => `<div class="acao"><div class="k">Lacuna ${k}</div><h3>${t}</h3><p>${d}</p><div class="prova">${pr}</div></div>`).join('');
 
@@ -516,6 +533,8 @@ $('#medida').onclick = e => {
   tudo();
 };
 tudo(); grafImprensa();
+let eraMovel = innerWidth < 640;
+addEventListener('resize', () => { if ((innerWidth < 640) !== eraMovel) { eraMovel = !eraMovel; grafAno(); grafImprensa(); } });
 $('#rodape').textContent = `Base: ${n(D.numeros.comentarios_total)} comentários lidos, ${n(B.n)} conteúdos de redes sobre o tema e ${n(D.numeros.reportagens_classificadas)} reportagens. Dados coletados até 27/10/2026; página gerada em ${D.gerado_em}.`;
 
 /* barra de progresso da leitura */

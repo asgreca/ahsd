@@ -229,6 +229,18 @@ blockquote small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 .fato span:last-child{font-size:15px;color:var(--ink2)}
 footer{padding:48px 0 64px;color:var(--muted);font-size:14px}
 footer p{max-width:80ch;margin-bottom:10px}
+/* celular: marca e tema na primeira linha, capítulos numa faixa rolável logo abaixo, alvos de toque de 40px */
+@media (max-width:640px){
+  .top .wrap{height:auto;flex-wrap:wrap;gap:0 10px;padding-top:6px}
+  .marca{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:44px}
+  .tema-btn{min-height:40px;min-width:40px}
+  .nav{order:3;flex:0 0 calc(100% + 32px);gap:20px;margin:0 -16px;padding:0 16px}
+  .nav a{min-height:40px;display:inline-flex;align-items:center;font-size:15px}
+  table{font-size:14px}
+  th,td{padding:9px 10px}
+  .filtros,.abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .filtros button,.abas button,.seg button{flex:none;min-height:40px}
+}
 </style>
 </head>
 <body>
@@ -236,7 +248,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <div class="wrap">
     <a class="marca" href="#topo">Radar da <b>Superdotação</b></a>
     <nav class="nav" aria-label="Seções">
-      <a href="index.html">Dados</a><a href="historia.html">História</a><a href="mapa.html">Mapa de influência</a><a href="#temas">Temas</a><a href="#influenciadores">Influenciadores</a>
+      <a href="index.html">Dados</a><a href="historia.html">História</a><a href="index.html#mapa">Mapa de influência</a><a href="#temas">Temas</a><a href="#influenciadores">Influenciadores</a>
       <a href="#comentarios">Comentários</a><a href="#redes">Redes e veículos</a><a href="#mensa">Mensa</a><a href="metodologia.html">Metodologia</a>
     </nav>
     <button class="tema-btn" id="tema-btn" type="button">◐ Tema</button>
@@ -247,7 +259,7 @@ footer p{max-width:80ch;margin-bottom:10px}
   <section class="cap" id="abre" style="padding-top:56px"><div class="wrap">
     <div class="cap-num">Para aprofundar</div>
     <h2>Todas as tabelas</h2>
-    <p class="sub">Os números completos por trás dos gráficos do site. <a href="index.html">Voltar ao panorama</a>.</p>
+    <p class="sub">Os números completos por trás dos gráficos do site, para quem prefere conferir a conta em vez de confiar no desenho. <a href="index.html">Voltar ao panorama</a>.</p>
   </div></section>
   <section class="cap" id="fontes"><div class="wrap">
     <div class="cap-num">Fontes</div>
@@ -263,7 +275,7 @@ footer p{max-width:80ch;margin-bottom:10px}
     <div class="tabela"><table id="tab-var"></table></div>
     <div class="rotulo">Distribuição no período todo</div>
     <div class="tabela"><table id="tab-temas2"></table></div>
-    <p class="nota">Percentuais dentro de cada fonte. "Curtidas/coment." é a média de curtidas que o comentário daquele tema recebe: mede o quanto o público concorda com quem fala. "Outro" reúne comentários sem conteúdo sobre o tema (emojis, marcações, respostas soltas).</p>
+    <p class="nota">Percentuais dentro de cada fonte. "Curtidas/coment." é a média de curtidas que o comentário daquele tema recebe: funciona como uma medida aproximada de quanto o público concorda com quem fala. "Outro" reúne comentários sem conteúdo sobre o tema (emojis, marcações, respostas soltas).</p>
   </div></section>
   <section class="cap" id="influenciadores"><div class="wrap">
     <div class="cap-num">Influenciadores</div>
