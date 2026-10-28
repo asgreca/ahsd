@@ -24,3 +24,7 @@ banco de dados/
 *.sqlite
 *.sqlite3
 *.db
+
+# Videos pesados
+*.mp4
+*.part
