@@ -319,6 +319,7 @@ blockquote small a{color:var(--accent)}
 .voz .def{font-size:14px;color:var(--muted);margin:4px 0 10px}
 blockquote{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:8px 0;font-size:15px;color:var(--ink)}
 blockquote small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.tag-trad{color:var(--accent);font-style:italic;opacity:0.9;font-size:11px;margin-left:4px}
 
 /* redes */
 .redes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -625,6 +626,9 @@ footer p{max-width:80ch;margin-bottom:10px}
     <h2>Humor, skepticism, and "could I be gifted?"</h2>
     <p class="sub">The comments partition into three distinct populations: those deflecting via self-deprecating IQ humor, those disputing psychometric validity, and those experiencing sudden self-recognition. Below are the twenty most frequent lexical bigrams and the most upvoted comments per topic, with user identities rigorously anonymized.</p>
     <figure class="banner"><img src="img/vozes.jpg" alt="Multidão com balões de fala e perguntas" loading="lazy"></figure>
+    <div class="aviso-traducao" style="margin:16px 0;padding:12px 16px;background:var(--surface);border-left:4px solid var(--accent);border-radius:4px;font-size:14px;color:var(--ink)">
+      <strong>Methodological Disclosure:</strong> All quoted public user comments displayed throughout this observatory have been translated into English from original Brazilian Portuguese remarks (YouTube & Instagram), preserving authentic psychological sentiment, informal nuances, and colloquial expressions.
+    </div>
     <div class="rotulo">Top 20 Most Frequent Adjacent Word Pairs (Bigrams)</div>
     <div class="filtros" id="filtro-fonte" aria-label="Fonte"></div>
     <div class="filtros" id="filtro-tri" aria-label="Tema"></div>
@@ -641,6 +645,9 @@ footer p{max-width:80ch;margin-bottom:10px}
     <h2>"Am I gifted?" and "why have I always felt this way?"</h2>
     <p class="sub">Beneath the layer of sarcastic remarks lies a demographic experiencing genuine distress. I extracted comments formulating inquiries or describing suffering, utilizing natural language processing to identify their core dilemmas. It is the least humorous segment of the dataset and, by a wide margin, the most socially urgent.</p>
     <figure class="banner"><img src="img/ponte.jpg" alt="Ponte de luz sendo construída entre dois penhascos" loading="lazy"></figure>
+    <div class="aviso-traducao" style="margin:16px 0;padding:12px 16px;background:var(--surface);border-left:4px solid var(--accent);border-radius:4px;font-size:14px;color:var(--ink)">
+      <strong>Methodological Disclosure:</strong> The following qualitative inquiries and existential testimonials were originally authored in Brazilian Portuguese and translated into English for scholarly accessibility.
+    </div>
     <div class="lead-box" id="duv-lead"></div>
     <div class="card" style="margin-bottom:20px"><h4>Distribution of Core Inquiries</h4><div class="hb" id="duv-barras"></div></div>
     <div class="duv" id="duv"></div>
@@ -662,9 +669,9 @@ footer p{max-width:80ch;margin-bottom:10px}
     <figure class="banner"><img src="img/clube.jpg" alt="Porta redonda iluminada com pessoas do lado de fora" loading="lazy"></figure>
     
     <div class="leitura" style="max-width:85ch;margin:24px 0 28px;font-size:16px;line-height:1.7;color:var(--ink)">
-      <p style="margin-bottom:14px"><b>O que é a Mensa e para que ela existe?</b> A Mensa foi fundada em 1946, em Oxford, logo depois da Segunda Guerra Mundial, pelos juristas e pesquisadores Roland Berrill e Lancelot Ware. A proposta era, por qualquer padrão, ambiciosa: reunir pessoas de altíssima capacidade intelectual sem distinção de raça, credo, posição social ou ideologia política, e pôr essa inteligência a serviço da paz e do livre intercâmbio de ideias. Curiosidade etimológica: o nome vem do latim <i>mensa</i> ("mesa"), e a imagem pretendida é a de uma <b>mesa redonda</b>, como a da lenda arturiana, onde ninguém senta na cabeceira, não há hierarquia e todas as vozes têm o mesmo peso.</p>
-      <p style="margin-bottom:14px"><b>Uma conta simples desfaz o mito do elitismo: 2% é muita gente.</b> Na cultura popular e na TV, entrar na Mensa costuma ser retratado como troféu de vaidade ou admissão num clube secreto de semideuses. A aritmética, que não tem opinião, conta outra história. O critério de admissão é pontuar no percentil 98, isto é, entre os 2% superiores, em um teste psicométrico padronizado e supervisionado. Em um país com 215 milhões de habitantes, isso significa que <b>mais de 4,3 milhões de brasileiros são elegíveis</b>. É uma população da ordem da Paraíba inteira, ou da Nova Zelândia, espalhada por todas as classes sociais, profissões e bairros, da periferia ao centro. E a imensa maioria dessas pessoas cresce e envelhece sem jamais receber um diagnóstico formal.</p>
-      <p><b>Por que conviver entre iguais importa.</b> Deixando de lado as estatísticas de QI, a Mensa e as entidades congêneres (como a Febratis e as associações de famílias) atendem a uma necessidade psicológica concreta: a <b>saúde mental da convivência entre pares</b>. Pessoas neurodivergentes com altas habilidades costumam acumular trajetórias com solidão crônica, bullying, incompreensão familiar e uma autocensura cansativa, a de "diminuir o próprio ritmo" para não parecer arrogante. Num ambiente em que a velocidade do pensamento, os hiperfocos, as piadas complexas e a sensibilidade aguçada são compreendidos sem explicação prévia, a convivência deixa de exigir tradução. Isso não é privilégio. É acolhimento terapêutico e, em muitos casos, sobrevivência emocional.</p>
+      <p style="margin-bottom:14px"><b>What is Mensa and why does it exist?</b> Mensa was founded in 1946 in Oxford, immediately following the Second World War, by barristers and scholars Roland Berrill and Lancelot Ware. The premise was, by any objective standard, extraordinarily ambitious: to convene individuals of superior cognitive ability regardless of race, creed, socio-economic origin, or political dogma, placing intellect in the service of peace and unrestricted ideational exchange. Etymological precision: the term derives from the Latin <i>mensa</i> ("table"), symbolizing an egalitarian <b>round table</b> reminiscent of Arthurian lore, wherein no individual occupies the head, no hierarchy exists, and every participant's intellectual contributions carry identical weight.</p>
+      <p style="margin-bottom:14px"><b>Elementary arithmetic dismantles the myth of elitism: 2% represents a substantial population.</b> In popular media and television, Mensa membership is frequently trivialized as a vanity badge or admission into an occult society of demigods. Mathematics, indifferent to human prejudice, reveals a radically different picture. The sole qualification is scoring at or above the 98th percentile on a standardized, proctored psychometric examination. In a nation of 215 million citizens, this equates to <b>over 4.3 million eligible Brazilians</b>. That constitutes a populace equivalent to the entire nation of New Zealand, distributed across every socio-economic stratum, vocation, and geographic precinct. Tragically, the overwhelming majority live and perish without ever obtaining a formal clinical diagnosis.</p>
+      <p><b>Why congregating among intellectual peers is vital.</b> Setting aside psychometric scores, Mensa and kindred advocacy organizations address a profound clinical reality: the <b>mental health necessity of peer conviviality</b>. Twice-exceptional and gifted individuals frequently endure chronic loneliness, severe childhood ostracism, family incomprehension, and exhausting self-censorship—deliberately slowing their cognitive tempo to avoid perceived arrogance. In an intellectual sanctuary where processing speed, hyper-fixations, abstract humor, and acute sensory-emotional depth require zero prior justification, communication no longer requires constant semantic translation. This is not elitist privilege; it is psychological accommodation and, in countless instances, emotional survival.</p>
     </div>
 
     <div class="fatos">

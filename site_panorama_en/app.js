@@ -286,14 +286,14 @@ $('#filtro-tri').onclick = e => { if (e.target.dataset.k) { filtroNv.tema = e.ta
 $('#filtro-tri-ano').innerHTML = ['todos', ...D.anual.anos.map(String)].map(a => `<button data-a="${a}">${a === 'todos' ? 'All Years' : a}</button>`).join('');
 $('#filtro-tri-ano').onclick = e => { if (e.target.dataset.a) { filtroNv.ano = e.target.dataset.a; nuvem(); } };
 nuvem();
-const fonteLink = e => e.url ? ` · <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.onde || 'ver o post')} ↗</a>` : '';
-$('#vozes').innerHTML = D.vozes.filter(v => v.exemplos.length).map(v => `<div class="card voz"><div class="voz-cab"><span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONE_TEMA[v.tema] || ''}"/></svg></span><h4>${esc(v.rotulo)}</h4></div>${v.exemplos.map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · YouTube · ${e.ano}${fonteLink(e)}</small></blockquote>`).join('')}</div>`).join('');
-$('#vozes-ig').innerHTML = D.vozes_instagram.slice(0, 6).map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · Instagram${fonteLink(e)}</small></blockquote>`).join('');
+const fonteLink = e => e.url ? ` · <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.onde || 'view post')} ↗</a>` : '';
+$('#vozes').innerHTML = D.vozes.filter(v => v.exemplos.length).map(v => `<div class="card voz"><div class="voz-cab"><span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONE_TEMA[v.tema] || ''}"/></svg></span><h4>${esc(v.rotulo)}</h4></div>${v.exemplos.map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · YouTube · ${e.ano}${fonteLink(e)} · <span class="tag-trad" title="Translated from Brazilian Portuguese original">[Translated from Portuguese]</span></small></blockquote>`).join('')}</div>`).join('');
+$('#vozes-ig').innerHTML = D.vozes_instagram.slice(0, 6).map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · Instagram${fonteLink(e)} · <span class="tag-trad" title="Translated from Brazilian Portuguese original">[Translated from Portuguese]</span></small></blockquote>`).join('');
 
 const heat = (v, mx) => `background:color-mix(in srgb, var(--accent) ${Math.round(85 * v / mx)}%, transparent)`;
 const G = Object.keys(D.grupos).filter(k => k !== 'humor' || true);
 const CL = D.comentarios_lexico, cmx = Math.max(...Object.values(CL).flatMap(o => Object.values(o)));
-$('#tab-com-lex').innerHTML = `<thead><tr><th>Assunto</th>${Object.keys(CL).map(r => `<th class="n">${r}</th>`).join('')}</tr></thead><tbody>` +
+$('#tab-com-lex').innerHTML = `<thead><tr><th>Topic</th>${Object.keys(CL).map(r => `<th class="n">${r}</th>`).join('')}</tr></thead><tbody>` +
   G.map(g => `<tr><td>${esc(D.grupos[g])}</td>${Object.values(CL).map(o => `<td class="h" style="${heat(o[g], cmx)}">${Math.round(o[g])}%</td>`).join('')}</tr>`).join('') + '</tbody>';
 
 /* 07 redes */
@@ -398,14 +398,14 @@ $('#tab-var').onclick = e => { const a = e.target.closest('.ver-serie'); if (a) 
 const DV = D.duvidas;
 if (DV && DV.categorias.length) {
   const C = DV.categorias, t1 = C[0], t2 = C[1];
-  $('#duv-lead').innerHTML = `Em <span>${p(100 * DV.com_duvida / DV.amostra)}</span> dos comments que perguntam ou desabafam há uma dúvida ou angústia real. As mais comuns: <span>${esc(t1.titulo)}</span> (${p(t1.pct)}) e <span>${esc(t2.titulo)}</span> (${p(t2.pct)}).`;
+  $('#duv-lead').innerHTML = `In <span>${p(100 * DV.com_duvida / DV.amostra)}</span> of comments that ask questions or express anguish, there is a genuine dilemma. The most prevalent: <span>${esc(t1.titulo)}</span> (${p(t1.pct)}) and <span>${esc(t2.titulo)}</span> (${p(t2.pct)}).`;
   hb('#duv-barras', C.map(x => [x.titulo, x.pct]), p);
   const fontes = Object.keys(DV.por_fonte);
   const tot = Object.fromEntries(fontes.map(f => [f, Object.values(DV.por_fonte[f]).reduce((a, b) => a + b, 0) || 1]));
-  $('#tab-duv-fonte').innerHTML = `<thead><tr><th>Dúvida</th>${fontes.map(f => `<th class="n">${f}</th>`).join('')}</tr></thead><tbody>` +
+  $('#tab-duv-fonte').innerHTML = `<thead><tr><th>Inquiry / Dilemma</th>${fontes.map(f => `<th class="n">${f}</th>`).join('')}</tr></thead><tbody>` +
     C.map(x => `<tr><td>${esc(x.titulo)}</td>${fontes.map(f => { const v = 100 * (DV.por_fonte[f][x.chave] || 0) / tot[f]; return `<td class="h" style="${heat(v, 40)}">${Math.round(v)}%</td>`; }).join('')}</tr>`).join('') + '</tbody>';
   const dif = C.map(x => [x.titulo, 100 * (DV.por_fonte.Instagram[x.chave] || 0) / tot.Instagram - 100 * (DV.por_fonte.YouTube[x.chave] || 0) / tot.YouTube]).sort((a, b) => b[1] - a[1]);
-  $('#duv-fonte-nota').textContent = `Percentual das dúvidas de cada rede. O Instagram concentra mais "${dif[0][0]}" e "${dif[1][0]}"; o YouTube, mais "${dif[dif.length - 1][0]}" e "${dif[dif.length - 2][0]}".`;
+  $('#duv-fonte-nota').textContent = `Percentage of inquiries by platform. Instagram concentrates more "${dif[0][0]}" and "${dif[1][0]}"; YouTube, more "${dif[dif.length - 1][0]}" and "${dif[dif.length - 2][0]}".`;
   const ICONE_DUV = {
   sofrimento_mental: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z M16 16s-1.5-2-4-2-4 2-4 2 M9 9h.01 M15 9h.01',
   tdah_autismo_ou_sd: 'M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7z M9 21h6 M10 17v4 M14 17v4',
@@ -419,10 +419,10 @@ if (DV && DV.categorias.length) {
   como_entrar_mensa: 'M3 21h18 M5 21V8l7-5 7 5v13 M9 21v-6h6v6',
 };
 $('#duv').innerHTML = C.map(x => `<div class="card"><div class="duv-cab"><span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONE_DUV[x.chave] || ''}"/></svg></span><div class="pct">${p(x.pct)}</div></div><h3>${esc(x.titulo)}</h3><p class="desc">${esc(x.desc)} · ${n(x.n)} comments · ${n(x.likes)} aggregate likes</p>
-    ${x.exemplos.map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · ${e.fonte}${fonteLink(e)}</small></blockquote>`).join('')}<div class="fundo" style="width:${x.pct * 2.5}%"></div></div>`).join('');
-  $('#duv-nota').textContent = `Amostra de ${n(DV.amostra)} comments classificados pela nossa IA (${Object.entries(DV.amostra_fonte).map(([f, q]) => n(q) + ' do ' + f).join(', ')}); ${n(DV.com_duvida)} expressam dúvida ou angústia. Percentuais sobre esses ${n(DV.com_duvida)}. Comentários sem autor; trechos com números, links ou marcações foram excluídos.`;
+    ${x.exemplos.map(e => `<blockquote>"${esc(e.texto)}"<small>${n(e.likes)} likes · ${e.fonte}${fonteLink(e)} · <span class="tag-trad" title="Translated from Brazilian Portuguese original">[Translated from Portuguese]</span></small></blockquote>`).join('')}<div class="fundo" style="width:${x.pct * 2.5}%"></div></div>`).join('');
+  $('#duv-nota').textContent = `Sample of ${n(DV.amostra)} comments classified by our NLP model (${Object.entries(DV.amostra_fonte).map(([f, q]) => n(q) + ' from ' + f).join(', ')}); ${n(DV.com_duvida)} express a real inquiry or anguish. Percentages are based on these ${n(DV.com_duvida)}. Anonymous comments; numbers, links, and tags removed.`;
 } else {
-  $('#duv-lead').textContent = 'Classificação em andamento.';
+  $('#duv-lead').textContent = 'Classification in progress.';
 }
 
 /* fundo da abertura: rede de neurônios em verde */
