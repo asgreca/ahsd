@@ -1,0 +1,118 @@
+== base do tema por fonte
+┌─────────────┬───────┬────────┐
+│    fonte    │   n   │  elit  │
+│   varchar   │ int64 │ int128 │
+├─────────────┼───────┼────────┤
+│ Google News │  2315 │      0 │
+│ YouTube     │   363 │      0 │
+│ Câmara      │    10 │      0 │
+│ Senado      │     6 │      0 │
+│ Reddit      │     6 │      2 │
+└─────────────┴───────┴────────┘
+
+== notícias únicas do tema, por ano
+┌───────┬───────┬────────┬──────────┐
+│  ano  │   n   │ mensa  │ elitismo │
+│ int64 │ int64 │ int128 │  int128  │
+├───────┼───────┼────────┼──────────┤
+│  2020 │    13 │      1 │        0 │
+│  2021 │    53 │      4 │        0 │
+│  2022 │   131 │      3 │        0 │
+│  2023 │   139 │      3 │        0 │
+│  2024 │   156 │      3 │        0 │
+│  2025 │   293 │     15 │        0 │
+│  2026 │   411 │     19 │        0 │
+└───────┴───────┴────────┴──────────┘
+
+== Mensa em notícias (títulos): elitismo
+┌───────┬────────┐
+│   n   │  elit  │
+│ int64 │ int128 │
+├───────┼────────┤
+│    48 │      0 │
+└───────┴────────┘
+
+== manchetes com termo de elitismo (tema)
+┌─────────┬─────────┬─────────┐
+│    d    │ veiculo │ titulo  │
+│ varchar │ varchar │ varchar │
+└─────────┴─────────┴─────────┘
+            0 rows           
+
+== YouTube: tema sem ruído, por canal
+┌───────────────────────────────────────────────────┬────────┬────────┐
+│                       canal                       │ videos │ views  │
+│                      varchar                      │ int64  │ int128 │
+├───────────────────────────────────────────────────┼────────┼────────┤
+│ Mensa Brasil                                      │     11 │  18192 │
+│ Dra. Olzeni Ribeiro                               │      9 │  31984 │
+│ Jean Alessandro                                   │      6 │ 381227 │
+│ Mais Que Autismo                                  │      5 │ 128904 │
+│ Instituto para Otimização da Aprendizagem INODAP  │      5 │  39312 │
+│ Lygia Pereira - Psicologia e Autismo Feminino     │      4 │  58891 │
+│ UniqueBrain                                       │      3 │ 198778 │
+│ Sem Groselha Podcast                              │      3 │ 189296 │
+│ À Deriva trechos [OFICIAL]                        │      3 │  98820 │
+│ Dra. Paula Lemes - Cognitiva                      │      3 │  33067 │
+│     ·                                             │      · │     ·  │
+│     ·                                             │      · │     ·  │
+│     ·                                             │      · │     ·  │
+│ CBS TEXAS                                         │      2 │   7479 │
+│ Nenhum Talento a Menos                            │      2 │   4797 │
+│ TestHelden - Einstellungstest & Prüfung üben      │      2 │   3122 │
+│ Dr. Fabiano de Abreu Agrela                       │      2 │   2830 │
+│ Polyana Raquel Pedroso - Neurodiversidade na Pele │      2 │   2460 │
+│ SerMaisHumano                                     │      2 │   1871 │
+│ Jovem Pan News                                    │      2 │    715 │
+│ Mario Brandao                                     │      2 │    521 │
+│ Exatamente                                        │      2 │    486 │
+│ Matemática Básica com Prof Alberto                │      2 │    433 │
+└───────────────────────────────────────────────────┴────────┴────────┘
+  40 rows (20 shown)                                        3 columns
+
+== YouTube: sem ruído, com 'mensa' no título
+┌───────┬─────────┐
+│   n   │  views  │
+│ int64 │ int128  │
+├───────┼─────────┤
+│   127 │ 7782666 │
+└───────┴─────────┘
+
+== YouTube: vídeos do tema com termo de elitismo
+┌─────────┬─────────┬───────┐
+│ titulo  │  canal  │ views │
+│ varchar │ varchar │ int64 │
+└─────────┴─────────┴───────┘
+           0 rows          
+
+== Reddit, Câmara, Senado (tema)
+┌─────────┬─────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┐
+│  fonte  │                       titulo                        │                         url                          │
+│ varchar │                       varchar                       │                       varchar                        │
+├─────────┼─────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤
+│ Câmara  │ PL 108/2020: Institui a Política Nacional de Incen… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 1053/2022: Institui o Dia Nacional Das Pessoas … │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 1459/2025: Institui os Centros Psicopedagógicos… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 5237/2026: Altera a Lei nº 8.080, de 19 de sete… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 1171/2026: Altera a Lei nº 9.394, de 20 de deze… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 1981/2026: Dispõe sobre a criação de Centros de… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 2962/2026: Altera a Lei nº 9.394, de 20 de deze… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 4105/2026: Altera a Lei nº 9.394, de 20 de deze… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PL 4130/2026: Altera a Lei nº 9.394/1996 para incl… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Câmara  │ PRC 48/2026: Dispõe sobre a criação da Procuradori… │ https://www.camara.leg.br/proposicoesWeb/fichadetra… │
+│ Reddit  │ Idea para una serie.                                │ https://www.reddit.com/r/chistes/comments/jcbro2/id… │
+│ Reddit  │ Grupo para superdotados                             │ https://www.reddit.com/r/altashabilidades/comments/… │
+│ Reddit  │ O problema do Divino se revelar através de meios h… │ https://www.reddit.com/r/FilosofiaBAR/comments/1m2i… │
+│ Reddit  │ Não sei se sou, alguém se identifica?               │ https://www.reddit.com/r/autismobrasil/comments/1lu… │
+│ Reddit  │ Qué es Mensa, la organización de superdotados en l… │ https://www.reddit.com/r/eldeber/comments/10ltljm/q… │
+│ Reddit  │ Algumas perguntas que você teria que responder par… │ https://www.reddit.com/r/brasilnoticias/comments/ck… │
+│ Senado  │ REQ 00033/2026: Requer inclusão de convidados para… │ https://www25.senado.leg.br/web/atividade/materias/… │
+│ Senado  │ REQ 00004/2026: Requer, nos termos do art. 58, § 2… │ https://www25.senado.leg.br/web/atividade/materias/… │
+│ Senado  │ PL 01049/2026: Institui a Política Nacional para E… │ https://www25.senado.leg.br/web/atividade/materias/… │
+│ Senado  │ PL 01487/2026: Institui a Lei de Inclusão de Super… │ https://www25.senado.leg.br/web/atividade/materias/… │
+│ Senado  │ PL 02083/2026: Institui o Agosto Violeta, o Dia Na… │ https://www25.senado.leg.br/web/atividade/materias/… │
+│ Senado  │ VET 00033/2026: Veto parcial aposto ao Projeto de … │ https://www25.senado.leg.br/web/atividade/materias/… │
+└─────────┴─────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┘
+  22 rows                                                                                                    3 columns
+
+exportado

@@ -1,0 +1,46 @@
+artigos sobre o tema por revista
+Crescer              n=  53 mensa_em= 30% ciencia= 60% especialista= 81% cetico= 45% celebra= 66% politica= 77% diagn=100% elitismo=  6% comercial= 66%
+Veja                 n=  33 mensa_em=  6% ciencia= 64% especialista= 64% cetico= 45% celebra= 36% politica= 70% diagn= 85% elitismo=  0% comercial= 58%
+Exame                n=  28 mensa_em= 43% ciencia= 68% especialista= 54% cetico= 18% celebra= 43% politica= 57% diagn= 89% elitismo=  4% comercial= 46%
+IstoÉ                n=  16 mensa_em= 12% ciencia= 56% especialista= 81% cetico= 31% celebra= 50% politica= 44% diagn=100% elitismo= 19% comercial= 50%
+Veja Saúde           n=  14 mensa_em= 14% ciencia= 71% especialista= 79% cetico= 50% celebra= 21% politica= 64% diagn=100% elitismo= 21% comercial= 64%
+Carta Capital        n=  11 mensa_em= 18% ciencia= 55% especialista= 91% cetico= 73% celebra= 18% politica= 91% diagn=100% elitismo=  9% comercial=100%
+Superinteressante    n=   9 mensa_em= 44% ciencia= 67% especialista= 78% cetico= 44% celebra= 56% politica= 67% diagn= 89% elitismo= 44% comercial= 44%
+Marie Claire         n=   9 mensa_em= 11% ciencia= 67% especialista= 78% cetico= 22% celebra= 33% politica= 78% diagn= 78% elitismo= 22% comercial= 56%
+Revista Planeta      n=   8 mensa_em= 38% ciencia= 62% especialista= 38% cetico= 38% celebra= 75% politica= 25% diagn= 75% elitismo= 38% comercial= 38%
+Época Negócios       n=   7 mensa_em= 71% ciencia= 71% especialista= 71% cetico= 29% celebra= 71% politica= 71% diagn=100% elitismo=  0% comercial= 43%
+Pesquisa FAPESP      n=   7 mensa_em= 14% ciencia=100% especialista= 57% cetico= 43% celebra= 43% politica= 57% diagn= 86% elitismo= 14% comercial= 43%
+Galileu              n=   7 mensa_em= 43% ciencia= 71% especialista= 86% cetico= 43% celebra= 43% politica= 57% diagn=100% elitismo= 29% comercial= 43%
+Revista Educação     n=   4 mensa_em=  0% ciencia= 75% especialista=100% cetico= 50% celebra=  0% politica=100% diagn=100% elitismo= 25% comercial=100%
+Revista Oeste        n=   2 mensa_em=  0% ciencia= 50% especialista=100% cetico=  0% celebra= 50% politica=100% diagn=100% elitismo=  0% comercial=100%
+Ciência Hoje         n=   2 mensa_em=  0% ciencia=100% especialista=100% cetico= 50% celebra= 50% politica=100% diagn=100% elitismo=  0% comercial=100%
+
+artigos por ano
+[('2009', 1), ('2018', 1), ('2019', 1), ('2020', 5), ('2021', 17), ('2022', 15), ('2023', 26), ('2024', 34), ('2025', 58), ('2026', 52)]
+
+artigos com termo de elitismo (texto)
+Carta Capital 2023 | As cores da luta e da liberdade - CartaCapital | https://www.cartacapital.com.br/cultura/as-cores-da-luta-e-da-liberdade/
+Pesquisa FAPESP 2025 | Plano Nacional de Educação permite avanços no acesso à escola, mas não cumpre a maioria das metas -  | https://revistapesquisa.fapesp.br/plano-nacional-de-educacao-permite-avancos-no-acesso-a-escola-mas-nao-cumpre-a-maioria-das-metas/
+Crescer 2023 | Superdotado, menino de 8 anos, de SP, detecta 44 asteróides e ganha medalha em programa que tem parc | https://revistacrescer.globo.com/criancas/desenvolvimento/noticia/2023/10/superdotado-menino-de-8-anos-de-sp-detecta-44-asteroides-e-ganha-medalha-em-programa-que-tem-parceria-com-a-nasa.ghtml
+Exame 2025 | Sua Majestade, o tempo: a despedida de Gilberto Gil dos grandes palcos com a última turnê - Exame | https://exame.com/revista-exame/sua-majestade-o-tempo/
+IstoÉ 2026 | Superdotação feminina: inteligência sensível e talento ainda silenciado no mundo - IstoÉ | https://istoe.com.br/superdotacao-feminina-inteligencia-sensivel-e-talento-ainda-silenciado-no-mundo
+Superinteressante 2022 | O menino que coleciona aprovações em vestibulares desde os 12 anos - Superinteressante | https://super.abril.com.br/cultura/o-menino-que-coleciona-aprovacoes-em-vestibulares-desde-os-12-anos/
+Revista Educação 2026 | Adaptação curricular: como a aprendizagem por camadas garante a inclusão dos estudantes - Revista Ed | https://revistaeducacao.com.br/2026/05/07/adaptacao-curricular-aprendizagem/
+Superinteressante 2025 | Ilum: a nova universidade que quer formar a elite da ciência brasileira - Superinteressante | https://super.abril.com.br/ciencia/ilum-a-nova-universidade-que-quer-formar-a-elite-da-ciencia-brasileira/
+IstoÉ 2024 | Superdotação: pais de Lulu, fenômeno na internet, explicam importância de diagnóstico - IstoÉ | https://istoe.com.br/superdotacao-pais-de-lulu-fenomeno-na-internet-explicam-importancia-de-diagnostico
+Superinteressante 2026 | A real sobre os testes de QI - Superinteressante | https://super.abril.com.br/ciencia/a-real-sobre-os-testes-de-qi/
+Marie Claire 2025 | Diretora do Instituto Principia, física Norma Reggiani luta pela democratização da ciência - Globo | https://revistamarieclaire.globo.com/retratos/noticia/2025/01/diretora-do-instituto-principia-fisica-norma-reggiani-luta-pela-democratizacao-da-ciencia.ghtml
+Veja Saúde 2024 | Contra a síndrome do impostor, pense nos verdadeiros impostores - Assine Abril | https://saude.abril.com.br/coluna/neurodiferentes/contra-a-sindrome-do-impostor-pense-nos-verdadeiros-impostores/
+Marie Claire 2023 | 'Descobrir ser superdotada me fez entender porque me sentia desajustada na vida' - Globo | https://revistamarieclaire.globo.com/saude/noticia/2023/09/descobrir-ser-superdotada-me-fez-entender-porque-me-sentia-desajustada-na-vida.ghtml
+Veja Saúde 2026 | Superdotação: crianças ganham política nacional, adultos seguem à espera - Assine Abril | https://saude.abril.com.br/coluna/neurodiferentes/superdotacao-criancas-ganham-politica-nacional-adultos-seguem-a-espera/
+Revista Planeta 2025 | Superdotados enfrentam desafios para se adaptar ao mundo: ‘A gente é legal’ - Revista Planeta | https://revistaplaneta.com.br/superdotados-enfrentam-desafios-para-se-adaptar-ao-mundo-a-gente-e-legal
+Revista Planeta 2021 | Os vários tipos de inteligência: musical, intrapessoal, espacial, corporal, matemática, emocional. Q | https://revistaplaneta.com.br/os-varios-tipos-de-inteligencia-musical-intrapessoal-espacial-corporal-matematica-emocional-qual-e-a-sua
+Crescer 2024 | Estudante de 10 anos supera QI de Albert Einstein e Stephen Hawking e dispara: 'Estou pasmo' - Cresc | https://revistacrescer.globo.com/fique-por-dentro/noticia/2024/11/estudante-de-10-anos-supera-qi-de-albert-einstein-e-stephen-hawking-e-dispara-estou-pasmo.ghtml
+Revista Planeta 2022 | Hubble mostra as consequências de um cataclismo cósmico - Revista Planeta | https://revistaplaneta.com.br/hubble-mostra-as-consequencias-de-um-cataclismo-cosmico
+Crescer 2024 | Menino autista de 9 anos é aprovado em engenharia e já catalogou 200 exoplanetas - Crescer | https://revistacrescer.globo.com/criancas/educacao/noticia/2024/08/conheca-o-menino-autista-de-9-anos-que-foi-aprovado-no-vestibular-de-engenharia-e-ja-catalogou-mais-de-200-exoplanetas.ghtml
+Superinteressante 2024 | Sudoku: a história e a lógica por trás do puzzle mais popular do mundo - Superinteressante | https://super.abril.com.br/cultura/sudoku-a-historia-e-a-logica-por-tras-do-puzzle-mais-popular-do-mundo/
+IstoÉ 2025 | Fabiana Karla descobre habilidades após diagnóstico errado de TDAH; entenda - IstoÉ | https://istoe.com.br/fabiana-karla-descobre-habilidades-apos-diagnostico-errado-de-tdah-entenda
+Veja Saúde 2026 | Superdotação: quantos talentos ainda estão fora do jogo? | Veja Saúde - Assine Abril | https://saude.abril.com.br/coluna/neurodiferentes/superdotacao-quantos-talentos-ainda-estao-fora-do-jogo/
+Galileu 2025 | O perfil dos superdotados no Brasil: por que há mais homens do que mulheres? - Globo | https://revistagalileu.globo.com/sociedade/noticia/2025/10/o-perfil-dos-superdotados-no-brasil-por-que-ha-mais-homens-do-que-mulheres.ghtml
+Galileu 2025 | Mentes brilhantes: quem são os superdotados do Brasil e o que define a condição - Globo | https://revistagalileu.globo.com/sociedade/noticia/2025/10/mentes-brilhantes-quem-sao-os-superdotados-do-brasil-e-o-que-define-a-condicao.ghtml
+total 210

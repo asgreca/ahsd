@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Conversa da Superdotação</title>
+<meta name="description" content="Uma história com dados: como a superdotação virou assunto nacional entre 2021 e 2026, quem tem o público e o que ele pergunta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110d; --surface:#0f1d16; --surface2:#152a20; --line:#1f3a2b;
+  --ink:#e8f3ec; --ink2:#b5cbbd; --muted:#7f9a8a; --cinza:#3b5246; --cinza2:#56705f;
+  --accent:#34d399; --spark:#c4f25a; --deep:#0f6b4a; --neg:#f2a35e;
+  --glow:rgba(52,211,153,.14);
+  --head:"Saira Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f3f7f2; --surface:#ffffff; --surface2:#eaf2ec; --line:#d3e3d8;
+  --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69; --cinza:#c3d3c8; --cinza2:#a2b8aa;
+  --accent:#0f8a5f; --spark:#4f7d00; --deep:#0b5c40; --neg:#c2631a; --glow:rgba(15,138,95,.10);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f7f2; --surface:#ffffff; --surface2:#eaf2ec; --line:#d3e3d8;
+    --ink:#0d2419; --ink2:#2c4a3a; --muted:#5d7a69; --cinza:#c3d3c8; --cinza2:#a2b8aa;
+    --accent:#0f8a5f; --spark:#4f7d00; --deep:#0b5c40; --neg:#c2631a; --glow:rgba(15,138,95,.10);
+    color-scheme:light;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--head);text-transform:uppercase;line-height:1.02;letter-spacing:.01em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.texto{max-width:680px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* barra fixa com a régua de medida */
+.barra{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.barra .wrap{display:flex;align-items:center;gap:14px;min-height:58px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.marca{font:800 18px var(--head);text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+.marca b{color:var(--accent)}
+.regua{display:flex;align-items:center;gap:8px;margin-left:auto;flex-wrap:wrap}
+.regua span{font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);background:var(--surface)}
+.seg button{border:0;background:transparent;color:var(--ink2);padding:7px 14px;font:700 14px var(--body);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#04110a}
+.tema-btn{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:5px 11px;font:600 13px var(--body);cursor:pointer}
+.progresso{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
+
+/* capa */
+.capa{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.capa .fundo{position:absolute;inset:0}
+.capa .fundo canvas,.capa .fundo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.capa .fundo img{opacity:.55}
+.capa .fundo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,var(--bg) 92%)}
+.capa .wrap{position:relative;padding-bottom:48px;padding-top:120px}
+.chapeu{font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.capa h1{font-size:clamp(40px,6.2vw,78px);margin:14px 0 18px;max-width:19ch}
+.capa h1 em{font-style:normal;color:var(--spark)}
+.capa p{font:400 21px/1.5 var(--serif);color:var(--ink2);max-width:40ch}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.kpis div{background:var(--surface);padding:16px 18px}
+.kpis b{display:block;font:800 clamp(28px,4vw,42px)/1 var(--head);color:var(--ink)}
+.kpis div.on b{color:var(--spark)}
+.kpis span{font-size:13px;color:var(--ink2);display:block}
+.kpis small{display:block;font-size:12px;color:var(--muted);margin-top:5px;line-height:1.35}
+@media (max-width:720px){.kpis{grid-template-columns:1fr 1fr}}
+
+/* atos */
+.ato{padding:84px 0 40px;border-bottom:1px solid var(--line)}
+.ato-num{font:800 14px var(--head);letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.ato h2{font-size:clamp(34px,5vw,58px);margin:8px 0 18px;max-width:20ch}
+.ato p{margin-bottom:16px;color:var(--ink2)}
+.ato p.abre{font:400 22px/1.55 var(--serif);color:var(--ink)}
+.ato p b{color:var(--ink)}
+figure.ilus{position:relative;margin:28px 0;aspect-ratio:3/1.4;overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse at 30% 40%,var(--deep),transparent 60%),radial-gradient(ellipse at 80% 70%,color-mix(in srgb,var(--spark) 25%,transparent),transparent 55%),var(--surface)}
+figure.ilus img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+figure.ilus svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* gráfico */
+.graf{margin:34px 0 12px;padding:22px 22px 18px;background:var(--surface);border:1px solid var(--line)}
+.graf h3{font-size:clamp(22px,2.8vw,28px);max-width:30ch}
+.graf h3 em{font-style:normal;color:var(--spark)}
+.graf .sub{font-size:14px;color:var(--muted);margin:4px 0 16px}
+.graf .fonte{font-size:13px;color:var(--muted);margin-top:12px}
+.hbar{display:grid;grid-template-columns:minmax(110px,32%) 1fr;gap:7px 12px;align-items:center;font-size:15px}
+.hbar .l{color:var(--ink2);text-align:right;line-height:1.2}
+.hbar .l.on{color:var(--ink);font-weight:700}
+.hbar .t{display:flex;align-items:center;gap:8px;min-width:0}
+.hbar .t i{display:block;height:20px;background:var(--cinza);transition:width .5s ease;min-width:2px}
+.hbar .t i.on{background:var(--accent)}
+.hbar .t i.sp{background:var(--spark)}
+.hbar .t span{font-variant-numeric:tabular-nums;font-size:14px;color:var(--muted);white-space:nowrap}
+.hbar .t span.on{color:var(--ink);font-weight:700}
+.dupla{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:820px){.dupla{grid-template-columns:1fr}}
+.dupla>*{min-width:0}
+.legenda{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px}
+.legenda span:before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px;background:var(--c)}
+
+/* destaques numéricos */
+.num-grande{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:30px 0}
+.num-grande div{border-top:3px solid var(--accent);padding-top:10px}
+.num-grande b{display:block;font:800 clamp(36px,5vw,56px)/1 var(--head);color:var(--spark)}
+.num-grande span{font-size:15px;color:var(--ink2)}
+@media (max-width:720px){.num-grande{grid-template-columns:1fr}}
+blockquote.voz{font:italic 400 22px/1.45 var(--serif);border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:26px 0;color:var(--ink)}
+blockquote.voz small{display:block;font:600 13px var(--body);font-style:normal;color:var(--muted);margin-top:8px}
+
+/* tabela */
+.tab{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pts{display:inline-flex;gap:2px}
+.pts i{width:8px;height:14px;background:var(--cinza)}
+.pts i.on{background:var(--accent)}
+tr.foco td{background:var(--glow)}
+
+/* ações */
+.acoes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}
+@media (max-width:860px){.acoes{grid-template-columns:1fr}}
+.acao{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);padding:20px}
+.acao .k{font:800 15px var(--head);color:var(--accent);letter-spacing:.08em}
+.acao h3{font-size:24px;margin:6px 0 10px}
+.acao p{font-size:16px;color:var(--ink2);margin-bottom:10px}
+.acao .prova{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.acao .prova b{color:var(--spark)}
+
+footer{padding:48px 0 70px;font-size:14px;color:var(--muted)}
+footer p{max-width:80ch;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="barra">
+  <div class="wrap">
+    <a class="marca" href="#capa">A conversa da <b>superdotação</b></a>
+    <div class="regua">
+      <span>Medir por</span>
+      <div class="seg" id="medida" role="group" aria-label="Escolha a medida dos gráficos">
+        <button data-m="views">Alcance</button><button data-m="likes">Curtidas</button><button data-m="coments">Comentários</button>
+      </div>
+      <a href="index.html" style="font-size:14px;font-weight:600">Explorar os dados</a>
+      <a href="mapa.html" style="font-size:14px;font-weight:600">Mapa de influência</a>
+      <a href="metodologia.html" style="font-size:14px;font-weight:600">Metodologia</a>
+      <button class="tema-btn" id="tema-btn" type="button">◐</button>
+    </div>
+    <div class="progresso" id="progresso"></div>
+  </div>
+</div>
+
+<header class="capa" id="capa">
+  <div class="fundo"><canvas id="neural" aria-hidden="true"></canvas><img src="img/capa.jpg" alt="" onerror="this.remove()"></div>
+  <div class="wrap">
+    <div class="chapeu">Uma história com dados · Brasil, 2021 a 2026</div>
+    <h1>O Brasil quer falar de superdotação. <em>Quem responde são os criadores, não as instituições.</em></h1>
+    <p>Em seis anos, o tema saiu do teste de QI e chegou à lei, ao consultório e ao celular. Medimos cada passo em alcance, curtidas e comentários.</p>
+    <div class="kpis" id="kpis"></div>
+  </div>
+</header>
+
+<main>
+  <section class="ato" id="contexto"><div class="wrap">
+    <div class="ato-num">Contexto</div>
+    <h2 id="t-contexto">Uma conversa que cresceu em todas as frentes</h2>
+    <div class="texto">
+      <p class="abre">Em 2021, a imprensa publicou 53 manchetes sobre superdotação. Em 2026, foram 411. Nas redes, o salto foi maior.</p>
+      <p>Somamos vídeos do YouTube e do TikTok e posts do Instagram sobre o tema. Use a régua no topo para trocar a medida: alcance (visualizações), curtidas ou comentários. Todos os gráficos da página mudam juntos.</p>
+    </div>
+    <div class="graf">
+      <h3 id="h-ano"></h3>
+      <div class="sub" id="s-ano"></div>
+      <svg id="g-ano" viewBox="0 0 1000 330" role="img" aria-label="Medida por ano e rede" style="width:100%;height:auto"></svg>
+      <div class="legenda"><span style="--c:var(--accent)">TikTok</span><span style="--c:var(--cinza2)">YouTube</span><span style="--c:var(--spark)">Instagram</span></div>
+      <div class="fonte">Conteúdos sobre o tema publicados de 2021 a 2026. Instagram e TikTok foram coletados em 2026 e favorecem o conteúdo recente. O Instagram não mostra visualizações, por isso não entra no alcance. O X ficou de fora porque a coleta não trouxe métricas.</div>
+    </div>
+  </div></section>
+
+  <section class="ato" id="ato1"><div class="wrap">
+    <div class="ato-num">Ato I · O número</div>
+    <h2>Primeiro, o QI virou espetáculo</h2>
+    <figure class="ilus" data-img="espetaculo"></figure>
+    <div class="texto">
+      <p class="abre">No começo do período, superdotação era sinônimo de um número. Quizzes de "gênio", ilusões de ótica e o "maior QI do Brasil" levavam as maiores audiências.</p>
+      <p>Em 2021, quase metade dos comentários do YouTube (<b>47%</b>) era piada sobre o próprio QI. Em 2026, essa fatia caiu para <b>17%</b>. O espetáculo continua dando audiência, mas o público começou a perguntar outra coisa: se o teste mede mesmo alguma coisa.</p>
+    </div>
+    <div class="graf">
+      <h3 id="h-yt"></h3>
+      <div class="sub">Vídeos do YouTube de 2021 a 2026 por tema. Em verde, o tema destacado no título; em cinza, os demais.</div>
+      <div class="hbar" id="g-yt"></div>
+      <div class="fonte">Temas atribuídos pela nossa IA a partir do título e da descrição de 353 vídeos.</div>
+    </div>
+  </div></section>
+
+  <section class="ato" id="ato2"><div class="wrap">
+    <div class="ato-num">Ato II · O espelho</div>
+    <h2>Depois, virou identidade</h2>
+    <figure class="ilus" data-img="espelho"></figure>
+    <div class="texto">
+      <p class="abre">Entre 2023 e 2024, o TikTok e o Instagram trocaram a pergunta "qual é o seu QI?" por "você se reconhece nestes sinais?".</p>
+      <p>Psicólogos, neuropsicólogos e médicos passaram a listar características, falar de sobrecarga sensorial, de TDAH e autismo junto com altas habilidades, de adultos que se descobriram tarde. O público respondeu: <b>infância e família</b> e <b>escola</b> são os assuntos com mais alcance nas redes.</p>
+    </div>
+    <div class="dupla">
+      <div class="graf">
+        <h3 id="h-assunto"></h3>
+        <div class="sub">Conteúdos de YouTube, TikTok e Instagram que tocam cada assunto. Um conteúdo pode tocar vários.</div>
+        <div class="hbar" id="g-assunto"></div>
+      </div>
+      <div class="graf">
+        <h3 id="h-cluster"></h3>
+        <div class="sub">Grupos de criadores formados pelo vocabulário dos próprios posts.</div>
+        <div class="hbar" id="g-cluster"></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="ato" id="ato3"><div class="wrap">
+    <div class="ato-num">Ato III · A lei</div>
+    <h2>Em 2026, o tema chegou ao Estado</h2>
+    <figure class="ilus" data-img="lei"></figure>
+    <div class="texto">
+      <p class="abre">Em fevereiro, um menino de 6 anos falou no Senado. Em junho, a Lei 15.436 instituiu a política nacional para estudantes com altas habilidades ou superdotação.</p>
+      <p>A política pública passou de <b>6%</b> das reportagens em 2021 para <b>26%</b> em 2026. Entre todos os conteúdos sobre o tema, o vídeo da criança no Senado é o que mais recebeu comentários.</p>
+    </div>
+    <div class="graf">
+      <h3>Política pública virou a pauta da imprensa em 2026</h3>
+      <div class="sub">Participação de cada tema nas reportagens, 2021 a 2026. Em verde, política pública; em cinza, os outros temas.</div>
+      <svg id="g-imprensa" viewBox="0 0 1000 320" role="img" aria-label="Temas das reportagens por ano" style="width:100%;height:auto"></svg>
+      <div class="fonte">1.264 reportagens classificadas pela nossa IA.</div>
+    </div>
+  </div></section>
+
+  <section class="ato" id="virada"><div class="wrap">
+    <div class="ato-num">A virada</div>
+    <h2 id="t-virada">A instituição mais citada fala para poucos</h2>
+    <figure class="ilus" data-img="clube"></figure>
+    <div class="texto">
+      <p class="abre">A Mensa é a instituição mais citada no tema. No mesmo período, a Mensa Brasil passou de 2 mil para 7 mil membros e virou fonte das reportagens sobre crianças superdotadas.</p>
+      <p>Nas redes, porém, a voz da própria Mensa quase não aparece. E quando o público fala dela nos comentários, a maioria critica: clube fechado, teste caro, arrogância.</p>
+    </div>
+    <div class="num-grande" id="num-mensa"></div>
+    <div class="graf">
+      <h3 id="h-mensa"></h3>
+      <div class="sub">Contas da própria Mensa (Instagram, TikTok e canal do YouTube), conteúdos de terceiros que citam a Mensa e o maior grupo de criadores.</div>
+      <div class="hbar" id="g-mensa"></div>
+    </div>
+    <div class="graf">
+      <h3>Quem cita a Mensa nos comentários critica; a imprensa não</h3>
+      <div class="sub">Postura sobre a Mensa entre os itens que a citam.</div>
+      <div class="hbar" id="g-postura"></div>
+      <div class="fonte">Postura classificada pela nossa IA: 1.461 comentários, 143 vídeos e 408 reportagens que citam a Mensa.</div>
+    </div>
+  </div></section>
+
+  <section class="ato" id="climax"><div class="wrap">
+    <div class="ato-num">O ponto alto</div>
+    <h2>Por trás da piada, gente perguntando e sofrendo</h2>
+    <figure class="ilus" data-img="vozes"></figure>
+    <div class="texto">
+      <p class="abre">Lemos os comentários que fazem perguntas ou desabafam. Em 4 de cada 10, há uma dúvida ou angústia real.</p>
+      <p>Quase nenhuma é sobre instituições. São sobre sofrimento, sobre a confusão com TDAH e autismo, sobre não se encaixar e sobre "será que eu sou?". Quem responde a essas perguntas hoje são os criadores clínicos, não as entidades.</p>
+    </div>
+    <blockquote class="voz" id="voz1"></blockquote>
+    <div class="graf">
+      <h3 id="h-duv"></h3>
+      <div class="sub" id="s-duv"></div>
+      <div class="hbar" id="g-duv"></div>
+      <div class="fonte" id="f-duv"></div>
+    </div>
+    <div class="graf">
+      <h3>O público pergunta sobre o teste; quase ninguém responde</h3>
+      <div class="sub">Validade dos testes de QI: participação nos comentários e nos vídeos do YouTube, 2021 a 2026.</div>
+      <div class="hbar" id="g-lacuna"></div>
+    </div>
+    <blockquote class="voz" id="voz2"></blockquote>
+  </div></section>
+
+  <section class="ato" id="acao"><div class="wrap">
+    <div class="ato-num">Resolução · O que a conversa pede</div>
+    <h2>Três lacunas entre o que se publica e o que se pergunta</h2>
+    <figure class="ilus" data-img="ponte"></figure>
+    <div class="texto">
+      <p class="abre">O público existe, é grande e está pedindo respostas. Para qualquer pessoa ou organização que comunique sobre o tema, os números apontam três lacunas:</p>
+    </div>
+    <div class="acoes" id="acoes"></div>
+    <div class="graf">
+      <h3>Quem já tem o público</h3>
+      <div class="sub">Criadores com 3 ou mais conteúdos sobre o tema e pelo menos 50 mil de alcance (views ou seguidores). Nota de 1 a 5 em três critérios: alcance, afinidade de pauta (fala de saúde, escola, família e diagnóstico mais do que de quiz) e conversa (comentários por conteúdo). A ordem segue a medida escolhida no topo.</div>
+      <div class="tab"><table id="g-parceiros"></table></div>
+      <div class="fonte">Notas por quintil entre os candidatos. É um filtro para começar a conversa, não uma recomendação fechada: conferir valores, histórico e conflitos de interesse de cada perfil.</div>
+    </div>
+    <div class="graf">
+      <h3 id="h-top"></h3>
+      <div class="sub">Os 12 conteúdos sobre o tema com o maior valor na medida escolhida.</div>
+      <div class="tab"><table id="g-top"></table></div>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <p><b>Como medimos.</b> Alcance é a soma de visualizações informadas pelo YouTube e pelo TikTok no dia da coleta (o Instagram não mostra views). Curtidas e comentários são os números exibidos por cada rede; no Instagram, os comentários são os que foram coletados. Só entram conteúdos sobre o tema, de 2021 a 2026.</p>
+  <p><b>Amostra.</b> Os volumes são o que as buscas devolveram e passou pelo filtro de tema, não o total de conteúdo das redes. <a href="metodologia.html">Veja a metodologia</a>.</p>
+  <p><b>Limites.</b> Temas, posturas e dúvidas foram classificados pela nossa IA sem validação humana. Datas de comentários do YouTube são aproximadas por ano. Números de membros da Mensa são os noticiados pela imprensa.</p>
+  <p id="rodape"></p>
+  <p><b>Fontes.</b> YouTube, TikTok, Instagram e X (coleta própria); Google Notícias e portais; reportagens de G1, Crescer, O Globo, Veja, Terra, Exame e Correio Braziliense, entre outras.</p>
+</div></footer>
+
+<script src="dados.js"></script>
+<script>
+(() => {
+const D = window.DADOS, H = D.historia;
+const $ = s => document.querySelector(s);
+const nf = new Intl.NumberFormat('pt-BR');
+const n = x => x == null ? '–' : nf.format(Math.round(x));
+const c = x => {
+  if (x == null) return '–';
+  if (x >= 1e6) return (x / 1e6).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' mi';
+  if (x >= 1e4) return Math.round(x / 1e3).toLocaleString('pt-BR') + ' mil';
+  return n(x);
+};
+const p = x => (x ?? 0).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + '%';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const NOME = {views: 'alcance', likes: 'curtidas', coments: 'comentários'};
+const UNID = {views: 'visualizações', likes: 'curtidas', coments: 'comentários'};
+let M = 'views';
+try { M = localStorage.getItem('medida') || 'views'; } catch (e) {}
+
+/* tema */
+const raiz = document.documentElement;
+try { const t = localStorage.getItem('tema'); if (t) raiz.dataset.theme = t; } catch (e) {}
+$('#tema-btn').onclick = () => {
+  const escuro = raiz.dataset.theme ? raiz.dataset.theme === 'dark' : !matchMedia('(prefers-color-scheme: light)').matches;
+  raiz.dataset.theme = escuro ? 'light' : 'dark';
+  try { localStorage.setItem('tema', raiz.dataset.theme); } catch (e) {}
+};
+
+/* barras horizontais: cinza para contexto, verde para o destaque */
+function hbar(el, rows, fmt = c) {
+  const mx = Math.max(...rows.map(r => r.v), 1);
+  $(el).innerHTML = rows.map(r => `<div class="l${r.on ? ' on' : ''}">${esc(r.l)}</div><div class="t"><i class="${r.on ? (r.sp ? 'sp' : 'on') : ''}" style="width:${Math.max(.4, 78 * r.v / mx)}%"></i><span class="${r.on ? 'on' : ''}">${r.txt ?? fmt(r.v)}</span></div>`).join('');
+}
+
+/* ilustrações: usa a imagem gerada se existir; senão desenha uma rede */
+document.querySelectorAll('figure.ilus').forEach((f, k) => {
+  const nome = f.dataset.img;
+  let s = '<svg viewBox="0 0 900 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
+  let seed = k * 97 + 13;
+  const r = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const pts = Array.from({length: 46}, () => [r() * 900, r() * 420]);
+  pts.forEach((a, i) => pts.slice(i + 1).forEach(b => { const d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (d < 120) s += `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--accent)" stroke-opacity="${.35 * (1 - d / 120)}"/>`; }));
+  pts.forEach((a, i) => s += `<circle cx="${a[0]}" cy="${a[1]}" r="${i % 7 ? 2 : 4}" fill="${i % 9 ? 'var(--accent)' : 'var(--spark)'}" fill-opacity=".8"/>`);
+  f.innerHTML = s + `</svg><img src="img/${nome}.jpg" alt="" loading="lazy" onerror="this.remove()">`;
+});
+
+/* números de abertura */
+const B = H.assunto_base;
+function kpis() {
+  const R = r => H.rede_ano[r].reduce((o, x) => ({views: o.views + x.views, likes: o.likes + x.likes, coments: o.coments + x.coments}), {views: 0, likes: 0, coments: 0});
+  const yt = R('YouTube'), tt = R('TikTok'), ig = R('Instagram'), ME = D.medicao;
+  const itens = [
+    ['views', B.views, 'alcance em visualizações', `YouTube ${c(yt.views)} · TikTok ${c(tt.views)} · Instagram e X sem views na coleta`],
+    ['likes', B.likes, 'curtidas', `YouTube ${c(yt.likes)} · TikTok ${c(tt.likes)} · Instagram ${c(ig.likes)} · X sem métrica`],
+    ['coments', B.coments + ME.X.coments, 'comentários', `YouTube ${c(yt.coments)} · TikTok ${c(tt.coments)} · Instagram ${c(ig.coments)} · X ${c(ME.X.coments)} respostas`],
+  ];
+  $('#kpis').innerHTML = itens.map(([m, v, l, d]) => `<div class="${m === M ? 'on' : ''}"><b>${c(v)}</b><span>${l}</span><small>${d}</small></div>`).join('') +
+    `<div><b>${c(ME.Instagram.seguidores)}</b><span>audiência potencial no Instagram</span><small>seguidores dos ${ME.Instagram.perfis} perfis que postaram sobre o tema</small></div>`;
+}
+
+/* contexto: barras empilhadas por ano */
+function grafAno() {
+  const anos = D.anual.anos, redes = [['TikTok', 'var(--accent)'], ['YouTube', 'var(--cinza2)'], ['Instagram', 'var(--spark)']];
+  const tot = anos.map((a, i) => redes.reduce((s, [r]) => s + H.rede_ano[r][i][M], 0));
+  const mx = Math.max(...tot), W = 1000, Hh = 330, pb = 30, pt = 34, bw = 92;
+  const x = i => 70 + i * (W - 140) / (anos.length - 1) - bw / 2;
+  let s = '';
+  anos.forEach((a, i) => {
+    let y0 = Hh - pb;
+    redes.forEach(([r, cor]) => {
+      const v = H.rede_ano[r][i][M], h = (Hh - pb - pt) * v / mx;
+      if (v > 0) s += `<rect x="${x(i)}" y="${y0 - h}" width="${bw}" height="${h}" fill="${cor}"><title>${r} ${a}: ${n(v)} ${UNID[M]}</title></rect>`;
+      y0 -= h;
+    });
+    s += `<text x="${x(i) + bw / 2}" y="${y0 - 8}" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">${c(tot[i])}</text>`;
+    s += `<text x="${x(i) + bw / 2}" y="${Hh - 8}" text-anchor="middle" font-size="14" fill="var(--muted)">${a}</text>`;
+  });
+  $('#g-ano').innerHTML = s;
+  const soma = tot.reduce((a, b) => a + b, 0), u = tot[tot.length - 1];
+  $('#h-ano').innerHTML = `<em>${p(100 * u / soma)}</em> de todo o ${NOME[M]} dos seis anos está em 2026`;
+  $('#s-ano').textContent = `${c(soma)} ${UNID[M]} no período. O TikTok responde por ${p(100 * H.rede_ano.TikTok.reduce((a, x) => a + x[M], 0) / soma)} do total.`;
+}
+
+/* ato I: temas dos vídeos */
+function grafYT() {
+  const L = H.yt_tema.filter(t => t.n > 0 && t.tema !== 'outro').sort((a, b) => b[M] - a[M]);
+  const tot = L.reduce((a, t) => a + t[M], 0);
+  const top = L[0];
+  hbar('#g-yt', L.map(t => ({l: t.rotulo, v: t[M], on: t.tema === top.tema || t.tema === 'validade_testes_qi', sp: t.tema === 'validade_testes_qi' && t.tema !== top.tema, txt: `${c(t[M])} · ${t.n} vídeos`})));
+  const v = L.find(t => t.tema === 'validade_testes_qi');
+  $('#h-yt').innerHTML = `${esc(top.rotulo)} lidera em ${NOME[M]} (<em>${p(100 * top[M] / tot)}</em>); a validade do teste, com só ${v.n} vídeos, leva ${p(100 * v[M] / tot)}`;
+}
+
+/* ato II: assuntos e clusters */
+function grafAssunto() {
+  const L = [...H.assunto].sort((a, b) => b[M] - a[M]);
+  const dest = ['infancia', 'escola', 'neuro', 'diagnostico', 'adulto'];
+  hbar('#g-assunto', L.map(a => ({l: a.rotulo, v: a[M], on: dest.includes(a.grupo), sp: a.grupo === 'mensa'})));
+  $('#h-assunto').innerHTML = `${esc(L[0].rotulo)} é o assunto com mais ${NOME[M]}: <em>${c(L[0][M])}</em>`;
+  const C = [...H.clusters].sort((a, b) => b[M] - a[M]);
+  const tot = C.reduce((a, x) => a + x[M], 0);
+  hbar('#g-cluster', C.map(x => ({l: `${x.nome} (${x.n})`, v: x[M], on: x === C[0], sp: x.nome === 'Mensa e mídia'})));
+  $('#h-cluster').innerHTML = `"${esc(C[0].nome)}" concentra <em>${p(100 * C[0][M] / tot)}</em> do ${NOME[M]} dos grupos`;
+}
+
+/* ato III: temas da imprensa por ano (linhas cinza, política em verde) */
+function grafImprensa() {
+  const anos = D.anual.anos, T = D.imprensa_tema_ano, W = 1000, Hh = 320, pl = 46, pr = 210, pt = 16, pb = 30;
+  const temas = Object.keys(D.rotulos_tema).filter(k => k !== 'outro' && Math.max(...anos.map(a => T[a][k])) >= 8 || k === 'politica_publica');
+  const mx = 36, x = i => pl + (W - pl - pr) * i / (anos.length - 1), y = v => pt + (Hh - pt - pb) * (1 - Math.min(v, mx) / mx);
+  let s = '';
+  [0, 10, 20, 30].forEach(g => s += `<text x="${pl - 8}" y="${y(g) + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${g}%</text><line x1="${pl}" x2="${W - pr}" y1="${y(g)}" y2="${y(g)}" stroke="var(--line)"/>`);
+  anos.forEach((a, i) => s += `<text x="${x(i)}" y="${Hh - 8}" text-anchor="middle" font-size="13" fill="var(--muted)">${a}</text>`);
+  const fins = [];
+  for (const k of temas.sort((a, b) => (a === 'politica_publica') - (b === 'politica_publica'))) {
+    const on = k === 'politica_publica', v = anos.map(a => T[a][k]);
+    s += `<polyline points="${v.map((q, i) => x(i) + ',' + y(q)).join(' ')}" fill="none" stroke="${on ? 'var(--accent)' : 'var(--cinza)'}" stroke-width="${on ? 4 : 2}"/>`;
+    fins.push([y(v[v.length - 1]), on, `${D.rotulos_tema[k]} ${p(v[v.length - 1])}`]);
+    if (on) s += `<circle cx="${x(5)}" cy="${y(v[5])}" r="6" fill="var(--accent)"/><text x="${x(0)}" y="${y(v[0]) - 10}" font-size="13" fill="var(--accent)">${p(v[0])}</text>`;
+  }
+  fins.sort((a, b) => a[0] - b[0]);
+  for (let i = 1; i < fins.length; i++) if (fins[i][0] - fins[i - 1][0] < 17) fins[i][0] = fins[i - 1][0] + 17;
+  fins.forEach(([yy, on, t]) => s += `<text x="${W - pr + 10}" y="${yy + 4}" font-size="${on ? 14 : 12}" font-weight="${on ? 700 : 400}" fill="${on ? 'var(--accent)' : 'var(--muted)'}">${esc(t)}</text>`);
+  $('#g-imprensa').innerHTML = s;
+}
+
+/* virada: Mensa */
+const MP = H.mensa_proprio, MC = H.mensa_citada, CL0 = [...H.clusters].sort((a, b) => b.views - a.views)[0];
+function grafMensa() {
+  const rows = [
+    {l: 'Contas da própria Mensa', v: MP[M], on: true, sp: true, txt: `${c(MP[M])} · ${MP.n} conteúdos`},
+    {l: 'Terceiros citando a Mensa', v: MC[M], txt: `${c(MC[M])} · ${MC.n} conteúdos`},
+    {l: `Grupo "${CL0.nome}"`, v: CL0[M], on: true, txt: `${c(CL0[M])} · ${CL0.n} criadores`},
+  ];
+  hbar('#g-mensa', rows);
+  const raz = CL0[M] / Math.max(1, MP[M]);
+  $('#h-mensa').innerHTML = `O maior grupo de criadores tem <em>${raz >= 10 ? n(raz) + ' vezes' : raz.toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' vezes'}</em> o ${NOME[M]} das contas da Mensa`;
+  const mb = D.mensa.membros;
+  $('#num-mensa').innerHTML = `<div><b>${n(mb[0].membros)} → ${n(mb[mb.length - 1].membros)}</b><span>membros noticiados, de 2022 a 2026</span></div>
+    <div><b>${c(MP[M])}</b><span>${NOME[M]} das contas da própria Mensa nas redes, 2021 a 2026</span></div>
+    <div><b>${p(100 * 894 / 1461)}</b><span>dos comentários que citam a Mensa a criticam</span></div>`;
+}
+const POS = D.mensa.postura;
+hbar('#g-postura', Object.entries(POS).map(([f, o]) => { const t = o.detrator + o.neutro + o.apoiador; return {l: f, v: 100 * o.detrator / t, on: f === 'Comentários', txt: `${p(100 * o.detrator / t)} críticos · ${n(t)} itens`}; }), p);
+
+/* clímax: dúvidas */
+const DV = D.duvidas;
+function grafDuv() {
+  if (!DV) return;
+  const campo = M === 'likes' ? 'likes' : 'n';
+  const L = [...DV.categorias].sort((a, b) => b[campo] - a[campo]);
+  hbar('#g-duv', L.map((x, i) => ({l: x.titulo, v: x[campo], on: i < 3, txt: campo === 'likes' ? `${c(x.likes)} curtidas` : `${n(x.n)} comentários · ${p(x.pct)}`})));
+  $('#h-duv').innerHTML = campo === 'likes'
+    ? `As dúvidas mais curtidas: <em>${esc(L[0].titulo)}</em> e ${esc(L[1].titulo)}`
+    : `<em>${esc(L[0].titulo)}</em> é a angústia mais frequente`;
+  $('#s-duv').textContent = campo === 'likes' ? 'Soma das curtidas dos comentários de cada categoria.' : (M === 'views' ? 'Comentários não têm alcance próprio; aqui, o número de comentários de cada categoria.' : 'Número de comentários em cada categoria.');
+  $('#f-duv').textContent = `Amostra de ${n(DV.amostra)} comentários do YouTube e do Instagram que perguntam ou desabafam; ${n(DV.com_duvida)} trazem dúvida ou angústia. Classificação da nossa IA.`;
+  const ex = DV.categorias[0].exemplos[0], ex2 = (DV.categorias.find(x => x.chave === 'sera_que_sou') || DV.categorias[1]).exemplos[1];
+  if (ex) $('#voz1').innerHTML = `"${esc(ex.texto)}"<small>Comentário no ${ex.fonte}, ${n(ex.likes)} curtidas</small>`;
+  if (ex2) $('#voz2').innerHTML = `"${esc(ex2.texto)}"<small>Comentário no ${ex2.fonte}, ${n(ex2.likes)} curtidas</small>`;
+}
+const tv = Object.fromEntries(D.temas.map(t => [t.tema, t]));
+hbar('#g-lacuna', [
+  {l: 'Nos comentários', v: tv.validade_testes_qi.pct_comentarios, on: true, sp: true},
+  {l: 'Nos vídeos', v: tv.validade_testes_qi.pct_videos},
+  {l: 'Nas reportagens', v: tv.validade_testes_qi.pct_reportagens},
+], p);
+
+/* resolução */
+const A = H.assunto.reduce((o, a) => (o[a.grupo] = a, o), {});
+$('#acoes').innerHTML = [
+  ['1', 'Explicar o teste', 'Quase ninguém explica, em linguagem simples, o que um teste de inteligência mede, o que não mede e por que um resultado online não vale. É a dúvida que o público mais repete e a que menos vídeos respondem.', `Validade do teste: <b>${p(tv.validade_testes_qi.pct_comentarios)}</b> dos comentários e <b>${H.yt_tema.find(t => t.tema === 'validade_testes_qi').n}</b> vídeos no período.`],
+  ['2', 'O alcance está concentrado', 'As respostas sobre sinais, avaliação e custo vêm de poucos criadores clínicos. Instituições, escolas e especialistas acadêmicos falam para públicos pequenos.', `Grupo "${esc(CL0.nome)}": <b>${c(CL0.views)}</b> views. Contas da Mensa, a instituição mais citada: <b>${c(MP.views)}</b>.`],
+  ['3', 'O adulto, não só o prodígio', 'A imprensa ainda conta muito a história da criança-recorde. As angústias estão em adultos, mulheres e famílias que procuram acolhimento e caminhos práticos.', `Descoberta adulta: <b>${c(A.adulto.views)}</b> views; sofrimento psíquico é a dúvida nº 1 (<b>${DV ? p(DV.categorias[0].pct) : '–'}</b>).`],
+].map(([k, t, d, pr]) => `<div class="acao"><div class="k">Lacuna ${k}</div><h3>${t}</h3><p>${d}</p><div class="prova">${pr}</div></div>`).join('');
+
+const pts = v => `<span class="pts">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= v ? 'on' : ''}"></i>`).join('')}</span>`;
+function grafParceiros() {
+  const L = [...H.parceiros].sort((a, b) => b.pontos - a.pontos || b[M] - a[M]);
+  $('#g-parceiros').innerHTML = `<thead><tr><th>Perfil</th><th>Redes</th><th class="n">Alcance</th><th class="n">Curtidas</th><th class="n">Comentários</th><th>Alcance</th><th>Afinidade</th><th>Conversa</th></tr></thead><tbody>` +
+    L.map(x => `<tr class="${x.foco ? 'foco' : ''}"><td><b>${esc(x.autor)}</b></td><td>${Object.keys(x.redes).join(', ')}</td><td class="n">${c(Math.max(x.views, x.seguidores || 0))}${x.views ? '' : ' seg.'}</td><td class="n">${c(x.likes)}</td><td class="n">${c(x.coments)}</td><td>${pts(x.n_alcance)}</td><td>${pts(x.n_afinidade)}</td><td>${pts(x.n_conversa)}</td></tr>`).join('') + '</tbody>';
+}
+function grafTop() {
+  const L = H.top[M];
+  $('#h-top').innerHTML = `Os campeões de ${NOME[M]}`;
+  $('#g-top').innerHTML = `<thead><tr><th>#</th><th>Conteúdo</th><th>Perfil</th><th>Ano</th><th class="n">Alcance</th><th class="n">Curtidas</th><th class="n">Comentários</th></tr></thead><tbody>` +
+    L.map((x, i) => `<tr><td>${i + 1}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.titulo)}</a></td><td>${esc(x.rede === 'YouTube' ? x.autor : '@' + x.autor)}<br><small style="color:var(--muted)">${x.rede}</small></td><td>${x.ano}</td>
+      <td class="n" style="${M === 'views' ? 'color:var(--spark);font-weight:700' : ''}">${x.views ? c(x.views) : '–'}</td><td class="n" style="${M === 'likes' ? 'color:var(--spark);font-weight:700' : ''}">${c(x.likes)}</td><td class="n" style="${M === 'coments' ? 'color:var(--spark);font-weight:700' : ''}">${c(x.coments)}</td></tr>`).join('') + '</tbody>';
+}
+
+function tudo() {
+  document.querySelectorAll('#medida button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === M));
+  kpis(); grafAno(); grafYT(); grafAssunto(); grafMensa(); grafDuv(); grafParceiros(); grafTop();
+}
+$('#medida').onclick = e => {
+  if (!e.target.dataset.m) return;
+  M = e.target.dataset.m;
+  try { localStorage.setItem('medida', M); } catch (er) {}
+  tudo();
+};
+tudo(); grafImprensa();
+$('#rodape').textContent = `Base: ${n(D.numeros.comentarios_total)} comentários lidos, ${n(B.n)} conteúdos de redes sobre o tema e ${n(D.numeros.reportagens_classificadas)} reportagens. Dados coletados até 27/10/2026; página gerada em ${D.gerado_em}.`;
+
+/* barra de progresso da leitura */
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  $('#progresso').style.width = (100 * h.scrollTop / (h.scrollHeight - h.clientHeight)) + '%';
+}, {passive: true});
+
+/* rede neural da capa */
+const cv = $('#neural'), ctx = cv.getContext('2d');
+let P = [], W = 0, Hh = 0;
+function tam() {
+  const r = cv.getBoundingClientRect(), d = devicePixelRatio || 1;
+  W = r.width; Hh = r.height; cv.width = W * d; cv.height = Hh * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+  P = Array.from({length: Math.round(W * Hh / 12000)}, () => ({x: Math.random() * W, y: Math.random() * Hh, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3}));
+}
+const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function quadro() {
+  const a = getComputedStyle(raiz).getPropertyValue('--accent').trim();
+  ctx.clearRect(0, 0, W, Hh); ctx.strokeStyle = a; ctx.fillStyle = a;
+  for (const q of P) { q.x += q.vx; q.y += q.vy; if (q.x < 0 || q.x > W) q.vx *= -1; if (q.y < 0 || q.y > Hh) q.vy *= -1; }
+  for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) {
+    const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, d = dx * dx + dy * dy;
+    if (d < 14000) { ctx.globalAlpha = .3 * (1 - d / 14000); ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke(); }
+  }
+  ctx.globalAlpha = .75; for (const q of P) { ctx.beginPath(); ctx.arc(q.x, q.y, 1.7, 0, 7); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  if (!parado) requestAnimationFrame(quadro);
+}
+tam(); quadro(); addEventListener('resize', () => { tam(); if (parado) quadro(); });
+})();
+</script>
+</body>
+</html>

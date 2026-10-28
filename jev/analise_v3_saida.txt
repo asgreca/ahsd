@@ -1,0 +1,60 @@
+comentarios com data e rótulo 8543
+vídeos com rótulo 353
+
+== comentários por tema
+{'tema': 'entretenimento_humor', 'comentarios': 1739, 'pct_comentarios': 20.4, 'likes_nos_comentarios': 24524, 'videos': 38, 'pct_videos': 10.8, 'pct_views_videos': 51.1, 'razao_demanda_oferta': 1.89}
+{'tema': 'validade_testes_qi', 'comentarios': 1699, 'pct_comentarios': 19.9, 'likes_nos_comentarios': 7024, 'videos': 10, 'pct_videos': 2.8, 'pct_views_videos': 9.6, 'razao_demanda_oferta': 7.02}
+{'tema': 'experiencia_pessoal', 'comentarios': 1235, 'pct_comentarios': 14.5, 'likes_nos_comentarios': 14897, 'videos': 29, 'pct_videos': 8.2, 'pct_views_videos': 3.0, 'razao_demanda_oferta': 1.76}
+{'tema': 'diagnostico_avaliacao', 'comentarios': 868, 'pct_comentarios': 10.2, 'likes_nos_comentarios': 4500, 'videos': 51, 'pct_videos': 14.4, 'pct_views_videos': 7.0, 'razao_demanda_oferta': 0.7}
+{'tema': 'saude_mental_neuro', 'comentarios': 850, 'pct_comentarios': 9.9, 'likes_nos_comentarios': 6069, 'videos': 61, 'pct_videos': 17.3, 'pct_views_videos': 3.9, 'razao_demanda_oferta': 0.58}
+{'tema': 'elitismo_arrogancia', 'comentarios': 586, 'pct_comentarios': 6.9, 'likes_nos_comentarios': 14875, 'videos': 0, 'pct_videos': 0.0, 'pct_views_videos': 0.0, 'razao_demanda_oferta': None}
+{'tema': 'caracteristicas_sinais', 'comentarios': 421, 'pct_comentarios': 4.9, 'likes_nos_comentarios': 2988, 'videos': 31, 'pct_videos': 8.8, 'pct_views_videos': 9.1, 'razao_demanda_oferta': 0.56}
+{'tema': 'outro', 'comentarios': 371, 'pct_comentarios': 4.3, 'likes_nos_comentarios': 1304, 'videos': 37, 'pct_videos': 10.5, 'pct_views_videos': 3.5, 'razao_demanda_oferta': 0.41}
+{'tema': 'elogio_admiracao', 'comentarios': 265, 'pct_comentarios': 3.1, 'likes_nos_comentarios': 2757, 'videos': 4, 'pct_videos': 1.1, 'pct_views_videos': 0.1, 'razao_demanda_oferta': 2.74}
+{'tema': 'mensa_sociedade', 'comentarios': 217, 'pct_comentarios': 2.5, 'likes_nos_comentarios': 5470, 'videos': 59, 'pct_videos': 16.7, 'pct_views_videos': 8.6, 'razao_demanda_oferta': 0.15}
+{'tema': 'educacao_escola', 'comentarios': 174, 'pct_comentarios': 2.0, 'likes_nos_comentarios': 1442, 'videos': 25, 'pct_videos': 7.1, 'pct_views_videos': 4.0, 'razao_demanda_oferta': 0.29}
+{'tema': 'politica_publica', 'comentarios': 60, 'pct_comentarios': 0.7, 'likes_nos_comentarios': 77, 'videos': 6, 'pct_videos': 1.7, 'pct_views_videos': 0.1, 'razao_demanda_oferta': 0.41}
+{'tema': 'custo_acesso', 'comentarios': 58, 'pct_comentarios': 0.7, 'likes_nos_comentarios': 419, 'videos': 2, 'pct_videos': 0.6, 'pct_views_videos': 0.0, 'razao_demanda_oferta': 1.2}
+
+== postura sobre a Mensa nos comentários
+Counter({'nao_se_aplica': 6665, 'detrator': 1251, 'neutro': 346, 'apoiador': 281})
+
+== postura sobre a Mensa nos vídeos
+Counter({'nao_se_aplica': 214, 'neutro': 79, 'apoiador': 55, 'detrator': 5})
+
+== tipo de criador
+Counter({'profissional_saude_educacao': 92, 'canal_entretenimento_humor': 83, 'outro': 66, 'jornalismo_midia': 47, 'canal_mensa_ou_entidade': 39, 'pessoa_com_ah_sd_ou_familia': 26})
+
+== top correlações (|r|)
+diagnostico_avaliacao x educacao_escola 0.98
+outro x politica_publica 0.98
+caracteristicas_sinais x outro 0.977
+elogio_admiracao x outro 0.977
+diagnostico_avaliacao x elogio_admiracao 0.975
+elitismo_arrogancia x experiencia_pessoal 0.974
+caracteristicas_sinais x educacao_escola 0.973
+politica_publica x validade_testes_qi 0.968
+educacao_escola x outro 0.967
+elogio_admiracao x validade_testes_qi 0.966
+caracteristicas_sinais x diagnostico_avaliacao 0.964
+educacao_escola x politica_publica 0.964
+
+== vídeos por views (top 15)
+6545005 629448 39000 2020-07 entretenimento_humor | Você Sabia? | 11 ILUSÕES DE ÓTICA QUE SOMENTE PESSOAS COM O QI ALTO CONSEGUEM RESOLV
+4362805 60882 11000 2019-02 entretenimento_humor | Tibees | This is what a Mensa IQ test looks like
+2204696 0 0 2009-04 mensa_sociedade | Sky News | Mensa marvel: two-year-old with an IQ of 156
+1883732 106307 10000 2024-11 validade_testes_qi | Ciência Todo Dia | A verdade sobre TESTES de QI
+1714558 24540 1800 2023-02 entretenimento_humor | INCRÍVEL | Um Quiz Divertido Para Saber Se Você Tem QI de Gênio
+1138042 31253 3000 2025-04 entretenimento_humor | ConVerso | ROGER do ULTRAJE: O MAIOR QI do BRASIL
+974106 0 3100 2023-11 educacao_escola | Vick Souza | ☆ QI, ENEM E PROVAS: boas notas, passar de ano, inteligência sublimina
+890538 24707 4500 2023-12 entretenimento_humor | Teste de Inteligência | Teste de QI - Perguntas reais de testes de QI para testar sua inteligê
+742895 25777 259 2026-10 entretenimento_humor | Brino | AQUELES CARAS vs O MAIOR QI DO BRASIL! - React Aqueles Caras
+741541 29905 2400 2023-10 caracteristicas_sinais | Cortes do Lutz [OFICIAL] | OS SINAIS DE QUE VOCÊ É SUPERDOTADO  | Lutz Podcast
+517990 10332 788 2026-07 experiencia_pessoal | Uri Sabat | Superdotado con 165 de CI: Por qué el Cerebro NO Está Diseñado para Pe
+455497 11260 1400 2025-08 caracteristicas_sinais | Alberto Chao | Superdotado: Vivir con Altas Capacidades, Elon Musk e Inteligencia con
+424086 26277 2400 2026-01 outro | Carol Capel | Homem com MAIOR QI DO MUNDO, QI 276, consegue provar ONDE ESTÁ DEUS E 
+422778 4378 220 2024-09 diagnostico_avaliacao | Tv Atalaia | Criança de 3 anos é considerada superdotada - JE
+415787 40132 2600 2025-10 diagnostico_avaliacao | Nunca vi 1 cientista | O que significa ter Altas habilidades ou Superdotação?
+
+== meses com dados
+2007-10 2026-10 131

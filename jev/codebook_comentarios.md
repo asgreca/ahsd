@@ -1,0 +1,162 @@
+# Codebook gerado a partir dos comentários
+
+## entretenimento_humor
+Comentários: 1739 (amostra de 60)
+
+Os trechos têm em comum o uso do tema QI, superdotação e Mensa como matéria de piada, ironia ou provocação, sem discussão séria sobre o assunto. Predominam a autodepreciação cômica ("meu QI é zero"), a autoproclamação exagerada ("meu QI é 520,342"), os trocadilhos e duplos sentidos, e o deboche dirigido a terceiros, como o entrevistado, o apresentador ou grupos políticos. O tom é de zombaria, geralmente marcado por "kkkk", emojis de riso ou números absurdos. Os comentários também ridicularizam a própria Mensa e seus membros, seja com sarcasmo em inglês, seja com estereótipos. O que une tudo é a intenção de fazer graça ou cutucar, não de informar, perguntar ou relatar experiência.
+
+Exemplos:
+- "Meu QI deve ser de -100."
+- "meu qi é 69 só penso em sexo"
+- "Contra a luz, percebe-se que o envelope está vazio... meu QI 1.000 KKKK"
+
+Limite: não entram aqui comentários que falem de superdotação, QI ou Mensa de forma séria, como relatos pessoais de diagnóstico, dúvidas sinceras, opiniões argumentadas sobre os testes ou elogios e críticas ao conteúdo do vídeo sem intenção cômica. Também ficam de fora ataques políticos ou ideológicos em que o QI serve apenas de pretexto para a discussão partidária, e não de recurso humorístico.
+
+## validade_testes_qi
+Comentários: 1699 (amostra de 60)
+
+Os trechos têm em comum o debate sobre se o QI e os testes que o medem (incluindo os da Mensa e os quizzes de vídeo) medem de fato a inteligência. Os comentários questionam a validade do teste por vários ângulos: ele captaria só um tipo de raciocínio (lógico-matemático, reconhecimento de padrões, vocabulário), seria enviesado por cultura e classe social, teria perguntas ambíguas ou com mais de uma resposta correta, ou ignoraria emoção, criatividade, esforço e personalidade. Também aparecem a estabilidade e a margem de erro dos escores, a credibilidade de números muito altos e o uso do QI como prova de inteligência, geralmente com ironia política. Alguns poucos defendem o QI como preditivo ou como medida legítima. O tom predominante é cético.
+
+Exemplos:
+- "Existem 9 ou mais inteligencias, e o QI só mede uma delas."
+- "I've taken a Mensa, this is nothing like it. This is about how much knowledge you know, not how intelligent you are"
+- "Teste de qi fake pois não há tanta gente com 150-200 de qi falso teste"
+
+Limite: não devem entrar comentários que apenas elogiam, atacam ou zombam do vídeo ou da pessoa, ou que relatam o próprio resultado ou o palpite sobre a resposta de uma questão, sem avaliar se o QI ou o teste mede inteligência. Debates sobre critérios diagnósticos de superdotação ou sobre a Mensa como grupo social também ficam fora, se não tratarem da validade do teste.
+
+## experiencia_pessoal
+Comentários: 1235 (amostra de 60)
+
+Os trechos são relatos em primeira pessoa em que o autor fala de si, de sua família ou de pessoas próximas em relação a altas habilidades, superdotação, QI ou testes da Mensa. Eles trazem vivências concretas: diagnósticos e laudos, resultados de testes, a descoberta tardia, a infância e a escola, relações sociais e de trabalho, sofrimento emocional, sensação de inadequação e dúvidas sobre ser ou não superdotado. Há também comentários mais leves ou autocongratulatórios, que só informam o próprio QI ou o resultado em um teste. O que une tudo é o ponto de vista de quem viveu ou está vivendo a situação, e não a opinião geral sobre o tema.
+
+Exemplos literais:
+- "Descobri que tenho superdotação faz uns meses e ainda estou aprendendo a lidar com isso"
+- "Minha psicóloga disse que eu tenho altas habilidades, não sei muito bem o que quer dizer e temos trabalhando nisso"
+- "Got a 126 on the Mensa Norway and 124 on the Denmark. Guess I'm just a hair below Mensa 😢"
+
+Limite: não entram comentários que apenas opinam, explicam ou debatem o tema em termos gerais, como críticas à Mensa, discussões sobre o que é inteligência ou elogios ao vídeo, sem relato de vivência própria ou de alguém próximo. Também ficam de fora comentários sem relação com o assunto, como o que trata só da Bíblia, e dicas ou propaganda em tom de instrução, mesmo que citem brevemente o autor.
+
+## diagnostico_avaliacao
+Comentários: 868 (amostra de 60)
+
+Os trechos têm em comum o tema de como se descobre, mede ou confirma a superdotação/altas habilidades (AH/SD). Aparecem relatos de avaliações neuropsicológicas e de testes de QI (WAIS, SON-R, Mensa), com pontuações e laudos, e também diagnósticos que se misturam ou se confundem com TDAH e TEA (dupla excepcionalidade). Há ainda dúvidas práticas, como qual teste fazer, onde, a partir de que pontuação se é considerado superdotado e o que significa um resultado, além de comentários de profissionais e leigos sobre os critérios de identificação (QI acima de 130, anéis de Renzulli). Inclui também pessoas que se autoavaliam com testes online e buscam confirmação formal.
+
+Exemplos:
+- "Qual o caminho para descobrir uma superdotação?"
+- "Minha psicóloga atual desconfia que eu seja AH/SD, mas quando fiz o teste de QI, deu 108( fiz avaliação neuropsicológica) pelo WAIS III."
+- "A superdotação não é identificada só pelo QI acima de 130."
+
+Limite: não entram aqui comentários que apenas falam de características, vivências ou emoções de pessoas superdotadas, elogios ao vídeo ou opiniões gerais sobre o tema, sem tratar de teste, avaliação, laudo ou critério de identificação. Também ficam de fora os que citam o QI só como número solto ou curiosidade, sem relação com avaliação ou diagnóstico.
+
+## saude_mental_neuro
+Comentários: 850 (amostra de 60)
+
+**1. Definição**
+
+Os trechos reúnem comentários em que altas habilidades/superdotação (AH/SD) aparecem ligadas a condições de neurodesenvolvimento e de saúde mental, sobretudo TEA, TDAH e a dupla ou tripla excepcionalidade. Também aparecem ansiedade, depressão, burnout, crises de raiva e de pânico, mascaramento (masking) e diagnóstico tardio. Em geral, as pessoas relatam experiência própria ou de filhos, falam de sofrimento e de avaliação neuropsicológica, ou pedem esclarecimentos e novos vídeos sobre como essas condições se sobrepõem e se distinguem. Entram também os comentários que contestam essa associação, seja por estereótipo, seja por acharem que há excesso de diagnósticos.
+
+**2. Exemplos literais**
+
+- "Eu mascarei o autismo por anos, até que fui parar numa neuropsicóloga que me pediu testes e deu AHSD com TEA N2"
+- "O que eu achei que a superdotação ia me dar:  boas notas em matemática.  O que ela realmente me deu: depressão existencial."
+- "E a tripla excepcionalidade?? Kkkk O raio caiu certinho em mim: TEA, TDAH e AHSD"
+
+**3. Limite**
+
+Não devem entrar comentários sobre superdotação, QI ou Mensa que não tenham relação com saúde mental, neurodivergência ou diagnóstico. Por exemplo: debates sobre o conceito de "gifted" ou sobre como desenvolver habilidades, ou elogios ao vídeo sem menção a essas condições. Citações isoladas, como "Os psicopatas têm QI alto...", também ficam de fora, quando não descrevem vivência, dúvida ou diagnóstico.
+
+## elitismo_arrogancia
+Comentários: 586 (amostra de 60)
+
+1. Os trechos tratam o QI, a superdotação e a Mensa como marcadores de status e hierarquia entre pessoas. Em um grupo, o autor se vangloria do próprio QI, se coloca acima da "média" ou usa o QI para rebaixar outros, como o brasileiro comum, adversários políticos ou quem comenta. No outro grupo, o autor acusa superdotados, membros da Mensa ou figuras públicas de ego inflado, soberba, narcisismo ou de se acharem superiores. Nos dois casos, o foco é a postura de superioridade, seja assumida, atribuída ou ridicularizada, e não a inteligência em si. O tom costuma ser de desprezo, ironia ou insulto.
+
+2. Exemplos:
+- "NÃO PRECISO FAZER TESTE...MEU QI É 200."
+- "Mensa=narcissists."
+- "Vim só ler os comentários dos trouxas que se acham superdotados para ter o mínimo de autoestima."
+
+3. Limite: não entram comentários que discutem superdotação, testes de QI ou a Mensa de forma factual ou conceitual, como a crítica à definição ampla do termo ou a dúvida sobre a validade dos testes, sem tom de superioridade, vaidade ou desprezo. Também ficam de fora piadas ou críticas que usem "QI" só como trocadilho, como "Quem Indica", sem alvo de arrogância.
+
+## caracteristicas_sinais
+Comentários: 421 (amostra de 60)
+
+A categoria reúne comentários que descrevem como é, ou como se manifesta, uma pessoa com altas habilidades/superdotação. Entram aqui traços cognitivos (aprendizagem precoce, memória, hiperfoco, criatividade, interesses variados), emocionais e sensoriais (perfeccionismo, intensidade, hipersensibilidade) e sociais (isolamento, dificuldade de se relacionar com quem não acompanha o raciocínio). Os autores falam de si mesmos, de filhos, alunos e familiares, ou discutem se determinado traço é típico ou não da superdotação. Aparecem também listas de características, dúvidas do tipo "isso é um sinal?" e estereótipos sobre como o superdotado seria ou deixaria de ser.
+
+Exemplos:
+- "Eu aprendi a ler aos 3 anos."
+- "Quanto mais alto o QI, mais isolado vc vive, pois tem poucas pessoas para se comunicar"
+- "Então trocar de interesses constantemente pode ser um sinal de altas habilidades?"
+
+Limite: não entram comentários que não tratam de traços ou sinais da pessoa superdotada, como elogios ou críticas à entrevista ou ao entrevistado, debates sobre o funcionamento da Mensa, ou questões de diagnóstico, testes de QI e políticas educacionais em si. Também ficam de fora comentários sobre a pessoa do entrevistado, como "Pode ter alto QI porém, é um cara ridículo", quando não descrevem características da superdotação.
+
+## outro
+Comentários: 371 (amostra de 60)
+
+1. Os trechos formam uma categoria residual de comentários que giram em torno de QI, superdotação ou da Mensa, mas usam o tema como pretexto ou ponto de partida para outro assunto. Entre eles estão ataques e discussões políticas (sobretudo sobre bolsonarismo), debates religiosos sobre a Bíblia e Deus, e juízos pessoais sobre o QI ou a carreira de figuras públicas. Também aparecem comentários sobre o formato ou a condução do vídeo, pedidos de pauta, perguntas muito básicas, spam e propaganda de cursos, além de textos em outros idiomas e curiosidades soltas. Em geral não aprofundam nenhum conceito sobre altas habilidades; o QI funciona como gancho para opinião, provocação, humor ou divulgação.
+
+2. Exemplos:
+- "Tem um QI alto mas é bolsonarista, triste"
+- "Belo QI mas tá claro q não entendeu a essência da bíblia. Contexto, tempo..."
+- "Desviou muito do tema! Passou de SUPERDOTADO para filosofar sobre crise existencial!"
+
+3. Não devem entrar aqui comentários que discutem de fato o conceito, a identificação ou as características da superdotação e das altas habilidades. Isso inclui teoria (como Renzulli), prevalência, hereditariedade, diferença entre termos, invisibilidade feminina e relação com sucesso na vida. Esses pertencem a categorias temáticas específicas, mesmo quando o tom é crítico ou informal.
+
+## elogio_admiracao
+Comentários: 265 (amostra de 60)
+
+Os trechos têm em comum a expressão de uma avaliação positiva, explícita ou emocionada, dirigida a um vídeo, ao criador de conteúdo, a um entrevistado ou à própria temática da superdotação, do QI e da Mensa. Aparecem parabéns, agradecimentos, adjetivos como "excelente" e "incrível", relatos de acolhimento ou de emoção ao assistir e declarações de fascínio pelo assunto. Também cabe aqui a admiração por pessoas tidas como muito inteligentes, como gênios históricos, quem tem QI alto ou quem é membro da Mensa. Essa admiração aparece como espanto, reverência ou elogio ao talento ou ao caráter da pessoa. O tom é de apreço, e o conteúdo informativo ou argumentativo do comentário fica em segundo plano.
+
+Exemplos:
+- "Estou ficando cada vez mais fascinado por este assunto da superdotação, é tipo brincar de quebra-cabeça!"
+- "Mensa brabissimo."
+- "Parabéns pelo podcast. A visão realista desmistifica a questão da superdotação."
+
+Limite: não entram aqui comentários que apenas citam números de QI ou fatos sobre pessoas famosas sem valoração ("Tesla QI 280-300", "O QI do Einstein era de 152"), nem pedidos, sugestões ou correções feitas sem elogio claro. Também ficam de fora ironias, críticas e usos do "QI alto" para provocação política ou deboche, ainda que usem palavras aparentemente elogiosas.
+
+## mensa_sociedade
+Comentários: 217 (amostra de 60)
+
+A categoria reúne comentários que tratam da Mensa como organização e instituição social: quem a integra, como se entra, o que ela faz, qual é o seu valor e como é percebida. Aparecem experiências de membros e ex-membros, dúvidas sobre ingresso e testes de admissão (percentil de 2%, limite de tempo, testes aceitos), críticas e elogios à cultura interna e debates sobre a utilidade do grupo. Também há menções a outras associações de alto QI, a pessoas famosas associadas e piadas ou ironias sobre a Mensa. O foco está na Mensa como grupo ou clube, e não na inteligência ou na superdotação em geral.
+
+Exemplos:
+- "Faço parte da Mensa e não tem nada de “sociedade secreta”. É puro clickbait 😅"
+- "I got 25/33, but what's the point of mensa?"
+- "Gostaria muito de me corresponder com a mensa e ingressar!!"
+
+Limite: não devem entrar comentários que discutem QI, superdotação, altas habilidades ou testes de inteligência em geral sem referência à Mensa como organização. Também ficam fora os que só citam a palavra "Mensa" de passagem, sem tratar da instituição, de seus membros ou de seu funcionamento.
+
+## educacao_escola
+Comentários: 174 (amostra de 60)
+
+Os trechos têm em comum o foco na relação entre altas habilidades/superdotação e o ambiente escolar. Aparecem relatos de pais, professores e ex-alunos sobre falta de preparo das escolas, incompreensão e preconceito de docentes, tédio com o ritmo do ensino, bullying, isolamento e abandono escolar. Também há menções a soluções e recursos, como aceleração de série, escolas específicas, acompanhamento psicológico e diagnóstico (laudo, PDI), além de críticas mais amplas ao sistema educacional brasileiro e à sua capacidade de identificar e apoiar esses alunos. Alguns comentários discordam da tese de que a escola falha e atribuem o problema ao comportamento do aluno ou à família, mas ainda tratam do tema escola e ensino.
+
+Exemplos:
+- "Quando eu era criança o diretor da escolinha falou que eu podia ser superdotado, a  solução oferecida por ele foi me tirar da escola por uma ano."
+- "Meu filho tem (135 qi), melhorou depois que pulou um ano. Só vi benefícios em avançar série. Então, fica essa dica"
+- "A escola realmente nao esta preparada para o ahsd, sao muitas demandas em diversas frentes e parece que todas ficam na superfície."
+
+Limite: não entram aqui comentários que falam de QI, genética, Mensa, política ou pessoas famosas sem ligação concreta com escola, ensino ou aprendizagem. Também ficam de fora relatos puramente familiares ou clínicos (diagnóstico, autismo, TDAH) em que a escola é apenas citada de passagem, e ofensas genéricas sobre "educação" no sentido de má educação ou comportamento.
+
+## politica_publica
+Comentários: 60 (amostra de 60)
+
+Os trechos têm em comum a ligação entre QI, superdotação ou Mensa e o Estado, o governo ou a disputa política. Uma parte cobra ou avalia o poder público: falta de apoio, de leis e de direitos para superdotados (inclusive adultos), comparações com outros países e pedidos de investimento em educação. Outra parte usa o QI como argumento em debates partidários e eleitorais, seja para atacar ou defender Lula, Bolsonaro e a esquerda ou a direita, seja para explicar a política brasileira pelo "QI médio" da população. Há ainda propostas e críticas sobre o papel do Estado, como o voto ponderado pelo QI ou a esterilização.
+
+Exemplos:
+- "Que políticas públicas existem em Pernambuco para superdotados?"
+- "Brasil deve ser especialista em jogar seus superdotados no lixo"
+- "Como um país pode se desenvolver com um QI médio de 83?"
+
+Limite: não entram aqui comentários sobre a validade do teste de QI, relatos pessoais de diagnóstico ou de experiência com a Mensa, nem dúvidas técnicas sem relação com governo, leis ou política. Também ficam de fora ofensas genéricas sem conteúdo político ou de políticas públicas.
+
+## custo_acesso
+Comentários: 58 (amostra de 58)
+
+1. Os trechos tratam do dinheiro como barreira ou objeção ao acesso a testes de QI, laudos de altas habilidades/superdotação e à filiação à Mensa. Isso aparece em queixas sobre taxas de teste, anuidades e preços de avaliações neuropsicológicas, e em relatos de quem desistiu, não pôde pagar ou se sentiu enganado pela cobrança. Também há comentários de que a Mensa lucra com isso, e pedidos de alternativas gratuitas ou baratas. Há ainda o lado da desigualdade: famílias e adultos sem recursos, sem cobertura do plano ou do SUS, que ficam sem diagnóstico. O tom varia entre indignação, ironia, frustração e resignação, mas o eixo é sempre o preço de saber ou de provar a própria capacidade.
+
+2. Exemplos copiados literalmente:
+- "Mensa, the organisation that you pay in order to tell you how smart  you are.🤔"
+- "A professora e eu acreditamos que meu filho tenha altas habilidades, mas como não tenho dinheiro pro laudo, ficamos aqui no limbo."
+- "O problema no Brasil para diagnosticar é o alto valor. Em média de 2000 a 2500 reais."
+
+3. Limite: não entram comentários que só mencionam a Mensa, testes de QI ou diagnóstico sem tratar de custo, preço, pagamento ou recursos financeiros (por exemplo, elogios ao vídeo, debates sobre o valor do QI ou relatos de pontuação). Também ficam de fora críticas à Mensa por elitismo ou arrogância que não envolvam dinheiro, e dúvidas sobre onde ou como fazer o teste sem referência a preço ou acessibilidade financeira.
